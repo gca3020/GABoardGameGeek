@@ -1,6 +1,8 @@
 # GABoardGameGeek
 
 [![Build Status](https://travis-ci.org/gca3020/GABoardGameGeek.svg?branch=master)](https://travis-ci.org/gca3020/GABoardGameGeek)
+[![codecov.io](https://codecov.io/github/gca3020/GABoardGameGeek/coverage.svg?branch=master)](https://codecov.io/github/gca3020/GABoardGameGeek?branch=master)
+![Swift version](https://img.shields.io/badge/swift-2.2-orange.svg)
 [![Twitter](https://img.shields.io/badge/twitter-@gca3020-blue.svg?style=flat)](http://twitter.com/gca3020)
 
 BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections on BGG
@@ -10,7 +12,7 @@ BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections
 - [x] Read-only access to user collections and games
 - [x] TODO! Searching
 - [x] TODO! Forums, Videos, Users, etc...
-- [x] Comprehensive Test Coverage
+- [x] Comprehensive Test Coverage & Automated Coverage Reports
 
 ## Requirements
 
