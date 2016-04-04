@@ -1,7 +1,11 @@
 language: objective-c
 osx_image: xcode7.2
 
-script: ./runTests.sh
+install:
+  - gem install xcpretty
+
+script:
+  - set -o pipefail && xcodebuild -project GABoardGameGeek.xcodeproj -scheme GABoardGameGeek -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' test | xcpretty
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
