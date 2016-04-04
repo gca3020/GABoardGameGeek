@@ -21,17 +21,22 @@ class GABoardGameGeekTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+    func testBggThing() {
+
+        // Verify the Full Initializer
+        let fullThing = BggThing(objectId: 123, name: "The Sort Name", sortIndex: 5)
+        XCTAssertEqual(fullThing.name, "The Sort Name")
+        XCTAssertEqual(fullThing.sortName, "Sort Name")
+
+        // Verify the Convenience Initializer
+        let convenienceThing = BggThing(objectId: 321, name: "Convenience")
+        XCTAssertEqual(convenienceThing.name, "Convenience")
+        XCTAssertEqual(convenienceThing.sortName, "Convenience")
+
+        // Verify that a bad sortIndex won't cause problems
+        XCTAssertEqual(BggThing(objectId: 1, name: "ZeroIndex", sortIndex: 0).sortName, "ZeroIndex")
+        XCTAssertEqual(BggThing(objectId: 1, name: "NegativeIndex", sortIndex: -5).sortName, "NegativeIndex")
+        XCTAssertEqual(BggThing(objectId: 1, name: "TooLargeIndex", sortIndex: 100).sortName, "TooLargeIndex")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+
 }
