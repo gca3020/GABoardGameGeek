@@ -46,22 +46,9 @@ public class BggThing {
 
      - returns: A BggThing
      */
-    init(objectId: Int, name: String, sortIndex: Int) {
+    init(objectId: Int, name: String, sortIndex: Int = 1) {
         self.objectId = objectId
         self.name = name
         self.sortIndex = sortIndex
     }
-
-    /**
-     Short initializer for a Thing. Assume that the sortIndex is the first character
-
-     - parameter objectId: The object ID
-     - parameter name:     The name
-
-     - returns: A BggThing
-     */
-    convenience init(objectId: Int, name: String) {
-        self.init(objectId: objectId, name:name, sortIndex: 1)
-    }
-
 }

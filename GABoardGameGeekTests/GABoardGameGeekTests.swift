@@ -21,7 +21,7 @@ class GABoardGameGeekTests: XCTestCase {
         super.tearDown()
     }
     
-    func testBggThing() {
+    func testThing() {
 
         // Verify the Full Initializer
         let fullThing = BggThing(objectId: 123, name: "The Sort Name", sortIndex: 5)
