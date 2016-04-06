@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - CollectionBoardGame
 
-public class CollectionBoardGame: BggThing {
+public class CollectionBoardGame: BoardGame {
 
     // MARK: - Data Members
 
@@ -33,6 +33,14 @@ public class CollectionBoardGame: BggThing {
 
     /// The number of plays a user has logged of the game. Not present when brief=1
     var numPlays: Int?
+
+    /// If the user has commented on this game in their wishlist, this field will be populated.
+    /// Not present when brief=1
+    var wishListComment: String?
+
+    /// If the user has commented on this game in their collection, this field will be populated.
+    /// Not present when brief=1
+    var comment: String?
 
     // MARK: - Initializers
 
@@ -94,9 +102,9 @@ public struct CollectionStatus {
 
 /**
  *  A class representing the statistics of a game, pulled when requesting the collection with the
- * "stats=1" flag
+ * "stats=1" flag. If brief stats are pulled, this structure will contain only the non-optional members.
  */
-public class CollectionStats: BggStats {
+public struct CollectionStats {
 
     /// The minimum number of players this game supports
     var minPlayers = 0
@@ -113,9 +121,28 @@ public class CollectionStats: BggStats {
     /// The listed playing time for this game
     var playingTime = 0
 
+    /// The number of users that own this game
+    var numOwned = 0
+
     /// The user's rating for this game. If the user has not rated this game, it will be 0.0
     var userRating = 0.0
 
     /// The number of users that have rated this game. Not present when brief=1
     var usersRated: Int?
+
+    /// The average rating given to this game. Not present when brief=1
+    var averageRating: Double?
+
+    /// The weighted "Geek Rating" given to this game. Not present when brief=1
+    var bayesAverageRating: Double?
+
+    /// The standard deviation of the rating for this game. Not present when brief=1
+    var stdDev: Double?
+
+    /// The median rating given to this game. Not present when brief=1
+    /// - Note: I have never seen this be non-zero.
+    var median: Double?
+
+    /// This game's ranking within various lists. Not present when brief=1
+    var ranks: [GameRank]?
 }

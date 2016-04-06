@@ -12,7 +12,7 @@
 		6C383F661CB1A17C00A14737 /* GABoardGameGeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C383F5B1CB1A17C00A14737 /* GABoardGameGeek.framework */; };
 		6C383F6B1CB1A17C00A14737 /* GABoardGameGeekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383F6A1CB1A17C00A14737 /* GABoardGameGeekTests.swift */; };
 		6C383F761CB1A8AD00A14737 /* BggTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383F751CB1A8AD00A14737 /* BggTypes.swift */; };
-		6C383F7A1CB1AD6800A14737 /* BggThing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383F791CB1AD6800A14737 /* BggThing.swift */; };
+		6C383F7A1CB1AD6800A14737 /* BoardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383F791CB1AD6800A14737 /* BoardGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +34,7 @@
 		6C383F6A1CB1A17C00A14737 /* GABoardGameGeekTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GABoardGameGeekTests.swift; sourceTree = "<group>"; };
 		6C383F6C1CB1A17C00A14737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C383F751CB1A8AD00A14737 /* BggTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BggTypes.swift; sourceTree = "<group>"; };
-		6C383F791CB1AD6800A14737 /* BggThing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BggThing.swift; sourceTree = "<group>"; };
+		6C383F791CB1AD6800A14737 /* BoardGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 				6C383F5E1CB1A17C00A14737 /* GABoardGameGeek.h */,
 				6C383F601CB1A17C00A14737 /* Info.plist */,
 				6C383F751CB1A8AD00A14737 /* BggTypes.swift */,
-				6C383F791CB1AD6800A14737 /* BggThing.swift */,
+				6C383F791CB1AD6800A14737 /* BoardGame.swift */,
 				6C1A84961CB33E2B004CD61F /* CollectionBoardGame.swift */,
 			);
 			path = GABoardGameGeek;
@@ -206,7 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C383F761CB1A8AD00A14737 /* BggTypes.swift in Sources */,
-				6C383F7A1CB1AD6800A14737 /* BggThing.swift in Sources */,
+				6C383F7A1CB1AD6800A14737 /* BoardGame.swift in Sources */,
 				6C1A84971CB33E2B004CD61F /* CollectionBoardGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
