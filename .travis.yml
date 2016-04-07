@@ -6,6 +6,7 @@ install:
 
 script:
   - set -o pipefail
+  - pod install
   - xcodebuild -version
   - xcodebuild -showsdks
   - xcodebuild -workspace GABoardGameGeek.xcworkspace -scheme GABoardGameGeek -sdk iphonesimulator9.3 -destination 'OS=9.3,name=iPhone 6S Plus' test | xcpretty
