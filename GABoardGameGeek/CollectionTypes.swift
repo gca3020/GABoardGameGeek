@@ -10,9 +10,16 @@ import Foundation
 
 // MARK: - CollectionBoardGame
 
-public class CollectionBoardGame: BoardGame {
+public struct CollectionBoardGame {
 
-    // MARK: - Data Members
+    /// The object ID of this game.
+    var objectId: Int
+
+    /// The name of this game.
+    var name: String
+
+    /// The sort index of this game.
+    var sortIndex: Int
 
     /// The status of a BoardGame in a user's collection - Along with the name and ID,
     /// this is the only thing that is guaranteed to be there when querying a collection
@@ -25,11 +32,13 @@ public class CollectionBoardGame: BoardGame {
     /// The year a game was published. Not present when brief=1
     var yearPublished: Int?
 
-    /// The URL where the game image can be accessed. Not present when brief=1
-    var imageUrl: NSURL?
+    /// The path where the game image can be accessed. Not present when brief=1
+    /// - Note: Querying the image should be done via the imageUrl computed param.
+    var imagePath: String?
 
-    /// The URL where the game thumbnail image can be accessed. Not present when brief=1
-    var thumbnailUrl: NSURL?
+    /// The path where the game thumbnail image can be accessed. Not present when brief=1
+    /// - Note: Querying the thumbnail should be done via the thumbnailUrl computed param.
+    var thumbnailPath: String?
 
     /// The number of plays a user has logged of the game. Not present when brief=1
     var numPlays: Int?
@@ -41,23 +50,6 @@ public class CollectionBoardGame: BoardGame {
     /// If the user has commented on this game in their collection, this field will be populated.
     /// Not present when brief=1
     var comment: String?
-
-    // MARK: - Initializers
-
-    /**
-     Basic initializer for a CollectionBoardGame object. This primarily just calls the
-     Superclass initializer fills in the defaults for a CollectionStatus
-
-     - parameter objectId:  The object ID of this game.
-     - parameter name:      The name of this game.
-     - parameter sortIndex: The character in the name to sort on (1-indexed)
-
-     - returns: A CollectionBoardGame
-     */
-    override init(objectId: Int, name: String, sortIndex: Int = 1) {
-        self.status = CollectionStatus()
-        super.init(objectId: objectId, name: name, sortIndex: sortIndex)
-    }
 }
 
 // MARK: - CollectionStatus
@@ -107,34 +99,46 @@ public struct CollectionStatus {
 public struct CollectionStats {
 
     /// The minimum number of players this game supports
-    var minPlayers = 0
+    var minPlayers: Int
 
     /// The maximum number of players this game supports
-    var maxPlayers = 0
+    var maxPlayers: Int
 
     /// The minimum playtime listed for this game
-    var minPlaytime = 0
+    var minPlaytime: Int
 
     /// The maximum playtime listed for this game
-    var maxPlaytime = 0
+    var maxPlaytime: Int
 
     /// The listed playing time for this game
-    var playingTime = 0
+    var playingTime: Int
 
     /// The number of users that own this game
-    var numOwned = 0
+    var numOwned: Int
+
+    /// The ratings and rankings for this gem.
+    var rating: CollectionRating
+}
+
+// MARK: - CollectionRating
+
+/**
+ *  A class representing the statistics of a game, pulled when requesting the collection with the
+ * "stats=1" flag. If brief stats are pulled, this structure will contain only the non-optional members.
+ */
+public struct CollectionRating {
 
     /// The user's rating for this game. If the user has not rated this game, it will be 0.0
-    var userRating = 0.0
+    var userRating: Double?
 
     /// The number of users that have rated this game. Not present when brief=1
     var usersRated: Int?
 
     /// The average rating given to this game. Not present when brief=1
-    var averageRating: Double?
+    var averageRating: Double
 
     /// The weighted "Geek Rating" given to this game. Not present when brief=1
-    var bayesAverageRating: Double?
+    var bayesAverageRating: Double
 
     /// The standard deviation of the rating for this game. Not present when brief=1
     var stdDev: Double?

@@ -6,3 +6,7 @@ use_frameworks!
 target 'GABoardGameGeek' do
 	pod 'SWXMLHash', '~> 2.2.0'
 end
+
+target 'GABoardGameGeekTests' do
+    pod 'SWXMLHash', '~> 2.2.0'
+end

@@ -1,913 +1,543 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>280F13F7A69BA3841CA017E2</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_GABoardGameGeek.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>37B90206D29761F9A8EC6136</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>280F13F7A69BA3841CA017E2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4D0194CEAB12419701044A9E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-GABoardGameGeek.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>63708CA6FEC6147B4EBD71E6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>280F13F7A69BA3841CA017E2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>690F0594DA60B1F8ED2CAEDE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7A2CDFD72A06702894C3BD3F</string>
-				<string>4D0194CEAB12419701044A9E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C1A84961CB33E2B004CD61F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>CollectionBoardGame.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C1A84971CB33E2B004CD61F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6C1A84961CB33E2B004CD61F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6C383F511CB1A17C00A14737</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6C383F5D1CB1A17C00A14737</string>
-				<string>6C383F691CB1A17C00A14737</string>
-				<string>6C383F5C1CB1A17C00A14737</string>
-				<string>690F0594DA60B1F8ED2CAEDE</string>
-				<string>37B90206D29761F9A8EC6136</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C383F521CB1A17C00A14737</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0730</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Geoffrey Amey</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>6C383F5A1CB1A17C00A14737</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>DevelopmentTeam</key>
-						<string>68E47Z23NQ</string>
-					</dict>
-					<key>6C383F641CB1A17C00A14737</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>DevelopmentTeam</key>
-						<string>68E47Z23NQ</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>6C383F551CB1A17C00A14737</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>6C383F511CB1A17C00A14737</string>
-			<key>productRefGroup</key>
-			<string>6C383F5C1CB1A17C00A14737</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>6C383F5A1CB1A17C00A14737</string>
-				<string>6C383F641CB1A17C00A14737</string>
-			</array>
-		</dict>
-		<key>6C383F551CB1A17C00A14737</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>6C383F6D1CB1A17C00A14737</string>
-				<string>6C383F6E1CB1A17C00A14737</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>6C383F561CB1A17C00A14737</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6C383F761CB1A8AD00A14737</string>
-				<string>6C383F7A1CB1AD6800A14737</string>
-				<string>6C1A84971CB33E2B004CD61F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6C383F571CB1A17C00A14737</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>63708CA6FEC6147B4EBD71E6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6C383F581CB1A17C00A14737</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6C383F5F1CB1A17C00A14737</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6C383F591CB1A17C00A14737</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6C383F5A1CB1A17C00A14737</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>6C383F6F1CB1A17C00A14737</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F5FA4082C0FF12B3FEED193B</string>
-				<string>6C383F561CB1A17C00A14737</string>
-				<string>6C383F571CB1A17C00A14737</string>
-				<string>6C383F581CB1A17C00A14737</string>
-				<string>6C383F591CB1A17C00A14737</string>
-				<string>E77E8943BEA518DAA08751AD</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>GABoardGameGeek</string>
-			<key>productName</key>
-			<string>GABoardGameGeek</string>
-			<key>productReference</key>
-			<string>6C383F5B1CB1A17C00A14737</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>6C383F5B1CB1A17C00A14737</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>GABoardGameGeek.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>6C383F5C1CB1A17C00A14737</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6C383F5B1CB1A17C00A14737</string>
-				<string>6C383F651CB1A17C00A14737</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C383F5D1CB1A17C00A14737</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6C383F5E1CB1A17C00A14737</string>
-				<string>6C383F601CB1A17C00A14737</string>
-				<string>6C383F751CB1A8AD00A14737</string>
-				<string>6C383F791CB1AD6800A14737</string>
-				<string>6C1A84961CB33E2B004CD61F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>GABoardGameGeek</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C383F5E1CB1A17C00A14737</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>GABoardGameGeek.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C383F5F1CB1A17C00A14737</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6C383F5E1CB1A17C00A14737</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>6C383F601CB1A17C00A14737</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C383F611CB1A17C00A14737</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6C383F6B1CB1A17C00A14737</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6C383F621CB1A17C00A14737</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6C383F661CB1A17C00A14737</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6C383F631CB1A17C00A14737</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6C383F641CB1A17C00A14737</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>6C383F721CB1A17C00A14737</string>
-			<key>buildPhases</key>
-			<array>
-				<string>6C383F611CB1A17C00A14737</string>
-				<string>6C383F621CB1A17C00A14737</string>
-				<string>6C383F631CB1A17C00A14737</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>6C383F681CB1A17C00A14737</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>GABoardGameGeekTests</string>
-			<key>productName</key>
-			<string>GABoardGameGeekTests</string>
-			<key>productReference</key>
-			<string>6C383F651CB1A17C00A14737</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>6C383F651CB1A17C00A14737</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>GABoardGameGeekTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>6C383F661CB1A17C00A14737</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6C383F5B1CB1A17C00A14737</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6C383F671CB1A17C00A14737</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>6C383F521CB1A17C00A14737</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>6C383F5A1CB1A17C00A14737</string>
-			<key>remoteInfo</key>
-			<string>GABoardGameGeek</string>
-		</dict>
-		<key>6C383F681CB1A17C00A14737</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>6C383F5A1CB1A17C00A14737</string>
-			<key>targetProxy</key>
-			<string>6C383F671CB1A17C00A14737</string>
-		</dict>
-		<key>6C383F691CB1A17C00A14737</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6C383F6A1CB1A17C00A14737</string>
-				<string>6C383F6C1CB1A17C00A14737</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>GABoardGameGeekTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C383F6A1CB1A17C00A14737</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>GABoardGameGeekTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C383F6B1CB1A17C00A14737</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6C383F6A1CB1A17C00A14737</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6C383F6C1CB1A17C00A14737</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C383F6D1CB1A17C00A14737</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>6C383F6E1CB1A17C00A14737</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>6C383F6F1CB1A17C00A14737</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>6C383F701CB1A17C00A14737</string>
-				<string>6C383F711CB1A17C00A14737</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>6C383F701CB1A17C00A14737</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>7A2CDFD72A06702894C3BD3F</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>GABoardGameGeek/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>gamey.GABoardGameGeek</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>6C383F711CB1A17C00A14737</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>4D0194CEAB12419701044A9E</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>GABoardGameGeek/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>gamey.GABoardGameGeek</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>6C383F721CB1A17C00A14737</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>6C383F731CB1A17C00A14737</string>
-				<string>6C383F741CB1A17C00A14737</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>6C383F731CB1A17C00A14737</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>GABoardGameGeekTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>gamey.GABoardGameGeekTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>6C383F741CB1A17C00A14737</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>GABoardGameGeekTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>gamey.GABoardGameGeekTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>6C383F751CB1A8AD00A14737</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>BggTypes.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C383F761CB1A8AD00A14737</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6C383F751CB1A8AD00A14737</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6C383F791CB1AD6800A14737</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>BoardGame.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C383F7A1CB1AD6800A14737</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6C383F791CB1AD6800A14737</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7A2CDFD72A06702894C3BD3F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-GABoardGameGeek.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E77E8943BEA518DAA08751AD</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>F5FA4082C0FF12B3FEED193B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>6C383F521CB1A17C00A14737</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63708CA6FEC6147B4EBD71E6 /* Pods_GABoardGameGeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280F13F7A69BA3841CA017E2 /* Pods_GABoardGameGeek.framework */; };
+		6C1A84971CB33E2B004CD61F /* CollectionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1A84961CB33E2B004CD61F /* CollectionTypes.swift */; };
+		6C1A849B1CB5E527004CD61F /* Collection.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6C1A849A1CB5E527004CD61F /* Collection.xml */; };
+		6C1A849D1CB5E79D004CD61F /* GABoardGameGeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1A849C1CB5E79D004CD61F /* GABoardGameGeek.swift */; };
+		6C1A849F1CB5E84E004CD61F /* CollectionDeserializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1A849E1CB5E84E004CD61F /* CollectionDeserializers.swift */; };
+		6C383F5F1CB1A17C00A14737 /* GABoardGameGeek.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C383F5E1CB1A17C00A14737 /* GABoardGameGeek.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C383F661CB1A17C00A14737 /* GABoardGameGeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C383F5B1CB1A17C00A14737 /* GABoardGameGeek.framework */; };
+		6C383F6B1CB1A17C00A14737 /* GABoardGameGeekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383F6A1CB1A17C00A14737 /* GABoardGameGeekTests.swift */; };
+		6C383F761CB1A8AD00A14737 /* BggTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383F751CB1A8AD00A14737 /* BggTypes.swift */; };
+		6C383F7A1CB1AD6800A14737 /* BoardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383F791CB1AD6800A14737 /* BoardGame.swift */; };
+		8EAD3A6E370AF76CE28A6468 /* Pods_GABoardGameGeekTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710FB5E388E90AFB4A50DA2B /* Pods_GABoardGameGeekTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C383F671CB1A17C00A14737 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C383F521CB1A17C00A14737 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C383F5A1CB1A17C00A14737;
+			remoteInfo = GABoardGameGeek;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		280F13F7A69BA3841CA017E2 /* Pods_GABoardGameGeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABoardGameGeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0194CEAB12419701044A9E /* Pods-GABoardGameGeek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeek.release.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek.release.xcconfig"; sourceTree = "<group>"; };
+		6C1A84961CB33E2B004CD61F /* CollectionTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTypes.swift; sourceTree = "<group>"; };
+		6C1A849A1CB5E527004CD61F /* Collection.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Collection.xml; sourceTree = "<group>"; };
+		6C1A849C1CB5E79D004CD61F /* GABoardGameGeek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GABoardGameGeek.swift; sourceTree = "<group>"; };
+		6C1A849E1CB5E84E004CD61F /* CollectionDeserializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDeserializers.swift; sourceTree = "<group>"; };
+		6C383F5B1CB1A17C00A14737 /* GABoardGameGeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GABoardGameGeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C383F5E1CB1A17C00A14737 /* GABoardGameGeek.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GABoardGameGeek.h; sourceTree = "<group>"; };
+		6C383F601CB1A17C00A14737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C383F651CB1A17C00A14737 /* GABoardGameGeekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GABoardGameGeekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C383F6A1CB1A17C00A14737 /* GABoardGameGeekTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GABoardGameGeekTests.swift; sourceTree = "<group>"; };
+		6C383F6C1CB1A17C00A14737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C383F751CB1A8AD00A14737 /* BggTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BggTypes.swift; sourceTree = "<group>"; };
+		6C383F791CB1AD6800A14737 /* BoardGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGame.swift; sourceTree = "<group>"; };
+		710FB5E388E90AFB4A50DA2B /* Pods_GABoardGameGeekTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABoardGameGeekTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A2CDFD72A06702894C3BD3F /* Pods-GABoardGameGeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek.debug.xcconfig"; sourceTree = "<group>"; };
+		838F1750A24B809EAC07E663 /* Pods-GABoardGameGeekTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeekTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests.debug.xcconfig"; sourceTree = "<group>"; };
+		90861E9FB247EBC2AE57AD4A /* Pods-GABoardGameGeekTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeekTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C383F571CB1A17C00A14737 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63708CA6FEC6147B4EBD71E6 /* Pods_GABoardGameGeek.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C383F621CB1A17C00A14737 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C383F661CB1A17C00A14737 /* GABoardGameGeek.framework in Frameworks */,
+				8EAD3A6E370AF76CE28A6468 /* Pods_GABoardGameGeekTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37B90206D29761F9A8EC6136 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				280F13F7A69BA3841CA017E2 /* Pods_GABoardGameGeek.framework */,
+				710FB5E388E90AFB4A50DA2B /* Pods_GABoardGameGeekTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		690F0594DA60B1F8ED2CAEDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A2CDFD72A06702894C3BD3F /* Pods-GABoardGameGeek.debug.xcconfig */,
+				4D0194CEAB12419701044A9E /* Pods-GABoardGameGeek.release.xcconfig */,
+				838F1750A24B809EAC07E663 /* Pods-GABoardGameGeekTests.debug.xcconfig */,
+				90861E9FB247EBC2AE57AD4A /* Pods-GABoardGameGeekTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6C383F511CB1A17C00A14737 = {
+			isa = PBXGroup;
+			children = (
+				6C383F5D1CB1A17C00A14737 /* GABoardGameGeek */,
+				6C383F691CB1A17C00A14737 /* GABoardGameGeekTests */,
+				6C383F5C1CB1A17C00A14737 /* Products */,
+				690F0594DA60B1F8ED2CAEDE /* Pods */,
+				37B90206D29761F9A8EC6136 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6C383F5C1CB1A17C00A14737 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C383F5B1CB1A17C00A14737 /* GABoardGameGeek.framework */,
+				6C383F651CB1A17C00A14737 /* GABoardGameGeekTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C383F5D1CB1A17C00A14737 /* GABoardGameGeek */ = {
+			isa = PBXGroup;
+			children = (
+				6C383F5E1CB1A17C00A14737 /* GABoardGameGeek.h */,
+				6C383F601CB1A17C00A14737 /* Info.plist */,
+				6C383F751CB1A8AD00A14737 /* BggTypes.swift */,
+				6C383F791CB1AD6800A14737 /* BoardGame.swift */,
+				6C1A849E1CB5E84E004CD61F /* CollectionDeserializers.swift */,
+				6C1A84961CB33E2B004CD61F /* CollectionTypes.swift */,
+				6C1A849C1CB5E79D004CD61F /* GABoardGameGeek.swift */,
+			);
+			path = GABoardGameGeek;
+			sourceTree = "<group>";
+		};
+		6C383F691CB1A17C00A14737 /* GABoardGameGeekTests */ = {
+			isa = PBXGroup;
+			children = (
+				6C383F6A1CB1A17C00A14737 /* GABoardGameGeekTests.swift */,
+				6C383F6C1CB1A17C00A14737 /* Info.plist */,
+				6C1A849A1CB5E527004CD61F /* Collection.xml */,
+			);
+			path = GABoardGameGeekTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6C383F581CB1A17C00A14737 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C383F5F1CB1A17C00A14737 /* GABoardGameGeek.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6C383F5A1CB1A17C00A14737 /* GABoardGameGeek */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C383F6F1CB1A17C00A14737 /* Build configuration list for PBXNativeTarget "GABoardGameGeek" */;
+			buildPhases = (
+				F5FA4082C0FF12B3FEED193B /* Check Pods Manifest.lock */,
+				6C383F561CB1A17C00A14737 /* Sources */,
+				6C383F571CB1A17C00A14737 /* Frameworks */,
+				6C383F581CB1A17C00A14737 /* Headers */,
+				6C383F591CB1A17C00A14737 /* Resources */,
+				E77E8943BEA518DAA08751AD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GABoardGameGeek;
+			productName = GABoardGameGeek;
+			productReference = 6C383F5B1CB1A17C00A14737 /* GABoardGameGeek.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6C383F641CB1A17C00A14737 /* GABoardGameGeekTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C383F721CB1A17C00A14737 /* Build configuration list for PBXNativeTarget "GABoardGameGeekTests" */;
+			buildPhases = (
+				FA3C2CB7952557D2633F5F08 /* Check Pods Manifest.lock */,
+				6C383F611CB1A17C00A14737 /* Sources */,
+				6C383F621CB1A17C00A14737 /* Frameworks */,
+				6C383F631CB1A17C00A14737 /* Resources */,
+				687FA10FB8753652C695FE45 /* Embed Pods Frameworks */,
+				05E1EF29BA4E329008371DA3 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C383F681CB1A17C00A14737 /* PBXTargetDependency */,
+			);
+			name = GABoardGameGeekTests;
+			productName = GABoardGameGeekTests;
+			productReference = 6C383F651CB1A17C00A14737 /* GABoardGameGeekTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C383F521CB1A17C00A14737 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Geoffrey Amey";
+				TargetAttributes = {
+					6C383F5A1CB1A17C00A14737 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 68E47Z23NQ;
+					};
+					6C383F641CB1A17C00A14737 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 68E47Z23NQ;
+					};
+				};
+			};
+			buildConfigurationList = 6C383F551CB1A17C00A14737 /* Build configuration list for PBXProject "GABoardGameGeek" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6C383F511CB1A17C00A14737;
+			productRefGroup = 6C383F5C1CB1A17C00A14737 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C383F5A1CB1A17C00A14737 /* GABoardGameGeek */,
+				6C383F641CB1A17C00A14737 /* GABoardGameGeekTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C383F591CB1A17C00A14737 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C383F631CB1A17C00A14737 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C1A849B1CB5E527004CD61F /* Collection.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05E1EF29BA4E329008371DA3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		687FA10FB8753652C695FE45 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E77E8943BEA518DAA08751AD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5FA4082C0FF12B3FEED193B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA3C2CB7952557D2633F5F08 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C383F561CB1A17C00A14737 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C1A849F1CB5E84E004CD61F /* CollectionDeserializers.swift in Sources */,
+				6C383F761CB1A8AD00A14737 /* BggTypes.swift in Sources */,
+				6C383F7A1CB1AD6800A14737 /* BoardGame.swift in Sources */,
+				6C1A849D1CB5E79D004CD61F /* GABoardGameGeek.swift in Sources */,
+				6C1A84971CB33E2B004CD61F /* CollectionTypes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C383F611CB1A17C00A14737 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C383F6B1CB1A17C00A14737 /* GABoardGameGeekTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C383F681CB1A17C00A14737 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C383F5A1CB1A17C00A14737 /* GABoardGameGeek */;
+			targetProxy = 6C383F671CB1A17C00A14737 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6C383F6D1CB1A17C00A14737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6C383F6E1CB1A17C00A14737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6C383F701CB1A17C00A14737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A2CDFD72A06702894C3BD3F /* Pods-GABoardGameGeek.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GABoardGameGeek/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gamey.GABoardGameGeek;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6C383F711CB1A17C00A14737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D0194CEAB12419701044A9E /* Pods-GABoardGameGeek.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GABoardGameGeek/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gamey.GABoardGameGeek;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6C383F731CB1A17C00A14737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 838F1750A24B809EAC07E663 /* Pods-GABoardGameGeekTests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = GABoardGameGeekTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gamey.GABoardGameGeekTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6C383F741CB1A17C00A14737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90861E9FB247EBC2AE57AD4A /* Pods-GABoardGameGeekTests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = GABoardGameGeekTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gamey.GABoardGameGeekTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C383F551CB1A17C00A14737 /* Build configuration list for PBXProject "GABoardGameGeek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C383F6D1CB1A17C00A14737 /* Debug */,
+				6C383F6E1CB1A17C00A14737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C383F6F1CB1A17C00A14737 /* Build configuration list for PBXNativeTarget "GABoardGameGeek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C383F701CB1A17C00A14737 /* Debug */,
+				6C383F711CB1A17C00A14737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C383F721CB1A17C00A14737 /* Build configuration list for PBXNativeTarget "GABoardGameGeekTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C383F731CB1A17C00A14737 /* Debug */,
+				6C383F741CB1A17C00A14737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C383F521CB1A17C00A14737 /* Project object */;
+}

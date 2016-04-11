@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<items totalitems="7" termsofuse="http://boardgamegeek.com/xmlapi/termsofuse" pubdate="Thu, 07 Apr 2016 00:33:32 +0000">
+
+    <item objecttype="thing" objectid="111" subtype="boardgame" collid="11">
+        <name sortindex="1">Brief Game</name>
+		<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-04-04 20:19:37" />
+    </item>
+
+    <item objecttype="thing" objectid="222" subtype="boardgame" collid="22">
+        <name sortindex="3">A Brief Game With Stats</name>
+        <stats minplayers="4" maxplayers="8" minplaytime="120" maxplaytime="480" playingtime="240" numowned="2222">
+            <rating value="8.5">
+                <average value="7.79921"/>
+                <bayesaverage value="7.58107"/>
+            </rating>
+        </stats>
+        <status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="1" wishlistpriority="3" preordered="0" lastmodified="2015-12-18 09:38:29"/>
+    </item>
+
+    <item objecttype="thing" objectid="333" subtype="boardgame" collid="33">
+        <name sortindex="1">Standard Game</name>
+        <yearpublished>2016</yearpublished>
+        <image>//path.to/image333.jpg</image>
+        <thumbnail>//path.to/thumbnail333.jpg</thumbnail>
+        <status own="0" prevowned="1" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0" preordered="0" lastmodified="2016-04-04 20:19:37"/>
+        <numplays>1</numplays>
+        <comment>
+            Standard Comment
+        </comment>
+    </item>
+
+    <item objecttype="thing" objectid="444" subtype="boardgame" collid="44">
+        <name sortindex="3">A Game With Stats</name>
+        <yearpublished>2016</yearpublished>
+        <image>//path.to/image444.jpg</image>
+        <thumbnail>//path.to/thumbnail444.jpg</thumbnail>
+        <stats minplayers="1" maxplayers="2" minplaytime="20" maxplaytime="60" playingtime="45" numowned="4444">
+            <rating value="N/A">
+                <usersrated value="70"/>
+                <average value="7.66143"/>
+                <bayesaverage value="5.68734"/>
+                <stddev value="0.795755"/>
+                <median value="0"/>
+                <ranks>
+                    <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="3785" bayesaverage="5.68734"/>
+                    <rank type="family" id="5497" name="strategygames" friendlyname="Strategy Game Rank" value="20" bayesaverage="7.74838"/>
+                </ranks>
+            </rating>
+        </stats>
+        <status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0" preordered="0" lastmodified="2016-04-04 20:19:37"/>
+        <numplays>2</numplays>
+        <wishlistcomment>
+            Wish List Comment
+        </wishlistcomment>
+    </item>
+
+    <!--
+    <item objecttype="thing" objectid="555" subtype="boardgame" collid="55">
+        <name sortindex="1">Invalid Collection Status</name>
+        <status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0" lastmodified="2016-04-04 20:19:37" />
+    </item>
+
+    <item objecttype="thing" objectid="666" subtype="boardgame" collid="66">
+        <name sortindex="1">Invalid Stats</name>
+        <stats minplayers="4" maxplayers="8" minplaytime="120" maxplaytime="480" playingtime="240" numowned="6666">
+            <rating value="8.5">
+                <bayesaverage value="7.58107"/>
+            </rating>
+        </stats>
+        <status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="1" wishlistpriority="3" preordered="0" lastmodified="2015-12-18 09:38:29"/>
+    </item>
+
+    <item objecttype="thing" objectid="777" subtype="boardgame" collid="77">
+        <name sortindex="1">Invalid Ranking</name>
+        <yearpublished>2016</yearpublished>
+        <image>//path.to/image777.jpg</image>
+        <thumbnail>//path.to/thumbnail777.jpg</thumbnail>
+        <stats minplayers="1" maxplayers="2" minplaytime="20" maxplaytime="60" playingtime="45" numowned="7777">
+            <rating value="N/A">
+                <usersrated value="70"/>
+                <average value="7.66143"/>
+                <bayesaverage value="5.68734"/>
+                <stddev value="0.795755"/>
+                <median value="0"/>
+                <ranks>
+                    <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" bayesaverage="5.68734"/>
+                </ranks>
+            </rating>
+        </stats>
+        <status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0" preordered="0" lastmodified="2016-04-04 20:19:37"/>
+        <numplays>2</numplays>
+    </item>
+     -->
+</items>
