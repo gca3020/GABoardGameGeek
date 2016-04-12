@@ -44,19 +44,14 @@ extension CollectionBoardGame: XMLIndexerDeserializable {
      - returns: A CollectionBoardGame structure.
      */
     public static func deserialize(node: XMLIndexer) throws -> CollectionBoardGame {
-        guard let objectIdStr = node.element?.attributes["objectid"],
-            let sortIndexStr = node["name"].element?.attributes["sortindex"]
-                else { throw XMLDeserializationError.NodeIsInvalid(node: node)
-        }
-
-        guard let objectId = Int(objectIdStr), let sortIndex = Int(sortIndexStr)
-            else { throw XMLDeserializationError.NodeIsInvalid(node: node)
+        guard node.element != nil && node["name"].element != nil else {
+            throw XMLDeserializationError.NodeIsInvalid(node: node)
         }
 
         return try CollectionBoardGame(
-            objectId: objectId,
+            objectId: node.element!.attribute("objectid"),
             name: node["name"].value(),
-            sortIndex: sortIndex,
+            sortIndex: node["name"].element!.attribute("sortindex"),
             status: node["status"].value(),
             stats: node["stats"].value(),
             yearPublished: node["yearpublished"].value(),
@@ -69,7 +64,7 @@ extension CollectionBoardGame: XMLIndexerDeserializable {
     }
 }
 
-extension CollectionStatus: XMLIndexerDeserializable {
+extension CollectionStatus: XMLElementDeserializable {
 
     /**
      Deserializes a "status" indexer in BoardGameGeek "collection" response.
@@ -83,37 +78,19 @@ extension CollectionStatus: XMLIndexerDeserializable {
 
      - returns: A CollectionStatus structure.
      */
-    public static func deserialize(node: XMLIndexer) throws -> CollectionStatus {
-        guard let owned = node.element?.attributes["own"],
-            let prevOwned = node.element?.attributes["prevowned"],
-            let wantToBuy = node.element?.attributes["wanttobuy"],
-            let wantToPlay = node.element?.attributes["wanttoplay"],
-            let preOrdered = node.element?.attributes["preordered"],
-            let wantInTrade = node.element?.attributes["want"],
-            let forTrade = node.element?.attributes["fortrade"],
-            let wishList = node.element?.attributes["wishlist"],
-            let lastModified = node.element?.attributes["lastmodified"]
-                else { throw XMLDeserializationError.NodeIsInvalid(node: node)
-        }
-
-        var wishListPriority: Int?
-
-        // Wish List Priority is only there if the item is on the wishlist.
-        if let wishListPriorityStr = node.element?.attributes["wishlistpriority"] {
-            wishListPriority = Int(wishListPriorityStr)
-        }
-
-        return CollectionStatus(
-            owned: owned == "1",
-            prevOwned: prevOwned == "1",
-            wantToBuy: wantToBuy == "1",
-            wantToPlay: wantToPlay == "1",
-            preOrdered: preOrdered == "1",
-            wantInTrade: wantInTrade == "1",
-            forTrade: forTrade == "1",
-            wishList: wishList == "1",
-            wishListPriority: wishListPriority,
-            lastModified: lastModified)
+    public static func deserialize(element: XMLElement) throws -> CollectionStatus {
+        return try CollectionStatus(
+            owned: element.attribute("own"),
+            prevOwned: element.attribute("prevowned"),
+            wantToBuy: element.attribute("wanttobuy"),
+            wantToPlay: element.attribute("wanttoplay"),
+            preOrdered: element.attribute("preordered"),
+            wantInTrade: element.attribute("want"),
+            forTrade: element.attribute("fortrade"),
+            wishList: element.attribute("wishlist"),
+            wishListPriority: element.attribute("wishlistpriority"),
+            lastModified: element.attribute("lastmodified")
+        )
     }
 }
 
@@ -137,33 +114,17 @@ extension CollectionStats: XMLIndexerDeserializable {
      - returns: A CollectionStats structure.
      */
     public static func deserialize(node: XMLIndexer) throws -> CollectionStats {
-        guard let minPlayersStr = node.element?.attributes["minplayers"],
-            let maxPlayersStr = node.element?.attributes["maxplayers"],
-            let minPlaytimeStr = node.element?.attributes["minplaytime"],
-            let maxPlaytimeStr = node.element?.attributes["maxplaytime"],
-            let playingTimeStr = node.element?.attributes["playingtime"],
-            let numOwnedStr = node.element?.attributes["numowned"]
-                else {
-                    throw XMLDeserializationError.NodeIsInvalid(node: node)
-        }
-
-        guard let minPlayers = Int(minPlayersStr),
-            let maxPlayers = Int(maxPlayersStr),
-            let minPlaytime = Int(minPlaytimeStr),
-            let maxPlaytime = Int(maxPlaytimeStr),
-            let playingTime = Int(playingTimeStr),
-            let numOwned = Int(numOwnedStr)
-                else {
-                    throw XMLDeserializationError.NodeIsInvalid(node: node)
+        guard let element = node.element else {
+            throw XMLDeserializationError.NodeIsInvalid(node: node)
         }
 
         return try CollectionStats(
-            minPlayers: minPlayers,
-            maxPlayers: maxPlayers,
-            minPlaytime: minPlaytime,
-            maxPlaytime: maxPlaytime,
-            playingTime: playingTime,
-            numOwned: numOwned,
+            minPlayers: element.attribute("minplayers"),
+            maxPlayers: element.attribute("maxplayers"),
+            minPlaytime: element.attribute("minplaytime"),
+            maxPlaytime: element.attribute("maxplaytime"),
+            playingTime: element.attribute("playingtime"),
+            numOwned: element.attribute("numowned"),
             rating: node["rating"].value()
         )
     }
@@ -201,41 +162,17 @@ extension CollectionRating: XMLIndexerDeserializable {
      - returns: A CollectionStats structure.
      */
     public static func deserialize(node: XMLIndexer) throws -> CollectionRating {
-        guard let userRatingStr = node.element?.attributes["value"],
-            let averageRatingStr = node["average"].element?.attributes["value"],
-            let bayesAverageRatingStr = node["bayesaverage"].element?.attributes["value"]
-                else {
-                    throw XMLDeserializationError.NodeIsInvalid(node: node)
-        }
-
-        guard let averageRating = Double(averageRatingStr),
-            let bayesAverageRating = Double(bayesAverageRatingStr)
-                else {
-                    throw XMLDeserializationError.NodeIsInvalid(node: node)
-        }
-
-        var stdDev: Double? = nil
-        if let stdDevStr = node["stddev"].element?.attributes["value"] {
-            stdDev = Double(stdDevStr)
-        }
-
-        var median: Double? = nil
-        if let medianStr = node["median"].element?.attributes["value"] {
-            median = Double(medianStr)
-        }
-
-        var usersRated: Int? = nil
-        if let usersRatedStr = node["usersrated"].element?.attributes["value"] {
-            usersRated = Int(usersRatedStr)
+        guard node["average"].element != nil && node["bayesaverage"].element != nil else {
+            throw XMLDeserializationError.NodeIsInvalid(node: node)
         }
 
         return try CollectionRating(
-            userRating: Double(userRatingStr),
-            usersRated: usersRated,
-            averageRating: averageRating,
-            bayesAverageRating: bayesAverageRating,
-            stdDev: stdDev,
-            median: median,
+            userRating: node.element?.attribute("value"),
+            usersRated: node["usersrated"].element?.attribute("value"),
+            averageRating: node["average"].element!.attribute("value"),
+            bayesAverageRating: node["bayesaverage"].element!.attribute("value"),
+            stdDev: node["stddev"].element?.attribute("value"),
+            median: node["median"].element?.attribute("value"),
             ranks: node["ranks"]["rank"].value()
         )
     }
@@ -256,27 +193,76 @@ extension GameRank: XMLElementDeserializable {
      - returns: A populated GameRank structure
      */
     public static func deserialize(element: XMLElement) throws -> GameRank {
-        guard let typeStr = element.attributes["type"],
-            let idStr = element.attributes["id"],
-            let nameStr = element.attributes["name"],
-            let friendlyNameStr = element.attributes["friendlyname"],
-            let valueStr = element.attributes["value"],
-            let bayesAverageStr = element.attributes["bayesaverage"]
-                else {
-                    throw XMLDeserializationError.TypeConversionFailed(type: "GameRank", element: element)
-        }
+        return try GameRank(
+            type: element.attribute("type"),
+            id: element.attribute("id"),
+            name: element.attribute("name"),
+            friendlyName: element.attribute("friendlyname"),
+            value: element.attribute("value"),
+            bayesAverage: element.attribute("bayesaverage")
+        )
+    }
+}
 
-        guard let id = Int(idStr), value = Int(valueStr), bayesAverage = Double(bayesAverageStr)
-            else {
-                throw XMLDeserializationError.TypeConversionFailed(type: "GameRank", element: element)
-        }
+extension XMLElement {
 
-        return GameRank(
-            type: typeStr,
-            id: id,
-            name: nameStr,
-            friendlyName: friendlyNameStr,
-            value: value,
-            bayesAverage: bayesAverage)
+    // Int
+    public func attribute(attribute: String) throws -> Int {
+        guard let attributeStr = self.attributes[attribute], let ret = Int(attributeStr) else {
+            throw XMLDeserializationError.NodeHasNoValue
+        }
+        return ret
+    }
+    // Int?
+    public func attribute(attribute: String) throws -> Int? {
+        if let attributeStr = self.attributes[attribute] {
+            return Int(attributeStr)
+        }
+        return nil
+    }
+
+    // Double
+    public func attribute(attribute: String) throws -> Double {
+        guard let attributeStr = self.attributes[attribute], let ret = Double(attributeStr) else {
+            throw XMLDeserializationError.NodeHasNoValue
+        }
+        return ret
+    }
+    // Double?
+    public func attribute(attribute: String) throws -> Double? {
+        if let attributeStr = self.attributes[attribute] {
+            return Double(attributeStr)
+        }
+        return nil
+    }
+
+    // String
+    public func attribute(attribute: String) throws -> String {
+        guard let ret = self.attributes[attribute] else {
+            throw XMLDeserializationError.NodeHasNoValue
+        }
+        return ret
+    }
+    // String?
+    public func attribute(attribute: String) throws -> String? {
+        if let attributeStr = self.attributes[attribute] {
+            return attributeStr
+        }
+        return nil
+    }
+
+    // Bool
+    public func attribute(attribute: String) throws -> Bool {
+        guard let attributeStr = self.attributes[attribute] else {
+            throw XMLDeserializationError.NodeHasNoValue
+        }
+        return NSString(string: attributeStr).boolValue
+    }
+    // Bool?
+    public func attribute(attribute: String) throws -> Bool? {
+        if let attributeStr = self.attributes[attribute] {
+            return NSString(string: attributeStr).boolValue
+        }
+        return nil
     }
 }
