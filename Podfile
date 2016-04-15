@@ -4,9 +4,11 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'GABoardGameGeek' do
-	pod 'SWXMLHash', '~> 2.2.0'
+	pod 'SWXMLHash', '~> 2.3.1'
 end
 
 target 'GABoardGameGeekTests' do
-    pod 'SWXMLHash', '~> 2.2.0'
+  pod 'SWXMLHash', '~> 2.3.1'
+  pod 'Nimble', '~> 3.2.0'
+  pod 'Quick', '~>0.9.2'
 end

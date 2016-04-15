@@ -50,6 +50,19 @@ public struct CollectionBoardGame {
     /// If the user has commented on this game in their collection, this field will be populated.
     /// Not present when brief=1
     var comment: String?
+
+    /// The sort-name of this game. A calculated parameter that indexes into the name by the sortIndex
+    var sortName: String {
+        get {
+            if sortIndex > 0 && sortIndex <= name.characters.count {
+                return name.substringFromIndex(name.startIndex.advancedBy(sortIndex-1))
+            }
+            else {
+                return name
+            }
+        }
+    }
+
 }
 
 // MARK: - CollectionStatus
