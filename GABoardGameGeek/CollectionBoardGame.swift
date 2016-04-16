@@ -129,7 +129,7 @@ public struct CollectionStats {
     /// The number of users that own this game
     var numOwned: Int
 
-    /// The ratings and rankings for this gem.
+    /// The ratings and rankings for this game.
     var rating: CollectionRating
 }
 

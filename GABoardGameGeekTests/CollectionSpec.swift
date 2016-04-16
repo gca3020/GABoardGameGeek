@@ -312,6 +312,60 @@ class CollectionSpec: QuickSpec {
                 }
             }
 
+            context("with invalid XML elements") {
+                let xml =
+                    "<root>" +
+                    "    <item objecttype=\"thing\" objectid=\"444\" subtype=\"boardgame\" collid=\"44\">" +
+                    //"        <name sortindex=\"1\">Error</name>" +
+                    "        <status own=\"1\" prevowned=\"0\" fortrade=\"1\" want=\"0\" wanttoplay=\"0\" wanttobuy=\"0\" wishlist=\"0\" preordered=\"0\" lastmodified=\"2016-04-04 20:19:37\"/>" +
+                    "    </item>" +
+
+                    //"    <status own=\"1\" prevowned=\"0\" fortrade=\"1\" want=\"0\" wanttoplay=\"0\" wanttobuy=\"0\" wishlist=\"0\" preordered=\"0\" lastmodified=\"2016-04-04 20:19:37\"/>" +
+                    "    <status prevowned=\"0\" fortrade=\"1\" want=\"0\" wanttoplay=\"0\" wanttobuy=\"0\" wishlist=\"0\" preordered=\"0\" lastmodified=\"2016-04-04 20:19:37\"/>" +
+
+                    //"    <stats minplayers=\"1\" maxplayers=\"2\" minplaytime=\"20\" maxplaytime=\"60\" playingtime=\"45\" numowned=\"4444\">" +
+                    "    <stats maxplayers=\"2\" minplaytime=\"20\" maxplaytime=\"60\" playingtime=\"45\" numowned=\"4444\">" +
+                    "        <rating value=\"N/A\">" +
+                    "            <average value=\"7.66143\"/>" +
+                    "            <bayesaverage value=\"5.68734\"/>" +
+                    "        </rating>" +
+                    "    </stats>" +
+
+                    "    <rating value=\"N/A\">" +
+                    //"        <average value=\"7.66143\"/>" +
+                    "        <bayesaverage value=\"5.68734\"/>" +
+                    "    </rating>" +
+
+                    //"    <rank type=\"subtype\" id=\"1\" name=\"boardgame\" friendlyname=\"Board Game Rank\" value=\"3785\" bayesaverage=\"5.68734\"/>" +
+                    "    <rank id=\"1\" name=\"boardgame\" friendlyname=\"Board Game Rank\" value=\"3785\" bayesaverage=\"5.68734\"/>" +
+                    "</root>"
+
+                beforeEach {
+                    parser = SWXMLHash.parse(xml)
+                }
+
+                it("should fail if a game has no name element") {
+                    expect{ try (parser!["root"]["item"].value() as CollectionBoardGame) }.to(throwError(errorType: XMLDeserializationError.self))
+                }
+
+                it("should fail if a status block is missing an element") {
+                    expect{ try (parser!["root"]["status"].value() as CollectionStatus) }.to(throwError(errorType: XMLDeserializationError.self))
+                }
+
+                it("should fail if a stats block is missing an element") {
+                    expect{ try parser!["root"]["stats"].value() as CollectionStats }.to(throwError(errorType: XMLDeserializationError.self))
+                }
+
+                it("should fail if a rating block is missing an element") {
+                    expect{ try parser!["root"]["rating"].value() as CollectionRating }.to(throwError(errorType: XMLDeserializationError.self))
+                }
+
+                it("should fail if a rank block is missing an element") {
+                    expect{ try parser!["root"]["rank"].value() as GameRank }.to(throwError(errorType: XMLDeserializationError.self))
+                }
+
+            }
+
         }
     }
 }
