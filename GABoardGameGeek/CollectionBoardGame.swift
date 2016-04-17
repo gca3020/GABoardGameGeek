@@ -10,6 +10,14 @@ import Foundation
 
 // MARK: - CollectionBoardGame
 
+/**
+ * A struct representing a board game retrieved from a user's collection query. A collection
+ * query can be different depending on several flags. Two of the flags that make the most
+ * difference to the format of the results are "brief=1" and "stats=1". The structures below
+ * document what I believe to be nearly complete (I am am missing some of the more obscure
+ * optional fields like "wantparts"), with Swift optionals for the fields that are not
+ * guaranteed to be present.
+ */
 public struct CollectionBoardGame {
 
     /// The object ID of this game.
@@ -53,16 +61,20 @@ public struct CollectionBoardGame {
 
     /// The sort-name of this game. A calculated parameter that indexes into the name by the sortIndex
     var sortName: String {
-        get {
-            if sortIndex > 0 && sortIndex <= name.characters.count {
-                return name.substringFromIndex(name.startIndex.advancedBy(sortIndex-1))
-            }
-            else {
-                return name
-            }
-        }
+        get { return Utils.getSortName(name, sortIndex: sortIndex) }
     }
 
+    /// The NSURL to retrieve the game's image.
+    /// - Note: Nil if the game has no imagePath, or if the imagePath is malformed.
+    var imageUrl: NSURL? {
+        get { return Utils.urlFrom(imagePath) }
+    }
+
+    /// The NSURL to retrieve the game's thumbnail image.
+    /// - Note: Nil if the game has no thumbnailPath, or if the thumbnailPath is malformed.
+    var thumbnailUrl: NSURL? {
+        get { return Utils.urlFrom(thumbnailPath) }
+    }
 }
 
 // MARK: - CollectionStatus
