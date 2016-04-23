@@ -1,5 +1,5 @@
 //
-//  XmlDeserializers.swift
+//  CollectionDeserializers.swift
 //  GABoardGameGeek
 //
 //  Created by Geoffrey Amey on 4/6/16.
