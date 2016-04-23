@@ -98,6 +98,10 @@ class BoardGameSpec: QuickSpec {
                     game = try? parser!["item"].value()
                 }
 
+                it("should fully parse") {
+                    expect(game).toNot(beNil())
+                }
+
                 it("should have an objectId and type") {
                     expect(game!.objectId).to(equal(161936))
                     expect(game!.type).to(equal("boardgame"))
@@ -165,6 +169,139 @@ class BoardGameSpec: QuickSpec {
 
                 it("should not have a statistics block") {
                     expect(game!.stats).to(beNil())
+                }
+            }
+
+            context("from a minimal xml with stats") {
+                let xml =
+                "<item type=\"boardgame\" id=\"123\">" +
+                "   <name type=\"primary\" sortindex=\"3\" value=\"A Made-Up Game\"/>" +
+                "   <description>" +
+                "       A made-up game" +
+                "   </description>" +
+                "   <yearpublished value=\"1984\"/>" +
+                "   <minplayers value=\"1\"/>" +
+                "   <maxplayers value=\"100\"/>" +
+                "   <poll name=\"suggested_numplayers\" title=\"User Suggested Number of Players\" totalvotes=\"0\">" +
+                "       <results numplayers=\"0+\"></results>" +
+                "   </poll>" +
+                "   <playingtime value=\"0\"/>" +
+                "   <minplaytime value=\"0\"/>" +
+                "   <maxplaytime value=\"0\"/>" +
+                "   <minage value=\"0\"/>" +
+                "   <poll name=\"suggested_playerage\" title=\"User Suggested Player Age\" totalvotes=\"0\"></poll>" +
+                "   <poll name=\"language_dependence\" title=\"Language Dependence\" totalvotes=\"0\"></poll>" +
+                "   <link type=\"boardgamepublisher\" id=\"4\" value=\"(Self-Published)\"/>" +
+                "   <statistics page=\"1\">" +
+                "       <ratings>" +
+                "           <usersrated value=\"1\"/>" +
+                "           <average value=\"5.5\"/>" +
+                "           <bayesaverage value=\"4.0\"/>" +
+                "           <ranks>" +
+                "               <rank type=\"subtype\" id=\"1\" name=\"boardgame\" friendlyname=\"Board Game Rank\" value=\"Not Ranked\" bayesaverage=\"Not Ranked\"/>" +
+                "           </ranks>" +
+                "           <stddev value=\"0.1\"/>" +
+                "           <median value=\"0\"/>" +
+                "           <owned value=\"5\"/>" +
+                "           <trading value=\"0\"/>" +
+                "           <wanting value=\"3\"/>" +
+                "           <wishing value=\"1\"/>" +
+                "           <numcomments value=\"2\"/>" +
+                "           <numweights value=\"1\"/>" +
+                "           <averageweight value=\"2.7\"/>" +
+                "       </ratings>" +
+                "   </statistics>" +
+                "</item>"
+
+                beforeEach {
+                    parser = SWXMLHash.parse(xml)
+                    do {
+                        game = try parser!["item"].value()
+                    } catch {
+                        print("Error Info: \(error)")
+                    }
+                }
+
+                it("should fully parse") {
+                    expect(game).toNot(beNil())
+                }
+
+                it("should have an objectId and type") {
+                    expect(game!.objectId).to(equal(123))
+                    expect(game!.type).to(equal("boardgame"))
+                }
+
+                it("should have a name") {
+                    expect(game!.name).to(equal("A Made-Up Game"))
+                    expect(game!.sortIndex).to(equal(3))
+                    expect(game!.sortName).to(equal("Made-Up Game"))
+                }
+
+                it("should have a description") {
+                    expect(game!.description).to(equal("A made-up game"))
+                }
+
+                it("should not have image and thumbnail URLs") {
+                    expect(game!.thumbnailPath).to(beNil())
+                    expect(game!.imagePath).to(beNil())
+                }
+
+                it("should have additional data about the game") {
+                    expect(game!.yearPublished).to(equal(1984))
+                    expect(game!.minPlayers).to(equal(1))
+                    expect(game!.maxPlayers).to(equal(100))
+                    expect(game!.minPlaytime).to(equal(0))
+                    expect(game!.maxPlaytime).to(equal(0))
+                    expect(game!.playingTime).to(equal(0))
+                    expect(game!.minAge).to(equal(0))
+                }
+
+                it("should have an empty player count poll") {
+                    expect(game!.suggestedPlayers.totalVotes).to(equal(0))
+                    expect(game!.suggestedPlayers.results).to(beNil())
+                }
+
+                it("should have an empty player age poll") {
+                    expect(game!.suggestedPlayerage.totalVotes).to(equal(0))
+                    expect(game!.suggestedPlayerage.results).to(beNil())
+                }
+
+                it("should have an empty language dependence poll") {
+                    expect(game!.languageDependence.totalVotes).to(equal(0))
+                    expect(game!.languageDependence.results).to(beNil())
+                }
+
+                it("should have one link") {
+                    expect(game!.links).to(haveCount(1))
+
+                    expect(game!.links[0].type).to(equal("boardgamepublisher"))
+                    expect(game!.links[0].id).to(equal(4))
+                    expect(game!.links[0].value).to(equal("(Self-Published)"))
+                    expect(game!.links[0].inbound).to(beNil())
+                }
+
+                it("should have a statistics block") {
+                    expect(game!.stats).toNot(beNil())
+                    expect(game!.stats!.usersRated).to(equal(1))
+                    expect(game!.stats!.average).to(beCloseTo(5.5))
+                    expect(game!.stats!.bayesAverage).to(beCloseTo(4.0))
+                    expect(game!.stats!.stdDev).to(beCloseTo(0.1))
+                    expect(game!.stats!.median).to(beCloseTo(0.0))
+                    expect(game!.stats!.owned).to(equal(5))
+                    expect(game!.stats!.trading).to(equal(0))
+                    expect(game!.stats!.wanting).to(equal(3))
+                    expect(game!.stats!.wishing).to(equal(1))
+                    expect(game!.stats!.numComments).to(equal(2))
+                    expect(game!.stats!.numWeights).to(equal(1))
+                    expect(game!.stats!.averageWeight).to(beCloseTo(2.7))
+
+                    expect(game!.stats!.ranks).to(haveCount(1))
+                    expect(game!.stats!.ranks[0].type).to(equal("subtype"))
+                    expect(game!.stats!.ranks[0].id).to(equal(1))
+                    expect(game!.stats!.ranks[0].name).to(equal("boardgame"))
+                    expect(game!.stats!.ranks[0].friendlyName).to(equal("Board Game Rank"))
+                    expect(game!.stats!.ranks[0].value).to(equal(0))
+                    expect(game!.stats!.ranks[0].bayesAverage).to(beCloseTo(0.0))
                 }
             }
         }

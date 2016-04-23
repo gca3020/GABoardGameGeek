@@ -161,7 +161,7 @@ extension BoardGame: XMLIndexerDeserializable {
             suggestedPlayerage: node["poll"].withAttr("name", "suggested_playerage").value(),
             languageDependence: node["poll"].withAttr("name", "language_dependence").value(),
             links: node["link"].value(),
-            stats: nil
+            stats: node["statistics"]["ratings"].value()
         )
     }
 }
@@ -331,6 +331,59 @@ extension PollResult: XMLElementDeserializable {
     }
 }
 
+extension Statistics: XMLIndexerDeserializable {
+    /**
+    Deserializes a `statistics` block in a BoardGame "thing" response.
+
+    The format of this block is as follows:
+    <statistics page="1">
+        <ratings>
+            <usersrated value="7930"/>
+            <average value="8.62655"/>
+            <bayesaverage value="8.3415"/>
+            <ranks>
+                <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="1" bayesaverage="8.3415"/>
+                <rank type="family" id="5496" name="thematic" friendlyname="Thematic Rank" value="1" bayesaverage="8.41841"/>
+                <rank type="family" id="5497" name="strategygames" friendlyname="Strategy Game Rank" value="1" bayesaverage="8.3792"/>
+            </ranks>
+            <stddev value="2.01419"/>
+            <median value="0"/>
+            <owned value="13079"/>
+            <trading value="35"/>
+            <wanting value="535"/>
+            <wishing value="4180"/>
+            <numcomments value="1467"/>
+            <numweights value="462"/>
+            <averageweight value="2.816"/>
+        </ratings>
+    </statistics>
+
+    - parameter node: The `statistics` indexer containing the game statistics
+
+    - throws: XMLDeserializationError.
+
+    - returns: A populated Statistics structure
+    */
+    public static func deserialize(node: XMLIndexer) throws -> Statistics {
+        return try Statistics(
+            usersRated: node["usersrated"].element!.attribute("value"),
+            average: node["average"].element!.attribute("value"),
+            bayesAverage: node["bayesaverage"].element!.attribute("value"),
+            stdDev: node["stddev"].element!.attribute("value"),
+            median: node["median"].element!.attribute("value"),
+            owned: node["owned"].element!.attribute("value"),
+            trading: node["trading"].element!.attribute("value"),
+            wanting: node["wanting"].element!.attribute("value"),
+            wishing: node["wishing"].element!.attribute("value"),
+            numComments: node["numcomments"].element!.attribute("value"),
+            numWeights: node["numweights"].element!.attribute("value"),
+            averageWeight: node["averageweight"].element!.attribute("value"),
+            ranks: node["ranks"]["rank"].value()
+        )
+    }
+
+}
+
 extension BoardGameLink: XMLElementDeserializable {
 
     /**
@@ -376,8 +429,8 @@ extension GameRank: XMLElementDeserializable {
             id: element.attribute("id"),
             name: element.attribute("name"),
             friendlyName: element.attribute("friendlyname"),
-            value: element.attribute("value"),
-            bayesAverage: element.attribute("bayesaverage")
+            value: (element.attribute("value") as Int?) ?? 0,
+            bayesAverage: (element.attribute("bayesaverage") as Double?) ?? 0.0
         )
     }
 }

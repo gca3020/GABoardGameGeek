@@ -30,6 +30,10 @@ class CollectionSpec: QuickSpec {
                     game = try! parser!["item"].value()
                 }
 
+                it("should fully parse") {
+                    expect(game).toNot(beNil())
+                }
+
                 it("should have an objectId") {
                     expect(game!.objectId).to(equal(111))
                 }
@@ -79,6 +83,10 @@ class CollectionSpec: QuickSpec {
                 beforeEach {
                     parser = SWXMLHash.parse(xml)
                     game = try! parser!["item"].value()
+                }
+
+                it("should fully parse") {
+                    expect(game).toNot(beNil())
                 }
 
                 it("should have an objectId") {
@@ -146,6 +154,10 @@ class CollectionSpec: QuickSpec {
                 beforeEach {
                     parser = SWXMLHash.parse(xml)
                     game = try! parser!["item"].value()
+                }
+
+                it("should fully parse") {
+                    expect(game).toNot(beNil())
                 }
 
                 it("should have an objectId") {
@@ -226,6 +238,10 @@ class CollectionSpec: QuickSpec {
                 beforeEach {
                     parser = SWXMLHash.parse(xml)
                     game = try! parser!["item"].value()
+                }
+
+                it("should fully parse") {
+                    expect(game).toNot(beNil())
                 }
 
                 it("should have an objectId") {
