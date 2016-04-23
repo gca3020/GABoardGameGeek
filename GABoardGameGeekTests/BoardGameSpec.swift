@@ -129,19 +129,38 @@ class BoardGameSpec: QuickSpec {
                 }
 
                 it("should have a player count poll") {
-                    // TODO
+                    expect(game!.suggestedPlayers.totalVotes).to(equal(199))
+                    expect(game!.suggestedPlayers.results).toNot(beNil())
+                    expect(game!.suggestedPlayers.results).to(haveCount(5))
+                    expect(game!.suggestedPlayers.results!["4"]).to(haveCount(3))
+                    expect(game!.suggestedPlayers.results!["4+"]).to(haveCount(3))
+                    expect(game!.suggestedPlayers.results!["5"]).to(beNil())
                 }
 
                 it("should have a player age poll") {
-                    // TODO
+                    expect(game!.suggestedPlayerage.totalVotes).to(equal(60))
+                    expect(game!.suggestedPlayerage.results).toNot(beNil())
+                    expect(game!.suggestedPlayerage.results).to(haveCount(12))
                 }
 
                 it("should have a language dependence poll") {
-                    // TODO
+                    expect(game!.languageDependence.totalVotes).to(equal(63))
+                    expect(game!.languageDependence.results).toNot(beNil())
+                    expect(game!.languageDependence.results).to(haveCount(5))
                 }
 
                 it("should have a collection of links") {
-                    // TODO
+                    expect(game!.links).to(haveCount(2))
+
+                    expect(game!.links[0].type).to(equal("boardgamecategory"))
+                    expect(game!.links[0].id).to(equal(1084))
+                    expect(game!.links[0].value).to(equal("Environmental"))
+                    expect(game!.links[0].inbound).to(beNil())
+
+                    expect(game!.links[1].type).to(equal("boardgameimplementation"))
+                    expect(game!.links[1].id).to(equal(30549))
+                    expect(game!.links[1].value).to(equal("Pandemic"))
+                    expect(game!.links[1].inbound).to(beTrue())
                 }
 
                 it("should not have a statistics block") {

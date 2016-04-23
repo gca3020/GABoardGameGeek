@@ -177,30 +177,3 @@ extension CollectionRating: XMLIndexerDeserializable {
         )
     }
 }
-
-extension GameRank: XMLElementDeserializable {
-
-    /**
-     Deserializes a "rating" element in BoardGameGeek "collection" response.
-
-     The format of the rating element is as follows:
-     <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="3616" bayesaverage="5.70119"/>
-
-     - parameter element: The `rank` element
-
-     - throws: XMLDeserializationError.
-
-     - returns: A populated GameRank structure
-     */
-    public static func deserialize(element: XMLElement) throws -> GameRank {
-        return try GameRank(
-            type: element.attribute("type"),
-            id: element.attribute("id"),
-            name: element.attribute("name"),
-            friendlyName: element.attribute("friendlyname"),
-            value: element.attribute("value"),
-            bayesAverage: element.attribute("bayesaverage")
-        )
-    }
-}
-

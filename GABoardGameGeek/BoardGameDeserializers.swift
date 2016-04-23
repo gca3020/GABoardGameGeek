@@ -157,11 +157,228 @@ extension BoardGame: XMLIndexerDeserializable {
             minPlaytime: node["minplaytime"].element!.attribute("value"),
             maxPlaytime: node["maxplaytime"].element!.attribute("value"),
             minAge: node["minage"].element!.attribute("value"),
-            suggestedPlayers: SuggestedPlayersPoll(totalVotes: 0, results: nil),
-            suggestedPlayerage: SuggestedPlayeragePoll(totalVotes: 0, results: nil),
-            languageDependence: LanguageDependencePoll(totalVotes: 0, results: nil),
-            links: [BoardGameLink(type: "", id: 0, value: "", inbound: nil)],
+            suggestedPlayers: node["poll"].withAttr("name", "suggested_numplayers").value(),
+            suggestedPlayerage: node["poll"].withAttr("name", "suggested_playerage").value(),
+            languageDependence: node["poll"].withAttr("name", "language_dependence").value(),
+            links: node["link"].value(),
             stats: nil
         )
     }
 }
+
+extension SuggestedPlayersPoll: XMLIndexerDeserializable {
+
+    /**
+    Deserializes a Suggested Player Count Poll in a BoardGame API response
+
+    The format of this element is as follows:
+    <poll name="suggested_numplayers" title="User Suggested Number of Players" totalvotes="199">
+        <results numplayers="1">
+            <result value="Best" numvotes="7"/>
+            <result value="Recommended" numvotes="33"/>
+            <result value="Not Recommended" numvotes="79"/>
+        </results>
+        <results numplayers="2">
+            <result value="Best" numvotes="26"/>
+            <result value="Recommended" numvotes="101"/>
+            <result value="Not Recommended" numvotes="22"/>
+        </results>
+        <results numplayers="3">
+            <result value="Best" numvotes="31"/>
+            <result value="Recommended" numvotes="93"/>
+            <result value="Not Recommended" numvotes="15"/>
+        </results>
+        <results numplayers="4">
+            <result value="Best" numvotes="111"/>
+            <result value="Recommended" numvotes="53"/>
+            <result value="Not Recommended" numvotes="6"/>
+        </results>
+        <results numplayers="4+">
+            <result value="Best" numvotes="6"/>
+            <result value="Recommended" numvotes="1"/>
+            <result value="Not Recommended" numvotes="81"/>
+        </results>
+    </poll>
+
+    - parameter node: The `poll` indexer containing the suggested_numplayers poll
+
+    - throws: XMLDeserializationError.
+
+    - returns: A populated SuggestedPlayersPoll structure
+    */
+    public static func deserialize(node: XMLIndexer) throws -> SuggestedPlayersPoll {
+        guard node.element != nil else {
+            throw XMLDeserializationError.NodeIsInvalid(node: node)
+        }
+
+        let totalVotes = try node.element!.attribute("totalvotes") as Int
+        var resultDict: [String: [PollResult]]? = nil
+
+        // Only attempt to parse this if
+        if( totalVotes > 0 ) {
+            resultDict = [String: [PollResult]]()
+
+            // Fill in the dictionary, indexing the PollResult arrays by the number of players string
+            for result in node["results"] {
+                resultDict![(try result.element!.attribute("numplayers") as String)] = try result["result"].value()
+            }
+        }
+
+        return SuggestedPlayersPoll(
+            totalVotes: totalVotes,
+            results: resultDict
+        )
+    }
+}
+
+extension SuggestedPlayeragePoll: XMLIndexerDeserializable {
+
+    /**
+    Deserializes a Suggested Playerage Poll in a BoardGame API response
+
+    The format of this element is as follows:
+    <poll name="suggested_playerage" title="User Suggested Player Age" totalvotes="60">
+        <results>
+            <result value="2" numvotes="0"/>
+            <result value="3" numvotes="0"/>
+            <result value="4" numvotes="0"/>
+            <result value="5" numvotes="0"/>
+            <result value="6" numvotes="1"/>
+            <result value="8" numvotes="6"/>
+            <result value="10" numvotes="15"/>
+            <result value="12" numvotes="24"/>
+            <result value="14" numvotes="11"/>
+            <result value="16" numvotes="2"/>
+            <result value="18" numvotes="0"/>
+            <result value="21 and up" numvotes="1"/>
+        </results>
+    </poll>
+
+    - parameter node: The `poll` indexer containing the suggested_playerage poll
+
+    - throws: XMLDeserializationError.
+
+    - returns: A populated SuggestedPlayeragePoll structure
+    */
+    public static func deserialize(node: XMLIndexer) throws -> SuggestedPlayeragePoll {
+        guard node.element != nil else {
+            throw XMLDeserializationError.NodeIsInvalid(node: node)
+        }
+
+        return try SuggestedPlayeragePoll(
+            totalVotes: node.element!.attribute("totalvotes"),
+            results: node["results"]["result"].value()
+        )
+    }
+}
+
+extension LanguageDependencePoll: XMLIndexerDeserializable {
+
+    /**
+    Deserializes a Language Dependence Poll in a BoardGame API response
+
+    The format of this element is as follows:
+    <poll name="language_dependence" title="Language Dependence" totalvotes="63">
+        <results>
+            <result level="1" value="No necessary in-game text" numvotes="1"/>
+            <result level="2" value="Some necessary text - easily memorized or small crib sheet" numvotes="0"/>
+            <result level="3" value="Moderate in-game text - needs crib sheet or paste ups" numvotes="8"/>
+            <result level="4" value="Extensive use of text - massive conversion needed to be playable" numvotes="44"/>
+            <result level="5" value="Unplayable in another language" numvotes="10"/>
+        </results>
+    </poll>
+
+    - parameter node: The `poll` indexer containing the language_dependence poll
+
+    - throws: XMLDeserializationError.
+
+    - returns: A populated LanguageDependencePoll structure
+    */
+    public static func deserialize(node: XMLIndexer) throws -> LanguageDependencePoll {
+        guard node.element != nil else {
+            throw XMLDeserializationError.NodeIsInvalid(node: node)
+        }
+
+        return try LanguageDependencePoll(
+            totalVotes: node.element!.attribute("totalvotes"),
+            results: node["results"]["result"].value()
+        )
+    }
+}
+
+extension PollResult: XMLElementDeserializable {
+
+    /**
+    Deserializes a Poll Result from any of the possible poll types in a BoardGameGeek API response
+
+    Possible formats for this element are as follows:
+    <result level="1" value="No necessary in-game text" numvotes="1"/>
+    <result value="2" numvotes="0"/>
+    <result value="Best" numvotes="31"/>
+
+    - parameter element: The `result` element
+
+    - throws: XMLDeserializationError.
+
+    - returns: A populated PollResult structure
+    */
+    public static func deserialize(element: XMLElement) throws -> PollResult {
+        return try PollResult(
+            level: element.attribute("level"),
+            value: element.attribute("value"),
+            numVotes: element.attribute("numvotes")
+        )
+    }
+}
+
+extension BoardGameLink: XMLElementDeserializable {
+
+    /**
+    Deserializes a "link" element in a BoardGame "thing" response.
+
+    The format of the link element is as follows:
+    <link type="boardgameimplementation" id="30549" value="Pandemic" inbound="true"/>
+    <link type="boardgamedesigner" id="442" value="Rob Daviau"/>
+
+    - parameter element: The `link` element
+
+    - throws: XMLDeserializationError.
+
+    - returns: A populated BoardGameLink structure
+    */
+    public static func deserialize(element: XMLElement) throws -> BoardGameLink {
+        return try BoardGameLink(
+            type: element.attribute("type"),
+            id: element.attribute("id"),
+            value: element.attribute("value"),
+            inbound: element.attribute("inbound")
+        )
+    }
+}
+
+extension GameRank: XMLElementDeserializable {
+
+    /**
+     Deserializes a "rating" element in BoardGameGeek API response.
+
+     The format of the rating element is as follows:
+     <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="3616" bayesaverage="5.70119"/>
+
+     - parameter element: The `rank` element
+
+     - throws: XMLDeserializationError.
+
+     - returns: A populated GameRank structure
+     */
+    public static func deserialize(element: XMLElement) throws -> GameRank {
+        return try GameRank(
+            type: element.attribute("type"),
+            id: element.attribute("id"),
+            name: element.attribute("name"),
+            friendlyName: element.attribute("friendlyname"),
+            value: element.attribute("value"),
+            bayesAverage: element.attribute("bayesaverage")
+        )
+    }
+}
+
