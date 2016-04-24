@@ -30,6 +30,10 @@ class CollectionSpec: QuickSpec {
                     game = try! parser!["item"].value()
                 }
 
+                it("should fully parse") {
+                    expect(game).toNot(beNil())
+                }
+
                 it("should have an objectId") {
                     expect(game!.objectId).to(equal(111))
                 }
@@ -53,7 +57,9 @@ class CollectionSpec: QuickSpec {
 
                 it("should not have any optional values populated") {
                     expect(game!.imagePath).to(beNil())
+                    expect(game!.imageUrl).to(beNil())
                     expect(game!.thumbnailPath).to(beNil())
+                    expect(game!.thumbnailUrl).to(beNil())
                     expect(game!.wishListComment).to(beNil())
                     expect(game!.comment).to(beNil())
                     expect(game!.numPlays).to(beNil())
@@ -79,6 +85,10 @@ class CollectionSpec: QuickSpec {
                 beforeEach {
                     parser = SWXMLHash.parse(xml)
                     game = try! parser!["item"].value()
+                }
+
+                it("should fully parse") {
+                    expect(game).toNot(beNil())
                 }
 
                 it("should have an objectId") {
@@ -119,7 +129,9 @@ class CollectionSpec: QuickSpec {
 
                 it("should not have any other optional values populated") {
                     expect(game!.imagePath).to(beNil())
+                    expect(game!.imageUrl).to(beNil())
                     expect(game!.thumbnailPath).to(beNil())
+                    expect(game!.thumbnailUrl).to(beNil())
                     expect(game!.wishListComment).to(beNil())
                     expect(game!.comment).to(beNil())
                     expect(game!.numPlays).to(beNil())
@@ -146,6 +158,10 @@ class CollectionSpec: QuickSpec {
                 beforeEach {
                     parser = SWXMLHash.parse(xml)
                     game = try! parser!["item"].value()
+                }
+
+                it("should fully parse") {
+                    expect(game).toNot(beNil())
                 }
 
                 it("should have an objectId") {
@@ -175,7 +191,12 @@ class CollectionSpec: QuickSpec {
 
                 it("should have an image and thumbnail URL") {
                     expect(game!.imagePath).to(equal("//path.to/image.jpg"))
+                    expect(game!.imageUrl).toNot(beNil())
+                    expect(game!.imageUrl!.absoluteString).to(equal("http://path.to/image.jpg"))
+
                     expect(game!.thumbnailPath).to(equal("//path.to/thumbnail.jpg"))
+                    expect(game!.thumbnailUrl).toNot(beNil())
+                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://path.to/thumbnail.jpg"))
                 }
 
                 it("should have plays logged") {
@@ -228,6 +249,10 @@ class CollectionSpec: QuickSpec {
                     game = try! parser!["item"].value()
                 }
 
+                it("should fully parse") {
+                    expect(game).toNot(beNil())
+                }
+
                 it("should have an objectId") {
                     expect(game!.objectId).to(equal(444))
                 }
@@ -255,7 +280,11 @@ class CollectionSpec: QuickSpec {
 
                 it("should have an image and thumbnail URL") {
                     expect(game!.imagePath).to(equal("//path.to/image.jpg"))
+                    expect(game!.imageUrl).toNot(beNil())
+                    expect(game!.imageUrl!.absoluteString).to(equal("http://path.to/image.jpg"))
                     expect(game!.thumbnailPath).to(equal("//path.to/thumbnail.jpg"))
+                    expect(game!.thumbnailUrl).toNot(beNil())
+                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://path.to/thumbnail.jpg"))
                 }
 
                 it("should have plays logged") {

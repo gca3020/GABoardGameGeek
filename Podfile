@@ -9,6 +9,6 @@ end
 
 target 'GABoardGameGeekTests' do
   pod 'SWXMLHash', '~> 2.3.1'
-  pod 'Nimble', '~> 4.0.0'
+  pod 'Nimble', '~> 4.0.1'
   pod 'Quick', '~>0.9.2'
 end

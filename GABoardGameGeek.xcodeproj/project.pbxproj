@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DB0B33E0DF22D9F5DD69F2D /* BoardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0BB8CB96009D5F23D4E9A /* BoardGame.swift */; };
+		5DB0B81A42A75CE955F41E1B /* BoardGameSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0B683DF9EE12F09182375 /* BoardGameSpec.swift */; };
+		5DB0B89650B75A0793BF52F8 /* BoardGameDeserializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0BEF06DF93DCFEDFDBD8C /* BoardGameDeserializers.swift */; };
 		5DB0BAFF3CDFED22BB8ECE16 /* CollectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0B4FF202A8E75F97FD9BB /* CollectionSpec.swift */; };
+		5DB0BFC6AD21C338004691DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0B1F5C3192AE8C9F3B573 /* Utils.swift */; };
 		63708CA6FEC6147B4EBD71E6 /* Pods_GABoardGameGeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280F13F7A69BA3841CA017E2 /* Pods_GABoardGameGeek.framework */; };
 		6C1A84971CB33E2B004CD61F /* CollectionBoardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1A84961CB33E2B004CD61F /* CollectionBoardGame.swift */; };
-		6C1A849B1CB5E527004CD61F /* Collection.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6C1A849A1CB5E527004CD61F /* Collection.xml */; };
 		6C1A849D1CB5E79D004CD61F /* GABoardGameGeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1A849C1CB5E79D004CD61F /* GABoardGameGeek.swift */; };
 		6C1A849F1CB5E84E004CD61F /* CollectionDeserializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1A849E1CB5E84E004CD61F /* CollectionDeserializers.swift */; };
 		6C383F5F1CB1A17C00A14737 /* GABoardGameGeek.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C383F5E1CB1A17C00A14737 /* GABoardGameGeek.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,9 +36,12 @@
 /* Begin PBXFileReference section */
 		280F13F7A69BA3841CA017E2 /* Pods_GABoardGameGeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABoardGameGeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0194CEAB12419701044A9E /* Pods-GABoardGameGeek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeek.release.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek.release.xcconfig"; sourceTree = "<group>"; };
+		5DB0B1F5C3192AE8C9F3B573 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5DB0B4FF202A8E75F97FD9BB /* CollectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSpec.swift; sourceTree = "<group>"; };
+		5DB0B683DF9EE12F09182375 /* BoardGameSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGameSpec.swift; sourceTree = "<group>"; };
+		5DB0BB8CB96009D5F23D4E9A /* BoardGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGame.swift; sourceTree = "<group>"; };
+		5DB0BEF06DF93DCFEDFDBD8C /* BoardGameDeserializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGameDeserializers.swift; sourceTree = "<group>"; };
 		6C1A84961CB33E2B004CD61F /* CollectionBoardGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBoardGame.swift; sourceTree = "<group>"; };
-		6C1A849A1CB5E527004CD61F /* Collection.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Collection.xml; sourceTree = "<group>"; };
 		6C1A849C1CB5E79D004CD61F /* GABoardGameGeek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GABoardGameGeek.swift; sourceTree = "<group>"; };
 		6C1A849E1CB5E84E004CD61F /* CollectionDeserializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDeserializers.swift; sourceTree = "<group>"; };
 		6C383F5B1CB1A17C00A14737 /* GABoardGameGeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GABoardGameGeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +128,9 @@
 				6C1A84961CB33E2B004CD61F /* CollectionBoardGame.swift */,
 				6C1A849C1CB5E79D004CD61F /* GABoardGameGeek.swift */,
 				6C7D29051CC16EA10089F9D3 /* XMLAttributeHelpers.swift */,
+				5DB0BB8CB96009D5F23D4E9A /* BoardGame.swift */,
+				5DB0B1F5C3192AE8C9F3B573 /* Utils.swift */,
+				5DB0BEF06DF93DCFEDFDBD8C /* BoardGameDeserializers.swift */,
 			);
 			path = GABoardGameGeek;
 			sourceTree = "<group>";
@@ -130,8 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				6C383F6C1CB1A17C00A14737 /* Info.plist */,
-				6C1A849A1CB5E527004CD61F /* Collection.xml */,
 				5DB0B4FF202A8E75F97FD9BB /* CollectionSpec.swift */,
+				5DB0B683DF9EE12F09182375 /* BoardGameSpec.swift */,
 			);
 			path = GABoardGameGeekTests;
 			sourceTree = "<group>";
@@ -241,7 +250,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C1A849B1CB5E527004CD61F /* Collection.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +343,9 @@
 				6C383F761CB1A8AD00A14737 /* BoardGameGeekTypes.swift in Sources */,
 				6C1A849D1CB5E79D004CD61F /* GABoardGameGeek.swift in Sources */,
 				6C1A84971CB33E2B004CD61F /* CollectionBoardGame.swift in Sources */,
+				5DB0B33E0DF22D9F5DD69F2D /* BoardGame.swift in Sources */,
+				5DB0BFC6AD21C338004691DC /* Utils.swift in Sources */,
+				5DB0B89650B75A0793BF52F8 /* BoardGameDeserializers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DB0BAFF3CDFED22BB8ECE16 /* CollectionSpec.swift in Sources */,
+				5DB0B81A42A75CE955F41E1B /* BoardGameSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
