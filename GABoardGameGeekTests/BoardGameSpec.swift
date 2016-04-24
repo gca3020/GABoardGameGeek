@@ -182,7 +182,7 @@ class BoardGameSpec: QuickSpec {
                 "<item type=\"boardgame\" id=\"123\">" +
                 "   <name type=\"primary\" sortindex=\"3\" value=\"A Made-Up Game\"/>" +
                 "   <description>" +
-                "       A made-up game" +
+                "       A &#039;made-up&#039; game with fake stats &amp; details" +
                 "   </description>" +
                 "   <yearpublished value=\"1984\"/>" +
                 "   <minplayers value=\"1\"/>" +
@@ -220,11 +220,7 @@ class BoardGameSpec: QuickSpec {
 
                 beforeEach {
                     parser = SWXMLHash.parse(xml)
-                    do {
-                        game = try parser!["item"].value()
-                    } catch {
-                        print("Error Info: \(error)")
-                    }
+                    game = try? parser!["item"].value()
                 }
 
                 it("should fully parse") {
@@ -242,8 +238,8 @@ class BoardGameSpec: QuickSpec {
                     expect(game!.sortName).to(equal("Made-Up Game"))
                 }
 
-                it("should have a description") {
-                    expect(game!.description).to(equal("A made-up game"))
+                it("should handle special characters in the description") {
+                    expect(game!.description).to(equal("A 'made-up' game with fake stats & details"))
                 }
 
                 it("should not have image and thumbnail URLs") {
