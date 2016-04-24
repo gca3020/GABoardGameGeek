@@ -119,7 +119,12 @@ class BoardGameSpec: QuickSpec {
 
                 it("should have image and thumbnail URLs") {
                     expect(game!.thumbnailPath).to(equal("//cf.geekdo-images.com/images/pic2452831_t.png"))
+                    expect(game!.thumbnailUrl).toNot(beNil())
+                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic2452831_t.png"))
+
                     expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic2452831.png"))
+                    expect(game!.imageUrl).toNot(beNil())
+                    expect(game!.imageUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic2452831.png"))
                 }
 
                 it("should have additional data about the game") {
@@ -243,7 +248,9 @@ class BoardGameSpec: QuickSpec {
 
                 it("should not have image and thumbnail URLs") {
                     expect(game!.thumbnailPath).to(beNil())
+                    expect(game!.thumbnailUrl).to(beNil())
                     expect(game!.imagePath).to(beNil())
+                    expect(game!.imageUrl).to(beNil())
                 }
 
                 it("should have additional data about the game") {

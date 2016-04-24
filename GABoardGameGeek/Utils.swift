@@ -8,15 +8,18 @@ import Foundation
 internal class Utils {
 
     static func urlFrom(string: String?) -> NSURL? {
-        return nil
+        guard let urlString = string else {
+            return nil
+        }
+
+        return NSURL(string: "http:\(urlString)")
     }
 
     static func getSortName(name: String, sortIndex: Int) -> String {
         if sortIndex <= 1 || sortIndex > name.characters.count {
             return name
-        }
-        else {
-            return name.substringFromIndex(name.startIndex.advancedBy(sortIndex-1))
+        } else {
+            return name.substringFromIndex(name.startIndex.advancedBy(sortIndex - 1))
         }
     }
 }
