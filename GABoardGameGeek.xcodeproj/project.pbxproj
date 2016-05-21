@@ -20,6 +20,8 @@
 		6C383F661CB1A17C00A14737 /* GABoardGameGeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C383F5B1CB1A17C00A14737 /* GABoardGameGeek.framework */; };
 		6C383F761CB1A8AD00A14737 /* BoardGameGeekTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383F751CB1A8AD00A14737 /* BoardGameGeekTypes.swift */; };
 		6C7D29061CC16EA10089F9D3 /* XMLAttributeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7D29051CC16EA10089F9D3 /* XMLAttributeHelpers.swift */; };
+		6CA4B9B61CCD713E00FCFA7B /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA4B9B51CCD713E00FCFA7B /* NetworkAdapter.swift */; };
+		6CA4B9B81CCD7F5C00FCFA7B /* ApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA4B9B71CCD7F5C00FCFA7B /* ApiSpec.swift */; };
 		8EAD3A6E370AF76CE28A6468 /* Pods_GABoardGameGeekTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710FB5E388E90AFB4A50DA2B /* Pods_GABoardGameGeekTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		6C383F6C1CB1A17C00A14737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C383F751CB1A8AD00A14737 /* BoardGameGeekTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGameGeekTypes.swift; sourceTree = "<group>"; };
 		6C7D29051CC16EA10089F9D3 /* XMLAttributeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLAttributeHelpers.swift; sourceTree = "<group>"; };
+		6CA4B9B51CCD713E00FCFA7B /* NetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
+		6CA4B9B71CCD7F5C00FCFA7B /* ApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiSpec.swift; sourceTree = "<group>"; };
 		710FB5E388E90AFB4A50DA2B /* Pods_GABoardGameGeekTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABoardGameGeekTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2CDFD72A06702894C3BD3F /* Pods-GABoardGameGeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek.debug.xcconfig"; sourceTree = "<group>"; };
 		838F1750A24B809EAC07E663 /* Pods-GABoardGameGeekTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeekTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,15 +126,16 @@
 			isa = PBXGroup;
 			children = (
 				6C383F5E1CB1A17C00A14737 /* GABoardGameGeek.h */,
-				6C383F601CB1A17C00A14737 /* Info.plist */,
-				6C383F751CB1A8AD00A14737 /* BoardGameGeekTypes.swift */,
-				6C1A849E1CB5E84E004CD61F /* CollectionDeserializers.swift */,
-				6C1A84961CB33E2B004CD61F /* CollectionBoardGame.swift */,
 				6C1A849C1CB5E79D004CD61F /* GABoardGameGeek.swift */,
-				6C7D29051CC16EA10089F9D3 /* XMLAttributeHelpers.swift */,
 				5DB0BB8CB96009D5F23D4E9A /* BoardGame.swift */,
-				5DB0B1F5C3192AE8C9F3B573 /* Utils.swift */,
 				5DB0BEF06DF93DCFEDFDBD8C /* BoardGameDeserializers.swift */,
+				6C1A84961CB33E2B004CD61F /* CollectionBoardGame.swift */,
+				6C1A849E1CB5E84E004CD61F /* CollectionDeserializers.swift */,
+				6C383F751CB1A8AD00A14737 /* BoardGameGeekTypes.swift */,
+				6CA4B9B51CCD713E00FCFA7B /* NetworkAdapter.swift */,
+				5DB0B1F5C3192AE8C9F3B573 /* Utils.swift */,
+				6C7D29051CC16EA10089F9D3 /* XMLAttributeHelpers.swift */,
+				6C383F601CB1A17C00A14737 /* Info.plist */,
 			);
 			path = GABoardGameGeek;
 			sourceTree = "<group>";
@@ -139,8 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				6C383F6C1CB1A17C00A14737 /* Info.plist */,
-				5DB0B4FF202A8E75F97FD9BB /* CollectionSpec.swift */,
+				6CA4B9B71CCD7F5C00FCFA7B /* ApiSpec.swift */,
 				5DB0B683DF9EE12F09182375 /* BoardGameSpec.swift */,
+				5DB0B4FF202A8E75F97FD9BB /* CollectionSpec.swift */,
 			);
 			path = GABoardGameGeekTests;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 				6C1A849D1CB5E79D004CD61F /* GABoardGameGeek.swift in Sources */,
 				6C1A84971CB33E2B004CD61F /* CollectionBoardGame.swift in Sources */,
 				5DB0B33E0DF22D9F5DD69F2D /* BoardGame.swift in Sources */,
+				6CA4B9B61CCD713E00FCFA7B /* NetworkAdapter.swift in Sources */,
 				5DB0BFC6AD21C338004691DC /* Utils.swift in Sources */,
 				5DB0B89650B75A0793BF52F8 /* BoardGameDeserializers.swift in Sources */,
 			);
@@ -355,6 +362,7 @@
 			files = (
 				5DB0BAFF3CDFED22BB8ECE16 /* CollectionSpec.swift in Sources */,
 				5DB0B81A42A75CE955F41E1B /* BoardGameSpec.swift in Sources */,
+				6CA4B9B81CCD7F5C00FCFA7B /* ApiSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
