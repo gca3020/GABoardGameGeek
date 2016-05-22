@@ -12,7 +12,7 @@
 		5DB0B89650B75A0793BF52F8 /* BoardGameDeserializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0BEF06DF93DCFEDFDBD8C /* BoardGameDeserializers.swift */; };
 		5DB0BAFF3CDFED22BB8ECE16 /* CollectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0B4FF202A8E75F97FD9BB /* CollectionSpec.swift */; };
 		5DB0BFC6AD21C338004691DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0B1F5C3192AE8C9F3B573 /* Utils.swift */; };
-		63708CA6FEC6147B4EBD71E6 /* Pods_GABoardGameGeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280F13F7A69BA3841CA017E2 /* Pods_GABoardGameGeek.framework */; };
+		5DDDC99F45FC2935632AD9A0 /* Pods_GABoardGameGeekTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6E6899A11013247BF6A05 /* Pods_GABoardGameGeekTests.framework */; };
 		6C1A84971CB33E2B004CD61F /* CollectionBoardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1A84961CB33E2B004CD61F /* CollectionBoardGame.swift */; };
 		6C1A849D1CB5E79D004CD61F /* GABoardGameGeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1A849C1CB5E79D004CD61F /* GABoardGameGeek.swift */; };
 		6C1A849F1CB5E84E004CD61F /* CollectionDeserializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1A849E1CB5E84E004CD61F /* CollectionDeserializers.swift */; };
@@ -20,9 +20,8 @@
 		6C383F661CB1A17C00A14737 /* GABoardGameGeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C383F5B1CB1A17C00A14737 /* GABoardGameGeek.framework */; };
 		6C383F761CB1A8AD00A14737 /* BoardGameGeekTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383F751CB1A8AD00A14737 /* BoardGameGeekTypes.swift */; };
 		6C7D29061CC16EA10089F9D3 /* XMLAttributeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7D29051CC16EA10089F9D3 /* XMLAttributeHelpers.swift */; };
-		6CA4B9B61CCD713E00FCFA7B /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA4B9B51CCD713E00FCFA7B /* NetworkAdapter.swift */; };
 		6CA4B9B81CCD7F5C00FCFA7B /* ApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA4B9B71CCD7F5C00FCFA7B /* ApiSpec.swift */; };
-		8EAD3A6E370AF76CE28A6468 /* Pods_GABoardGameGeekTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710FB5E388E90AFB4A50DA2B /* Pods_GABoardGameGeekTests.framework */; };
+		7423A6C488DCFA9772903364 /* Pods_GABoardGameGeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E393180958C85B3DA650D /* Pods_GABoardGameGeek.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +35,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		280F13F7A69BA3841CA017E2 /* Pods_GABoardGameGeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABoardGameGeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D0194CEAB12419701044A9E /* Pods-GABoardGameGeek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeek.release.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek.release.xcconfig"; sourceTree = "<group>"; };
+		00CAC4DA5B1DCCBA003FDA1C /* Pods-GABoardGameGeek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeek.release.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek.release.xcconfig"; sourceTree = "<group>"; };
+		075E393180958C85B3DA650D /* Pods_GABoardGameGeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABoardGameGeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2373F5691FD607C4C389E4EF /* Pods-GABoardGameGeekTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeekTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests.release.xcconfig"; sourceTree = "<group>"; };
 		5DB0B1F5C3192AE8C9F3B573 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5DB0B4FF202A8E75F97FD9BB /* CollectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSpec.swift; sourceTree = "<group>"; };
 		5DB0B683DF9EE12F09182375 /* BoardGameSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGameSpec.swift; sourceTree = "<group>"; };
 		5DB0BB8CB96009D5F23D4E9A /* BoardGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGame.swift; sourceTree = "<group>"; };
 		5DB0BEF06DF93DCFEDFDBD8C /* BoardGameDeserializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGameDeserializers.swift; sourceTree = "<group>"; };
+		6660D118813E7DDF215EDFC2 /* Pods-GABoardGameGeekTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeekTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C1A84961CB33E2B004CD61F /* CollectionBoardGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBoardGame.swift; sourceTree = "<group>"; };
 		6C1A849C1CB5E79D004CD61F /* GABoardGameGeek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GABoardGameGeek.swift; sourceTree = "<group>"; };
 		6C1A849E1CB5E84E004CD61F /* CollectionDeserializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDeserializers.swift; sourceTree = "<group>"; };
@@ -53,12 +54,10 @@
 		6C383F6C1CB1A17C00A14737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C383F751CB1A8AD00A14737 /* BoardGameGeekTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGameGeekTypes.swift; sourceTree = "<group>"; };
 		6C7D29051CC16EA10089F9D3 /* XMLAttributeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLAttributeHelpers.swift; sourceTree = "<group>"; };
-		6CA4B9B51CCD713E00FCFA7B /* NetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
 		6CA4B9B71CCD7F5C00FCFA7B /* ApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiSpec.swift; sourceTree = "<group>"; };
-		710FB5E388E90AFB4A50DA2B /* Pods_GABoardGameGeekTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABoardGameGeekTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A2CDFD72A06702894C3BD3F /* Pods-GABoardGameGeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek.debug.xcconfig"; sourceTree = "<group>"; };
-		838F1750A24B809EAC07E663 /* Pods-GABoardGameGeekTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeekTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests.debug.xcconfig"; sourceTree = "<group>"; };
-		90861E9FB247EBC2AE57AD4A /* Pods-GABoardGameGeekTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeekTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests.release.xcconfig"; sourceTree = "<group>"; };
+		B26641CE4B1AA055D2FC8F0C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9E92DE52673D44968F1D255 /* Pods-GABoardGameGeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek.debug.xcconfig"; sourceTree = "<group>"; };
+		DDB6E6899A11013247BF6A05 /* Pods_GABoardGameGeekTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABoardGameGeekTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63708CA6FEC6147B4EBD71E6 /* Pods_GABoardGameGeek.framework in Frameworks */,
+				7423A6C488DCFA9772903364 /* Pods_GABoardGameGeek.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C383F661CB1A17C00A14737 /* GABoardGameGeek.framework in Frameworks */,
-				8EAD3A6E370AF76CE28A6468 /* Pods_GABoardGameGeekTests.framework in Frameworks */,
+				5DDDC99F45FC2935632AD9A0 /* Pods_GABoardGameGeekTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,19 +84,20 @@
 		37B90206D29761F9A8EC6136 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				280F13F7A69BA3841CA017E2 /* Pods_GABoardGameGeek.framework */,
-				710FB5E388E90AFB4A50DA2B /* Pods_GABoardGameGeekTests.framework */,
+				B26641CE4B1AA055D2FC8F0C /* Pods.framework */,
+				075E393180958C85B3DA650D /* Pods_GABoardGameGeek.framework */,
+				DDB6E6899A11013247BF6A05 /* Pods_GABoardGameGeekTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		690F0594DA60B1F8ED2CAEDE /* Pods */ = {
+		3DA9DBFF6597F1A2B61307B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7A2CDFD72A06702894C3BD3F /* Pods-GABoardGameGeek.debug.xcconfig */,
-				4D0194CEAB12419701044A9E /* Pods-GABoardGameGeek.release.xcconfig */,
-				838F1750A24B809EAC07E663 /* Pods-GABoardGameGeekTests.debug.xcconfig */,
-				90861E9FB247EBC2AE57AD4A /* Pods-GABoardGameGeekTests.release.xcconfig */,
+				D9E92DE52673D44968F1D255 /* Pods-GABoardGameGeek.debug.xcconfig */,
+				00CAC4DA5B1DCCBA003FDA1C /* Pods-GABoardGameGeek.release.xcconfig */,
+				6660D118813E7DDF215EDFC2 /* Pods-GABoardGameGeekTests.debug.xcconfig */,
+				2373F5691FD607C4C389E4EF /* Pods-GABoardGameGeekTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -108,8 +108,8 @@
 				6C383F5D1CB1A17C00A14737 /* GABoardGameGeek */,
 				6C383F691CB1A17C00A14737 /* GABoardGameGeekTests */,
 				6C383F5C1CB1A17C00A14737 /* Products */,
-				690F0594DA60B1F8ED2CAEDE /* Pods */,
 				37B90206D29761F9A8EC6136 /* Frameworks */,
+				3DA9DBFF6597F1A2B61307B4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,7 +132,6 @@
 				6C1A84961CB33E2B004CD61F /* CollectionBoardGame.swift */,
 				6C1A849E1CB5E84E004CD61F /* CollectionDeserializers.swift */,
 				6C383F751CB1A8AD00A14737 /* BoardGameGeekTypes.swift */,
-				6CA4B9B51CCD713E00FCFA7B /* NetworkAdapter.swift */,
 				5DB0B1F5C3192AE8C9F3B573 /* Utils.swift */,
 				6C7D29051CC16EA10089F9D3 /* XMLAttributeHelpers.swift */,
 				6C383F601CB1A17C00A14737 /* Info.plist */,
@@ -169,12 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C383F6F1CB1A17C00A14737 /* Build configuration list for PBXNativeTarget "GABoardGameGeek" */;
 			buildPhases = (
-				F5FA4082C0FF12B3FEED193B /* Check Pods Manifest.lock */,
+				1C8A377CE228EF09AE92CF8F /* 📦 Check Pods Manifest.lock */,
 				6C383F561CB1A17C00A14737 /* Sources */,
 				6C383F571CB1A17C00A14737 /* Frameworks */,
 				6C383F581CB1A17C00A14737 /* Headers */,
 				6C383F591CB1A17C00A14737 /* Resources */,
-				E77E8943BEA518DAA08751AD /* Copy Pods Resources */,
+				57D878D28794590B12D563F6 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,12 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C383F721CB1A17C00A14737 /* Build configuration list for PBXNativeTarget "GABoardGameGeekTests" */;
 			buildPhases = (
-				FA3C2CB7952557D2633F5F08 /* Check Pods Manifest.lock */,
+				8E59A09879FE8AB74F63BBB9 /* 📦 Check Pods Manifest.lock */,
 				6C383F611CB1A17C00A14737 /* Sources */,
 				6C383F621CB1A17C00A14737 /* Frameworks */,
 				6C383F631CB1A17C00A14737 /* Resources */,
-				687FA10FB8753652C695FE45 /* Embed Pods Frameworks */,
-				05E1EF29BA4E329008371DA3 /* Copy Pods Resources */,
+				02F2F5346C50C258375C1FA3 /* 📦 Embed Pods Frameworks */,
+				68F913C30FD477597B687BE7 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,29 +261,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05E1EF29BA4E329008371DA3 /* Copy Pods Resources */ = {
+		02F2F5346C50C258375C1FA3 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		687FA10FB8753652C695FE45 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,29 +276,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E77E8943BEA518DAA08751AD /* Copy Pods Resources */ = {
+		1C8A377CE228EF09AE92CF8F /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F5FA4082C0FF12B3FEED193B /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,14 +291,44 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FA3C2CB7952557D2633F5F08 /* Check Pods Manifest.lock */ = {
+		57D878D28794590B12D563F6 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68F913C30FD477597B687BE7 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GABoardGameGeekTests/Pods-GABoardGameGeekTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E59A09879FE8AB74F63BBB9 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +349,6 @@
 				6C1A849D1CB5E79D004CD61F /* GABoardGameGeek.swift in Sources */,
 				6C1A84971CB33E2B004CD61F /* CollectionBoardGame.swift in Sources */,
 				5DB0B33E0DF22D9F5DD69F2D /* BoardGame.swift in Sources */,
-				6CA4B9B61CCD713E00FCFA7B /* NetworkAdapter.swift in Sources */,
 				5DB0BFC6AD21C338004691DC /* Utils.swift in Sources */,
 				5DB0B89650B75A0793BF52F8 /* BoardGameDeserializers.swift in Sources */,
 			);
@@ -470,7 +468,7 @@
 		};
 		6C383F701CB1A17C00A14737 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A2CDFD72A06702894C3BD3F /* Pods-GABoardGameGeek.debug.xcconfig */;
+			baseConfigurationReference = D9E92DE52673D44968F1D255 /* Pods-GABoardGameGeek.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -489,7 +487,7 @@
 		};
 		6C383F711CB1A17C00A14737 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D0194CEAB12419701044A9E /* Pods-GABoardGameGeek.release.xcconfig */;
+			baseConfigurationReference = 00CAC4DA5B1DCCBA003FDA1C /* Pods-GABoardGameGeek.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -507,7 +505,7 @@
 		};
 		6C383F731CB1A17C00A14737 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 838F1750A24B809EAC07E663 /* Pods-GABoardGameGeekTests.debug.xcconfig */;
+			baseConfigurationReference = 6660D118813E7DDF215EDFC2 /* Pods-GABoardGameGeekTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = GABoardGameGeekTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -518,7 +516,7 @@
 		};
 		6C383F741CB1A17C00A14737 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90861E9FB247EBC2AE57AD4A /* Pods-GABoardGameGeekTests.release.xcconfig */;
+			baseConfigurationReference = 2373F5691FD607C4C389E4EF /* Pods-GABoardGameGeekTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = GABoardGameGeekTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

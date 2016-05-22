@@ -20,8 +20,9 @@ class ApiSpec: QuickSpec {
             it("should do something") {
                 var apiResult: ApiResult<[CollectionBoardGame]>?
                 
-                GABoardGameGeek().getUserCollection("gca3020") { result in
+                GABoardGameGeek().getUserCollection("gca3020", brief: true, stats: true) { result in
                     apiResult = result
+                    print(apiResult)
                 }
 
                 expect(apiResult).toEventuallyNot(beNil(), timeout: 150)
