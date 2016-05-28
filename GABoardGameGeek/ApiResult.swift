@@ -20,17 +20,21 @@ public enum ApiResult<Value> {
 }
 
 /**
- * An enumeration to hold a more detailed description of an error when an API call fails
- *
- * - ConnectionError: There were network connectivity issues. The Network or Server may be down.
- * - ServerError: We connected to the server, but it returned a non-200 HTTP Status Code (e.g. 404, 502)
- * - ApiError: Any error parsing the server response, or any other error that indicates a failure.
- *             This could be something like an invalid username, etc...
- * - XmlError: An error when parsing the XML into a specific type
+ An enumeration to hold a more detailed description of an error when an API call fails.
+
+ - ConnectionError: There were network connectivity errors. The Network or Server may be down, or
+                    responding with a bad status code. The NSError returned with this will contain
+                    additional details.
+ - ServerNotReady:  The server returned a 202 HTTP Status code, indicating that it has accepted our
+                    request, but has not yet processed it, and we should retry later. This happens
+                    very frequently with User Collection requests.
+ - ApiError:        The API returned an error of some sort. Details are available in the description.
+ - XmlError:        There was an error parsing the XML response. This can indicate that the data models
+                    are incorrect, or possibly that the XMLAPI has changed.
  */
 public enum BggError: ErrorType {
     case ConnectionError(NSError)
-    case ServerError(Int)
+    case ServerNotReady
     case ApiError(String)
     case XmlError(String)
 }

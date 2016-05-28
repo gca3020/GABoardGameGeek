@@ -150,7 +150,7 @@ extension BoardGame: XMLIndexerDeserializable {
                 sortIndex: node["name"].withAttr("type", "primary").element!.attribute("sortindex"),
                 imagePath: node["image"].value(),
                 thumbnailPath: node["thumbnail"].value(),
-                description: (node["description"].value() as String).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()),
+                description: (node["description"].value() as String).trimWhitespace,
                 yearPublished: node["yearpublished"].element!.attribute("value"),
                 minPlayers: node["minplayers"].element!.attribute("value"),
                 maxPlayers: node["maxplayers"].element!.attribute("value"),

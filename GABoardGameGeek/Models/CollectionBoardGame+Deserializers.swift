@@ -59,8 +59,8 @@ extension CollectionBoardGame: XMLIndexerDeserializable {
                 imagePath: node["image"].value(),
                 thumbnailPath: node["thumbnail"].value(),
                 numPlays: node["numplays"].value(),
-                wishListComment: (node["wishlistcomment"].value() as String?)?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()),
-                comment: (node["comment"].value() as String?)?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                wishListComment: (node["wishlistcomment"].value() as String?)?.trimWhitespace,
+                comment: (node["comment"].value() as String?)?.trimWhitespace
             )
         } catch {
             // If any errors occur while parsing this game, throw them as a single exception along

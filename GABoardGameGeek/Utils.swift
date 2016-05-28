@@ -13,6 +13,11 @@ internal extension String {
     var URLQueryString: String {
         return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
     }
+
+    /// Get a string with whitespace trimmed off
+    var trimWhitespace: String {
+        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    }
 }
 
 internal extension String {

@@ -52,7 +52,7 @@ public class GABoardGameGeek {
         requestParams["stats"] = (stats ? "1" : "0")
 
         // Make the request
-        networkAdapter.urlRequest(self.itemUrl, params: requestParams) { result in
+        networkAdapter.requestData(self.itemUrl, params: requestParams) { result in
             switch(result) {
             case .Success(let resultString):
                 closure(self.xmlAdapter.parse(resultString, rootElement: "items", childElement: "item"))
@@ -71,13 +71,6 @@ public class GABoardGameGeek {
     // MARK: - Private Functions
 
     /**
-
-     - parameter baseUrl: The Base URL of the request
-     - parameter params:  The Encoded Params
-     - parameter closure: The result closure
-     */
-
-    /**
      Make an API request specifically for a user collection. This function exists separately from the
      user callable function, since this will potentially be called multiple times while retrying.
 
@@ -87,17 +80,16 @@ public class GABoardGameGeek {
      */
     private func collectionRequest(params: [String: String], retryUntil: NSDate, closure: ApiResult<[CollectionBoardGame]> -> ()) {
         // Make the raw request, and handle the result
-        networkAdapter.urlRequest(self.collectionUrl, params: params) { result in
+        networkAdapter.requestData(self.collectionUrl, params: params) { result in
             switch(result) {
             case .Success(let xmlString):
                 closure(self.xmlAdapter.parse(xmlString, rootElement: "items", childElement: "item"))
             case .Failure(let error):
                 switch(error) {
-                case .ServerError(let statusCode):
+                case .ServerNotReady:
                     // Special case for Collection Requests, a 202 status code means we should try again,
                     // so queue up a retry to happen in one second, as long as we're still below the timeout.
-                    if( statusCode == 202 && (NSDate().compare(retryUntil) == NSComparisonResult.OrderedAscending) ) {
-                        print("Making collection Request: Now=\(NSDate()), RetryUntil=\(retryUntil)")
+                    if( (NSDate().compare(retryUntil) == NSComparisonResult.OrderedAscending) ) {
                         let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC)))
                         dispatch_after(delay, dispatch_get_main_queue()) {
                             self.collectionRequest(params, retryUntil: retryUntil, closure: closure)

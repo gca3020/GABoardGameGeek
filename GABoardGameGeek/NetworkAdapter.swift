@@ -19,18 +19,18 @@ internal class NetworkAdapter {
      - parameter params:  The parameters to make the call on. These should be URL Query Encoded already
      - parameter closure: The closure to call with the response
      */
-    internal func urlRequest(baseUrl: String, params: [String: String], closure: ApiResult<String> -> ()) {
+    internal func requestData(baseUrl: String, params: [String: String], closure: ApiResult<String> -> ()) {
         Alamofire.request(.GET, baseUrl, parameters: params)
-            .validate()
+            .validate(statusCode: 200...202)
+            .validate(contentType: ["text/xml"])
             .responseString { response in
                 switch response.result {
                 case .Success:
                     if let statusCode = response.response?.statusCode {
-                        if( statusCode == 200 ) {
+                        if( statusCode == 202 ) {
+                            closure(.Failure(.ServerNotReady))
+                        } else {
                             closure(.Success(response.result.value!))
-                        }
-                        else {
-                            closure(.Failure(.ServerError(statusCode)))
                         }
                     }
                 case .Failure(let error):

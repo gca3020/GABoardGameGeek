@@ -25,7 +25,7 @@ class ApiSpec: QuickSpec {
                     {
                     case .Success(let games):
                         userGames = games
-                        print(userGames)
+                        //print(userGames)
                     case .Failure(let error):
                         print("The request Failed: \(error)")
                     }

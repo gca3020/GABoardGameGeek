@@ -55,10 +55,18 @@ internal class XmlAdapter {
      - returns: The ApiError if present, or nil if no errors were detected.
      */
     private func checkForApiError(indexer: XMLIndexer) -> BggError? {
-        // For some calls, the error message will be in a <errors><error><message>MessageText</message></error></errors> block
+        // For some calls, the error message will look like this:
+        // <errors><error><message>MessageText</message></error></errors> block
         if let errorMessage = indexer["errors"]["error"]["message"].element?.text {
             return .ApiError(errorMessage)
         }
+
+        // Occasionally, the XML contains just this:
+        //<div class="messagebox error">error reading chunk of file</div>
+        if let errorMessage = indexer["div"].element?.text {
+            return .ApiError(errorMessage.trimWhitespace)
+        }
+
         return nil
     }
 
