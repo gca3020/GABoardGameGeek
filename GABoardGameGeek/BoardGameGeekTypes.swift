@@ -8,13 +8,19 @@
 
 import Foundation
 
+/**
+ An enumeration to hold the results of making an API call into the BGG XMLAPI2
+
+ - Success: The call was successful. The value contains the deserialized results
+ - Failure: The call failed. BggError contains the error enumeration with additional details
+ */
 public enum ApiResult<Value> {
     case Success(Value)
     case Failure(BggError)
 }
 
 /**
- * An enumeration to hold the results of making an API call into the BGG XMLAPI2
+ * An enumeration to hold a more detailed description of an error when an API call fails
  *
  * - ConnectionError: There were network connectivity issues. The Network or Server may be down.
  * - ServerError: We connected to the server, but it returned a non-200 HTTP Status Code (e.g. 404, 502)

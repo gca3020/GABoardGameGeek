@@ -1,5 +1,5 @@
 //
-//  BoardGameDeserializers.swift
+//  BoardGame+Deserializers.swift
 //  GABoardGameGeek
 //
 //  Created by Geoffrey Amey on 4/22/16.
