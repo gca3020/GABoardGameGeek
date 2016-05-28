@@ -20,12 +20,12 @@ class ApiSpec: QuickSpec {
             it("should do something") {
                 var userGames: [CollectionBoardGame]?
                 
-                GABoardGameGeek().getUserCollection("tomvasel", brief: false, stats: true) { result in
+                GABoardGameGeek().getUserCollection("gca3020", brief: false, stats: true) { result in
                     switch(result)
                     {
                     case .Success(let games):
                         userGames = games
-                        //print(userGames)
+                        print(userGames)
                     case .Failure(let error):
                         print("The request Failed: \(error)")
                     }

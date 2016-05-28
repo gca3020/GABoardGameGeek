@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SWXMLHash
 
 public class GABoardGameGeek {
 
@@ -32,7 +31,8 @@ public class GABoardGameGeek {
         requestParams["stats"] = (stats ? "1" : "0")
 
         // Make the network call to get the collection.
-        collectionRequest(requestParams, endTime: NSDate().dateByAddingTimeInterval(Double(timeoutSeconds))) { result in
+        let endTime = NSDate().dateByAddingTimeInterval(Double(timeoutSeconds))
+        collectionRequest(requestParams, retryUntil: endTime) { result in
             closure(result)
         }
     }
@@ -51,16 +51,11 @@ public class GABoardGameGeek {
         requestParams["id"] = ids.map { String($0) }.joinWithSeparator(",")
         requestParams["stats"] = (stats ? "1" : "0")
 
+        // Make the request
         networkAdapter.urlRequest(self.itemUrl, params: requestParams) { result in
             switch(result) {
             case .Success(let resultString):
-                do {
-                    let parser = SWXMLHash.parse(resultString)
-                    let gameList: [BoardGame] = try parser["items"]["item"].value()
-                    closure(.Success(gameList))
-                } catch {
-                    closure(.Failure(.ApiError("Error Parsing XML Response")))
-                }
+                closure(self.xmlAdapter.parse(resultString, rootElement: "items", childElement: "item"))
             case .Failure(let error):
                 closure(.Failure(error))
             }
@@ -86,33 +81,26 @@ public class GABoardGameGeek {
      Make an API request specifically for a user collection. This function exists separately from the
      user callable function, since this will potentially be called multiple times while retrying.
 
-     - parameter params:  The parameters of the Collection Request, already encoded as a URL
-     - parameter endTime: The absolute end time and date that we should stop retrying.
-     - parameter closure: The completion closure when we have either finished or failed
+     - parameter params:     The parameters of the Collection Request, already encoded as a URL
+     - parameter retryUntil: The absolute end time after which we should stop retrying.
+     - parameter closure:    The completion closure when we have either finished or failed
      */
-    private func collectionRequest(params: [String: String], endTime: NSDate, closure: ApiResult<[CollectionBoardGame]> -> ()) {
+    private func collectionRequest(params: [String: String], retryUntil: NSDate, closure: ApiResult<[CollectionBoardGame]> -> ()) {
         // Make the raw request, and handle the result
         networkAdapter.urlRequest(self.collectionUrl, params: params) { result in
             switch(result) {
             case .Success(let xmlString):
-                do {
-                    let parser = SWXMLHash.parse(xmlString)
-                    let userGames: [CollectionBoardGame] = try parser["items"]["item"].value()
-                    closure(.Success(userGames))
-                } catch {
-                    closure(.Failure(.ApiError("Error Parsing XML Response: \(error)")))
-                }
-
+                closure(self.xmlAdapter.parse(xmlString, rootElement: "items", childElement: "item"))
             case .Failure(let error):
                 switch(error) {
                 case .ServerError(let statusCode):
                     // Special case for Collection Requests, a 202 status code means we should try again,
                     // so queue up a retry to happen in one second, as long as we're still below the timeout.
-                    if( statusCode == 202 && (NSDate().compare(endTime) == NSComparisonResult.OrderedAscending) ) {
-                        print("Making collection Request: Now=\(NSDate()), EndTime=\(endTime)")
+                    if( statusCode == 202 && (NSDate().compare(retryUntil) == NSComparisonResult.OrderedAscending) ) {
+                        print("Making collection Request: Now=\(NSDate()), RetryUntil=\(retryUntil)")
                         let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC)))
                         dispatch_after(delay, dispatch_get_main_queue()) {
-                            self.collectionRequest(params, endTime: endTime, closure: closure)
+                            self.collectionRequest(params, retryUntil: retryUntil, closure: closure)
                         }
                     }
                     else {
