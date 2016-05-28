@@ -36,7 +36,7 @@ class ApiSpec: QuickSpec {
 
         describe("a game request") {
 
-            it("should do something") {
+            it("should work with an array") {
                 var games: [BoardGame]?
                 GABoardGameGeek().getGamesById([89575, 173404], stats: true) { result in
                     switch(result)
@@ -51,8 +51,20 @@ class ApiSpec: QuickSpec {
                 expect(games).toEventuallyNot(beNil(), timeout: 150)
             }
 
+            it("should work with a single game") {
+                var game: BoardGame?
+                GABoardGameGeek().getGameById(173404, stats: true) { result in
+                    switch(result)
+                    {
+                    case .Success(let returnedGame):
+                        game = returnedGame
+                        print(game)
+                    case .Failure(let error):
+                        print("The request Failed: \(error)")
+                    }
+                }
+                expect(game).toEventuallyNot(beNil(), timeout: 150)
+            }
         }
-
-
     }
 }

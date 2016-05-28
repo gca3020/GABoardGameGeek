@@ -62,6 +62,30 @@ public class GABoardGameGeek {
         }
     }
 
+    /**
+     Retrieve the details of a single game, given its ID
+
+     - parameter id:      The ID of the game to request
+     - parameter stats:   true if we should request game statistics
+     - parameter closure: The closure to call when the results have been obtained or an error has occured.
+     */
+    public func getGameById(id: Int, stats: Bool = false, closure: ApiResult<BoardGame> -> () ) {
+
+        // Call the getter that takes an array, and validate that there was exactly one result
+        getGamesById([id], stats: stats) { result in
+            switch(result) {
+            case .Success(let gameCollection):
+                if(gameCollection.count == 1) {
+                    closure(.Success(gameCollection[0]))
+                } else {
+                    closure(.Failure(.ApiError("Invalid Number of Items Returned: \(gameCollection.count)")))
+                }
+            case .Failure(let error):
+                closure(.Failure(error))
+            }
+        }
+    }
+
     // MARK: - Initializer
     init() {
         self.networkAdapter = NetworkAdapter()
