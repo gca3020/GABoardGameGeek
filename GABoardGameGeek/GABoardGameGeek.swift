@@ -15,14 +15,16 @@ public class GABoardGameGeek {
     // MARK: - API Functions
 
     /**
-     Make a request for a user's collection, returning the results in a ApiResult on a closure.
+     Make a request for a user's collection, returning the results on a success, or a non-
+     Success ApiResult on a failure.
 
-     - parameter username: The username to request collection data from
-     - parameter brief:    true if we should request the brief collection, false otherwise
-     - parameter stats:    true if we should request stats, false otherwise
-     - parameter closure:  The closure to call when the results have been obtained or an error has occured.
+     - parameter username:       The username to request collection data from
+     - parameter brief:          true if we should request the brief collection, false otherwise
+     - parameter stats:          true if we should request stats, false otherwise
+     - parameter timeoutSeconds: The number of seconds we should retry the request if the site responds that it is still processing
+     - parameter closure:        The closure to call when the results have been obtained or an error has occured.
      */
-    public func getUserCollection(username: String, brief: Bool = false, stats: Bool = false, closure: ApiResult<[CollectionBoardGame]> -> ()) {
+    public func getUserCollection(username: String, brief: Bool = false, stats: Bool = false, timeoutSeconds: Int = 90, closure: ApiResult<[CollectionBoardGame]> -> () ) {
 
         // Set up the initial request parameters
         var requestParams = [String: String]()
@@ -31,8 +33,38 @@ public class GABoardGameGeek {
         requestParams["stats"] = (stats ? "1" : "0")
 
         // Make the network call to get the collection.
-        collectionRequest(requestParams, initialRequestTime: NSDate()) { result in
+        collectionRequest(requestParams, endTime: NSDate().dateByAddingTimeInterval(Double(timeoutSeconds))) { result in
             closure(result)
+        }
+    }
+
+    /**
+     Get a list of games, given a list of game IDs.
+
+     - parameter ids:     An array of integer game IDs to query
+     - parameter stats:   true if we should request game statistics
+     - parameter closure: The closure to call when the results have been obtained or an error has occured.
+     */
+    public func getGamesById(ids: [Int], stats: Bool = false, closure: ApiResult<[BoardGame]> -> () ) {
+
+        // Set up the request parameters
+        var requestParams = [String: String]()
+        requestParams["id"] = ids.map { String($0) }.joinWithSeparator(",")
+        requestParams["stats"] = (stats ? "1" : "0")
+
+        rawRequest(self.itemUrl, params: requestParams) { result in
+            switch(result) {
+            case .Success(let resultString):
+                do {
+                    let parser = SWXMLHash.parse(resultString)
+                    let gameList: [BoardGame] = try parser["items"]["item"].value()
+                    closure(.Success(gameList))
+                } catch {
+                    closure(.Failure(.ApiError("Error Parsing XML Response")))
+                }
+            case .Failure(let error):
+                closure(.Failure(error))
+            }
         }
     }
 
@@ -52,7 +84,11 @@ public class GABoardGameGeek {
         // Use the timeout to create the manager that Alamofire will use
         let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         sessionConfig.timeoutIntervalForRequest = Double(apiTimeout)
-        afManager = Alamofire.Manager(configuration: sessionConfig)
+        self.afManager = Alamofire.Manager(configuration: sessionConfig)
+    }
+
+    deinit {
+        print("Deitinializing GABoardGameGeek")
     }
 
     // MARK: - Private Functions
@@ -65,9 +101,7 @@ public class GABoardGameGeek {
      - parameter params:  The Encoded Params
      - parameter closure: The result closure
      */
-    private func collectionRequest(params: [String: String], initialRequestTime: NSDate, closure: ApiResult<[CollectionBoardGame]> -> ()) {
-        let elapsedTimeInterval = NSDate().timeIntervalSinceDate(initialRequestTime)
-
+    private func collectionRequest(params: [String: String], endTime: NSDate, closure: ApiResult<[CollectionBoardGame]> -> ()) {
         // Make the raw request, and handle the result
         rawRequest(self.collectionUrl, params: params) { result in
             switch(result) {
@@ -75,29 +109,29 @@ public class GABoardGameGeek {
                 do {
                     let parser = SWXMLHash.parse(xmlString)
                     let userGames: [CollectionBoardGame] = try parser["items"]["item"].value()
-                    closure(.Success(result: userGames))
+                    closure(.Success(userGames))
                 } catch {
-                    closure(.ApiError(message: "Error Parsing XML Response"))
+                    closure(.Failure(.ApiError("Error Parsing XML Response:")))
                 }
 
-            case .ServerError(let statusCode):
-                // Special case for Collection Requests, a 202 status code means we should try again,
-                // so queue up a retry to happen in one second, as long as we're still below the timeout.
-                if( statusCode == 202 && (Int(elapsedTimeInterval) < self.timeoutInSeconds-1) ) {
-                    print("Received 202 Status Code... Time Elapsed: \(elapsedTimeInterval)")
-                    let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC)))
-                    dispatch_after(delay, dispatch_get_main_queue()) {
-                        self.collectionRequest(params, initialRequestTime: initialRequestTime, closure: closure)
+            case .Failure(let error):
+                switch(error) {
+                case .ServerError(let statusCode):
+                    // Special case for Collection Requests, a 202 status code means we should try again,
+                    // so queue up a retry to happen in one second, as long as we're still below the timeout.
+                    if( statusCode == 202 && (NSDate().compare(endTime) == NSComparisonResult.OrderedAscending) ) {
+                        print("Making collection Request: Now=\(NSDate()), EndTime=\(endTime)")
+                        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC)))
+                        dispatch_after(delay, dispatch_get_main_queue()) {
+                            self.collectionRequest(params, endTime: endTime, closure: closure)
+                        }
                     }
+                    else {
+                        closure(.Failure(error))
+                    }
+                default:
+                    closure(.Failure(error))
                 }
-                else {
-                    closure(.ServerError(statusCode: statusCode))
-                }
-
-            case .ConnectionError(let error):
-                closure(.ConnectionError(error: error))
-            case .ApiError(let message):
-                closure(.ApiError(message: message))
             }
         }
     }
@@ -118,17 +152,45 @@ public class GABoardGameGeek {
                 case .Success:
                     if let statusCode = response.response?.statusCode {
                         if( statusCode == 200 ) {
-                            closure(.Success(result: response.result.value!))
+                            closure(.Success(response.result.value!))
                         }
                         else {
-                            closure(.ServerError(statusCode: statusCode))
+                            closure(.Failure(.ServerError(statusCode)))
                         }
                     }
                 case .Failure(let error):
-                    closure(.ConnectionError(error: error))
+                    closure(.Failure(.ConnectionError(error)))
                 }
+                print(self.collectionUrl)
         }
     }
+
+    /*
+    private func parseXml<ParseType: XMLIndexerDeserializable>(xml: String, elementPath: [String]) -> ApiResult<[ParseType]> {
+        
+    }
+
+    private func parseXml<ParseType: XMLIndexerDeserializable>(xml: String, elementPath: [String]) -> ApiResult<ParseType> {
+        do {
+            let parser = SWXMLHash.parse(xml)
+            let parsedValue: ParseType = try parser["items"]["item"].value()
+
+            //if(elementPath.count == 1) {
+            //    let parsedVal: Value = try parser["item"].value()
+            //} else if (elementPath.count == 2) {
+            //    let parsedVal: Value = try parser[elementPath[0]][elementPath[1]].value()
+            //} else {
+            //    return .Failure(.ApiError("Invalid Element Path: \(elementPath)"))
+            //}
+            return .Success(parsedValue)
+
+        } catch XMLDeserializationError.TypeConversionFailed(let type, let element) {
+            return .Failure(.XmlError("Error Parsing XML Response to \(type): \(element)"))
+        } catch {
+            return .Failure(.ApiError("Unhandled API Error: \(error)"))
+        }
+    }
+    */
 
     // MARK: - Private Member Variables
 

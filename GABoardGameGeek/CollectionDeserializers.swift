@@ -48,19 +48,26 @@ extension CollectionBoardGame: XMLIndexerDeserializable {
             throw XMLDeserializationError.NodeIsInvalid(node: node)
         }
 
-        return try CollectionBoardGame(
-            objectId: node.element!.attribute("objectid"),
-            name: node["name"].value(),
-            sortIndex: node["name"].element!.attribute("sortindex"),
-            status: node["status"].value(),
-            stats: node["stats"].value(),
-            yearPublished: node["yearpublished"].value(),
-            imagePath: node["image"].value(),
-            thumbnailPath: node["thumbnail"].value(),
-            numPlays: node["numplays"].value(),
-            wishListComment: (node["wishlistcomment"].value() as String?)?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()),
-            comment: (node["comment"].value() as String?)?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-        )
+        do {
+            return try CollectionBoardGame(
+                objectId: node.element!.attribute("objectid"),
+                name: node["name"].value(),
+                sortIndex: node["name"].element!.attribute("sortindex"),
+                status: node["status"].value(),
+                stats: node["stats"].value(),
+                yearPublished: node["yearpublished"].value(),
+                imagePath: node["image"].value(),
+                thumbnailPath: node["thumbnail"].value(),
+                numPlays: node["numplays"].value(),
+                wishListComment: (node["wishlistcomment"].value() as String?)?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()),
+                comment: (node["comment"].value() as String?)?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            )
+        } catch {
+            // If any errors occur while parsing this game, throw them as a single exception along
+            // with the XML that the game deserializes from. This makes it much easier to track down
+            // which particular field might be failing.
+            throw XMLDeserializationError.TypeConversionFailed(type: "CollectionBoardGame", element: node.element!)
+        }
     }
 }
 

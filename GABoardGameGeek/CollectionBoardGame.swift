@@ -124,19 +124,19 @@ public struct CollectionStatus {
 public struct CollectionStats {
 
     /// The minimum number of players this game supports
-    var minPlayers: Int
+    var minPlayers: Int?
 
     /// The maximum number of players this game supports
-    var maxPlayers: Int
+    var maxPlayers: Int?
 
     /// The minimum playtime listed for this game
-    var minPlaytime: Int
+    var minPlaytime: Int?
 
     /// The maximum playtime listed for this game
-    var maxPlaytime: Int
+    var maxPlaytime: Int?
 
     /// The listed playing time for this game
-    var playingTime: Int
+    var playingTime: Int?
 
     /// The number of users that own this game
     var numOwned: Int

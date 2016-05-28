@@ -142,27 +142,34 @@ extension BoardGame: XMLIndexerDeserializable {
             throw XMLDeserializationError.NodeIsInvalid(node: node)
         }
 
-        return try BoardGame(
-            objectId: node.element!.attribute("id"),
-            type: node.element!.attribute("type"),
-            name: node["name"].withAttr("type", "primary").element!.attribute("value")!,
-            sortIndex: node["name"].withAttr("type", "primary").element!.attribute("sortindex"),
-            imagePath: node["image"].value(),
-            thumbnailPath: node["thumbnail"].value(),
-            description: (node["description"].value() as String).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()),
-            yearPublished: node["yearpublished"].element!.attribute("value"),
-            minPlayers: node["minplayers"].element!.attribute("value"),
-            maxPlayers: node["maxplayers"].element!.attribute("value"),
-            playingTime: node["playingtime"].element!.attribute("value"),
-            minPlaytime: node["minplaytime"].element!.attribute("value"),
-            maxPlaytime: node["maxplaytime"].element!.attribute("value"),
-            minAge: node["minage"].element!.attribute("value"),
-            suggestedPlayers: node["poll"].withAttr("name", "suggested_numplayers").value(),
-            suggestedPlayerage: node["poll"].withAttr("name", "suggested_playerage").value(),
-            languageDependence: node["poll"].withAttr("name", "language_dependence").value(),
-            links: node["link"].value(),
-            stats: node["statistics"]["ratings"].value()
-        )
+        do {
+            return try BoardGame(
+                objectId: node.element!.attribute("id"),
+                type: node.element!.attribute("type"),
+                name: node["name"].withAttr("type", "primary").element!.attribute("value")!,
+                sortIndex: node["name"].withAttr("type", "primary").element!.attribute("sortindex"),
+                imagePath: node["image"].value(),
+                thumbnailPath: node["thumbnail"].value(),
+                description: (node["description"].value() as String).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()),
+                yearPublished: node["yearpublished"].element!.attribute("value"),
+                minPlayers: node["minplayers"].element!.attribute("value"),
+                maxPlayers: node["maxplayers"].element!.attribute("value"),
+                playingTime: node["playingtime"].element!.attribute("value"),
+                minPlaytime: node["minplaytime"].element!.attribute("value"),
+                maxPlaytime: node["maxplaytime"].element!.attribute("value"),
+                minAge: node["minage"].element!.attribute("value"),
+                suggestedPlayers: node["poll"].withAttr("name", "suggested_numplayers").value(),
+                suggestedPlayerage: node["poll"].withAttr("name", "suggested_playerage").value(),
+                languageDependence: node["poll"].withAttr("name", "language_dependence").value(),
+                links: node["link"].value(),
+                stats: node["statistics"]["ratings"].value()
+            )
+        } catch {
+            // If any errors occur while parsing this game, throw them as a single exception along
+            // with the XML that the game deserializes from. This makes it much easier to track down
+            // which particular field might be failing.
+            throw XMLDeserializationError.TypeConversionFailed(type: "BoardGame", element: node.element!)
+        }
     }
 }
 

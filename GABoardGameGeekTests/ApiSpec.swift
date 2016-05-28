@@ -18,16 +18,41 @@ class ApiSpec: QuickSpec {
         describe("a collection request") {
 
             it("should do something") {
-                var apiResult: ApiResult<[CollectionBoardGame]>?
+                var userGames: [CollectionBoardGame]?
                 
-                GABoardGameGeek().getUserCollection("gca3020", brief: true, stats: true) { result in
-                    apiResult = result
-                    print(apiResult)
+                GABoardGameGeek().getUserCollection("tomvasel", brief: false, stats: true) { result in
+                    switch(result)
+                    {
+                    case .Success(let games):
+                        userGames = games
+                        //print(userGames)
+                    case .Failure(let error):
+                        print("The request Failed: \(error)")
+                    }
                 }
-
-                expect(apiResult).toEventuallyNot(beNil(), timeout: 150)
+                expect(userGames).toEventuallyNot(beNil(), timeout: 150)
             }
         }
+
+        describe("a game request") {
+
+            it("should do something") {
+                var games: [BoardGame]?
+                GABoardGameGeek().getGamesById([89575, 173404], stats: true) { result in
+                    switch(result)
+                    {
+                    case .Success(let gameList):
+                        games = gameList
+                        //print(games)
+                    case .Failure(let error):
+                        print("The request Failed: \(error)")
+                    }
+                }
+                expect(games).toEventuallyNot(beNil(), timeout: 150)
+            }
+
+        }
+
 
     }
 }
