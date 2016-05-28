@@ -1,5 +1,5 @@
 //
-//  XMLAttributeHelpers.swift
+//  XmlAttributeHelpers.swift
 //  GABoardGameGeek
 //
 //  Created by Geoffrey Amey on 4/15/16.
@@ -8,6 +8,8 @@
 
 import Foundation
 import SWXMLHash
+
+// MARK: - XML Attribute Deserializers
 
 extension XMLElement {
 

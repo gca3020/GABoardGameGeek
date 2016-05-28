@@ -14,7 +14,7 @@ class BoardGameSpec: QuickSpec {
 
     override func spec() {
 
-        xdescribe("a standard board game") {
+        describe("a standard board game") {
             var game: BoardGame?
             var parser: XMLIndexer?
 

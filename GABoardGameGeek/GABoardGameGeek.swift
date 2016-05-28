@@ -8,7 +8,6 @@
 
 import Foundation
 import SWXMLHash
-import Alamofire
 
 public class GABoardGameGeek {
 
@@ -28,7 +27,7 @@ public class GABoardGameGeek {
 
         // Set up the initial request parameters
         var requestParams = [String: String]()
-        requestParams["username"] = username.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        requestParams["username"] = username.URLQueryString
         requestParams["brief"] = (brief ? "1" : "0")
         requestParams["stats"] = (stats ? "1" : "0")
 
@@ -52,7 +51,7 @@ public class GABoardGameGeek {
         requestParams["id"] = ids.map { String($0) }.joinWithSeparator(",")
         requestParams["stats"] = (stats ? "1" : "0")
 
-        rawRequest(self.itemUrl, params: requestParams) { result in
+        networkAdapter.urlRequest(self.itemUrl, params: requestParams) { result in
             switch(result) {
             case .Success(let resultString):
                 do {
@@ -68,42 +67,32 @@ public class GABoardGameGeek {
         }
     }
 
-    // MARK: - Initializers
-
-    /**
-     The standard initializer for a GABoardGameGeek instance. Useful when overriding the default 
-     timeout value, or for
-
-     - parameter apiTimeout: The desired timeout in seconds for network requests.
-
-     - returns: A GABoardGameGeek instance to use for making API requests
-     */
-    init(apiTimeout: Int = 60, urlSession: NSURLSession? = nil) {
-        self.timeoutInSeconds = apiTimeout
-
-        // Use the timeout to create the manager that Alamofire will use
-        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
-        sessionConfig.timeoutIntervalForRequest = Double(apiTimeout)
-        self.afManager = Alamofire.Manager(configuration: sessionConfig)
-    }
-
-    deinit {
-        print("Deitinializing GABoardGameGeek")
+    // MARK: - Initializer
+    init() {
+        self.networkAdapter = NetworkAdapter()
+        self.xmlAdapter = XmlAdapter()
     }
 
     // MARK: - Private Functions
 
     /**
-     Make an API request specifically for a user collection. This function exists separately from the 
-     user callable function, since this will potentially be called multiple times while retrying.
 
      - parameter baseUrl: The Base URL of the request
      - parameter params:  The Encoded Params
      - parameter closure: The result closure
      */
+
+    /**
+     Make an API request specifically for a user collection. This function exists separately from the
+     user callable function, since this will potentially be called multiple times while retrying.
+
+     - parameter params:  The parameters of the Collection Request, already encoded as a URL
+     - parameter endTime: The absolute end time and date that we should stop retrying.
+     - parameter closure: The completion closure when we have either finished or failed
+     */
     private func collectionRequest(params: [String: String], endTime: NSDate, closure: ApiResult<[CollectionBoardGame]> -> ()) {
         // Make the raw request, and handle the result
-        rawRequest(self.collectionUrl, params: params) { result in
+        networkAdapter.urlRequest(self.collectionUrl, params: params) { result in
             switch(result) {
             case .Success(let xmlString):
                 do {
@@ -111,7 +100,7 @@ public class GABoardGameGeek {
                     let userGames: [CollectionBoardGame] = try parser["items"]["item"].value()
                     closure(.Success(userGames))
                 } catch {
-                    closure(.Failure(.ApiError("Error Parsing XML Response:")))
+                    closure(.Failure(.ApiError("Error Parsing XML Response: \(error)")))
                 }
 
             case .Failure(let error):
@@ -136,69 +125,13 @@ public class GABoardGameGeek {
         }
     }
 
-    /**
-     Make an API request to the given URL with the specified parameters. The result
-     is an asynchronous call to the supplied closure, taking an ApiResult.
-
-     - parameter baseUrl: The base URL to make a call on. This does NOT include parameters
-     - parameter params:  The parameters to make the call on. These should be URL Query Encoded already
-     - parameter closure: The closure to call with the response
-     */
-    private func rawRequest(baseUrl: String, params: [String: String], closure: ApiResult<String> -> ()) {
-        afManager.request(.GET, baseUrl, parameters: params)
-            .validate()
-            .responseString { response in
-                switch response.result {
-                case .Success:
-                    if let statusCode = response.response?.statusCode {
-                        if( statusCode == 200 ) {
-                            closure(.Success(response.result.value!))
-                        }
-                        else {
-                            closure(.Failure(.ServerError(statusCode)))
-                        }
-                    }
-                case .Failure(let error):
-                    closure(.Failure(.ConnectionError(error)))
-                }
-                print(self.collectionUrl)
-        }
-    }
-
-    /*
-    private func parseXml<ParseType: XMLIndexerDeserializable>(xml: String, elementPath: [String]) -> ApiResult<[ParseType]> {
-        
-    }
-
-    private func parseXml<ParseType: XMLIndexerDeserializable>(xml: String, elementPath: [String]) -> ApiResult<ParseType> {
-        do {
-            let parser = SWXMLHash.parse(xml)
-            let parsedValue: ParseType = try parser["items"]["item"].value()
-
-            //if(elementPath.count == 1) {
-            //    let parsedVal: Value = try parser["item"].value()
-            //} else if (elementPath.count == 2) {
-            //    let parsedVal: Value = try parser[elementPath[0]][elementPath[1]].value()
-            //} else {
-            //    return .Failure(.ApiError("Invalid Element Path: \(elementPath)"))
-            //}
-            return .Success(parsedValue)
-
-        } catch XMLDeserializationError.TypeConversionFailed(let type, let element) {
-            return .Failure(.XmlError("Error Parsing XML Response to \(type): \(element)"))
-        } catch {
-            return .Failure(.ApiError("Unhandled API Error: \(error)"))
-        }
-    }
-    */
-
     // MARK: - Private Member Variables
 
-    /// The number of seconds we should wait on an API call before declaring it a failure.
-    private let timeoutInSeconds: Int
+    /// A Network Adapter to separate out all of the networking functionality of the API
+    private let networkAdapter: NetworkAdapter
 
-    /// The Alamofire manager to use for all of our network requests
-    private let afManager: Alamofire.Manager
+    /// An XML Adapter to separate out all of the XML parsing code
+    private let xmlAdapter: XmlAdapter
 
     /// The BGG URL to use when querying a user's collection
     private let collectionUrl = "https://boardgamegeek.com/xmlapi2/collection"

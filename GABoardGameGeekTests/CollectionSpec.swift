@@ -14,7 +14,7 @@ class CollectionSpec: QuickSpec {
 
     override func spec() {
 
-        xdescribe("a collection board game") {
+        describe("a collection board game") {
             var game: CollectionBoardGame?
             var parser: XMLIndexer?
 
@@ -353,7 +353,7 @@ class CollectionSpec: QuickSpec {
                     "    <status prevowned=\"0\" fortrade=\"1\" want=\"0\" wanttoplay=\"0\" wanttobuy=\"0\" wishlist=\"0\" preordered=\"0\" lastmodified=\"2016-04-04 20:19:37\"/>" +
 
                     //"    <stats minplayers=\"1\" maxplayers=\"2\" minplaytime=\"20\" maxplaytime=\"60\" playingtime=\"45\" numowned=\"4444\">" +
-                    "    <stats maxplayers=\"2\" minplaytime=\"20\" maxplaytime=\"60\" playingtime=\"45\" numowned=\"4444\">" +
+                    "    <stats minplayers=\"1\" maxplayers=\"2\" minplaytime=\"20\" maxplaytime=\"60\" playingtime=\"45\">" +
                     "        <rating value=\"N/A\">" +
                     "            <average value=\"7.66143\"/>" +
                     "            <bayesaverage value=\"5.68734\"/>" +

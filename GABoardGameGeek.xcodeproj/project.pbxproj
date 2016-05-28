@@ -18,9 +18,11 @@
 		6C1A849F1CB5E84E004CD61F /* CollectionBoardGame+Deserializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1A849E1CB5E84E004CD61F /* CollectionBoardGame+Deserializers.swift */; };
 		6C383F5F1CB1A17C00A14737 /* GABoardGameGeek.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C383F5E1CB1A17C00A14737 /* GABoardGameGeek.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C383F661CB1A17C00A14737 /* GABoardGameGeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C383F5B1CB1A17C00A14737 /* GABoardGameGeek.framework */; };
-		6C383F761CB1A8AD00A14737 /* BoardGameGeekTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383F751CB1A8AD00A14737 /* BoardGameGeekTypes.swift */; };
-		6C7D29061CC16EA10089F9D3 /* XMLAttributeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7D29051CC16EA10089F9D3 /* XMLAttributeHelpers.swift */; };
+		6C383F761CB1A8AD00A14737 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C383F751CB1A8AD00A14737 /* ApiResult.swift */; };
+		6C7D29061CC16EA10089F9D3 /* XmlAttributeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7D29051CC16EA10089F9D3 /* XmlAttributeHelpers.swift */; };
 		6CA4B9B81CCD7F5C00FCFA7B /* ApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA4B9B71CCD7F5C00FCFA7B /* ApiSpec.swift */; };
+		6CD93B371CF9FCAD00B98723 /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD93B361CF9FCAC00B98723 /* NetworkAdapter.swift */; };
+		6CD93B391CFA034F00B98723 /* XmlAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD93B381CFA034F00B98723 /* XmlAdapter.swift */; };
 		7423A6C488DCFA9772903364 /* Pods_GABoardGameGeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075E393180958C85B3DA650D /* Pods_GABoardGameGeek.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,9 +54,11 @@
 		6C383F601CB1A17C00A14737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C383F651CB1A17C00A14737 /* GABoardGameGeekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GABoardGameGeekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C383F6C1CB1A17C00A14737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C383F751CB1A8AD00A14737 /* BoardGameGeekTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGameGeekTypes.swift; sourceTree = "<group>"; };
-		6C7D29051CC16EA10089F9D3 /* XMLAttributeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLAttributeHelpers.swift; sourceTree = "<group>"; };
+		6C383F751CB1A8AD00A14737 /* ApiResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
+		6C7D29051CC16EA10089F9D3 /* XmlAttributeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlAttributeHelpers.swift; sourceTree = "<group>"; };
 		6CA4B9B71CCD7F5C00FCFA7B /* ApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiSpec.swift; sourceTree = "<group>"; };
+		6CD93B361CF9FCAC00B98723 /* NetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
+		6CD93B381CFA034F00B98723 /* XmlAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlAdapter.swift; sourceTree = "<group>"; };
 		B26641CE4B1AA055D2FC8F0C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E92DE52673D44968F1D255 /* Pods-GABoardGameGeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeek/Pods-GABoardGameGeek.debug.xcconfig"; sourceTree = "<group>"; };
 		DDB6E6899A11013247BF6A05 /* Pods_GABoardGameGeekTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABoardGameGeekTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,16 +129,18 @@
 		6C383F5D1CB1A17C00A14737 /* GABoardGameGeek */ = {
 			isa = PBXGroup;
 			children = (
+				6C383F601CB1A17C00A14737 /* Info.plist */,
 				6C383F5E1CB1A17C00A14737 /* GABoardGameGeek.h */,
 				6C1A849C1CB5E79D004CD61F /* GABoardGameGeek.swift */,
+				6CD93B361CF9FCAC00B98723 /* NetworkAdapter.swift */,
+				6CD93B381CFA034F00B98723 /* XmlAdapter.swift */,
+				6C7D29051CC16EA10089F9D3 /* XmlAttributeHelpers.swift */,
+				6C383F751CB1A8AD00A14737 /* ApiResult.swift */,
+				5DB0B1F5C3192AE8C9F3B573 /* Utils.swift */,
 				5DB0BB8CB96009D5F23D4E9A /* BoardGame.swift */,
 				6C1A84961CB33E2B004CD61F /* CollectionBoardGame.swift */,
-				6C383F751CB1A8AD00A14737 /* BoardGameGeekTypes.swift */,
-				5DB0B1F5C3192AE8C9F3B573 /* Utils.swift */,
 				5DB0BEF06DF93DCFEDFDBD8C /* BoardGame+Deserializers.swift */,
 				6C1A849E1CB5E84E004CD61F /* CollectionBoardGame+Deserializers.swift */,
-				6C7D29051CC16EA10089F9D3 /* XMLAttributeHelpers.swift */,
-				6C383F601CB1A17C00A14737 /* Info.plist */,
 			);
 			path = GABoardGameGeek;
 			sourceTree = "<group>";
@@ -343,12 +349,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C7D29061CC16EA10089F9D3 /* XMLAttributeHelpers.swift in Sources */,
+				6C7D29061CC16EA10089F9D3 /* XmlAttributeHelpers.swift in Sources */,
+				6CD93B391CFA034F00B98723 /* XmlAdapter.swift in Sources */,
 				6C1A849F1CB5E84E004CD61F /* CollectionBoardGame+Deserializers.swift in Sources */,
-				6C383F761CB1A8AD00A14737 /* BoardGameGeekTypes.swift in Sources */,
+				6C383F761CB1A8AD00A14737 /* ApiResult.swift in Sources */,
 				6C1A849D1CB5E79D004CD61F /* GABoardGameGeek.swift in Sources */,
 				6C1A84971CB33E2B004CD61F /* CollectionBoardGame.swift in Sources */,
 				5DB0B33E0DF22D9F5DD69F2D /* BoardGame.swift in Sources */,
+				6CD93B371CF9FCAD00B98723 /* NetworkAdapter.swift in Sources */,
 				5DB0BFC6AD21C338004691DC /* Utils.swift in Sources */,
 				5DB0B89650B75A0793BF52F8 /* BoardGame+Deserializers.swift in Sources */,
 			);

@@ -79,19 +79,19 @@ public struct BoardGame {
     /// The name that this game should be sorted on. For example, "The Gallerist" with a sortIndex of 5
     /// will be sorted simply as "Gallerist".
     var sortName: String {
-        get { return Utils.getSortName(name, sortIndex: sortIndex) }
+        get { return name.getSortString(sortIndex) }
     }
 
     /// The NSURL to retrieve the game's image.
     /// - Note: Nil if the game has no imagePath, or if the imagePath is malformed.
     var imageUrl: NSURL? {
-        get { return Utils.urlFrom(imagePath) }
+        get { return NSURL(fromBggUrlString: imagePath) }
     }
 
     /// The NSURL to retrieve the game's thumbnail image.
     /// - Note: Nil if the game has no thumbnailPath, or if the thumbnailPath is malformed.
     var thumbnailUrl: NSURL? {
-        get { return Utils.urlFrom(thumbnailPath) }
+        get { return NSURL(fromBggUrlString: thumbnailPath) }
     }
 }
 

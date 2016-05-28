@@ -1,5 +1,5 @@
 //
-//  BoardGameGeekTypes.swift
+//  ApiResult.swift
 //  GABoardGameGeek
 //
 //  Created by Geoffrey Amey on 4/3/16.
