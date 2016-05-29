@@ -20,6 +20,7 @@
 		6C81790B1CFA18730063B106 /* BoardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8179071CFA18730063B106 /* BoardGame.swift */; };
 		6C81790C1CFA18730063B106 /* CollectionBoardGame+Deserializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8179081CFA18730063B106 /* CollectionBoardGame+Deserializers.swift */; };
 		6C81790D1CFA18730063B106 /* CollectionBoardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8179091CFA18730063B106 /* CollectionBoardGame.swift */; };
+		6C81790F1CFB26B30063B106 /* TestData in Resources */ = {isa = PBXBuildFile; fileRef = 6C81790E1CFB26B30063B106 /* TestData */; };
 		6CA4B9B81CCD7F5C00FCFA7B /* ApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA4B9B71CCD7F5C00FCFA7B /* ApiSpec.swift */; };
 		6CD93B371CF9FCAD00B98723 /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD93B361CF9FCAC00B98723 /* NetworkAdapter.swift */; };
 		6CD93B391CFA034F00B98723 /* XmlAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD93B381CFA034F00B98723 /* XmlAdapter.swift */; };
@@ -56,6 +57,7 @@
 		6C8179071CFA18730063B106 /* BoardGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGame.swift; sourceTree = "<group>"; };
 		6C8179081CFA18730063B106 /* CollectionBoardGame+Deserializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionBoardGame+Deserializers.swift"; sourceTree = "<group>"; };
 		6C8179091CFA18730063B106 /* CollectionBoardGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBoardGame.swift; sourceTree = "<group>"; };
+		6C81790E1CFB26B30063B106 /* TestData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestData; sourceTree = "<group>"; };
 		6CA4B9B71CCD7F5C00FCFA7B /* ApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiSpec.swift; sourceTree = "<group>"; };
 		6CD93B361CF9FCAC00B98723 /* NetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
 		6CD93B381CFA034F00B98723 /* XmlAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlAdapter.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		6C383F691CB1A17C00A14737 /* GABoardGameGeekTests */ = {
 			isa = PBXGroup;
 			children = (
+				6C81790E1CFB26B30063B106 /* TestData */,
 				6C383F6C1CB1A17C00A14737 /* Info.plist */,
 				6CA4B9B71CCD7F5C00FCFA7B /* ApiSpec.swift */,
 				5DB0B683DF9EE12F09182375 /* BoardGameSpec.swift */,
@@ -269,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C81790F1CFB26B30063B106 /* TestData in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +531,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gamey.GABoardGameGeekTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 			};
 			name = Debug;
 		};
@@ -538,6 +543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gamey.GABoardGameGeekTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 			};
 			name = Release;
 		};
