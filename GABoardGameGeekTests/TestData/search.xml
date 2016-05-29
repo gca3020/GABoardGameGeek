@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?><items total="22" termsofuse="http://boardgamegeek.com/xmlapi/termsofuse">			<item type="boardgame" id="30549">
+			<name type="primary" value="Pandemic"/>			
+							<yearpublished value="2008" />
+					</item>
+			<item type="boardgame" id="57139">
+			<name type="alternate" value="Pandemic Express"/>			
+							<yearpublished value="2009" />
+					</item>
+			<item type="boardgame" id="198928">
+			<name type="primary" value="Pandemic Iberia"/>			
+							<yearpublished value="2016" />
+					</item>
+			<item type="boardgame" id="161936">
+			<name type="primary" value="Pandemic Legacy: Season 1"/>			
+							<yearpublished value="2015" />
+					</item>
+			<item type="boardgame" id="157789">
+			<name type="primary" value="Pandemic: Contagion"/>			
+							<yearpublished value="2014" />
+					</item>
+			<item type="boardgame" id="137136">
+			<name type="primary" value="Pandemic: In the Lab"/>			
+							<yearpublished value="2013" />
+					</item>
+			<item type="boardgame" id="40849">
+			<name type="primary" value="Pandemic: On the Brink"/>			
+							<yearpublished value="2009" />
+					</item>
+			<item type="boardgame" id="185403">
+			<name type="primary" value="Pandemic: Promo Roles"/>			
+							<yearpublished value="2015" />
+					</item>
+			<item type="boardgame" id="192153">
+			<name type="primary" value="Pandemic: Reign of Cthulhu"/>			
+							<yearpublished value="2016" />
+					</item>
+			<item type="boardgame" id="168703">
+			<name type="primary" value="Pandemic: State of Emergency"/>			
+							<yearpublished value="2015" />
+					</item>
+			<item type="boardgame" id="150658">
+			<name type="primary" value="Pandemic: The Cure"/>			
+							<yearpublished value="2014" />
+					</item>
+				<item type="boardgameexpansion" id="137136">
+			<name type="primary" value="Pandemic: In the Lab"/>			
+							<yearpublished value="2013" />
+					</item>
+			<item type="boardgameexpansion" id="40849">
+			<name type="primary" value="Pandemic: On the Brink"/>			
+							<yearpublished value="2009" />
+					</item>
+			<item type="boardgameexpansion" id="185403">
+			<name type="primary" value="Pandemic: Promo Roles"/>			
+							<yearpublished value="2015" />
+					</item>
+			<item type="boardgameexpansion" id="168703">
+			<name type="primary" value="Pandemic: State of Emergency"/>			
+							<yearpublished value="2015" />
+					</item>
+					<item type="rpgitem" id="182291">
+			<name type="primary" value="Pandemic"/>			
+							<yearpublished value="2015" />
+					</item>
+						<item type="videogame" id="131688">
+			<name type="primary" value="Pandemic"/>			
+					</item>
+			<item type="videogame" id="131689">
+			<name type="primary" value="Pandemic 2"/>			
+					</item>
+			<item type="videogame" id="131691">
+			<name type="primary" value="Pandemic: American Swine"/>			
+					</item>
+			<item type="videogame" id="131690">
+			<name type="primary" value="Pandemic: Extinction of Man"/>			
+					</item>
+			<item type="videogame" id="148659">
+			<name type="primary" value="Pandemic: The Board Game"/>			
+					</item>
+			<item type="videogame" id="88446">
+			<name type="primary" value="Zombie Pandemic"/>			
+					</item>
+	</items>

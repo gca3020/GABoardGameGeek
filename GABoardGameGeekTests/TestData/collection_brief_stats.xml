@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<items totalitems="123" termsofuse="http://boardgamegeek.com/xmlapi/termsofuse" pubdate="Mon, 23 May 2016 23:37:34 +0000">
+		<item objecttype="thing" objectid="177590" subtype="boardgame" collid="29096777">
+	<name sortindex="1">13 Days: The Cuban Missile Crisis</name>
+				<stats minplayers="2"																	maxplayers="2"																	minplaytime="30"																	maxplaytime="45"																	playingtime="45"																	numowned="362" >
+				<rating value="N/A">			<average value="7.81039" />
+			<bayesaverage value="5.88034" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-04-04 20:19:37" />
+								</item>
+		<item objecttype="thing" objectid="68448" subtype="boardgame" collid="28559665">
+	<name sortindex="1">7 Wonders</name>
+				<stats minplayers="2"																	maxplayers="7"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="53071" >
+				<rating value="7">			<average value="7.85191" />
+			<bayesaverage value="7.77005" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-23 22:47:11" />
+								</item>
+		<item objecttype="thing" objectid="173346" subtype="boardgame" collid="30359043">
+	<name sortindex="1">7 Wonders: Duel</name>
+				<stats minplayers="2"																	maxplayers="2"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="13077" >
+				<rating value="8.5">			<average value="8.21996" />
+			<bayesaverage value="7.9402" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-02-23 15:28:17" />
+								</item>
+		<item objecttype="thing" objectid="31260" subtype="boardgame" collid="28226246">
+	<name sortindex="1">Agricola</name>
+				<stats minplayers="1"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="150"																	playingtime="150"																	numowned="51594" >
+				<rating value="8">			<average value="8.09043" />
+			<bayesaverage value="8.00449" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-10 08:50:27" />
+								</item>
+		<item objecttype="thing" objectid="161970" subtype="boardgame" collid="28439050">
+	<name sortindex="1">Alchemists</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="120"																	maxplaytime="120"																	playingtime="120"																	numowned="9328" >
+				<rating value="9">			<average value="7.83418" />
+			<bayesaverage value="7.55559" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-23 14:54:41" />
+								</item>
+		<item objecttype="thing" objectid="48726" subtype="boardgame" collid="29622879">
+	<name sortindex="1">Alien Frontiers</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="90"																	maxplaytime="90"																	playingtime="90"																	numowned="10188" >
+				<rating value="N/A">			<average value="7.52915" />
+			<bayesaverage value="7.37064" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:38:51" />
+								</item>
+		<item objecttype="thing" objectid="27225" subtype="boardgame" collid="28226320">
+	<name sortindex="1">Bananagrams</name>
+				<stats minplayers="1"																	maxplayers="8"																	minplaytime="15"																	maxplaytime="15"																	playingtime="15"																	numowned="7296" >
+				<rating value="5">			<average value="6.35944" />
+			<bayesaverage value="6.19914" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:36:02" />
+								</item>
+		<item objecttype="thing" objectid="143741" subtype="boardgame" collid="29155985">
+	<name sortindex="1">BANG! The Dice Game</name>
+				<stats minplayers="3"																	maxplayers="8"																	minplaytime="15"																	maxplaytime="15"																	playingtime="15"																	numowned="11536" >
+				<rating value="7">			<average value="7.03228" />
+			<bayesaverage value="6.86523" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:36:38" />
+								</item>
+		<item objecttype="thing" objectid="157403" subtype="boardgame" collid="28295502">
+	<name sortindex="1">Black Fleet</name>
+				<stats minplayers="3"																	maxplayers="4"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="3466" >
+				<rating value="7">			<average value="7.14822" />
+			<bayesaverage value="6.68517" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:29:28" />
+								</item>
+		<item objecttype="thing" objectid="170216" subtype="boardgame" collid="34191812">
+	<name sortindex="1">Blood Rage</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="60"																	maxplaytime="90"																	playingtime="90"																	numowned="7855" >
+				<rating value="N/A">			<average value="8.26088" />
+			<bayesaverage value="7.84584" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-05-02 17:32:23" />
+								</item>
+		<item objecttype="thing" objectid="11" subtype="boardgame" collid="29622842">
+	<name sortindex="1">Bohnanza</name>
+				<stats minplayers="2"																	maxplayers="7"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="34708" >
+				<rating value="N/A">			<average value="7.07922" />
+			<bayesaverage value="6.99858" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:38:45" />
+								</item>
+		<item objecttype="thing" objectid="136888" subtype="boardgame" collid="29622875">
+	<name sortindex="1">Bruges</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="6942" >
+				<rating value="N/A">			<average value="7.52517" />
+			<bayesaverage value="7.27679" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:38:41" />
+								</item>
+		<item objecttype="thing" objectid="822" subtype="boardgame" collid="28226263">
+	<name sortindex="1">Carcassonne</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="45"																	playingtime="45"																	numowned="77813" >
+				<rating value="7">			<average value="7.43499" />
+			<bayesaverage value="7.3384" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:36:05" />
+								</item>
+		<item objecttype="thing" objectid="5405" subtype="boardgame" collid="28226271">
+	<name sortindex="1">Carcassonne: Expansion 2 – Traders &amp; Builders</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="22948" >
+				<rating value="7">			<average value="7.5895" />
+			<bayesaverage value="7.4143" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:36:15" />
+								</item>
+		<item objecttype="thing" objectid="2591" subtype="boardgame" collid="28226265">
+	<name sortindex="1">Carcassonne: The River</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="14297" >
+				<rating value="7">			<average value="6.94645" />
+			<bayesaverage value="6.76852" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:36:12" />
+								</item>
+		<item objecttype="thing" objectid="50381" subtype="boardgame" collid="28226308">
+	<name sortindex="1">Cards Against Humanity</name>
+				<stats minplayers="4"																	maxplayers="30"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="17394" >
+				<rating value="8">			<average value="6.36286" />
+			<bayesaverage value="6.19641" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:36:18" />
+								</item>
+		<item objecttype="thing" objectid="134607" subtype="boardgame" collid="28226314">
+	<name sortindex="1">Cards Against Humanity: Holiday Expansion</name>
+				<stats minplayers="4"																	maxplayers="30"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="2414" >
+				<rating value="7">			<average value="6.91271" />
+			<bayesaverage value="6.0539" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:36:31" />
+								</item>
+		<item objecttype="thing" objectid="140361" subtype="boardgame" collid="28226310">
+	<name sortindex="1">Cards Against Humanity: Third Expansion</name>
+				<stats minplayers="4"																	maxplayers="30"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="4633" >
+				<rating value="8">			<average value="7.14973" />
+			<bayesaverage value="6.41226" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:36:34" />
+								</item>
+		<item objecttype="thing" objectid="84876" subtype="boardgame" collid="29577003">
+	<name sortindex="5">The Castles of Burgundy</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="30"																	maxplaytime="90"																	playingtime="90"																	numowned="26154" >
+				<rating value="7.5">			<average value="8.10685" />
+			<bayesaverage value="7.98842" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 14:57:30" />
+								</item>
+		<item objecttype="thing" objectid="178900" subtype="boardgame" collid="29738875">
+	<name sortindex="1">Codenames</name>
+				<stats minplayers="2"																	maxplayers="8"																	minplaytime="15"																	maxplaytime="15"																	playingtime="15"																	numowned="22463" >
+				<rating value="9.5">			<average value="8.02414" />
+			<bayesaverage value="7.86598" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:37:59" />
+								</item>
+		<item objecttype="thing" objectid="39463" subtype="boardgame" collid="31847978">
+	<name sortindex="1">Cosmic Encounter</name>
+				<stats minplayers="3"																	maxplayers="5"																	minplaytime="60"																	maxplaytime="120"																	playingtime="120"																	numowned="18536" >
+				<rating value="N/A">			<average value="7.61346" />
+			<bayesaverage value="7.47612" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:38:34" />
+								</item>
+		<item objecttype="thing" objectid="131357" subtype="boardgame" collid="34303585">
+	<name sortindex="1">Coup</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="15"																	maxplaytime="15"																	playingtime="15"																	numowned="24374" >
+				<rating value="N/A">			<average value="7.16722" />
+			<bayesaverage value="7.05441" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-04-28 08:07:12" />
+								</item>
+		<item objecttype="thing" objectid="521" subtype="boardgame" collid="31762355">
+	<name sortindex="1">Crokinole</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="4699" >
+				<rating value="N/A">			<average value="7.80345" />
+			<bayesaverage value="7.58059" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="1" wishlistpriority="3" preordered="0" lastmodified="2015-12-18 09:38:29" />
+								</item>
+		<item objecttype="thing" objectid="143986" subtype="boardgame" collid="33326655">
+	<name sortindex="1">CV</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="3419" >
+				<rating value="N/A">			<average value="6.87402" />
+			<bayesaverage value="6.54171" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-02-29 12:31:23" />
+								</item>
+		<item objecttype="thing" objectid="150376" subtype="boardgame" collid="29622779">
+	<name sortindex="1">Dead of Winter: A Crossroads Game</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="210"																	playingtime="210"																	numowned="21944" >
+				<rating value="8.5">			<average value="7.98218" />
+			<bayesaverage value="7.80694" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:38:07" />
+								</item>
+		<item objecttype="thing" objectid="152162" subtype="boardgame" collid="29622892">
+	<name sortindex="1">Diamonds</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="20"																	maxplaytime="30"																	playingtime="30"																	numowned="3913" >
+				<rating value="N/A">			<average value="7.05351" />
+			<bayesaverage value="6.67878" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:38:23" />
+								</item>
+		<item objecttype="thing" objectid="61902" subtype="boardgame" collid="28226325">
+	<name sortindex="1">Disney Apples to Apples</name>
+				<stats minplayers="4"																	maxplayers="8"																	minplaytime="15"																	maxplaytime="15"																	playingtime="15"																	numowned="316" >
+				<rating value="3">			<average value="5.90823" />
+			<bayesaverage value="5.53881" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:37:15" />
+								</item>
+		<item objecttype="thing" objectid="15163" subtype="boardgame" collid="28226328">
+	<name sortindex="1">Disney Magic Kingdom Game</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="224" >
+				<rating value="3">			<average value="5.44457" />
+			<bayesaverage value="5.48195" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:37:25" />
+								</item>
+		<item objecttype="thing" objectid="39856" subtype="boardgame" collid="28226290">
+	<name sortindex="1">Dixit</name>
+				<stats minplayers="3"																	maxplayers="6"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="32569" >
+				<rating value="7">			<average value="7.39006" />
+			<bayesaverage value="7.29696" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:37:33" />
+								</item>
+		<item objecttype="thing" objectid="36218" subtype="boardgame" collid="28226283">
+	<name sortindex="1">Dominion</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="61911" >
+				<rating value="6">			<average value="7.73765" />
+			<bayesaverage value="7.6515" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 15:01:05" />
+								</item>
+		<item objecttype="thing" objectid="85250" subtype="boardgame" collid="28295902">
+	<name sortindex="5">The Dwarf King</name>
+				<stats minplayers="3"																	maxplayers="5"																	minplaytime="40"																	maxplaytime="40"																	playingtime="40"																	numowned="1635" >
+				<rating value="N/A">			<average value="6.53107" />
+			<bayesaverage value="6.0846" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:38:16" />
+								</item>
+		<item objecttype="thing" objectid="72125" subtype="boardgame" collid="31846580">
+	<name sortindex="1">Eclipse</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="60"																	maxplaytime="200"																	playingtime="200"																	numowned="19509" >
+				<rating value="N/A">			<average value="8.05117" />
+			<bayesaverage value="7.90676" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:45:42" />
+								</item>
+		<item objecttype="thing" objectid="146021" subtype="boardgame" collid="29622789">
+	<name sortindex="1">Eldritch Horror</name>
+				<stats minplayers="1"																	maxplayers="8"																	minplaytime="120"																	maxplaytime="240"																	playingtime="240"																	numowned="17767" >
+				<rating value="N/A">			<average value="7.94523" />
+			<bayesaverage value="7.71511" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:38:11" />
+								</item>
+		<item objecttype="thing" objectid="172225" subtype="boardgame" collid="29096769">
+	<name sortindex="1">Exploding Kittens</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="15"																	maxplaytime="15"																	playingtime="15"																	numowned="6140" >
+				<rating value="7">			<average value="5.79103" />
+			<bayesaverage value="5.63354" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-04 05:40:22" />
+								</item>
+		<item objecttype="thing" objectid="172242" subtype="boardgame" collid="29096771">
+	<name sortindex="1">Exploding Kittens: NSFW Deck</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="10"																	maxplaytime="20"																	playingtime="20"																	numowned="4845" >
+				<rating value="7">			<average value="6.1509" />
+			<bayesaverage value="5.8341" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-04 05:40:28" />
+								</item>
+		<item objecttype="thing" objectid="13823" subtype="boardgame" collid="30167606">
+	<name sortindex="1">Fairy Tale</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="9085" >
+				<rating value="7.5">			<average value="6.8133" />
+			<bayesaverage value="6.67011" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:38:25" />
+								</item>
+		<item objecttype="thing" objectid="157354" subtype="boardgame" collid="28226251">
+	<name sortindex="1">Five Tribes</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="40"																	maxplaytime="80"																	playingtime="80"																	numowned="15412" >
+				<rating value="9">			<average value="7.84829" />
+			<bayesaverage value="7.67119" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:37:55" />
+								</item>
+		<item objecttype="thing" objectid="258" subtype="boardgame" collid="28226357">
+	<name sortindex="1">Fluxx</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="5"																	maxplaytime="30"																	playingtime="30"																	numowned="16811" >
+				<rating value="6">			<average value="5.70218" />
+			<bayesaverage value="5.59883" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:38:04" />
+								</item>
+		<item objecttype="thing" objectid="172" subtype="boardgame" collid="28295918">
+	<name sortindex="1">For Sale</name>
+				<stats minplayers="3"																	maxplayers="6"																	minplaytime="20"																	maxplaytime="20"																	playingtime="20"																	numowned="14912" >
+				<rating value="7">			<average value="7.21462" />
+			<bayesaverage value="7.11066" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:38:30" />
+								</item>
+		<item objecttype="thing" objectid="136063" subtype="boardgame" collid="28226335">
+	<name sortindex="1">Forbidden Desert</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="18821" >
+				<rating value="8">			<average value="7.36127" />
+			<bayesaverage value="7.206" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:38:09" />
+								</item>
+		<item objecttype="thing" objectid="153748" subtype="boardgame" collid="28226337">
+	<name sortindex="1">Forbidden Desert: Storm Tracker Gear Card</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="612" >
+				<rating value="8">			<average value="6.73243" />
+			<bayesaverage value="5.6521" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:38:14" />
+								</item>
+		<item objecttype="thing" objectid="31481" subtype="boardgame" collid="31847984">
+	<name sortindex="1">Galaxy Trucker</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="17637" >
+				<rating value="N/A">			<average value="7.4974" />
+			<bayesaverage value="7.39859" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 09:24:26" />
+								</item>
+		<item objecttype="thing" objectid="125153" subtype="boardgame" collid="32011968">
+	<name sortindex="5">The Gallerist</name>
+				<stats minplayers="1"																	maxplayers="4"																	minplaytime="120"																	maxplaytime="120"																	playingtime="120"																	numowned="3012" >
+				<rating value="N/A">			<average value="8.11852" />
+			<bayesaverage value="7.256" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-25 07:47:48" />
+								</item>
+		<item objecttype="thing" objectid="156420" subtype="boardgame" collid="28226253">
+	<name sortindex="1">Geek Out! Pop Culture Party</name>
+				<stats minplayers="2"																	maxplayers="99"																	minplaytime="20"																	maxplaytime="20"																	playingtime="20"																	numowned="273" >
+				<rating value="5">			<average value="6.3164" />
+			<bayesaverage value="5.5767" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 15:03:36" />
+								</item>
+		<item objecttype="thing" objectid="12692" subtype="boardgame" collid="28226504">
+	<name sortindex="1">Gloom</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="14573" >
+				<rating value="6">			<average value="6.39443" />
+			<bayesaverage value="6.25307" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 15:03:50" />
+								</item>
+		<item objecttype="thing" objectid="37654" subtype="boardgame" collid="28253217">
+	<name sortindex="1">Gloom: Unfortunate Expeditions</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="2246" >
+				<rating value="N/A">			<average value="6.63152" />
+			<bayesaverage value="5.91358" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 15:03:54" />
+								</item>
+		<item objecttype="thing" objectid="19857" subtype="boardgame" collid="31848035">
+	<name sortindex="1">Glory to Rome</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="11468" >
+				<rating value="N/A">			<average value="7.51018" />
+			<bayesaverage value="7.36065" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 09:28:21" />
+								</item>
+		<item objecttype="thing" objectid="142992" subtype="boardgame" collid="28324873">
+	<name sortindex="1">Gravwell: Escape from the 9th Dimension</name>
+				<stats minplayers="1"																	maxplayers="4"																	minplaytime="20"																	maxplaytime="20"																	playingtime="20"																	numowned="2416" >
+				<rating value="7">			<average value="7.07012" />
+			<bayesaverage value="6.55332" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 16:04:10" />
+								</item>
+		<item objecttype="thing" objectid="116" subtype="boardgame" collid="28295527">
+	<name sortindex="1">Guillotine</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="18134" >
+				<rating value="7">			<average value="6.53387" />
+			<bayesaverage value="6.4366" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:34:58" />
+								</item>
+		<item objecttype="thing" objectid="98778" subtype="boardgame" collid="28226354">
+	<name sortindex="1">Hanabi</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="25"																	maxplaytime="25"																	playingtime="25"																	numowned="29854" >
+				<rating value="7">			<average value="7.28462" />
+			<bayesaverage value="7.20019" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:38:54" />
+								</item>
+		<item objecttype="thing" objectid="2655" subtype="boardgame" collid="28448755">
+	<name sortindex="1">Hive</name>
+				<stats minplayers="2"																	maxplayers="2"																	minplaytime="20"																	maxplaytime="20"																	playingtime="20"																	numowned="21677" >
+				<rating value="6">			<average value="7.34329" />
+			<bayesaverage value="7.24233" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-15 16:23:08" />
+								</item>
+		<item objecttype="thing" objectid="154203" subtype="boardgame" collid="29622901">
+	<name sortindex="1">Imperial Settlers</name>
+				<stats minplayers="1"																	maxplayers="4"																	minplaytime="45"																	maxplaytime="90"																	playingtime="90"																	numowned="11954" >
+				<rating value="N/A">			<average value="7.65057" />
+			<bayesaverage value="7.43763" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:38:01" />
+								</item>
+		<item objecttype="thing" objectid="148949" subtype="boardgame" collid="29622786">
+	<name sortindex="1">Istanbul</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="40"																	maxplaytime="60"																	playingtime="60"																	numowned="10320" >
+				<rating value="N/A">			<average value="7.62082" />
+			<bayesaverage value="7.41858" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:37:57" />
+								</item>
+		<item objecttype="thing" objectid="54043" subtype="boardgame" collid="31847985">
+	<name sortindex="1">Jaipur</name>
+				<stats minplayers="2"																	maxplayers="2"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="18466" >
+				<rating value="6.5">			<average value="7.54159" />
+			<bayesaverage value="7.41246" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 16:04:03" />
+								</item>
+		<item objecttype="thing" objectid="28023" subtype="boardgame" collid="28295905">
+	<name sortindex="1">Jamaica</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="30"																	maxplaytime="60"																	playingtime="60"																	numowned="10301" >
+				<rating value="8">			<average value="7.0982" />
+			<bayesaverage value="6.92857" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-06-08 12:32:15" />
+								</item>
+		<item objecttype="thing" objectid="127023" subtype="boardgame" collid="31847976">
+	<name sortindex="1">Kemet</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="90"																	maxplaytime="120"																	playingtime="120"																	numowned="8768" >
+				<rating value="N/A">			<average value="7.78162" />
+			<bayesaverage value="7.52588" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 09:23:50" />
+								</item>
+		<item objecttype="thing" objectid="122515" subtype="boardgame" collid="31846584">
+	<name sortindex="1">Keyflower</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="90"																	maxplaytime="120"																	playingtime="120"																	numowned="11267" >
+				<rating value="N/A">			<average value="7.98283" />
+			<bayesaverage value="7.77346" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:46:03" />
+								</item>
+		<item objecttype="thing" objectid="27162" subtype="boardgame" collid="29155974">
+	<name sortindex="1">Kingsburg</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="90"																	maxplaytime="90"																	playingtime="90"																	numowned="13115" >
+				<rating value="9">			<average value="7.24874" />
+			<bayesaverage value="7.13365" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-07-17 15:48:00" />
+								</item>
+		<item objecttype="thing" objectid="39775" subtype="boardgame" collid="29622867">
+	<name sortindex="1">Kingsburg: To Forge a Realm</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="90"																	maxplaytime="90"																	playingtime="90"																	numowned="6472" >
+				<rating value="9">			<average value="7.91289" />
+			<bayesaverage value="7.45314" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-09 14:32:37" />
+								</item>
+		<item objecttype="thing" objectid="129437" subtype="boardgame" collid="28226286">
+	<name sortindex="1">Legendary: A Marvel Deck Building Game</name>
+				<stats minplayers="1"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="14167" >
+				<rating value="9">			<average value="7.62875" />
+			<bayesaverage value="7.39257" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:38:42" />
+								</item>
+		<item objecttype="thing" objectid="186845" subtype="boardgame" collid="33868964">
+	<name sortindex="1">Legendary: Captain America 75th Anniversary</name>
+				<stats minplayers="1"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="60"																	playingtime="60"																	numowned="926" >
+				<rating value="N/A">			<average value="8.34946" />
+			<bayesaverage value="5.88576" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-04-03 09:12:40" />
+								</item>
+		<item objecttype="thing" objectid="137762" subtype="boardgame" collid="29622762">
+	<name sortindex="1">Legendary: Dark City</name>
+				<stats minplayers="1"																	maxplayers="5"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="7530" >
+				<rating value="8.5">			<average value="8.35026" />
+			<bayesaverage value="7.67142" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-09 14:33:38" />
+								</item>
+		<item objecttype="thing" objectid="163106" subtype="boardgame" collid="28295932">
+	<name sortindex="1">Legendary: Guardians of the Galaxy</name>
+				<stats minplayers="1"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="4665" >
+				<rating value="8.5">			<average value="8.1225" />
+			<bayesaverage value="7.09354" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-09 14:33:46" />
+								</item>
+		<item objecttype="thing" objectid="175156" subtype="boardgame" collid="29622922">
+	<name sortindex="1">Legendary: Secret Wars – Volume 1</name>
+				<stats minplayers="1"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="60"																	playingtime="60"																	numowned="2430" >
+				<rating value="8.5">			<average value="8.35717" />
+			<bayesaverage value="6.75274" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 16:08:40" />
+								</item>
+		<item objecttype="thing" objectid="125618" subtype="boardgame" collid="31898241">
+	<name sortindex="1">Libertalia</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="8841" >
+				<rating value="7">			<average value="7.3007" />
+			<bayesaverage value="7.11372" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:39:43" />
+								</item>
+		<item objecttype="thing" objectid="129622" subtype="boardgame" collid="28226444">
+	<name sortindex="1">Love Letter</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="20"																	maxplaytime="20"																	playingtime="20"																	numowned="48657" >
+				<rating value="8">			<average value="7.35806" />
+			<bayesaverage value="7.27984" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:38:59" />
+								</item>
+		<item objecttype="thing" objectid="176558" subtype="boardgame" collid="32011975">
+	<name sortindex="1">Mafia de Cuba</name>
+				<stats minplayers="6"																	maxplayers="12"																	minplaytime="10"																	maxplaytime="20"																	playingtime="20"																	numowned="1999" >
+				<rating value="N/A">			<average value="6.83617" />
+			<bayesaverage value="6.23988" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-25 07:48:23" />
+								</item>
+		<item objecttype="thing" objectid="96848" subtype="boardgame" collid="28226236">
+	<name sortindex="1">Mage Knight Board Game</name>
+				<stats minplayers="1"																	maxplayers="4"																	minplaytime="150"																	maxplaytime="150"																	playingtime="150"																	numowned="21911" >
+				<rating value="6">			<average value="8.14503" />
+			<bayesaverage value="7.96121" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-03-12 09:13:14" />
+								</item>
+		<item objecttype="thing" objectid="148575" subtype="boardgame" collid="28707608">
+	<name sortindex="1">Marvel Dice Masters: Avengers vs. X-Men</name>
+				<stats minplayers="2"																	maxplayers="2"																	minplaytime="15"																	maxplaytime="60"																	playingtime="60"																	numowned="8110" >
+				<rating value="7">			<average value="7.43017" />
+			<bayesaverage value="7.09347" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-06-03 22:03:25" />
+								</item>
+		<item objecttype="thing" objectid="154386" subtype="boardgame" collid="29622904">
+	<name sortindex="1">Medieval Academy</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="2435" >
+				<rating value="8.5">			<average value="7.18325" />
+			<bayesaverage value="6.60764" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 16:04:30" />
+								</item>
+		<item objecttype="thing" objectid="10630" subtype="boardgame" collid="28226243">
+	<name sortindex="1">Memoir &#039;44</name>
+				<stats minplayers="2"																	maxplayers="2"																	minplaytime="30"																	maxplaytime="60"																	playingtime="60"																	numowned="21504" >
+				<rating value="8">			<average value="7.52372" />
+			<bayesaverage value="7.39571" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 15:04:04" />
+								</item>
+		<item objecttype="thing" objectid="21123" subtype="boardgame" collid="28253223">
+	<name sortindex="1">Monopoly: Disney/Pixar</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="90"																	maxplaytime="90"																	playingtime="90"																	numowned="210" >
+				<rating value="3">			<average value="4.84521" />
+			<bayesaverage value="5.44049" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:39:20" />
+								</item>
+		<item objecttype="thing" objectid="72287" subtype="boardgame" collid="29155989">
+	<name sortindex="1">Mr. Jack Pocket</name>
+				<stats minplayers="2"																	maxplayers="2"																	minplaytime="15"																	maxplaytime="15"																	playingtime="15"																	numowned="6954" >
+				<rating value="8">			<average value="7.03813" />
+			<bayesaverage value="6.78077" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-07-07 07:33:25" />
+								</item>
+		<item objecttype="thing" objectid="163413" subtype="boardgame" collid="29622857">
+	<name sortindex="1">Murano</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="60"																	maxplaytime="75"																	playingtime="75"																	numowned="1280" >
+				<rating value="N/A">			<average value="7.30999" />
+			<bayesaverage value="6.52183" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:37:40" />
+								</item>
+		<item objecttype="thing" objectid="915" subtype="boardgame" collid="28295894">
+	<name sortindex="1">Mystery of the Abbey</name>
+				<stats minplayers="3"																	maxplayers="6"																	minplaytime="120"																	maxplaytime="120"																	playingtime="120"																	numowned="7557" >
+				<rating value="N/A">			<average value="6.5446" />
+			<bayesaverage value="6.40669" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:37:30" />
+								</item>
+		<item objecttype="thing" objectid="126042" subtype="boardgame" collid="31406857">
+	<name sortindex="1">Nations</name>
+				<stats minplayers="1"																	maxplayers="5"																	minplaytime="40"																	maxplaytime="200"																	playingtime="200"																	numowned="7595" >
+				<rating value="9">			<average value="7.8059" />
+			<bayesaverage value="7.55109" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 16:08:10" />
+								</item>
+		<item objecttype="thing" objectid="161757" subtype="boardgame" collid="29738880">
+	<name sortindex="1">New Salem</name>
+				<stats minplayers="3"																	maxplayers="8"																	minplaytime="30"																	maxplaytime="45"																	playingtime="45"																	numowned="520" >
+				<rating value="8.5">			<average value="6.73042" />
+			<bayesaverage value="5.8064" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 16:06:47" />
+								</item>
+		<item objecttype="thing" objectid="12942" subtype="boardgame" collid="29622851">
+	<name sortindex="1">No Thanks!</name>
+				<stats minplayers="3"																	maxplayers="5"																	minplaytime="20"																	maxplaytime="20"																	playingtime="20"																	numowned="15852" >
+				<rating value="N/A">			<average value="7.03958" />
+			<bayesaverage value="6.94318" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:43:51" />
+								</item>
+		<item objecttype="thing" objectid="147949" subtype="boardgame" collid="31848060">
+	<name sortindex="1">One Night Ultimate Werewolf</name>
+				<stats minplayers="3"																	maxplayers="10"																	minplaytime="10"																	maxplaytime="10"																	playingtime="10"																	numowned="12132" >
+				<rating value="7.5">			<average value="7.44234" />
+			<bayesaverage value="7.23158" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 09:29:43" />
+								</item>
+		<item objecttype="thing" objectid="30549" subtype="boardgame" collid="28226239">
+	<name sortindex="1">Pandemic</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="30"																	maxplaytime="90"																	playingtime="90"																	numowned="70565" >
+				<rating value="9">			<average value="7.66656" />
+			<bayesaverage value="7.58655" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:39:24" />
+								</item>
+		<item objecttype="thing" objectid="161936" subtype="boardgame" collid="32011980">
+	<name sortindex="1">Pandemic Legacy: Season 1</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="14261" >
+				<rating value="10">			<average value="8.63789" />
+			<bayesaverage value="8.36053" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 16:08:00" />
+								</item>
+		<item objecttype="thing" objectid="40849" subtype="boardgame" collid="28226257">
+	<name sortindex="1">Pandemic: On the Brink</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="26347" >
+				<rating value="9">			<average value="8.11856" />
+			<bayesaverage value="7.90598" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:39:30" />
+								</item>
+		<item objecttype="thing" objectid="150658" subtype="boardgame" collid="29096763">
+	<name sortindex="1">Pandemic: The Cure</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="6334" >
+				<rating value="8">			<average value="7.45227" />
+			<bayesaverage value="7.12271" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-07-07 07:30:26" />
+								</item>
+		<item objecttype="thing" objectid="2651" subtype="boardgame" collid="28295939">
+	<name sortindex="1">Power Grid</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="120"																	maxplaytime="120"																	playingtime="120"																	numowned="42271" >
+				<rating value="6">			<average value="7.97382" />
+			<bayesaverage value="7.90056" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-07-07 07:30:30" />
+								</item>
+		<item objecttype="thing" objectid="3076" subtype="boardgame" collid="29622886">
+	<name sortindex="1">Puerto Rico</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="90"																	maxplaytime="150"																	playingtime="150"																	numowned="48150" >
+				<rating value="N/A">			<average value="8.12156" />
+			<bayesaverage value="8.02232" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:37:12" />
+								</item>
+		<item objecttype="thing" objectid="28143" subtype="boardgame" collid="28559687">
+	<name sortindex="1">Race for the Galaxy</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="30"																	maxplaytime="60"																	playingtime="60"																	numowned="36483" >
+				<rating value="6">			<average value="7.78478" />
+			<bayesaverage value="7.70404" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-23 22:49:12" />
+								</item>
+		<item objecttype="thing" objectid="24310" subtype="boardgame" collid="34303575">
+	<name sortindex="5">The Red Dragon Inn</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="5669" >
+				<rating value="N/A">			<average value="6.56118" />
+			<bayesaverage value="6.34706" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-04-28 08:06:47" />
+								</item>
+		<item objecttype="thing" objectid="41114" subtype="boardgame" collid="28226553">
+	<name sortindex="5">The Resistance</name>
+				<stats minplayers="5"																	maxplayers="10"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="31358" >
+				<rating value="7">			<average value="7.47485" />
+			<bayesaverage value="7.37155" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:39:33" />
+								</item>
+		<item objecttype="thing" objectid="1829" subtype="boardgame" collid="28226254">
+	<name sortindex="1">Risk 2210 A.D.</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="240"																	maxplaytime="240"																	playingtime="240"																	numowned="8633" >
+				<rating value="6">			<average value="6.72215" />
+			<bayesaverage value="6.46867" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 15:04:11" />
+								</item>
+		<item objecttype="thing" objectid="105134" subtype="boardgame" collid="28226256">
+	<name sortindex="1">Risk Legacy</name>
+				<stats minplayers="3"																	maxplayers="5"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="7395" >
+				<rating value="9">			<average value="7.64787" />
+			<bayesaverage value="7.29205" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:40:03" />
+								</item>
+		<item objecttype="thing" objectid="121921" subtype="boardgame" collid="31846581">
+	<name sortindex="1">Robinson Crusoe: Adventures on the Cursed Island</name>
+				<stats minplayers="1"																	maxplayers="4"																	minplaytime="90"																	maxplaytime="180"																	playingtime="180"																	numowned="19710" >
+				<rating value="N/A">			<average value="8.04779" />
+			<bayesaverage value="7.86151" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="1" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-03-12 07:04:24" />
+								</item>
+		<item objecttype="thing" objectid="132531" subtype="boardgame" collid="29577002">
+	<name sortindex="1">Roll for the Galaxy</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="11680" >
+				<rating value="8.5">			<average value="7.90583" />
+			<bayesaverage value="7.69624" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 14:58:01" />
+								</item>
+		<item objecttype="thing" objectid="145659" subtype="boardgame" collid="29622791">
+	<name sortindex="1">Scoville</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="60"																	maxplaytime="90"																	playingtime="90"																	numowned="3332" >
+				<rating value="N/A">			<average value="7.25634" />
+			<bayesaverage value="6.75799" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:36:56" />
+								</item>
+		<item objecttype="thing" objectid="108745" subtype="boardgame" collid="29622882">
+	<name sortindex="1">Seasons</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="14301" >
+				<rating value="N/A">			<average value="7.49141" />
+			<bayesaverage value="7.34279" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:36:52" />
+								</item>
+		<item objecttype="thing" objectid="102652" subtype="boardgame" collid="31848064">
+	<name sortindex="1">Sentinels of the Multiverse</name>
+				<stats minplayers="1"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="60"																	playingtime="60"																	numowned="13674" >
+				<rating value="6">			<average value="7.40696" />
+			<bayesaverage value="7.20269" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 09:30:04" />
+								</item>
+		<item objecttype="thing" objectid="15062" subtype="boardgame" collid="28295936">
+	<name sortindex="1">Shadows over Camelot</name>
+				<stats minplayers="3"																	maxplayers="7"																	minplaytime="60"																	maxplaytime="80"																	playingtime="80"																	numowned="20974" >
+				<rating value="N/A">			<average value="7.15723" />
+			<bayesaverage value="7.05022" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:36:47" />
+								</item>
+		<item objecttype="thing" objectid="157969" subtype="boardgame" collid="29622809">
+	<name sortindex="1">Sheriff of Nottingham</name>
+				<stats minplayers="3"																	maxplayers="5"																	minplaytime="60"																	maxplaytime="60"																	playingtime="60"																	numowned="15092" >
+				<rating value="N/A">			<average value="7.45498" />
+			<bayesaverage value="7.28104" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:36:42" />
+								</item>
+		<item objecttype="thing" objectid="1269" subtype="boardgame" collid="28226440">
+	<name sortindex="1">Skip-Bo</name>
+				<stats minplayers="2"																	maxplayers="6"																	minplaytime="20"																	maxplaytime="20"																	playingtime="20"																	numowned="6020" >
+				<rating value="6">			<average value="5.32327" />
+			<bayesaverage value="5.30764" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:40:11" />
+								</item>
+		<item objecttype="thing" objectid="594" subtype="boardgame" collid="29622793">
+	<name sortindex="1">Sleuth</name>
+				<stats minplayers="3"																	maxplayers="7"																	minplaytime="30"																	maxplaytime="45"																	playingtime="45"																	numowned="3563" >
+				<rating value="N/A">			<average value="6.85829" />
+			<bayesaverage value="6.48602" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:36:36" />
+								</item>
+		<item objecttype="thing" objectid="122522" subtype="boardgame" collid="28358537">
+	<name sortindex="1">Smash Up</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="20212" >
+				<rating value="5">			<average value="6.94377" />
+			<bayesaverage value="6.79673" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-08 23:19:00" />
+								</item>
+		<item objecttype="thing" objectid="155624" subtype="boardgame" collid="29155981">
+	<name sortindex="1">Specter Ops</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="60"																	maxplaytime="90"																	playingtime="90"																	numowned="4133" >
+				<rating value="7.5">			<average value="7.54298" />
+			<bayesaverage value="6.98882" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-07-07 07:32:40" />
+								</item>
+		<item objecttype="thing" objectid="148228" subtype="boardgame" collid="28295538">
+	<name sortindex="1">Splendor</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="26945" >
+				<rating value="8">			<average value="7.57948" />
+			<bayesaverage value="7.46843" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:35:50" />
+								</item>
+		<item objecttype="thing" objectid="166384" subtype="boardgame" collid="31898249">
+	<name sortindex="1">Spyfall</name>
+				<stats minplayers="3"																	maxplayers="8"																	minplaytime="15"																	maxplaytime="15"																	playingtime="15"																	numowned="9059" >
+				<rating value="7">			<average value="7.34446" />
+			<bayesaverage value="7.12243" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:40:40" />
+								</item>
+		<item objecttype="thing" objectid="147020" subtype="boardgame" collid="28280080">
+	<name sortindex="1">Star Realms</name>
+				<stats minplayers="2"																	maxplayers="2"																	minplaytime="20"																	maxplaytime="20"																	playingtime="20"																	numowned="20579" >
+				<rating value="8">			<average value="7.68629" />
+			<bayesaverage value="7.5305" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:25:51" />
+								</item>
+		<item objecttype="thing" objectid="164153" subtype="boardgame" collid="28295925">
+	<name sortindex="1">Star Wars: Imperial Assault</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="60"																	maxplaytime="120"																	playingtime="120"																	numowned="13540" >
+				<rating value="9">			<average value="8.29311" />
+			<bayesaverage value="7.94262" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:38:46" />
+								</item>
+		<item objecttype="thing" objectid="162007" subtype="boardgame" collid="33789034">
+	<name sortindex="1">Steampunk Rally</name>
+				<stats minplayers="2"																	maxplayers="8"																	minplaytime="45"																	maxplaytime="60"																	playingtime="60"																	numowned="3069" >
+				<rating value="N/A">			<average value="7.56354" />
+			<bayesaverage value="6.90604" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-03-31 13:36:46" />
+								</item>
+		<item objecttype="thing" objectid="123260" subtype="boardgame" collid="28280074">
+	<name sortindex="1">Suburbia</name>
+				<stats minplayers="1"																	maxplayers="4"																	minplaytime="90"																	maxplaytime="90"																	playingtime="90"																	numowned="14579" >
+				<rating value="9">			<average value="7.68845" />
+			<bayesaverage value="7.54299" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-26 07:47:40" />
+								</item>
+		<item objecttype="thing" objectid="145196" subtype="boardgame" collid="28770678">
+	<name sortindex="1">Suburbia Inc</name>
+				<stats minplayers="1"																	maxplayers="4"																	minplaytime="90"																	maxplaytime="90"																	playingtime="90"																	numowned="5139" >
+				<rating value="9">			<average value="8.06588" />
+			<bayesaverage value="7.24631" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-06-15 09:05:16" />
+								</item>
+		<item objecttype="thing" objectid="70919" subtype="boardgame" collid="28226433">
+	<name sortindex="1">Takenoko</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="22188" >
+				<rating value="8">			<average value="7.36307" />
+			<bayesaverage value="7.2292" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:40:17" />
+								</item>
+		<item objecttype="thing" objectid="97903" subtype="boardgame" collid="28295899">
+	<name sortindex="1">Terror in Meeple City</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="7959" >
+				<rating value="N/A">			<average value="7.01878" />
+			<bayesaverage value="6.79448" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:36:27" />
+								</item>
+		<item objecttype="thing" objectid="182028" subtype="boardgame" collid="31898195">
+	<name sortindex="1">Through the Ages: A New Story of Civilization</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="180"																	maxplaytime="240"																	playingtime="240"																	numowned="3605" >
+				<rating value="N/A">			<average value="9.01588" />
+			<bayesaverage value="8.13595" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:34:45" />
+								</item>
+		<item objecttype="thing" objectid="9209" subtype="boardgame" collid="28226248">
+	<name sortindex="1">Ticket to Ride</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="60"																	playingtime="60"																	numowned="49640" >
+				<rating value="8">			<average value="7.49681" />
+			<bayesaverage value="7.40727" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:40:25" />
+								</item>
+		<item objecttype="thing" objectid="182078" subtype="boardgame" collid="33326663">
+	<name sortindex="1">Ticket to Ride Map Collection: Volume 5 – United Kingdom &amp; Pennsylvania</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="75"																	playingtime="75"																	numowned="3157" >
+				<rating value="N/A">			<average value="8.12676" />
+			<bayesaverage value="6.9674" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-02-29 12:31:52" />
+								</item>
+		<item objecttype="thing" objectid="24439" subtype="boardgame" collid="29622804">
+	<name sortindex="1">Ticket to Ride: USA 1910</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="60"																	playingtime="60"																	numowned="15314" >
+				<rating value="N/A">			<average value="8.02227" />
+			<bayesaverage value="7.75235" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-25 07:45:47" />
+								</item>
+		<item objecttype="thing" objectid="123540" subtype="boardgame" collid="28226430">
+	<name sortindex="1">Tokaido</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="10571" >
+				<rating value="8">			<average value="7.07465" />
+			<bayesaverage value="6.88033" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:40:34" />
+								</item>
+		<item objecttype="thing" objectid="124172" subtype="boardgame" collid="28226434">
+	<name sortindex="1">Tsuro of the Seas</name>
+				<stats minplayers="2"																	maxplayers="8"																	minplaytime="30"																	maxplaytime="30"																	playingtime="30"																	numowned="4974" >
+				<rating value="8">			<average value="6.65448" />
+			<bayesaverage value="6.36102" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:40:37" />
+								</item>
+		<item objecttype="thing" objectid="12333" subtype="boardgame" collid="31846574">
+	<name sortindex="1">Twilight Struggle</name>
+				<stats minplayers="2"																	maxplayers="2"																	minplaytime="180"																	maxplaytime="180"																	playingtime="180"																	numowned="30659" >
+				<rating value="N/A">			<average value="8.35183" />
+			<bayesaverage value="8.22845" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:45:27" />
+								</item>
+		<item objecttype="thing" objectid="183394" subtype="boardgame" collid="32011971">
+	<name sortindex="1">Viticulture Essential Edition</name>
+				<stats minplayers="1"																	maxplayers="6"																	minplaytime="90"																	maxplaytime="90"																	playingtime="90"																	numowned="2608" >
+				<rating value="9">			<average value="8.41093" />
+			<bayesaverage value="7.20853" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 16:09:16" />
+								</item>
+		<item objecttype="thing" objectid="115746" subtype="boardgame" collid="32734415">
+	<name sortindex="1">War of the Ring (second edition)</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="150"																	maxplaytime="150"																	playingtime="150"																	numowned="7693" >
+				<rating value="N/A">			<average value="8.34743" />
+			<bayesaverage value="7.91896" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-26 09:35:09" />
+								</item>
+		<item objecttype="thing" objectid="123239" subtype="boardgame" collid="28226304">
+	<name sortindex="1">Wits &amp; Wagers Party</name>
+				<stats minplayers="4"																	maxplayers="18"																	minplaytime="25"																	maxplaytime="25"																	playingtime="25"																	numowned="1721" >
+				<rating value="6">			<average value="6.94294" />
+			<bayesaverage value="6.19163" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:40:45" />
+								</item>
+		<item objecttype="thing" objectid="163602" subtype="boardgame" collid="28295888">
+	<name sortindex="1">XCOM: The Board Game</name>
+				<stats minplayers="1"																	maxplayers="4"																	minplaytime="90"																	maxplaytime="90"																	playingtime="90"																	numowned="5466" >
+				<rating value="N/A">			<average value="7.30197" />
+			<bayesaverage value="6.94436" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-18 09:35:49" />
+								</item>
+		<item objecttype="thing" objectid="89575" subtype="boardgame" collid="28253220">
+	<name sortindex="1">Zip-It</name>
+				<stats minplayers="2"																	maxplayers="2"																	minplaytime="15"																	maxplaytime="15"																	playingtime="15"																	numowned="211" >
+				<rating value="4">			<average value="6.17533" />
+			<bayesaverage value="5.55735" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-05-04 07:40:59" />
+								</item>
+		<item objecttype="thing" objectid="27588" subtype="boardgame" collid="29622796">
+	<name sortindex="1">Zooloretto</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="13171" >
+				<rating value="N/A">			<average value="6.88795" />
+			<bayesaverage value="6.77368" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="1" wishlistpriority="3" preordered="0" lastmodified="2015-08-06 12:33:00" />
+								</item>
+		
+</items>
