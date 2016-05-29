@@ -7,12 +7,65 @@ import Foundation
 import Quick
 import Nimble
 import SWXMLHash
+import OHHTTPStubs
 
 @testable import GABoardGameGeek
 
 class CollectionSpec: QuickSpec {
 
     override func spec() {
+
+        beforeSuite {
+            // Stub out the HTTP requests that this suite will make
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"0"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection.xml", self.dynamicType)
+                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"0"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_brief.xml", self.dynamicType)
+                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"1"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_stats.xml", self.dynamicType)
+                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"1"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_brief_stats.xml", self.dynamicType)
+                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+        }
+
+        afterSuite {
+            // Clear out the HTTP Stubs
+            OHHTTPStubs.removeAllStubs()
+        }
+
+        describe("A Collection API Request") {
+            var gameList = [CollectionBoardGame]()
+
+            context("from a standard request") {
+
+                beforeEach {
+                    GABoardGameGeek().getUserCollection("test", brief: false, stats: true) { result in
+                        switch(result) {
+                        case .Success(let games):
+                            gameList.appendContentsOf(games)
+                            print(gameList)
+                        case .Failure(let error):
+                            print(error)
+                        }
+                    }
+                }
+
+                afterEach {
+                    gameList.removeAll()
+                }
+
+                it("Should contain elements") {
+                    expect(gameList).toEventually(haveCount(123))
+                }
+            }
+        }
 
         describe("a collection board game") {
             var game: CollectionBoardGame?
