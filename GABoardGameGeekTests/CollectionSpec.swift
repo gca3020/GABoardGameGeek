@@ -15,88 +15,43 @@ class CollectionSpec: QuickSpec {
 
     override func spec() {
 
-        beforeSuite {
-            // Stub out the HTTP requests that this suite will make
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"0"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
-            }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"0"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_brief.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
-            }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"1"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_stats.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
-            }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"1"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_brief_stats.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
-            }
-        }
-
-        afterSuite {
-            // Clear out the HTTP Stubs
-            OHHTTPStubs.removeAllStubs()
-        }
-
         describe("A Collection API Request") {
             var gameList = [CollectionBoardGame]()
+            var game: CollectionBoardGame?
 
-            context("from a standard request") {
-
+            context("for a standard list") {
                 beforeEach {
-                    GABoardGameGeek().getUserCollection("test", brief: false, stats: true) { result in
-                        switch(result) {
-                        case .Success(let games):
-                            gameList.appendContentsOf(games)
-                            print(gameList)
-                        case .Failure(let error):
-                            print(error)
+                    waitUntil() { done in
+                        GABoardGameGeek().getUserCollection("test", brief: false, stats: false) { result in
+                            switch(result) {
+                            case .Success(let games):
+                                gameList.appendContentsOf(games)
+                                done()
+                            default:
+                                break
+                            }
                         }
                     }
                 }
 
                 afterEach {
                     gameList.removeAll()
+                    game = nil
                 }
 
-                it("Should contain elements") {
-                    expect(gameList).toEventually(haveCount(123))
-                }
-            }
-        }
-
-        describe("a collection board game") {
-            var game: CollectionBoardGame?
-            var parser: XMLIndexer?
-
-            context("from a brief xml") {
-                let xml =
-                    "<item objecttype=\"thing\" objectid=\"111\" subtype=\"boardgame\" collid=\"11\">" +
-                    "   <name sortindex=\"1\">Brief Game</name>" +
-                    "   <status own=\"1\" prevowned=\"0\" fortrade=\"0\" want=\"0\" wanttoplay=\"0\" wanttobuy=\"0\" wishlist=\"0\"  preordered=\"0\" lastmodified=\"2016-04-04 20:19:37\" />"
-                    "</item>"
-
-                beforeEach {
-                    parser = SWXMLHash.parse(xml)
-                    game = try! parser!["item"].value()
+                it("should contain the correct number of elements") {
+                    expect(gameList).to(haveCount(123))
                 }
 
-                it("should fully parse") {
+                it("should contain standard fields, and not optional ones") {
+                    game = gameList[18] // Castles of Burgundy
                     expect(game).toNot(beNil())
-                }
 
-                it("should have an objectId") {
-                    expect(game!.objectId).to(equal(111))
-                }
+                    expect(game!.objectId).to(equal(84876))
+                    expect(game!.name).to(equal("The Castles of Burgundy"))
+                    expect(game!.sortName).to(equal("Castles of Burgundy"))
+                    expect(game!.yearPublished).to(equal(2011))
 
-                it("should have a name") {
-                    expect(game!.name).to(equal("Brief Game"))
-                    expect(game!.sortName).to(equal("Brief Game"))
-                }
-
-                it("should have a status block where only owned is true") {
                     expect(game!.status.owned).to(equal(true))
                     expect(game!.status.prevOwned).to(equal(false))
                     expect(game!.status.forTrade).to(equal(false))
@@ -106,129 +61,116 @@ class CollectionSpec: QuickSpec {
                     expect(game!.status.wishList).to(equal(false))
                     expect(game!.status.preOrdered).to(equal(false))
                     expect(game!.status.wishListPriority).to(beNil())
-                }
 
-                it("should not have any optional values populated") {
-                    expect(game!.imagePath).to(beNil())
-                    expect(game!.imageUrl).to(beNil())
-                    expect(game!.thumbnailPath).to(beNil())
-                    expect(game!.thumbnailUrl).to(beNil())
+                    expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic1176894.jpg"))
+                    expect(game!.imageUrl).toNot(beNil())
+                    expect(game!.imageUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic1176894.jpg"))
+
+                    expect(game!.thumbnailPath).to(equal("//cf.geekdo-images.com/images/pic1176894_t.jpg"))
+                    expect(game!.thumbnailUrl).toNot(beNil())
+                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic1176894_t.jpg"))
+
+                    expect(game!.numPlays).to(equal(6))
+
+                    // The following fields should be nil for this game
+                    expect(game!.comment).to(beNil())
                     expect(game!.wishListComment).to(beNil())
-                    expect(game!.comment).to(beNil())
-                    expect(game!.numPlays).to(beNil())
-                    expect(game!.yearPublished).to(beNil())
-                    expect(game!.comment).to(beNil())
                     expect(game!.stats).to(beNil())
                 }
-            }
+            } // context( for a standard list )
 
-            context("from a brief xml with statistics") {
-                let xml =
-                    "<item objecttype=\"thing\" objectid=\"222\" subtype=\"boardgame\" collid=\"22\">" +
-                    "    <name sortindex=\"3\">A Brief Game With Stats</name>" +
-                    "    <stats minplayers=\"4\" maxplayers=\"8\" minplaytime=\"120\" maxplaytime=\"480\" playingtime=\"240\" numowned=\"2222\">" +
-                    "        <rating value=\"8.5\">" +
-                    "            <average value=\"7.79921\"/>" +
-                    "            <bayesaverage value=\"7.58107\"/>" +
-                    "        </rating>" +
-                    "    </stats>" +
-                    "    <status own=\"0\" prevowned=\"0\" fortrade=\"0\" want=\"0\" wanttoplay=\"1\" wanttobuy=\"0\" wishlist=\"1\" wishlistpriority=\"3\" preordered=\"0\" lastmodified=\"2015-12-18 09:38:29\"/>" +
-                    "</item>"
-
+            context("for a brief list") {
                 beforeEach {
-                    parser = SWXMLHash.parse(xml)
-                    game = try! parser!["item"].value()
+                    waitUntil() { done in
+                        GABoardGameGeek().getUserCollection("test", brief: true, stats: false) { result in
+                            switch(result) {
+                            case .Success(let games):
+                                gameList.appendContentsOf(games)
+                                done()
+                            default:
+                                break
+                            }
+                        }
+                    }
                 }
 
-                it("should fully parse") {
+                afterEach {
+                    gameList.removeAll()
+                    game = nil
+                }
+
+                it("should contain the correct number of elements") {
+                    expect(gameList).to(haveCount(123))
+                }
+
+                it("should contain only the base fields") {
+                    game = gameList[122] // Zooloretto
                     expect(game).toNot(beNil())
-                }
 
-                it("should have an objectId") {
-                    expect(game!.objectId).to(equal(222))
-                }
+                    expect(game!.objectId).to(equal(27588))
+                    expect(game!.name).to(equal("Zooloretto"))
+                    expect(game!.sortName).to(equal("Zooloretto"))
 
-                it("should have a name") {
-                    expect(game!.name).to(equal("A Brief Game With Stats"))
-                    expect(game!.sortName).to(equal("Brief Game With Stats"))
-                }
+                    expect(game!.yearPublished).to(beNil())
 
-                it("should have a status block where wanttoplay and wishlist are true and wishlist priority is set") {
                     expect(game!.status.owned).to(equal(false))
                     expect(game!.status.prevOwned).to(equal(false))
                     expect(game!.status.forTrade).to(equal(false))
                     expect(game!.status.wantInTrade).to(equal(false))
-                    expect(game!.status.wantToPlay).to(equal(true))
+                    expect(game!.status.wantToPlay).to(equal(false))
                     expect(game!.status.wantToBuy).to(equal(false))
                     expect(game!.status.wishList).to(equal(true))
                     expect(game!.status.preOrdered).to(equal(false))
                     expect(game!.status.wishListPriority).to(equal(3))
-                }
 
-                it("should have a simple stats block") {
-                    expect(game!.stats).toNot(beNil())
-                    let stats = game!.stats!
-                    expect(stats.minPlayers).to(equal(4))
-                    expect(stats.maxPlayers).to(equal(8))
-                    expect(stats.minPlaytime).to(equal(120))
-                    expect(stats.maxPlaytime).to(equal(480))
-                    expect(stats.playingTime).to(equal(240))
-                    expect(stats.numOwned).to(equal(2222))
 
-                    expect(stats.rating.userRating).to(beCloseTo(8.5))
-                    expect(stats.rating.averageRating).to(beCloseTo(7.79921))
-                    expect(stats.rating.bayesAverageRating).to(beCloseTo(7.58107))
-                }
-
-                it("should not have any other optional values populated") {
                     expect(game!.imagePath).to(beNil())
                     expect(game!.imageUrl).to(beNil())
                     expect(game!.thumbnailPath).to(beNil())
                     expect(game!.thumbnailUrl).to(beNil())
-                    expect(game!.wishListComment).to(beNil())
-                    expect(game!.comment).to(beNil())
                     expect(game!.numPlays).to(beNil())
-                    expect(game!.yearPublished).to(beNil())
                     expect(game!.comment).to(beNil())
+                    expect(game!.wishListComment).to(beNil())
+                    expect(game!.stats).to(beNil())
                 }
-            }
+            } // context( for a brief list )
 
-            context("from a standard xml") {
-
-                let xml =
-                    "<item objecttype=\"thing\" objectid=\"333\" subtype=\"boardgame\" collid=\"33\">" +
-                    "    <name sortindex=\"1\">Standard Game</name>" +
-                    "    <yearpublished>2016</yearpublished>" +
-                    "    <image>//path.to/image.jpg</image>" +
-                    "    <thumbnail>//path.to/thumbnail.jpg</thumbnail>" +
-                    "    <status own=\"0\" prevowned=\"1\" fortrade=\"0\" want=\"0\" wanttoplay=\"0\" wanttobuy=\"0\" wishlist=\"0\" preordered=\"0\" lastmodified=\"2016-04-04 20:19:37\"/>" +
-                    "    <numplays>1</numplays>" +
-                    "    <comment>" +
-                    "        Standard Comment" +
-                    "    </comment>" +
-                    "</item>"
-
+            context("for a standard list with stats") {
                 beforeEach {
-                    parser = SWXMLHash.parse(xml)
-                    game = try! parser!["item"].value()
+                    waitUntil() { done in
+                        GABoardGameGeek().getUserCollection("test", brief: false, stats: true) { result in
+                            switch(result) {
+                            case .Success(let games):
+                                gameList.appendContentsOf(games)
+                                done()
+                            default:
+                                break
+                            }
+                        }
+                    }
                 }
 
-                it("should fully parse") {
+                afterEach {
+                    gameList.removeAll()
+                    game = nil
+                }
+
+                it("should contain the correct number of elements") {
+                    expect(gameList).to(haveCount(123))
+                }
+
+                it("should contain all of the fields including statisics") {
+                    game = gameList[104] // Star Wars: Imperial Assault
                     expect(game).toNot(beNil())
-                }
 
-                it("should have an objectId") {
-                    expect(game!.objectId).to(equal(333))
-                }
+                    expect(game!.objectId).to(equal(164153))
+                    expect(game!.name).to(equal("Star Wars: Imperial Assault"))
+                    expect(game!.sortName).to(equal("Star Wars: Imperial Assault"))
 
-                it("should have a name") {
-                    expect(game!.name).to(equal("Standard Game"))
-                    expect(game!.sortName).to(equal("Standard Game"))
-                }
+                    expect(game!.yearPublished).to(equal(2014))
 
-                it("should have a status block where only prevowned is true") {
-                    expect(game!.status.owned).to(equal(false))
-                    expect(game!.status.prevOwned).to(equal(true))
+                    expect(game!.status.owned).to(equal(true))
+                    expect(game!.status.prevOwned).to(equal(false))
                     expect(game!.status.forTrade).to(equal(false))
                     expect(game!.status.wantInTrade).to(equal(false))
                     expect(game!.status.wantToPlay).to(equal(false))
@@ -236,86 +178,70 @@ class CollectionSpec: QuickSpec {
                     expect(game!.status.wishList).to(equal(false))
                     expect(game!.status.preOrdered).to(equal(false))
                     expect(game!.status.wishListPriority).to(beNil())
-                }
 
-                it("should have a publication year") {
-                    expect(game!.yearPublished).to(equal(2016))
-                }
-
-                it("should have an image and thumbnail URL") {
-                    expect(game!.imagePath).to(equal("//path.to/image.jpg"))
+                    expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic2247647.jpg"))
                     expect(game!.imageUrl).toNot(beNil())
-                    expect(game!.imageUrl!.absoluteString).to(equal("http://path.to/image.jpg"))
+                    expect(game!.imageUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic2247647.jpg"))
 
-                    expect(game!.thumbnailPath).to(equal("//path.to/thumbnail.jpg"))
+                    expect(game!.thumbnailPath).to(equal("//cf.geekdo-images.com/images/pic2247647_t.jpg"))
                     expect(game!.thumbnailUrl).toNot(beNil())
-                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://path.to/thumbnail.jpg"))
+                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic2247647_t.jpg"))
+
+                    expect(game!.numPlays).to(equal(9))
+
+                    expect(game!.comment).to(beNil())
+                    expect(game!.wishListComment).to(equal("Star Wars D&D."))
+
+                    expect(game!.stats).toNot(beNil())
+                    let stats = game!.stats!
+                    expect(stats.minPlayers).to(equal(2))
+                    expect(stats.maxPlayers).to(equal(5))
+                    expect(stats.minPlaytime).to(equal(60))
+                    expect(stats.maxPlaytime).to(equal(120))
+                    expect(stats.playingTime).to(equal(120))
+                    expect(stats.numOwned).to(equal(13637))
+
+                    expect(stats.rating.userRating).to(beCloseTo(9.0))
+                    expect(stats.rating.averageRating).to(beCloseTo(8.29618))
+                    expect(stats.rating.bayesAverageRating).to(beCloseTo(7.94556))
+
                 }
+            } // context( for a standard list with stats )
 
-                it("should have plays logged") {
-                    expect(game!.numPlays).to(equal(1))
-                }
-
-                it("should have a comment") {
-                    expect(game!.comment).to(equal("Standard Comment"))
-                }
-
-                it("should not have a wishlist comment") {
-                    expect(game!.wishListComment).to(beNil())
-                }
-
-                it("should not have a statistics block") {
-                    expect(game!.stats).to(beNil())
-                }
-            }
-
-            context("from a standard xml with statistics") {
-
-                let xml =
-                    "<item objecttype=\"thing\" objectid=\"444\" subtype=\"boardgame\" collid=\"44\">" +
-                    "    <name sortindex=\"3\">A Game With Stats</name>" +
-                    "    <yearpublished>2016</yearpublished>" +
-                    "    <image>//path.to/image.jpg</image>" +
-                    "    <thumbnail>//path.to/thumbnail.jpg</thumbnail>" +
-                    "    <stats minplayers=\"1\" maxplayers=\"2\" minplaytime=\"20\" maxplaytime=\"60\" playingtime=\"45\" numowned=\"4444\">" +
-                    "        <rating value=\"N/A\">" +
-                    "            <usersrated value=\"70\"/>" +
-                    "            <average value=\"7.66143\"/>" +
-                    "            <bayesaverage value=\"5.68734\"/>" +
-                    "            <stddev value=\"0.795755\"/>" +
-                    "            <median value=\"0\"/>" +
-                    "            <ranks>" +
-                    "                <rank type=\"subtype\" id=\"1\" name=\"boardgame\" friendlyname=\"Board Game Rank\" value=\"3785\" bayesaverage=\"5.68734\"/>" +
-                    "                <rank type=\"family\" id=\"5497\" name=\"strategygames\" friendlyname=\"Strategy Game Rank\" value=\"20\" bayesaverage=\"7.74838\"/>" +
-                    "            </ranks>" +
-                    "        </rating>" +
-                    "    </stats>" +
-                    "    <status own=\"1\" prevowned=\"0\" fortrade=\"1\" want=\"0\" wanttoplay=\"0\" wanttobuy=\"0\" wishlist=\"0\" preordered=\"0\" lastmodified=\"2016-04-04 20:19:37\"/>" +
-                    "    <numplays>2</numplays>" +
-                    "    <wishlistcomment>" +
-                    "        Wish List Comment" +
-                    "    </wishlistcomment>" +
-                    "</item>"
-
+            context("for a brief list with stats") {
                 beforeEach {
-                    parser = SWXMLHash.parse(xml)
-                    game = try! parser!["item"].value()
+                    waitUntil() { done in
+                        GABoardGameGeek().getUserCollection("test", brief: true, stats: true) { result in
+                            switch(result) {
+                            case .Success(let games):
+                                gameList.appendContentsOf(games)
+                                done()
+                            default:
+                                break
+                            }
+                        }
+                    }
                 }
 
-                it("should fully parse") {
+                afterEach {
+                    gameList.removeAll()
+                    game = nil
+                }
+
+                it("should contain the correct number of elements") {
+                    expect(gameList).to(haveCount(123))
+                }
+
+                it("should contain all of the fields including statisics") {
+                    game = gameList[70] // Memoir '44
                     expect(game).toNot(beNil())
-                }
 
-                it("should have an objectId") {
-                    expect(game!.objectId).to(equal(444))
-                }
+                    expect(game!.objectId).to(equal(10630))
+                    expect(game!.name).to(equal("Memoir '44"))
+                    expect(game!.sortName).to(equal("Memoir '44"))
 
-                it("should have a name") {
-                    expect(game!.name).to(equal("A Game With Stats"))
-                    expect(game!.sortName).to(equal("Game With Stats"))
-                }
+                    expect(game!.yearPublished).to(beNil())
 
-                it("should have a status block where owned and fortrade is true") {
                     expect(game!.status.owned).to(equal(true))
                     expect(game!.status.prevOwned).to(equal(false))
                     expect(game!.status.forTrade).to(equal(true))
@@ -325,76 +251,35 @@ class CollectionSpec: QuickSpec {
                     expect(game!.status.wishList).to(equal(false))
                     expect(game!.status.preOrdered).to(equal(false))
                     expect(game!.status.wishListPriority).to(beNil())
-                }
 
-                it("should have a publication year") {
-                    expect(game!.yearPublished).to(equal(2016))
-                }
+                    expect(game!.imagePath).to(beNil())
+                    expect(game!.imageUrl).to(beNil())
+                    expect(game!.thumbnailPath).to(beNil())
+                    expect(game!.thumbnailUrl).to(beNil())
 
-                it("should have an image and thumbnail URL") {
-                    expect(game!.imagePath).to(equal("//path.to/image.jpg"))
-                    expect(game!.imageUrl).toNot(beNil())
-                    expect(game!.imageUrl!.absoluteString).to(equal("http://path.to/image.jpg"))
-                    expect(game!.thumbnailPath).to(equal("//path.to/thumbnail.jpg"))
-                    expect(game!.thumbnailUrl).toNot(beNil())
-                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://path.to/thumbnail.jpg"))
-                }
+                    expect(game!.numPlays).to(beNil())
 
-                it("should have plays logged") {
-                    expect(game!.numPlays).to(equal(2))
-                }
-
-                it("should not have a comment") {
                     expect(game!.comment).to(beNil())
-                }
+                    expect(game!.wishListComment).to(beNil())
 
-                it("should have a wishlist comment") {
-                    expect(game!.wishListComment).to(equal("Wish List Comment"))
-                }
-
-                it("should have a statistics block") {
                     expect(game!.stats).toNot(beNil())
                     let stats = game!.stats!
-                    expect(stats.minPlayers).to(equal(1))
+                    expect(stats.minPlayers).to(equal(2))
                     expect(stats.maxPlayers).to(equal(2))
-                    expect(stats.minPlaytime).to(equal(20))
+                    expect(stats.minPlaytime).to(equal(30))
                     expect(stats.maxPlaytime).to(equal(60))
-                    expect(stats.playingTime).to(equal(45))
-                    expect(stats.numOwned).to(equal(4444))
-                }
+                    expect(stats.playingTime).to(equal(60))
+                    expect(stats.numOwned).to(equal(21504))
 
-                it("should have a rating block") {
-                    expect(game!.stats!.rating).toNot(beNil())
-                    let rating = game!.stats!.rating
-                    expect(rating.userRating).to(beNil())
-                    expect(rating.usersRated).to(equal(70))
-                    expect(rating.averageRating).to(beCloseTo(7.66143))
-                    expect(rating.bayesAverageRating).to(beCloseTo(5.68734))
-                    expect(rating.stdDev).to(beCloseTo(0.795755))
-                    expect(rating.median).to(beCloseTo(0.0))
+                    expect(stats.rating.userRating).to(beCloseTo(8.0))
+                    expect(stats.rating.averageRating).to(beCloseTo(7.52372))
+                    expect(stats.rating.bayesAverageRating).to(beCloseTo(7.39571))
+                    
                 }
-
-                it("should have ranks") {
-                    expect(game!.stats!.rating.ranks).toNot(beNil())
-                    let ranks = game!.stats!.rating.ranks!
-                    expect(ranks.count).to(equal(2))
-                    expect(ranks[0].type).to(equal("subtype"))
-                    expect(ranks[0].id).to(equal(1))
-                    expect(ranks[0].name).to(equal("boardgame"))
-                    expect(ranks[0].friendlyName).to(equal("Board Game Rank"))
-                    expect(ranks[0].value).to(equal(3785))
-                    expect(ranks[0].bayesAverage).to(beCloseTo(5.68734))
-
-                    expect(ranks[1].type).to(equal("family"))
-                    expect(ranks[1].id).to(equal(5497))
-                    expect(ranks[1].name).to(equal("strategygames"))
-                    expect(ranks[1].friendlyName).to(equal("Strategy Game Rank"))
-                    expect(ranks[1].value).to(equal(20))
-                    expect(ranks[1].bayesAverage).to(beCloseTo(7.74838))
-                }
-            }
+            } // context( for a brief list with stats )
 
             context("with invalid XML elements") {
+                var parser: XMLIndexer?
                 let xml =
                     "<root>" +
                     "    <item objecttype=\"thing\" objectid=\"444\" subtype=\"boardgame\" collid=\"44\">" +
@@ -447,7 +332,51 @@ class CollectionSpec: QuickSpec {
                 }
 
             }
+        }
 
+        beforeSuite {
+            var retryCount = 0
+
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"0"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection.xml", self.dynamicType)
+                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"0"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_brief.xml", self.dynamicType)
+                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"1"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_stats.xml", self.dynamicType)
+                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"1"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_brief_stats.xml", self.dynamicType)
+                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "invalid"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_invalid_username.xml", self.dynamicType)
+                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "empty"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_empty.xml", self.dynamicType)
+                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "delay"])) { _ in
+                let stubPathValid = OHPathForFile("TestData/collection.xml", self.dynamicType)
+                let stubPathNotReady = OHPathForFile("TestData/collection_notready.xml", self.dynamicType)
+
+                retryCount += 1
+                if retryCount <= 20 {
+                    return fixture(stubPathNotReady!, status: 202, headers: ["Content-Type":"text/xml"])
+                } else {
+                    return fixture(stubPathValid!, headers: ["Content-Type":"text/xml"])
+                }
+            }
+        }
+
+        afterSuite {
+            // Clear out the HTTP Stubs
+            OHHTTPStubs.removeAllStubs()
         }
     }
 }
