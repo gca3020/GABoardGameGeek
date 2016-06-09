@@ -15,7 +15,7 @@ script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-  - xcodebuild test -workspace Example/GABoardGameGeek.xcworkspace -scheme GABoardGameGeek-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+  - xcodebuild test -workspace Example/GABoardGameGeek.xcworkspace -scheme GABoardGameGeek-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=YES | xcpretty
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
