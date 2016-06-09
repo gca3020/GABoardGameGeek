@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/gca3020/GABoardGameGeek.svg?branch=master)](https://travis-ci.org/gca3020/GABoardGameGeek)
 [![codecov.io](https://codecov.io/github/gca3020/GABoardGameGeek/coverage.svg?branch=master)](https://codecov.io/github/gca3020/GABoardGameGeek?branch=master)
+[![Version](https://img.shields.io/cocoapods/v/GABoardGameGeek.svg?style=flat)](http://cocoapods.org/pods/GABoardGameGeek)
 ![Swift version](https://img.shields.io/badge/swift-2.2-orange.svg)
+[![License](https://img.shields.io/cocoapods/l/GABoardGameGeek.svg?style=flat)](http://cocoapods.org/pods/GABoardGameGeek)
 [![Twitter](https://img.shields.io/badge/twitter-@gca3020-blue.svg?style=flat)](http://twitter.com/gca3020)
 
 BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections on BGG
@@ -22,8 +24,8 @@ BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections
 
 ## Dependencies
 
-- [Alamofire 3.3+](https://github.com/Alamofire/Alamofire)
-- [SWXMLHash 2.2+](https://github.com/drmohundro/SWXMLHash)
+- [Alamofire](https://github.com/Alamofire/Alamofire)
+- [SWXMLHash](https://github.com/drmohundro/SWXMLHash)
 
 ## Communication
 
@@ -32,17 +34,18 @@ BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
 
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
 ## Installation
 
-### CocoaPods
+GABoardGameGeek is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
-TBD
-
-### Carthage
-
-TBD
-
----
+```ruby
+pod "GABoardGameGeek"
+```
 
 ## Usage
 

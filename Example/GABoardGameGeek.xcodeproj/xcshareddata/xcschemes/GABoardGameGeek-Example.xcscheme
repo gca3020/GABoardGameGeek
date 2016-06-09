@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6C383F5A1CB1A17C00A14737"
-               BuildableName = "GABoardGameGeek.framework"
-               BlueprintName = "GABoardGameGeek"
+               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+               BuildableName = "GABoardGameGeek_Example.app"
+               BlueprintName = "GABoardGameGeek_Example"
+               ReferencedContainer = "container:GABoardGameGeek.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BuildableName = "GABoardGameGeek_Tests.xctest"
+               BlueprintName = "GABoardGameGeek_Tests"
                ReferencedContainer = "container:GABoardGameGeek.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,16 +40,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6C383F641CB1A17C00A14737"
-               BuildableName = "GABoardGameGeekTests.xctest"
-               BlueprintName = "GABoardGameGeekTests"
+               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BuildableName = "GABoardGameGeek_Tests.xctest"
+               BlueprintName = "GABoardGameGeek_Tests"
                ReferencedContainer = "container:GABoardGameGeek.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6C383F5A1CB1A17C00A14737"
-            BuildableName = "GABoardGameGeek.framework"
-            BlueprintName = "GABoardGameGeek"
+            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BuildableName = "GABoardGameGeek_Example.app"
+            BlueprintName = "GABoardGameGeek_Example"
             ReferencedContainer = "container:GABoardGameGeek.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,15 +75,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6C383F5A1CB1A17C00A14737"
-            BuildableName = "GABoardGameGeek.framework"
-            BlueprintName = "GABoardGameGeek"
+            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BuildableName = "GABoardGameGeek_Example.app"
+            BlueprintName = "GABoardGameGeek_Example"
             ReferencedContainer = "container:GABoardGameGeek.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,15 +94,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6C383F5A1CB1A17C00A14737"
-            BuildableName = "GABoardGameGeek.framework"
-            BlueprintName = "GABoardGameGeek"
+            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BuildableName = "GABoardGameGeek_Example.app"
+            BlueprintName = "GABoardGameGeek_Example"
             ReferencedContainer = "container:GABoardGameGeek.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
