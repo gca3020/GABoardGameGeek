@@ -13,10 +13,48 @@ import Foundation
 
  - Success: The call was successful. The value contains the deserialized results
  - Failure: The call failed. BggError contains the error enumeration with additional details
+
+ - NOTE: Credit for this pattern (as well as the code) goes to Alamofire.
  */
 public enum ApiResult<Value> {
     case Success(Value)
     case Failure(BggError)
+
+    /// Returns `true` if the result is a success, `false` otherwise.
+    public var isSuccess: Bool {
+        switch self {
+        case .Success:
+            return true
+        case .Failure:
+            return false
+        }
+    }
+
+    /// Returns `true` if the result is a failure, `false` otherwise.
+    public var isFailure: Bool {
+        return !isSuccess
+    }
+
+    /// Returns the associated value if the result is a success, `nil` otherwise.
+    public var value: Value? {
+        switch self {
+        case .Success(let value):
+            return value
+        case .Failure:
+            return nil
+        }
+    }
+
+    /// Returns the associated error value if the result is a failure, `nil` otherwise.
+    public var error: BggError? {
+        switch self {
+        case .Success:
+            return nil
+        case .Failure(let error):
+            return error
+        }
+    }
+
 }
 
 /**
@@ -32,9 +70,25 @@ public enum ApiResult<Value> {
  - XmlError:        There was an error parsing the XML response. This can indicate that the data models
                     are incorrect, or possibly that the XMLAPI has changed.
  */
-public enum BggError: ErrorType {
+public enum BggError: ErrorType, Equatable {
     case ConnectionError(NSError)
     case ServerNotReady
     case ApiError(String)
     case XmlError(String)
 }
+
+public func ==(a: BggError, b: BggError) -> Bool {
+    switch(a, b) {
+    case(.ConnectionError(let a), .ConnectionError(let b)):
+        return a == b
+    case(.ServerNotReady, .ServerNotReady):
+        return true
+    case(.ApiError(let a), .ApiError(let b)):
+        return a == b
+    case(.XmlError(let a), .XmlError(let b)):
+        return a == b
+    default:
+        return false
+    }
+}
+
