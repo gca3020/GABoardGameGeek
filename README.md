@@ -18,7 +18,7 @@ BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections
 
 ## Requirements
 
-- iOS 9.0+
+- iOS 8.0+
 - Xcode 7.3+
 - Swift 2.2
 
@@ -34,9 +34,9 @@ BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
 
-## Example
+## Example & Unit Tests
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the unit tests, and see some additional usage details, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
 
@@ -49,11 +49,140 @@ pod "GABoardGameGeek"
 
 ## Usage
 
+### Reading a Game by ID
+
+One of the things that I wanted to accomplish with this library is making the common things you 
+would want to do very easy, as well as "Swifty". To that end, here is the syntax for requesting
+details on a game, assuming you know the game's ID.
+
+```swift
+import GABoardGameGeek
+
+GABoardGameGeek().getGameById(12345) { result in
+    switch(result) {
+    case .Success(let game):
+        print(game)
+    case .Failure(let error):
+        print(error)
+    }
+}
+```
+
+Of course, you also might want to request a bunch of games at once:
+
+```swift
+GABoardGameGeek().getGamesById([1, 232, 41415, 12]) { result in
+    switch(result) {
+    case .Success(let gameList):
+        print(gameList)
+    case .Failure(let error):
+        print(error)
+    }
+}
+```
+
+Additionally, you might want game statistics. These can be requested as well for either a single 
+game, or the list of games
+
+```swift
+GABoardGameGeek().getGameById(12123, stats: true) { result in
+    switch(result) {
+    case .Success(let game):
+        print(game)
+    case .Failure(let error):
+        print(error)
+    }
+}
+```
+
 ### Getting a User's Collection
+
+Likewise, getting a user's collection is also quite easy. Simply specify their username. The result is an ApiResult
+containing a `CollectionBoardGame` array
+
+```swift
+GABoardGameGeek().getUserCollection("userName") { result in
+    switch(result) {
+    case .Success(let gameCollection):
+        print(gameCollection)
+    case .Failure(let error):
+        print(error)
+    }
+}
+```
+
+Collection requests have a number of additional, optional parameters. You can request a "brief" collection, 
+which will generally be returned and parsed much quicker, especially for users with large collections, but 
+will not contain as many details about a game as a standard request. You can also request a collection with
+statistics, which will contain additional information about a game, such as it's overall rating, position in 
+various rankings, and what this particular user has rated it.  You can even combine these two parameters, 
+and request brief game details, with a subset of game statistics.
+
+Finally, BoardGameGeek's API generally takes a while to respond to Collection Requests, especially for users
+with very large collections. As a result, the call to request a collection has a default timeout of 90
+seconds, during which time it will retry, as long as the server continues to respond with a `202` error code.
+
+```swift
+GABoardGameGeek().getUserCollection("userName", brief: true, stats: true, timeout: 120) { result in
+    switch(result) {
+    case .Success(let gameCollection):
+        print(gameCollection)
+    case .Failure(let error):
+        print(error)
+    }
+}
+```
 
 ### Searching for a Game
 
-### Reading a Game by ID
+Game Search is coming very soon!
+
+### ApiResult
+
+With heavy inspiration taken from common Swift libraries like Alamofire, the primary way that API results 
+are returned is in an ApiResult container. This container uses Swift Generics to hold values of different
+types.
+
+If you don't like the Switch syntax, you can also access the results using some computed properties. The
+following two examples are equivalent:
+
+```swift
+// Use switch to handle results/errors
+GABoardGameGeek().getGameById(12123) { result in
+    switch(result) {
+    case .Success(let game):
+        print(game)
+    case .Failure(let error):
+        print(error)
+    }
+}
+
+// Use accessors to handle results/erros
+GABoardGameGeek().getGameById(12123) { result in
+    if(result.isSuccess) {
+        print(result.value!)
+    }
+    else {
+        print(result.error!)
+    }
+}
+```
+
+So feel free to choose the syntax you prefer.
+
+### Error Handling
+
+Whenever you are dealing with Networking APIs, there are a number of errors that can occur. I've done
+my best to prevent the ones I can, but there's nothing I can do when the API goes down, or a network 
+connection is unavaialable. When that happens, you can either add code to the `.Failure` case of the 
+`ApiResult` enum, or check `result.isFailure`. 
+
+There are a few classes of error in the `BggError` enumeration:
+- `ConnectionError`: Something went wrong with the network connection itself, and the API could not be reached.
+- `ServerNotReady`: Seen when querying a user's collection. The server is not ready yet, but our timeout has expired.
+- `ApiError`: There was an error in the results of the API, things like invalid usernames will cause this.
+- `XmlError`: There was an error parsing the XML response from the API. If you see one of these, please [Contact Me](mailto:gca3020@users.noreply.github.com)
+or create an issue with the request you were making and the detail text from the error.
 
 ---
 
