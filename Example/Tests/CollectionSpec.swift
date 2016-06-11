@@ -21,7 +21,7 @@ class CollectionSpec: QuickSpec {
 
             context("for a standard list") {
                 beforeEach {
-                    waitUntil() { done in
+                    waitUntil(timeout: 5) { done in
                         GABoardGameGeek().getUserCollection("test", brief: false, stats: false) { result in
                             switch(result) {
                             case .Success(let games):
@@ -81,7 +81,7 @@ class CollectionSpec: QuickSpec {
 
             context("for a brief list") {
                 beforeEach {
-                    waitUntil() { done in
+                    waitUntil(timeout: 5) { done in
                         GABoardGameGeek().getUserCollection("test", brief: true, stats: false) { result in
                             switch(result) {
                             case .Success(let games):
@@ -137,7 +137,7 @@ class CollectionSpec: QuickSpec {
 
             context("for a standard list with stats") {
                 beforeEach {
-                    waitUntil() { done in
+                    waitUntil(timeout: 5) { done in
                         GABoardGameGeek().getUserCollection("test", brief: false, stats: true) { result in
                             switch(result) {
                             case .Success(let games):
@@ -210,7 +210,7 @@ class CollectionSpec: QuickSpec {
 
             context("for a brief list with stats") {
                 beforeEach {
-                    waitUntil() { done in
+                    waitUntil(timeout: 5) { done in
                         GABoardGameGeek().getUserCollection("test", brief: true, stats: true) { result in
                             switch(result) {
                             case .Success(let games):
@@ -277,6 +277,76 @@ class CollectionSpec: QuickSpec {
                     
                 }
             } // context( for a brief list with stats )
+
+            context("for a request with a timeout") {
+                var apiResult: ApiResult<[CollectionBoardGame]>?
+
+                beforeEach {
+                    apiResult = nil
+                }
+
+                it("should timeout if a request is too short") {
+                    waitUntil(timeout: 10) { done in
+                        GABoardGameGeek().getUserCollection("delay", timeoutSeconds: 3) { result in
+                            apiResult = result
+                            done()
+                        }
+                    }
+
+                    expect(apiResult).toNot(beNil())
+                    expect(apiResult?.isFailure).to(equal(true))
+                    expect(apiResult?.error).to(matchError(BggError.ServerNotReady))
+                }
+
+                it("should return a real result given enough time") {
+                    waitUntil(timeout: 10) { done in
+                        GABoardGameGeek().getUserCollection("delay", timeoutSeconds: 7) { result in
+                            apiResult = result
+                            done()
+                        }
+                    }
+
+                    expect(apiResult).toNot(beNil())
+                    expect(apiResult?.isSuccess).to(equal(true))
+                    expect(apiResult?.value).to(haveCount(0))
+                }
+
+            } // context( for a request with a timeout )
+
+            context("for an invalid username") {
+
+                it("should return an ApiError") {
+                    var apiResult: ApiResult<[CollectionBoardGame]>?
+
+                    waitUntil(timeout: 10) { done in
+                        GABoardGameGeek().getUserCollection("invalid") { result in
+                            apiResult = result
+                            done()
+                        }
+                    }
+
+                    expect(apiResult).toNot(beNil())
+                    expect(apiResult?.isFailure).to(equal(true))
+                    expect(apiResult?.error).to(matchError(BggError.ApiError("Invalid username specified")))
+                }
+            } // context( for an invalid username )
+
+            context("for an empty collection") {
+                it("should return a collection of 0 elements") {
+                    var apiResult: ApiResult<[CollectionBoardGame]>?
+
+                    waitUntil(timeout: 10) { done in
+                        GABoardGameGeek().getUserCollection("empty") { result in
+                            apiResult = result
+                            done()
+                        }
+                    }
+
+                    expect(apiResult).toNot(beNil())
+                    expect(apiResult?.isSuccess).to(equal(true))
+                    expect(apiResult?.value).to(haveCount(0))
+                }
+            } // context( for an empty collection )
 
             context("with invalid XML elements") {
                 var parser: XMLIndexer?
@@ -362,11 +432,11 @@ class CollectionSpec: QuickSpec {
                 return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
             }
             stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "delay"])) { _ in
-                let stubPathValid = OHPathForFile("TestData/collection.xml", self.dynamicType)
+                let stubPathValid = OHPathForFile("TestData/collection_empty.xml", self.dynamicType)
                 let stubPathNotReady = OHPathForFile("TestData/collection_notready.xml", self.dynamicType)
 
                 retryCount += 1
-                if retryCount <= 20 {
+                if retryCount <= 5 {
                     return fixture(stubPathNotReady!, status: 202, headers: ["Content-Type":"text/xml"])
                 } else {
                     return fixture(stubPathValid!, headers: ["Content-Type":"text/xml"])
