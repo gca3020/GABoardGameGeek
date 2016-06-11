@@ -260,7 +260,7 @@ class CollectionSpec: QuickSpec {
 
                     expect(apiResult).toNot(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(matchError(BggError.ServerNotReady))
+                    expect(apiResult?.error).to(equal(BggError.ServerNotReady))
                 }
 
                 it("should return a real result given enough time") {
@@ -292,7 +292,7 @@ class CollectionSpec: QuickSpec {
 
                     expect(apiResult).toNot(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(matchError(BggError.ApiError("Invalid username specified")))
+                    expect(apiResult?.error).to(equal(BggError.ApiError("Invalid username specified")))
                 }
             } // context( for an invalid username )
 

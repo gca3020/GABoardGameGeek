@@ -201,7 +201,7 @@ class BoardGameSpec: QuickSpec {
 
                     expect(apiResult).toNot(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(matchError(BggError.ApiError("error reading chunk of file")))
+                    expect(apiResult?.error).to(equal(BggError.ApiError("error reading chunk of file")))
                 }
             } // context( for a broken game ID )
 
@@ -219,7 +219,7 @@ class BoardGameSpec: QuickSpec {
 
                     expect(apiResult).toNot(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(matchError(BggError.ApiError("Invalid Number of Items Returned: 0")))
+                    expect(apiResult?.error).to(equal(BggError.ApiError("Invalid Number of Items Returned: 0")))
                 }
 
                 it("should return an empty collection when asking for a collection") {
