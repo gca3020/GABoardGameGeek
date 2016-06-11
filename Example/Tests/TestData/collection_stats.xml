@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<items totalitems="123" termsofuse="http://boardgamegeek.com/xmlapi/termsofuse" pubdate="Sun, 29 May 2016 13:05:33 +0000">
+		<item objecttype="thing" objectid="84876" subtype="boardgame" collid="29577003">
+	<name sortindex="5">The Castles of Burgundy</name>
+		<yearpublished>2011</yearpublished>			<image>//cf.geekdo-images.com/images/pic1176894.jpg</image>
+		<thumbnail>//cf.geekdo-images.com/images/pic1176894_t.jpg</thumbnail>
+		<stats minplayers="2"																	maxplayers="4"																	minplaytime="30"																	maxplaytime="90"																	playingtime="90"																	numowned="26251" >
+				<rating value="7.5">			<usersrated value="19486" />			<average value="8.10716" />
+			<bayesaverage value="7.98839" />			<stddev value="1.22315" />
+			<median value="0" />			<ranks>
+												<rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="9" bayesaverage="7.98839" />
+																<rank type="family" id="5497" name="strategygames" friendlyname="Strategy Game Rank" value="8" bayesaverage="7.98937" />
+											</ranks>		</rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 14:57:30" />
+	<numplays>6</numplays>							</item>
+		<item objecttype="thing" objectid="10630" subtype="boardgame" collid="28226243">
+	<name sortindex="1">Memoir &#039;44</name>
+		<yearpublished>2004</yearpublished>			<image>//cf.geekdo-images.com/images/pic43663.jpg</image>
+		<thumbnail>//cf.geekdo-images.com/images/pic43663_t.jpg</thumbnail>
+		<stats minplayers="2"																	maxplayers="2"																	minplaytime="30"																	maxplaytime="60"																	playingtime="60"																	numowned="21530" >
+				<rating value="8">			<usersrated value="17606" />			<average value="7.5248" />
+			<bayesaverage value="7.39631" />			<stddev value="1.3914" />
+			<median value="0" />			<ranks>
+												<rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="104" bayesaverage="7.39631" />
+																<rank type="family" id="4664" name="wargames" friendlyname="War Game Rank" value="63" bayesaverage="7.30972" />
+											</ranks>		</rating>
+			</stats>	<status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 15:04:04" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="164153" subtype="boardgame" collid="28295925">
+	<name sortindex="1">Star Wars: Imperial Assault</name>
+		<yearpublished>2014</yearpublished>			<image>//cf.geekdo-images.com/images/pic2247647.jpg</image>
+		<thumbnail>//cf.geekdo-images.com/images/pic2247647_t.jpg</thumbnail>
+		<stats minplayers="2"																	maxplayers="5"																	minplaytime="60"																	maxplaytime="120"																	playingtime="120"																	numowned="13637" >
+				<rating value="9">			<usersrated value="7412" />			<average value="8.29618" />
+			<bayesaverage value="7.94556" />			<stddev value="1.41678" />
+			<median value="0" />			<ranks>
+												<rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="11" bayesaverage="7.94556" />
+																<rank type="family" id="5496" name="thematic" friendlyname="Thematic Rank" value="4" bayesaverage="8.00644" />
+											</ranks>		</rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:38:46" />
+	<numplays>9</numplays>							<wishlistcomment>Star Wars D&amp;D.</wishlistcomment></item>
+		<item objecttype="thing" objectid="27588" subtype="boardgame" collid="29622796">
+	<name sortindex="1">Zooloretto</name>
+		<yearpublished>2007</yearpublished>			<image>//cf.geekdo-images.com/images/pic187388.jpg</image>
+		<thumbnail>//cf.geekdo-images.com/images/pic187388_t.jpg</thumbnail>
+		<stats minplayers="2"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="13198" >
+				<rating value="N/A">			<usersrated value="10948" />			<average value="6.88815" />
+			<bayesaverage value="6.77377" />			<stddev value="1.16801" />
+			<median value="0" />			<ranks>
+												<rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="478" bayesaverage="6.77377" />
+																<rank type="family" id="5499" name="familygames" friendlyname="Family Game Rank" value="96" bayesaverage="6.80092" />
+											</ranks>		</rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="1" wishlistpriority="3" preordered="0" lastmodified="2015-08-06 12:33:00" />
+	<numplays>0</numplays>							<wishlistcomment>Looks like a fun game about running a zoo.</wishlistcomment></item>
+		
+</items>

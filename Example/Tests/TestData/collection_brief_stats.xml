@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<items totalitems="123" termsofuse="http://boardgamegeek.com/xmlapi/termsofuse" pubdate="Mon, 23 May 2016 23:37:34 +0000">
+		<item objecttype="thing" objectid="84876" subtype="boardgame" collid="29577003">
+	<name sortindex="5">The Castles of Burgundy</name>
+				<stats minplayers="2"																	maxplayers="4"																	minplaytime="30"																	maxplaytime="90"																	playingtime="90"																	numowned="26154" >
+				<rating value="7.5">			<average value="8.10685" />
+			<bayesaverage value="7.98842" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 14:57:30" />
+								</item>
+		<item objecttype="thing" objectid="10630" subtype="boardgame" collid="28226243">
+	<name sortindex="1">Memoir &#039;44</name>
+				<stats minplayers="2"																	maxplayers="2"																	minplaytime="30"																	maxplaytime="60"																	playingtime="60"																	numowned="21504" >
+				<rating value="8">			<average value="7.52372" />
+			<bayesaverage value="7.39571" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 15:04:04" />
+								</item>
+		<item objecttype="thing" objectid="164153" subtype="boardgame" collid="28295925">
+	<name sortindex="1">Star Wars: Imperial Assault</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="60"																	maxplaytime="120"																	playingtime="120"																	numowned="13540" >
+				<rating value="9">			<average value="8.29311" />
+			<bayesaverage value="7.94262" /></rating>
+			</stats>	<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:38:46" />
+								</item>
+		<item objecttype="thing" objectid="27588" subtype="boardgame" collid="29622796">
+	<name sortindex="1">Zooloretto</name>
+				<stats minplayers="2"																	maxplayers="5"																	minplaytime="45"																	maxplaytime="45"																	playingtime="45"																	numowned="13171" >
+				<rating value="N/A">			<average value="6.88795" />
+			<bayesaverage value="6.77368" /></rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="1" wishlistpriority="3" preordered="0" lastmodified="2015-08-06 12:33:00" />
+								</item>
+		
+</items>

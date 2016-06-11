@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (3.4.0)
+  - GABoardGameGeek (0.1.0):
+    - Alamofire (~> 3.0)
+    - SWXMLHash (~> 2.2)
+  - Nimble (4.0.1)
+  - OHHTTPStubs (5.1.0):
+    - OHHTTPStubs/Default (= 5.1.0)
+  - OHHTTPStubs/Core (5.1.0)
+  - OHHTTPStubs/Default (5.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (5.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (5.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (5.1.0)
+  - OHHTTPStubs/Swift (5.1.0):
+    - OHHTTPStubs/Core
+  - Quick (0.9.2)
+  - SWXMLHash (2.3.1)
+
+DEPENDENCIES:
+  - GABoardGameGeek (from `../`)
+  - Nimble
+  - OHHTTPStubs
+  - OHHTTPStubs/Swift
+  - Quick
+
+EXTERNAL SOURCES:
+  GABoardGameGeek:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  GABoardGameGeek: 31e17ba2fab5aba67c3369b1fc30ae41e6ec8859
+  Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
+  OHHTTPStubs: 592f74439d2d72615115cf99a954237a3fbe26e5
+  Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
+  SWXMLHash: 795c66e74f4cc9473ad6465c6653c5a6f59f417e
+
+PODFILE CHECKSUM: 54474ed4c073938fd2dbb3036f9e72cce6b2fad8
+
+COCOAPODS: 1.0.1

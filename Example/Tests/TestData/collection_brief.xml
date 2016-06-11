@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<items totalitems="123" termsofuse="http://boardgamegeek.com/xmlapi/termsofuse" pubdate="Sat, 28 May 2016 15:11:31 +0000">
+		<item objecttype="thing" objectid="84876" subtype="boardgame" collid="29577003">
+	<name sortindex="5">The Castles of Burgundy</name>
+					<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 14:57:30" />
+								</item>
+		<item objecttype="thing" objectid="10630" subtype="boardgame" collid="28226243">
+	<name sortindex="1">Memoir &#039;44</name>
+					<status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 15:04:04" />
+								</item>
+		<item objecttype="thing" objectid="164153" subtype="boardgame" collid="28295925">
+	<name sortindex="1">Star Wars: Imperial Assault</name>
+					<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:38:46" />
+								</item>
+		<item objecttype="thing" objectid="27588" subtype="boardgame" collid="29622796">
+	<name sortindex="1">Zooloretto</name>
+					<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="1" wishlistpriority="3" preordered="0" lastmodified="2015-08-06 12:33:00" />
+								</item>		
+</items>

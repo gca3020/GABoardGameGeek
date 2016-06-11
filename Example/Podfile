@@ -1,0 +1,9 @@
+use_frameworks!
+target 'GABoardGameGeek_Tests' do
+  pod 'GABoardGameGeek', :path => '../'
+  
+  pod 'Quick'
+  pod 'Nimble'
+  pod 'OHHTTPStubs'
+  pod 'OHHTTPStubs/Swift'
+end

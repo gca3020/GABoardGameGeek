@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<items totalitems="123" termsofuse="http://boardgamegeek.com/xmlapi/termsofuse" pubdate="Sat, 28 May 2016 19:02:23 +0000">
+		<item objecttype="thing" objectid="84876" subtype="boardgame" collid="29577003">
+	<name sortindex="5">The Castles of Burgundy</name>
+		<yearpublished>2011</yearpublished>			<image>//cf.geekdo-images.com/images/pic1176894.jpg</image>
+		<thumbnail>//cf.geekdo-images.com/images/pic1176894_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 14:57:30" />
+	<numplays>6</numplays>							</item>
+		<item objecttype="thing" objectid="10630" subtype="boardgame" collid="28226243">
+	<name sortindex="1">Memoir &#039;44</name>
+		<yearpublished>2004</yearpublished>			<image>//cf.geekdo-images.com/images/pic43663.jpg</image>
+		<thumbnail>//cf.geekdo-images.com/images/pic43663_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="1" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-08-06 15:04:04" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="164153" subtype="boardgame" collid="28295925">
+	<name sortindex="1">Star Wars: Imperial Assault</name>
+		<yearpublished>2014</yearpublished>			<image>//cf.geekdo-images.com/images/pic2247647.jpg</image>
+		<thumbnail>//cf.geekdo-images.com/images/pic2247647_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-12-15 07:38:46" />
+	<numplays>9</numplays>							<wishlistcomment>Star Wars D&amp;D.</wishlistcomment></item>
+		<item objecttype="thing" objectid="27588" subtype="boardgame" collid="29622796">
+	<name sortindex="1">Zooloretto</name>
+		<yearpublished>2007</yearpublished>			<image>//cf.geekdo-images.com/images/pic187388.jpg</image>
+		<thumbnail>//cf.geekdo-images.com/images/pic187388_t.jpg</thumbnail>
+			<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="1" wishlistpriority="3" preordered="0" lastmodified="2015-08-06 12:33:00" />
+	<numplays>0</numplays>							<wishlistcomment>Looks like a fun game about running a zoo.</wishlistcomment></item>
+</items>
