@@ -16,35 +16,25 @@ class CollectionSpec: QuickSpec {
     override func spec() {
 
         describe("A Collection API Request") {
-            var gameList = [CollectionBoardGame]()
-            var game: CollectionBoardGame?
 
             context("for a standard list") {
-                beforeEach {
-                    waitUntil(timeout: 5) { done in
-                        GABoardGameGeek().getUserCollection("test", brief: false, stats: false) { result in
-                            switch(result) {
-                            case .Success(let games):
-                                gameList.appendContentsOf(games)
-                                done()
-                            default:
-                                break
-                            }
-                        }
-                    }
-                }
-
-                afterEach {
-                    gameList.removeAll()
-                    game = nil
-                }
-
-                it("should contain the correct number of elements") {
-                    expect(gameList).to(haveCount(123))
-                }
 
                 it("should contain standard fields, and not optional ones") {
-                    game = gameList[18] // Castles of Burgundy
+                    var apiResult: ApiResult<[CollectionBoardGame]>?
+
+                    waitUntil() { done in
+                        GABoardGameGeek().getUserCollection("test", brief: false, stats: false) { result in
+                            apiResult = result
+                            done()
+                        }
+                    }
+
+                    expect(apiResult).toNot(beNil())
+                    expect(apiResult?.isSuccess).to(beTrue())
+                    expect(apiResult?.value).to(haveCount(4))
+
+                    let game = apiResult?.value?[0] // Castles of Burgundy
+
                     expect(game).toNot(beNil())
 
                     expect(game!.objectId).to(equal(84876))
@@ -52,14 +42,14 @@ class CollectionSpec: QuickSpec {
                     expect(game!.sortName).to(equal("Castles of Burgundy"))
                     expect(game!.yearPublished).to(equal(2011))
 
-                    expect(game!.status.owned).to(equal(true))
-                    expect(game!.status.prevOwned).to(equal(false))
-                    expect(game!.status.forTrade).to(equal(false))
-                    expect(game!.status.wantInTrade).to(equal(false))
-                    expect(game!.status.wantToPlay).to(equal(false))
-                    expect(game!.status.wantToBuy).to(equal(false))
-                    expect(game!.status.wishList).to(equal(false))
-                    expect(game!.status.preOrdered).to(equal(false))
+                    expect(game!.status.owned).to(beTrue())
+                    expect(game!.status.prevOwned).to(beFalse())
+                    expect(game!.status.forTrade).to(beFalse())
+                    expect(game!.status.wantInTrade).to(beFalse())
+                    expect(game!.status.wantToPlay).to(beFalse())
+                    expect(game!.status.wantToBuy).to(beFalse())
+                    expect(game!.status.wishList).to(beFalse())
+                    expect(game!.status.preOrdered).to(beFalse())
                     expect(game!.status.wishListPriority).to(beNil())
 
                     expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic1176894.jpg"))
@@ -80,31 +70,23 @@ class CollectionSpec: QuickSpec {
             } // context( for a standard list )
 
             context("for a brief list") {
-                beforeEach {
-                    waitUntil(timeout: 5) { done in
-                        GABoardGameGeek().getUserCollection("test", brief: true, stats: false) { result in
-                            switch(result) {
-                            case .Success(let games):
-                                gameList.appendContentsOf(games)
-                                done()
-                            default:
-                                break
-                            }
-                        }
-                    }
-                }
-
-                afterEach {
-                    gameList.removeAll()
-                    game = nil
-                }
-
-                it("should contain the correct number of elements") {
-                    expect(gameList).to(haveCount(123))
-                }
 
                 it("should contain only the base fields") {
-                    game = gameList[122] // Zooloretto
+                    var apiResult: ApiResult<[CollectionBoardGame]>?
+
+                    waitUntil() { done in
+                        GABoardGameGeek().getUserCollection("test", brief: true, stats: false) { result in
+                            apiResult = result
+                            done()
+                        }
+                    }
+
+                    expect(apiResult).toNot(beNil())
+                    expect(apiResult?.isSuccess).to(beTrue())
+                    expect(apiResult?.value).to(haveCount(4))
+
+                    let game = apiResult?.value?[3] // Zooloretto
+
                     expect(game).toNot(beNil())
 
                     expect(game!.objectId).to(equal(27588))
@@ -113,14 +95,14 @@ class CollectionSpec: QuickSpec {
 
                     expect(game!.yearPublished).to(beNil())
 
-                    expect(game!.status.owned).to(equal(false))
-                    expect(game!.status.prevOwned).to(equal(false))
-                    expect(game!.status.forTrade).to(equal(false))
-                    expect(game!.status.wantInTrade).to(equal(false))
-                    expect(game!.status.wantToPlay).to(equal(false))
-                    expect(game!.status.wantToBuy).to(equal(false))
-                    expect(game!.status.wishList).to(equal(true))
-                    expect(game!.status.preOrdered).to(equal(false))
+                    expect(game!.status.owned).to(beFalse())
+                    expect(game!.status.prevOwned).to(beFalse())
+                    expect(game!.status.forTrade).to(beFalse())
+                    expect(game!.status.wantInTrade).to(beFalse())
+                    expect(game!.status.wantToPlay).to(beFalse())
+                    expect(game!.status.wantToBuy).to(beFalse())
+                    expect(game!.status.wishList).to(beTrue())
+                    expect(game!.status.preOrdered).to(beFalse())
                     expect(game!.status.wishListPriority).to(equal(3))
 
 
@@ -136,31 +118,23 @@ class CollectionSpec: QuickSpec {
             } // context( for a brief list )
 
             context("for a standard list with stats") {
-                beforeEach {
-                    waitUntil(timeout: 5) { done in
-                        GABoardGameGeek().getUserCollection("test", brief: false, stats: true) { result in
-                            switch(result) {
-                            case .Success(let games):
-                                gameList.appendContentsOf(games)
-                                done()
-                            default:
-                                break
-                            }
-                        }
-                    }
-                }
-
-                afterEach {
-                    gameList.removeAll()
-                    game = nil
-                }
-
-                it("should contain the correct number of elements") {
-                    expect(gameList).to(haveCount(123))
-                }
 
                 it("should contain all of the fields including statisics") {
-                    game = gameList[104] // Star Wars: Imperial Assault
+                    var apiResult: ApiResult<[CollectionBoardGame]>?
+
+                    waitUntil() { done in
+                        GABoardGameGeek().getUserCollection("test", brief: false, stats: true) { result in
+                            apiResult = result
+                            done()
+                        }
+                    }
+
+                    expect(apiResult).toNot(beNil())
+                    expect(apiResult?.isSuccess).to(beTrue())
+                    expect(apiResult?.value).to(haveCount(4))
+
+                    let game = apiResult?.value?[2] // Star Wars: Imperial Assault
+
                     expect(game).toNot(beNil())
 
                     expect(game!.objectId).to(equal(164153))
@@ -169,14 +143,14 @@ class CollectionSpec: QuickSpec {
 
                     expect(game!.yearPublished).to(equal(2014))
 
-                    expect(game!.status.owned).to(equal(true))
-                    expect(game!.status.prevOwned).to(equal(false))
-                    expect(game!.status.forTrade).to(equal(false))
-                    expect(game!.status.wantInTrade).to(equal(false))
-                    expect(game!.status.wantToPlay).to(equal(false))
-                    expect(game!.status.wantToBuy).to(equal(false))
-                    expect(game!.status.wishList).to(equal(false))
-                    expect(game!.status.preOrdered).to(equal(false))
+                    expect(game!.status.owned).to(beTrue())
+                    expect(game!.status.prevOwned).to(beFalse())
+                    expect(game!.status.forTrade).to(beFalse())
+                    expect(game!.status.wantInTrade).to(beFalse())
+                    expect(game!.status.wantToPlay).to(beFalse())
+                    expect(game!.status.wantToBuy).to(beFalse())
+                    expect(game!.status.wishList).to(beFalse())
+                    expect(game!.status.preOrdered).to(beFalse())
                     expect(game!.status.wishListPriority).to(beNil())
 
                     expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic2247647.jpg"))
@@ -209,31 +183,22 @@ class CollectionSpec: QuickSpec {
             } // context( for a standard list with stats )
 
             context("for a brief list with stats") {
-                beforeEach {
-                    waitUntil(timeout: 5) { done in
-                        GABoardGameGeek().getUserCollection("test", brief: true, stats: true) { result in
-                            switch(result) {
-                            case .Success(let games):
-                                gameList.appendContentsOf(games)
-                                done()
-                            default:
-                                break
-                            }
-                        }
-                    }
-                }
-
-                afterEach {
-                    gameList.removeAll()
-                    game = nil
-                }
-
-                it("should contain the correct number of elements") {
-                    expect(gameList).to(haveCount(123))
-                }
 
                 it("should contain all of the fields including statisics") {
-                    game = gameList[70] // Memoir '44
+                    var apiResult: ApiResult<[CollectionBoardGame]>?
+
+                    waitUntil() { done in
+                        GABoardGameGeek().getUserCollection("test", brief: true, stats: true) { result in
+                            apiResult = result
+                            done()
+                        }
+                    }
+
+                    expect(apiResult).toNot(beNil())
+                    expect(apiResult?.isSuccess).to(beTrue())
+
+                    let game = apiResult?.value?[1] // Memoir '44
+
                     expect(game).toNot(beNil())
 
                     expect(game!.objectId).to(equal(10630))
@@ -242,14 +207,14 @@ class CollectionSpec: QuickSpec {
 
                     expect(game!.yearPublished).to(beNil())
 
-                    expect(game!.status.owned).to(equal(true))
-                    expect(game!.status.prevOwned).to(equal(false))
-                    expect(game!.status.forTrade).to(equal(true))
-                    expect(game!.status.wantInTrade).to(equal(false))
-                    expect(game!.status.wantToPlay).to(equal(false))
-                    expect(game!.status.wantToBuy).to(equal(false))
-                    expect(game!.status.wishList).to(equal(false))
-                    expect(game!.status.preOrdered).to(equal(false))
+                    expect(game!.status.owned).to(beTrue())
+                    expect(game!.status.prevOwned).to(beFalse())
+                    expect(game!.status.forTrade).to(beTrue())
+                    expect(game!.status.wantInTrade).to(beFalse())
+                    expect(game!.status.wantToPlay).to(beFalse())
+                    expect(game!.status.wantToBuy).to(beFalse())
+                    expect(game!.status.wishList).to(beFalse())
+                    expect(game!.status.preOrdered).to(beFalse())
                     expect(game!.status.wishListPriority).to(beNil())
 
                     expect(game!.imagePath).to(beNil())
@@ -294,7 +259,7 @@ class CollectionSpec: QuickSpec {
                     }
 
                     expect(apiResult).toNot(beNil())
-                    expect(apiResult?.isFailure).to(equal(true))
+                    expect(apiResult?.isFailure).to(beTrue())
                     expect(apiResult?.error).to(matchError(BggError.ServerNotReady))
                 }
 
@@ -307,7 +272,7 @@ class CollectionSpec: QuickSpec {
                     }
 
                     expect(apiResult).toNot(beNil())
-                    expect(apiResult?.isSuccess).to(equal(true))
+                    expect(apiResult?.isSuccess).to(beTrue())
                     expect(apiResult?.value).to(haveCount(0))
                 }
 
@@ -326,7 +291,7 @@ class CollectionSpec: QuickSpec {
                     }
 
                     expect(apiResult).toNot(beNil())
-                    expect(apiResult?.isFailure).to(equal(true))
+                    expect(apiResult?.isFailure).to(beTrue())
                     expect(apiResult?.error).to(matchError(BggError.ApiError("Invalid username specified")))
                 }
             } // context( for an invalid username )
@@ -343,7 +308,7 @@ class CollectionSpec: QuickSpec {
                     }
 
                     expect(apiResult).toNot(beNil())
-                    expect(apiResult?.isSuccess).to(equal(true))
+                    expect(apiResult?.isSuccess).to(beTrue())
                     expect(apiResult?.value).to(haveCount(0))
                 }
             } // context( for an empty collection )
@@ -436,7 +401,7 @@ class CollectionSpec: QuickSpec {
                 let stubPathNotReady = OHPathForFile("TestData/collection_notready.xml", self.dynamicType)
 
                 retryCount += 1
-                if retryCount <= 5 {
+                if retryCount <= 6 {
                     return fixture(stubPathNotReady!, status: 202, headers: ["Content-Type":"text/xml"])
                 } else {
                     return fixture(stubPathValid!, headers: ["Content-Type":"text/xml"])
