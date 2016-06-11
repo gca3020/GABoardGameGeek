@@ -138,7 +138,15 @@ extension BoardGame: XMLIndexerDeserializable {
      - returns: A BoardGame structure.
      */
     public static func deserialize(node: XMLIndexer) throws -> BoardGame {
-        guard node.element != nil else {
+        guard try node.element != nil &&
+            node["name"].withAttr("type", "primary").element != nil &&
+            node["yearpublished"].element != nil &&
+            node["minplayers"].element != nil &&
+            node["maxplayers"].element != nil &&
+            node["playingtime"].element != nil &&
+            node["minplaytime"].element != nil &&
+            node["maxplaytime"].element != nil &&
+            node["minage"].element != nil else {
             throw XMLDeserializationError.NodeIsInvalid(node: node)
         }
 

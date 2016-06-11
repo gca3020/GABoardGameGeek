@@ -219,7 +219,9 @@ class BoardGameSpec: QuickSpec {
 
                     expect(apiResult).toNot(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
+                    expect(apiResult?.isSuccess).to(beFalse())
                     expect(apiResult?.error).to(equal(BggError.ApiError("Invalid Number of Items Returned: 0")))
+                    expect(apiResult?.value).to(beNil())
                 }
 
                 it("should return an empty collection when asking for a collection") {
@@ -237,6 +239,48 @@ class BoardGameSpec: QuickSpec {
                     expect(apiResult?.value).to(haveCount(0))
                 }
             } // context( for an invalid game ID )
+
+            context("with network errors") {
+
+                // These tests could be done for any request, but I'm only going to put them here.
+                // Since all of the networking is common code anyway, I don't need to re-test it
+                // every time.
+                it("should timeout if the network does not respond") {
+                    var apiResult: ApiResult<BoardGame>?
+
+                    waitUntil() { done in
+                        GABoardGameGeek().getGameById(0) { result in
+                            apiResult = result
+                            done()
+                        }
+                    }
+
+                    expect(apiResult).toNot(beNil())
+                    expect(apiResult?.isSuccess).to(beFalse())
+                    expect(apiResult?.value).to(beNil())
+                    expect(apiResult?.isFailure).to(beTrue())
+                    expect(apiResult?.error).to(equal(BggError.ConnectionError(NSError(domain: NSURLErrorDomain, code: -1009, userInfo: nil))))
+                }
+            }
+
+            context("with an unparsable game") {
+                it("should return an XML error if the site returns unparsable results") {
+                    var apiResult: ApiResult<BoardGame>?
+
+                    waitUntil() { done in
+                        GABoardGameGeek().getGameById(34404) { result in
+                            apiResult = result
+                            done()
+                        }
+                    }
+
+                    expect(apiResult).toNot(beNil())
+                    expect(apiResult?.isSuccess).to(beFalse())
+                    expect(apiResult?.value).to(beNil())
+                    expect(apiResult?.isFailure).to(beTrue())
+                    expect(apiResult?.error).to(matchError(BggError.XmlError("")))
+                }
+            }
         }
 
         beforeSuite {
@@ -259,6 +303,14 @@ class BoardGameSpec: QuickSpec {
             stub(isHost("boardgamegeek.com") && containsQueryParams(["id": "999999"])) { _ in
                 let stubPath = OHPathForFile("TestData/thing_empty.xml", self.dynamicType)
                 return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["id": "34404"])) { _ in
+                let stubPath = OHPathForFile("TestData/thing_unparsable.xml", self.dynamicType)
+                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            }
+            stub(isHost("boardgamegeek.com") && containsQueryParams(["id": "0"])) { _ in
+                let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.CFURLErrorNotConnectedToInternet.rawValue), userInfo:nil)
+                return OHHTTPStubsResponse(error:notConnectedError)
             }
         }
 
