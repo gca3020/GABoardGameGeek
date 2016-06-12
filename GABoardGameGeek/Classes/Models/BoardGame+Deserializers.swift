@@ -11,10 +11,11 @@ import SWXMLHash
 extension BoardGame: XMLIndexerDeserializable {
 
     /**
-     Deserializes an "item" element in a BoardGameGeek "thing" response. This item represents
-     a "BoardGame" structure, and contains a number of required and several optional fields.
+     Deserializes an `<item>` element in a BoardGameGeek `thing` response. This item represents
+     a `BoardGame` structure, and contains a number of required and several optional fields.
 
      The format of the item element is as follows:
+     ```xml
         <item type="boardgame" id="161936">
             <thumbnail>//cf.geekdo-images.com/images/pic2452831_t.png</thumbnail>
             <image>//cf.geekdo-images.com/images/pic2452831.png</image>
@@ -130,12 +131,13 @@ extension BoardGame: XMLIndexerDeserializable {
                 </ratings>
             </statistics>
         </item>
+     ```
 
-     - parameter node: An XMLIndexer indexed to an "item" tag representing a BoardGame
+     - parameter node: An `XMLIndexer` indexed to an `<item>` tag representing a `BoardGame`
 
-     - throws: XMLDeserializationError if there is a problem with the deserialization.
+     - throws: `XMLDeserializationError` if there is a problem with the deserialization.
 
-     - returns: A BoardGame structure.
+     - returns: A `BoardGame` structure.
      */
     public static func deserialize(node: XMLIndexer) throws -> BoardGame {
         guard try node.element != nil &&
@@ -184,9 +186,10 @@ extension BoardGame: XMLIndexerDeserializable {
 extension SuggestedPlayersPoll: XMLIndexerDeserializable {
 
     /**
-    Deserializes a Suggested Player Count Poll in a BoardGame API response
+    Deserializes a Suggested Player Count `<poll>` element during `BoardGame` deserialization
 
     The format of this element is as follows:
+     ```xml
     <poll name="suggested_numplayers" title="User Suggested Number of Players" totalvotes="199">
         <results numplayers="1">
             <result value="Best" numvotes="7"/>
@@ -214,12 +217,13 @@ extension SuggestedPlayersPoll: XMLIndexerDeserializable {
             <result value="Not Recommended" numvotes="81"/>
         </results>
     </poll>
+     ```
 
-    - parameter node: The `poll` indexer containing the suggested_numplayers poll
+    - parameter node: The `<poll>` indexer containing the suggested_numplayers poll
 
-    - throws: XMLDeserializationError.
+    - throws: `XMLDeserializationError`
 
-    - returns: A populated SuggestedPlayersPoll structure
+    - returns: A populated `SuggestedPlayersPoll` structure
     */
     public static func deserialize(node: XMLIndexer) throws -> SuggestedPlayersPoll {
         guard node.element != nil else {
@@ -249,9 +253,10 @@ extension SuggestedPlayersPoll: XMLIndexerDeserializable {
 extension SuggestedPlayeragePoll: XMLIndexerDeserializable {
 
     /**
-    Deserializes a Suggested Playerage Poll in a BoardGame API response
+    Deserializes a Suggested Playerage `<poll>` element in a `BoardGame` API response
 
     The format of this element is as follows:
+     ```xml
     <poll name="suggested_playerage" title="User Suggested Player Age" totalvotes="60">
         <results>
             <result value="2" numvotes="0"/>
@@ -268,12 +273,13 @@ extension SuggestedPlayeragePoll: XMLIndexerDeserializable {
             <result value="21 and up" numvotes="1"/>
         </results>
     </poll>
+     ```
 
-    - parameter node: The `poll` indexer containing the suggested_playerage poll
+    - parameter node: The `<poll>` indexer containing the suggested_playerage poll
 
-    - throws: XMLDeserializationError.
+    - throws: `XMLDeserializationError`
 
-    - returns: A populated SuggestedPlayeragePoll structure
+    - returns: A populated `SuggestedPlayeragePoll` structure
     */
     public static func deserialize(node: XMLIndexer) throws -> SuggestedPlayeragePoll {
         guard node.element != nil else {
@@ -290,9 +296,10 @@ extension SuggestedPlayeragePoll: XMLIndexerDeserializable {
 extension LanguageDependencePoll: XMLIndexerDeserializable {
 
     /**
-    Deserializes a Language Dependence Poll in a BoardGame API response
+    Deserializes a Language Dependence `<poll>` element in a `BoardGame` API response
 
     The format of this element is as follows:
+     ```xml
     <poll name="language_dependence" title="Language Dependence" totalvotes="63">
         <results>
             <result level="1" value="No necessary in-game text" numvotes="1"/>
@@ -302,12 +309,13 @@ extension LanguageDependencePoll: XMLIndexerDeserializable {
             <result level="5" value="Unplayable in another language" numvotes="10"/>
         </results>
     </poll>
+     ```
 
-    - parameter node: The `poll` indexer containing the language_dependence poll
+    - parameter node: The `<poll>` indexer containing the language_dependence poll
 
-    - throws: XMLDeserializationError.
+    - throws: `XMLDeserializationError`
 
-    - returns: A populated LanguageDependencePoll structure
+    - returns: A populated `LanguageDependencePoll` structure
     */
     public static func deserialize(node: XMLIndexer) throws -> LanguageDependencePoll {
         guard node.element != nil else {
@@ -324,18 +332,20 @@ extension LanguageDependencePoll: XMLIndexerDeserializable {
 extension PollResult: XMLElementDeserializable {
 
     /**
-    Deserializes a Poll Result from any of the possible poll types in a BoardGameGeek API response
+    Deserializes a `<result>` element from any of the possible poll types in a `BoardGame` API response
 
     Possible formats for this element are as follows:
+     ```xml
     <result level="1" value="No necessary in-game text" numvotes="1"/>
     <result value="2" numvotes="0"/>
     <result value="Best" numvotes="31"/>
+     ```
 
-    - parameter element: The `result` element
+    - parameter element: The `<result>` element
 
-    - throws: XMLDeserializationError.
+    - throws: `XMLDeserializationError`
 
-    - returns: A populated PollResult structure
+    - returns: A populated `PollResult` structure
     */
     public static func deserialize(element: XMLElement) throws -> PollResult {
         return try PollResult(
@@ -348,9 +358,10 @@ extension PollResult: XMLElementDeserializable {
 
 extension Statistics: XMLIndexerDeserializable {
     /**
-    Deserializes a `statistics` block in a BoardGame "thing" response.
+    Deserializes a `<statistics>` element in a `BoardGame` API response.
 
     The format of this block is as follows:
+     ```xml
     <statistics page="1">
         <ratings>
             <usersrated value="7930"/>
@@ -372,12 +383,13 @@ extension Statistics: XMLIndexerDeserializable {
             <averageweight value="2.816"/>
         </ratings>
     </statistics>
+     ```
 
-    - parameter node: The `statistics` indexer containing the game statistics
+    - parameter node: The `<statistics>` indexer containing the game statistics
 
-    - throws: XMLDeserializationError.
+    - throws: `XMLDeserializationError`
 
-    - returns: A populated Statistics structure
+    - returns: A populated `Statistics` structure
     */
     public static func deserialize(node: XMLIndexer) throws -> Statistics {
         return try Statistics(
@@ -402,17 +414,19 @@ extension Statistics: XMLIndexerDeserializable {
 extension BoardGameLink: XMLElementDeserializable {
 
     /**
-    Deserializes a "link" element in a BoardGame "thing" response.
+    Deserializes a `<link>` element in a `BoardGame` API response.
 
-    The format of the link element is as follows:
+    The format of this element is as follows:
+     ```xml
     <link type="boardgameimplementation" id="30549" value="Pandemic" inbound="true"/>
     <link type="boardgamedesigner" id="442" value="Rob Daviau"/>
+     ```
 
-    - parameter element: The `link` element
+    - parameter element: The `<link>` element
 
-    - throws: XMLDeserializationError.
+    - throws: `XMLDeserializationError`
 
-    - returns: A populated BoardGameLink structure
+    - returns: A populated `BoardGameLink` structure
     */
     public static func deserialize(element: XMLElement) throws -> BoardGameLink {
         return try BoardGameLink(
@@ -427,16 +441,18 @@ extension BoardGameLink: XMLElementDeserializable {
 extension GameRank: XMLElementDeserializable {
 
     /**
-     Deserializes a "rating" element in BoardGameGeek API response.
+     Deserializes a `<rank>` element in a `BoardGame` API response.
 
      The format of the rating element is as follows:
+     ```xml
      <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="3616" bayesaverage="5.70119"/>
+     ```
 
-     - parameter element: The `rank` element
+     - parameter element: The `<rank>` element
 
-     - throws: XMLDeserializationError.
+     - throws: `XMLDeserializationError`
 
-     - returns: A populated GameRank structure
+     - returns: A populated `GameRank` structure
      */
     public static func deserialize(element: XMLElement) throws -> GameRank {
         return try GameRank(

@@ -12,10 +12,11 @@ import SWXMLHash
 extension CollectionBoardGame: XMLIndexerDeserializable {
 
     /**
-     Deserializes an "item" element in a BoardGameGeek "collection" response. This item represents
-     a "CollectionBoardGame", and contains a number of required and several optional fields.
+     Deserializes an `<item>` element in a BoardGameGeek "collection" response. This element represents
+     a `CollectionBoardGame`, and contains a number of required and several optional fields.
      
      The format of the item element is as follows:
+     ```xml
      <item objecttype="thing" objectid="177590" subtype="boardgame" collid="29096777">
         <name sortindex="1">13 Days: The Cuban Missile Crisis</name>
         <yearpublished>2015</yearpublished>
@@ -36,12 +37,13 @@ extension CollectionBoardGame: XMLIndexerDeserializable {
         <status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0" preordered="0" lastmodified="2016-04-04 20:19:37"/>
         <numplays>1</numplays>
      </item>
+     ```
 
-     - parameter node: An XMLIndexer indexed to an "item" tag representing a CollectionBoardGame
+     - parameter node: An `XMLIndexer` indexed to an `<item>` element representing a `CollectionBoardGame`
 
-     - throws: XMLDeserializationError if there is a problem with the deserialization.
+     - throws: `XMLDeserializationError` if there is a problem with the deserialization.
 
-     - returns: A CollectionBoardGame structure.
+     - returns: A `CollectionBoardGame` structure.
      */
     public static func deserialize(node: XMLIndexer) throws -> CollectionBoardGame {
         guard node.element != nil && node["name"].element != nil else {
@@ -74,16 +76,18 @@ extension CollectionBoardGame: XMLIndexerDeserializable {
 extension CollectionStatus: XMLElementDeserializable {
 
     /**
-     Deserializes a "status" indexer in BoardGameGeek "collection" response.
+     Deserializes a `<status>` element in a BoardGameGeek "collection" response.
 
      The format of the status element is as follows:
+     ```xml
      <status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="1" wanttobuy="0" wishlist="1" wishlistpriority="3" preordered="0" lastmodified="2015-12-18 09:38:29" />
+     ```
 
-     - parameter node: The XMLIndexer status node
+     - parameter node: The `<status>` element
 
-     - throws: XMLDeserializationError.NodeIsInvalid if the node does not contain all of the required attributes.
+     - throws: `XMLDeserializationError.NodeIsInvalid` if the node does not contain all of the required attributes.
 
-     - returns: A CollectionStatus structure.
+     - returns: A `CollectionStatus` structure.
      */
     public static func deserialize(element: XMLElement) throws -> CollectionStatus {
         return try CollectionStatus(
@@ -105,20 +109,22 @@ extension CollectionStatus: XMLElementDeserializable {
 extension CollectionStats: XMLIndexerDeserializable {
 
     /**
-     Deserializes a "stats" indexer in BoardGameGeek "collection" response.
+     Deserializes a `<stats>` indexer in BoardGameGeek "collection" response.
 
      The format of the stats element is as follows:
+     ```xml
      <stats minplayers="2" maxplayers="2" minplaytime="40" maxplaytime="60" playingtime="60" numowned="253">
         <rating value="N/A">
             ...snip...
         </rating>
      </stats>
+     ```
      
-     - parameter node: The XMLIndexer stats node
+     - parameter node: The `<stats>` indexer
 
-     - throws: XMLDeserializationError.NodeIsInvalid if the node does not contain all of the required attributes.
+     - throws: `XMLDeserializationError.NodeIsInvalid` if the node does not contain all of the required attributes.
 
-     - returns: A CollectionStats structure.
+     - returns: A `CollectionStats` structure.
      */
     public static func deserialize(node: XMLIndexer) throws -> CollectionStats {
         guard let element = node.element else {
@@ -143,6 +149,7 @@ extension CollectionRating: XMLIndexerDeserializable {
      Deserializes a "rating" indexer in BoardGameGeek "collection" response.
 
      The format of the rating element is as follows:
+     ```xml
      <rating value="N/A">
         <usersrated value="70"/>
         <average value="7.66143"/>
@@ -153,20 +160,21 @@ extension CollectionRating: XMLIndexerDeserializable {
             <rank ...snip... />
         </ranks>
      </rating>
+     ```
      
      or 
-     
+     ```xml
      <rating value="7.5">
          <average value="7.66143"/>
          <bayesaverage value="5.68734"/>
      </rating>
+     ```
 
+     - parameter node: The `<rating>` indexer
 
-     - parameter node: The XMLIndexer rating node
+     - throws: `XMLDeserializationError.NodeIsInvalid` if the node does not contain all of the required attributes.
 
-     - throws: XMLDeserializationError.NodeIsInvalid if the node does not contain all of the required attributes.
-
-     - returns: A CollectionStats structure.
+     - returns: A `CollectionStats` structure.
      */
     public static func deserialize(node: XMLIndexer) throws -> CollectionRating {
         guard node["average"].element != nil && node["bayesaverage"].element != nil else {

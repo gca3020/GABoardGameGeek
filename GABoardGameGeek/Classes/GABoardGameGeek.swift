@@ -13,14 +13,16 @@ public class GABoardGameGeek {
     // MARK: - API Functions
 
     /**
-     Make a request for a user's collection, returning the results on a success, or a non-
-     Success ApiResult on a failure.
+     Make a request for a user's collection, given the username
 
      - parameter username:       The username to request collection data from
-     - parameter brief:          true if we should request the brief collection, false otherwise
-     - parameter stats:          true if we should request stats, false otherwise
+     - parameter brief:          `true` if we should request the brief collection, `false` otherwise
+     - parameter stats:          `true` if we should request stats, `false` otherwise
      - parameter timeoutSeconds: The number of seconds we should retry the request if the site responds that it is still processing
-     - parameter closure:        The closure to call when the results have been obtained or an error has occured.
+     - parameter closure:        Async return of an `ApiResult<[CollectionBoardGame]>` containing `.Success(Value)`
+                                 on a successful call, or `.Failure(BggError)` if something went wrong.
+     
+     - NOTE: The closure executes on the main thread by default.
      */
     public func getUserCollection(username: String, brief: Bool = false, stats: Bool = false, timeoutSeconds: Int = 90, closure: ApiResult<[CollectionBoardGame]> -> () ) {
 
@@ -39,8 +41,11 @@ public class GABoardGameGeek {
      Get a list of games, given a list of game IDs.
 
      - parameter ids:     An array of integer game IDs to query
-     - parameter stats:   true if we should request game statistics
-     - parameter closure: The closure to call when the results have been obtained or an error has occured.
+     - parameter stats:   `true` if we should request game statistics
+     - parameter closure: Async return of an `ApiResult<[BoardGame]>` containing `.Success(Value)` on a 
+                          successful call, or `.Failure(BggError)` if something went wrong.
+
+     - NOTE: The closure executes on the main thread by default.
      */
     public func getGamesById(ids: [Int], stats: Bool = false, closure: ApiResult<[BoardGame]> -> () ) {
 
@@ -54,11 +59,14 @@ public class GABoardGameGeek {
     }
 
     /**
-     Retrieve the details of a single game, given its ID
+     Retrieve the details of a single game, given its ID.
 
      - parameter id:      The ID of the game to request
      - parameter stats:   true if we should request game statistics
-     - parameter closure: The closure to call when the results have been obtained or an error has occured.
+     - parameter closure: Async return of an `ApiResult<BoardGame>` containing `.Success(Value)` on a
+                          successful call, or `.Failure(BggError)` if something went wrong.
+
+     - NOTE: The closure executes on the main thread by default.
      */
     public func getGameById(id: Int, stats: Bool = false, closure: ApiResult<BoardGame> -> () ) {
 
@@ -77,12 +85,12 @@ public class GABoardGameGeek {
         }
     }
 
-    // MARK: - Initializer
+    // MARK: - Initializers
 
     /**
-     Initialize the GABoardGameGeek API
+     Initialize the `GABoardGameGeek` API
 
-     - returns: A GABoardGameGeek class ready to handle API requests
+     - returns: A `GABoardGameGeek` instance ready to handle API requests
      */
     public init() {
         self.api = ApiAdapter()
@@ -90,7 +98,7 @@ public class GABoardGameGeek {
 
     // MARK: - Private Member Variables
 
-    /// An API Adapter to separate out all of the internal Networking and XML Parsing Functionality
+    /// An `ApiAdapter` to separate out all of the internal Networking and XML Parsing Functionality
     private let api: ApiAdapter
 
     // MARK: - Constants

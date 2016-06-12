@@ -11,7 +11,7 @@ import Foundation
 // MARK: - CollectionBoardGame
 
 /**
- * A struct representing a board game retrieved from a user's collection query. A collection
+ * A struct representing a board game retrieved from a user collection query. A collection
  * query can be different depending on several flags. Two of the flags that make the most
  * difference to the format of the results are "brief=1" and "stats=1". The structures below
  * document what I believe to be nearly complete (I am am missing some of the more obscure
@@ -21,58 +21,63 @@ import Foundation
 public struct CollectionBoardGame {
 
     /// The object ID of this game.
-    var objectId: Int
+    public var objectId: Int
 
     /// The name of this game.
-    var name: String
+    public var name: String
 
     /// The sort index of this game.
-    var sortIndex: Int
+    public var sortIndex: Int
 
-    /// The status of a BoardGame in a user's collection - Along with the name and ID,
+    /// The status of a game in a user's collection - Along with the name and ID,
     /// this is the only thing that is guaranteed to be there when querying a collection
-    var status: CollectionStatus
+    public var status: CollectionStatus
 
     /// Statistics for a game in a user's collection. These are formatted differently
-    /// from the simple game lookup. Not present when stats=0
-    var stats: CollectionStats?
+    /// from the simple game lookup. 
+    /// - Note: Not present when `stats` is not set
+    public var stats: CollectionStats?
 
-    /// The year a game was published. Not present when brief=1
-    var yearPublished: Int?
+    /// The year a game was published. 
+    /// - Note: Not present when `brief` is set
+    public var yearPublished: Int?
 
-    /// The path where the game image can be accessed. Not present when brief=1
-    /// - Note: Querying the image should be done via the imageUrl computed param.
-    var imagePath: String?
+    /// The path where the game's image can be accessed.
+    /// - Note: Not present when `brief` is set
+    /// - Note: This parameter should not be used to make a web request. Instead use the `imageUrl` computed param.
+    public var imagePath: String?
 
-    /// The path where the game thumbnail image can be accessed. Not present when brief=1
-    /// - Note: Querying the thumbnail should be done via the thumbnailUrl computed param.
-    var thumbnailPath: String?
+    /// The path where the game's thumbnail-sized image can be accessed.
+    /// - Note: Not present when `brief` is set
+    /// - Note: This parameter should not be used to make a web request. Instead use the `thumbnailUrl` computed param.
+    public var thumbnailPath: String?
 
-    /// The number of plays a user has logged of the game. Not present when brief=1
-    var numPlays: Int?
+    /// The number of plays a user has logged of the game. 
+    /// - Note: Not present when `brief` is set
+    public var numPlays: Int?
 
     /// If the user has commented on this game in their wishlist, this field will be populated.
-    /// Not present when brief=1
-    var wishListComment: String?
+    /// - Note: Not present when `brief` is set
+    public var wishListComment: String?
 
     /// If the user has commented on this game in their collection, this field will be populated.
-    /// Not present when brief=1
-    var comment: String?
+    /// - Note: Not present when `brief` is set
+    public var comment: String?
 
     /// The sort-name of this game. A calculated parameter that indexes into the name by the sortIndex
-    var sortName: String {
+    public var sortName: String {
         get { return name.getSortString(sortIndex) }
     }
 
-    /// The NSURL to retrieve the game's image.
-    /// - Note: Nil if the game has no imagePath, or if the imagePath is malformed.
-    var imageUrl: NSURL? {
+    /// The `NSURL` to retrieve the game's image.
+    /// - Note: `nil` if the game has no `imagePath`, or if the `imagePath` is malformed.
+    public var imageUrl: NSURL? {
         get { return NSURL(fromBggUrlString: imagePath) }
     }
 
-    /// The NSURL to retrieve the game's thumbnail image.
-    /// - Note: Nil if the game has no thumbnailPath, or if the thumbnailPath is malformed.
-    var thumbnailUrl: NSURL? {
+    /// The `NSURL` to retrieve the game's thumbnail image.
+    /// - Note: `nil` if the game has no `thumbnailPath`, or if the `thumbnailPath` is malformed.
+    public var thumbnailUrl: NSURL? {
         get { return NSURL(fromBggUrlString: thumbnailPath) }
     }
 }
@@ -85,93 +90,101 @@ public struct CollectionBoardGame {
 public struct CollectionStatus {
 
     /// whether the user owns the game
-    var owned = false
+    public var owned = false
 
     /// The user has previously owned the game
-    var prevOwned = false
+    public var prevOwned = false
 
     /// The user has the game marked as "want to buy"
-    var wantToBuy = false
+    public var wantToBuy = false
 
     /// The user has the game marked as "want to play"
-    var wantToPlay = false
+    public var wantToPlay = false
 
     /// The user has preordered the game
-    var preOrdered = false
+    public var preOrdered = false
 
     /// The user would like to get this game in trade
-    var wantInTrade = false
+    public var wantInTrade = false
 
     /// The user owns this game and has it listed for trade.
-    var forTrade = false
+    public var forTrade = false
 
     /// The game is in this user's wishlist.
-    var wishList = false
+    public var wishList = false
 
-    /// The priority of this game in a user's wish list. Not present when wishList=false
-    var wishListPriority: Int?
+    /// The priority of this game in a user's wish list. 
+    /// - Note: Not present when `wishList` is `false`
+    public var wishListPriority: Int?
 
     /// The most recent date this item in the collection was modified
-    var lastModified = ""
+    public var lastModified = ""
 }
 
 // MARK: - CollectionStats
 
 /**
  *  A class representing the statistics of a game, pulled when requesting the collection with the
- * "stats=1" flag. If brief stats are pulled, this structure will contain only the non-optional members.
+ *  `stats` param set.
  */
 public struct CollectionStats {
 
     /// The minimum number of players this game supports
-    var minPlayers: Int?
+    public var minPlayers: Int?
 
     /// The maximum number of players this game supports
-    var maxPlayers: Int?
+    public var maxPlayers: Int?
 
     /// The minimum playtime listed for this game
-    var minPlaytime: Int?
+    public var minPlaytime: Int?
 
     /// The maximum playtime listed for this game
-    var maxPlaytime: Int?
+    public var maxPlaytime: Int?
 
     /// The listed playing time for this game
-    var playingTime: Int?
+    public var playingTime: Int?
 
     /// The number of users that own this game
-    var numOwned: Int
+    public var numOwned: Int
 
     /// The ratings and rankings for this game.
-    var rating: CollectionRating
+    public var rating: CollectionRating
 }
 
 // MARK: - CollectionRating
 
 /**
- *  A class representing the statistics of a game, pulled when requesting the collection with the
- * "stats=1" flag. If brief stats are pulled, this structure will contain only the non-optional members.
+ *  A class representing the ratings of a game, pulled when requesting the collection with the
+ *  `stats` param set.
  */
 public struct CollectionRating {
 
-    /// The user's rating for this game. If the user has not rated this game, it will be 0.0
-    var userRating: Double?
+    /// The user's rating for this game. 
+    /// - Note: If the user has not rated this game, it will be 0.0
+    public var userRating: Double?
 
-    /// The number of users that have rated this game. Not present when brief=1
-    var usersRated: Int?
+    /// The number of users that have rated this game. 
+    /// - Note: Not present when `brief` is set
+    public var usersRated: Int?
 
-    /// The average rating given to this game. Not present when brief=1
-    var averageRating: Double
+    /// The average rating given to this game. 
+    /// - Note: Not present when `brief` is set
+    public var averageRating: Double
 
-    /// The weighted "Geek Rating" given to this game. Not present when brief=1
-    var bayesAverageRating: Double
+    /// The weighted "Geek Rating" given to this game. 
+    /// - Note: Not present when `brief` is set
+    public var bayesAverageRating: Double
 
-    /// The standard deviation of the rating for this game. Not present when brief=1
-    var stdDev: Double?
+    /// The standard deviation of the rating for this game. 
+    /// - Note: Not present when `brief` is set
+    public var stdDev: Double?
 
-    /// The median rating given to this game. Not present when brief=1
+    /// The median rating given to this game. 
+    /// - Note: Not present when `brief` is set
     /// - Note: I have never seen this be non-zero.
-    var median: Double?
+    public var median: Double?
 
-    /// This game's ranking within various lists. Not present when brief=1
-    var ranks: [GameRank]?
+    /// This game's ranking within various lists. 
+    /// - Note: Not present when `brief` is set
+    public var ranks: [GameRank]?
 }

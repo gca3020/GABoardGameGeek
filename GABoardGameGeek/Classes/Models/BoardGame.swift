@@ -16,81 +16,82 @@ import Foundation
 public struct BoardGame {
 
     /// The object ID of this game. A unique identifier across the site.
-    var objectId: Int
+    public var objectId: Int
 
     /// The type of object this is. Commonly "boardgame", "boardgameexpansion", "boardgameaccessory"
-    var type: String
+    public var type: String
 
     /// The name of this game. This is the primary name.
-    var name: String
+    public var name: String
 
     /// The character of the name that the game should be sorted on. This is 1-indexed.
-    var sortIndex: Int
+    public var sortIndex: Int
 
     /// Path to the image for this game. This is not present if no image has been set for this game.
-    /// - Note: This parameter should not be used to make a web request. Instead use the imageUrl computed param.
-    var imagePath: String?
+    /// - Note: This parameter should not be used to make a web request. Instead use the `imageUrl` computed param.
+    public var imagePath: String?
 
     /// Path to the thumbnail image for this game. Not guaranteed to be present.
-    /// - Note: This parameter hsould not be used to make a web request. Instead use the thumbnailUrl computed param.
-    var thumbnailPath: String?
+    /// - Note: This parameter should not be used to make a web request. Instead use the `thumbnailUrl` computed param.
+    public var thumbnailPath: String?
 
     /// The game description.
-    var description: String
+    public var description: String
 
     /// The year this game was published.
-    var yearPublished: Int
+    public var yearPublished: Int
 
     /// The minimum number of players supported by this game.
-    var minPlayers: Int
+    public var minPlayers: Int
 
     /// The maximum number of players supported by this game.
-    var maxPlayers: Int
+    public var maxPlayers: Int
 
     /// The playing time for this game.
-    var playingTime: Int
+    public var playingTime: Int
 
     /// The minimum playing time for this game.
-    var minPlaytime: Int
+    public var minPlaytime: Int
 
     /// The maximum playing time for this game.
-    var maxPlaytime: Int
+    public var maxPlaytime: Int
 
     /// The minimum player age recommended for this game.
-    var minAge: Int
+    public var minAge: Int
 
     /// A poll for the suggested number of players that this game will play well with.
-    var suggestedPlayers: SuggestedPlayersPoll
+    public var suggestedPlayers: SuggestedPlayersPoll
 
     /// A poll for the suggested minimum player age for this game.
-    var suggestedPlayerage: SuggestedPlayeragePoll
+    public var suggestedPlayerage: SuggestedPlayeragePoll
 
     /// A poll for the language dependence of this game.
-    var languageDependence: LanguageDependencePoll
+    public var languageDependence: LanguageDependencePoll
 
     /// Links this game has to other site elements (publishers, designers, expansions, families, mechanics, etc...)
-    var links: [BoardGameLink]
+    public var links: [BoardGameLink]
 
-    /// Statistics for this game. Only present when stats=1 in the API request.
-    var stats: Statistics?
+    /// Statistics for this game. 
+    /// - Note: Not present when `stats` is `false` in the API request.
+    public var stats: Statistics?
 
     // - Mark: Computed Parameters
 
-    /// The name that this game should be sorted on. For example, "The Gallerist" with a sortIndex of 5
+    /// The name that this game should be sorted on. For example, "The Gallerist" with a `sortIndex` of 5
     /// will be sorted simply as "Gallerist".
-    var sortName: String {
+    public var sortName: String {
         get { return name.getSortString(sortIndex) }
     }
 
-    /// The NSURL to retrieve the game's image.
-    /// - Note: Nil if the game has no imagePath, or if the imagePath is malformed.
-    var imageUrl: NSURL? {
+    /// The `NSURL` to retrieve the game's image.
+    /// - Note: Nil if the game has no `imagePath`, or if `imagePath` is malformed.
+    public var imageUrl: NSURL? {
         get { return NSURL(fromBggUrlString: imagePath) }
     }
 
-    /// The NSURL to retrieve the game's thumbnail image.
-    /// - Note: Nil if the game has no thumbnailPath, or if the thumbnailPath is malformed.
-    var thumbnailUrl: NSURL? {
+    /// The `NSURL` to retrieve the game's thumbnail-sized image.
+    /// - Note: Nil if the game has no `thumbnailPath`, or if `thumbnailPath` is malformed.
+    public var thumbnailUrl: NSURL? {
         get { return NSURL(fromBggUrlString: thumbnailPath) }
     }
 }
@@ -110,18 +111,18 @@ public struct BoardGameLink {
     /// - boardgamedesigner
     /// - boardgameartist
     /// - boardgamepublisher
-    var type: String
+    public var type: String
 
     /// A unique identifier for the value of this link
-    var id: Int
+    public var id: Int
 
-    /// The human-readable value for this link (e.g. if 'type' is `boardgamemechanic`,
-    /// then 'value' might be `Set Collection`
-    var value: String
+    /// The human-readable value for this link (e.g. if `type` is "boardgamemechanic",
+    /// then `value` might be "Set Collection")
+    public var value: String
 
     /// Whether this link is in-bound from another game. Commonly seen when this item
     /// is an expansion for another game.
-    var inbound: Bool?
+    public var inbound: Bool?
 }
 
 // - Mark: SuggestedPlayersPoll
@@ -133,11 +134,11 @@ public struct BoardGameLink {
 public struct SuggestedPlayersPoll {
 
     /// The total number of votes in the poll.
-    var totalVotes: Int
+    public var totalVotes: Int
 
-    /// A dictionary mapping the poll results to the number of players. This is mapped by string, rather
-    /// than an integer, because the polls include things like `4+` meaning "more than 4"
-    var results: [String: [PollResult]]?
+    /// A `dictionary` mapping the poll results to the number of players. This is mapped by string, rather
+    /// than an integer, because the polls include things like "4+" meaning "more than 4"
+    public var results: [String: [PollResult]]?
 }
 
 // - Mark: SuggestedPlayeragePoll
@@ -148,10 +149,10 @@ public struct SuggestedPlayersPoll {
 public struct SuggestedPlayeragePoll {
 
     /// The total number of votes in the poll.
-    var totalVotes: Int
+    public var totalVotes: Int
 
-    /// A collection of poll results. Nil if no one has participated in the poll.
-    var results: [PollResult]?
+    /// A collection of poll results. `nil` if no one has participated in the poll.
+    public var results: [PollResult]?
 }
 
 // - Mark: LanguageDependencePoll
@@ -162,10 +163,10 @@ public struct SuggestedPlayeragePoll {
 public struct LanguageDependencePoll {
 
     /// The total number of votes in the poll.
-    var totalVotes: Int
+    public var totalVotes: Int
 
-    /// A collection of poll results. Nil if no one has participated in the poll.
-    var results: [PollResult]?
+    /// A collection of poll results. `nil` if no one has participated in the poll.
+    public var results: [PollResult]?
 }
 
 // - Mark: PollResult
@@ -175,88 +176,88 @@ public struct LanguageDependencePoll {
  */
 public struct PollResult {
 
-    /// The 'level' for this result. Appears to only be present in a Language Dependece poll.
+    /// The 'level' for this result. Appears to only be present in a Language Dependence poll.
     /// A '1' implies that the game is not language dependent, a '5' implies it's very dependent.
-    var level: Int?
+    public var level: Int?
 
     /// The value of the result. This is a human-readable string and will depend on the poll type.
-    var value: String
+    public var value: String
 
     /// The number of votes for this particular result.
-    var numVotes: Int
+    public var numVotes: Int
 }
 
 // - Mark: Statistics
 
 /**
- * The site's recorded statistics for a game, if the game is retrieved from the API with stats=1
+ * The site's recorded statistics for a game, if the game is retrieved from the API with `stats` set
  */
 public struct Statistics {
 
     /// The number of users who have rated this game.
-    var usersRated: Int
+    public var usersRated: Int
 
     /// The average rating given to this game.
-    var average: Double
+    public var average: Double
 
     /// The bayesian (weighted) average rating for this game. Also known as the "GeekRating"
-    var bayesAverage: Double
+    public var bayesAverage: Double
 
     /// The standard deviation in ratings for this game.
-    var stdDev: Double
+    public var stdDev: Double
 
     /// The median rating for this game.
     /// - Note: Currently the site appears to always return `0` for this value.
-    var median: Double
+    public var median: Double
 
     /// The number of users that have marked this game as owned.
-    var owned: Int
+    public var owned: Int
 
     /// The number of users that have this game for trade.
-    var trading: Int
+    public var trading: Int
 
     /// The number of users that have marked this game as one they would like to receive in a trade.
-    var wanting: Int
+    public var wanting: Int
 
     /// The number of users that have added this game to their wishlist.
-    var wishing: Int
+    public var wishing: Int
 
     /// The number of user comments on this game.
-    var numComments: Int
+    public var numComments: Int
 
     /// The number of users who have submitted a "weight" for this game.
-    var numWeights: Int
+    public var numWeights: Int
 
     /// The average "weight" of this game, submitted by users. Ratings are on a scale of 1-5,
     /// with 1 being the easiest to understand.
-    var averageWeight: Double
+    public var averageWeight: Double
 
     /// An array of ranks for this game, indicating its position on various lists.
-    var ranks: [GameRank]
+    public var ranks: [GameRank]
 }
 
 /**
  *  A structure to hold the information about a game's ranking within a particular family. Common
- *  to both games retrieved from the collection url (with stats enabled) as well as the thing url.
+ *  to both games retrieved from the collection url (with `stats` enabled) as well as the thing url.
  */
 public struct GameRank {
 
     /// The category of the ranking. Appears to be either "subtype" or "family"
-    var type: String
+    public var type: String
 
     /// The id of the family the game is ranked in.
-    /// Will be 1 for the "boardgame" rank, and other numbers for other ranks (e.g. thematicgames, familygames)
-    var id: Int
+    /// Will be 1 for the "boardgame" rank, and other numbers for other ranks (e.g. "thematicgames", "familygames")
+    public var id: Int
 
     /// The name of the family the game is ranked in.
-    var name: String
+    public var name: String
 
     /// The friendly name of the family the game is ranked in.
-    var friendlyName: String
+    public var friendlyName: String
 
     /// The ranking of the game in this family. 0 if unranked.
-    var value: Int
+    public var value: Int
 
     /// The weighted average for the rating of the game within this family.
-    var bayesAverage: Double
+    public var bayesAverage: Double
 }
