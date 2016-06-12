@@ -84,7 +84,7 @@ public class GABoardGameGeek {
 
      - returns: A GABoardGameGeek class ready to handle API requests
      */
-    init() {
+    public init() {
         self.api = ApiAdapter()
     }
 
