@@ -169,11 +169,7 @@ GABoardGameGeek().getUserCollection("userName", brief: true, stats: true, timeou
 }
 ```
 
-### Searching for a Game
-
-Game Search is coming very soon!
-
-### ApiResult
+### Handling Results
 
 With heavy inspiration taken from common Swift libraries like Alamofire, the primary way that API results 
 are returned is in an ApiResult container. This container uses Swift Generics to hold values of different
