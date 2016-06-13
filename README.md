@@ -4,6 +4,7 @@
 [![codecov.io](https://codecov.io/github/gca3020/GABoardGameGeek/coverage.svg?branch=master)](https://codecov.io/github/gca3020/GABoardGameGeek?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/GABoardGameGeek.svg?style=flat)](http://cocoapods.org/pods/GABoardGameGeek)
 ![Swift version](https://img.shields.io/badge/swift-2.2-orange.svg)
+[![Platform](https://img.shields.io/cocoapods/p/GABoardGameGeek.svg?style=flat)](http://cocoadocs.org/docsets/GABoardGameGeek)
 [![License](https://img.shields.io/cocoapods/l/GABoardGameGeek.svg?style=flat)](http://cocoapods.org/pods/GABoardGameGeek)
 [![Twitter](https://img.shields.io/badge/twitter-@gca3020-blue.svg?style=flat)](http://twitter.com/gca3020)
 
