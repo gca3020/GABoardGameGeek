@@ -10,7 +10,7 @@ import Foundation
 
 public class GABoardGameGeek {
 
-    // MARK: - API Functions
+    // MARK: - User Collections
 
     /**
      Make a request for a user's collection, given the username
@@ -36,6 +36,8 @@ public class GABoardGameGeek {
         let endTime = NSDate().dateByAddingTimeInterval(Double(timeoutSeconds))
         api.request(self.collectionUrl, params: requestParams, rootElement: "items", childElement: "item", retryUntil: endTime, closure: closure)
     }
+
+    // MARK: - Items
 
     /**
      Get a list of games, given a list of game IDs.
@@ -85,6 +87,24 @@ public class GABoardGameGeek {
         }
     }
 
+    // MARK: - Search
+
+    public func searchFor(query: String, searchType: String? = nil, exactMatch: Bool = false, closure: ApiResult<[SearchResult]> -> () ) {
+
+        // Set up the request parameters
+        var requestParams = [String: String]()
+
+        requestParams["query"] = query.URLQueryString
+        if let unwrappedSearchType = searchType {
+            requestParams["type"] = unwrappedSearchType.URLQueryString
+        }
+        requestParams["exact"] = (exactMatch ? "1" : "0")
+
+        // Make the request
+        api.request(self.searchUrl, params: requestParams, rootElement: "items", childElement: "item", closure: closure)
+    }
+
+
     // MARK: - Initializers
 
     /**
@@ -108,4 +128,7 @@ public class GABoardGameGeek {
 
     /// The BGG URL to use when querying an item by ID
     private let itemUrl = "https://boardgamegeek.com/xmlapi2/thing"
+
+    /// The BGG URL to use when performing a search
+    private let searchUrl = "https://boardgamegeek.com/xmlapi2/search"
 }

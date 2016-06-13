@@ -12,8 +12,8 @@ BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections
 ## Features
 
 - [x] Read-only access to user collections and games
-- [x] TODO! Searching
-- [x] TODO! Forums, Videos, Users, etc...
+- [x] Site Searching
+- [x] TODO! Forums, Videos, Users, Geeklists, etc...
 - [x] Comprehensive Test Coverage & Automated Coverage Reports
 
 ## Requirements
@@ -49,15 +49,51 @@ pod "GABoardGameGeek"
 
 ## Usage
 
-### Reading a Game by ID
-
 One of the things that I wanted to accomplish with this library is making the common things you 
-would want to do very easy, as well as "Swifty". To that end, here is the syntax for requesting
-details on a game, assuming you know the game's ID.
+would want to do very easy, as well as "Swifty". To that end, here are a number of the things you
+can do with this library.
+
+### Searching for a Game
+
+One of the very first things you might want to do is to search for a game by name:
 
 ```swift
 import GABoardGameGeek
 
+GABoardGameGeek().searchFor("pandemic") { result in
+    switch(result) {
+    case .Success(let searchResults):
+        print(searchResults)
+    case .Failure(let error):
+        print(error)
+    }
+}
+```
+
+Alternately, you might want to narrow down your search by only searching for exact matches, or only 
+for items of a specific type, like expansions:
+
+```swift
+import GABoardGameGeek
+
+GABoardGameGeek().searchFor("pandemic: on the brink", searchType: "boardgameexpansion", exactMatch: true) { result in
+    switch(result) {
+    case .Success(let searchResults):
+        print(searchResults)
+    case .Failure(let error):
+        print(error)
+    }
+}
+```
+
+I have some plans for how the search type is specified, as these handful of strings for "type" are used 
+pretty commonly throughout the API, but for now, specifying the string manually gets ths job done.
+
+### Reading a Game by ID
+
+Once you have a game ID, getting the details for that game is easy:
+
+```swift
 GABoardGameGeek().getGameById(12345) { result in
     switch(result) {
     case .Success(let game):

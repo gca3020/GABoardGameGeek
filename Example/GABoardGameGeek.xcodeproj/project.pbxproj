@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C1214811D0E036400AB6A37 /* SearchSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1214801D0E036400AB6A37 /* SearchSpec.swift */; };
 		6C4180231D08ECC200F4B9E7 /* BoardGameSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4180211D08ECC200F4B9E7 /* BoardGameSpec.swift */; };
 		6C4180241D08ECC200F4B9E7 /* CollectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4180221D08ECC200F4B9E7 /* CollectionSpec.swift */; };
 		6C41803C1D08EFEA00F4B9E7 /* TestData in Resources */ = {isa = PBXBuildFile; fileRef = 6C41803B1D08EFEA00F4B9E7 /* TestData */; };
@@ -18,6 +19,7 @@
 		3CD75A01818909122282EE04 /* Pods-GABoardGameGeek_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeek_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeek_Tests/Pods-GABoardGameGeek_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* GABoardGameGeek_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GABoardGameGeek_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C1214801D0E036400AB6A37 /* SearchSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSpec.swift; sourceTree = "<group>"; };
 		6C4180211D08ECC200F4B9E7 /* BoardGameSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGameSpec.swift; sourceTree = "<group>"; };
 		6C4180221D08ECC200F4B9E7 /* CollectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSpec.swift; sourceTree = "<group>"; };
 		6C41803B1D08EFEA00F4B9E7 /* TestData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestData; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				6C4180211D08ECC200F4B9E7 /* BoardGameSpec.swift */,
 				6C4180221D08ECC200F4B9E7 /* CollectionSpec.swift */,
+				6C1214801D0E036400AB6A37 /* SearchSpec.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C1214811D0E036400AB6A37 /* SearchSpec.swift in Sources */,
 				6C4180231D08ECC200F4B9E7 /* BoardGameSpec.swift in Sources */,
 				6C4180241D08ECC200F4B9E7 /* CollectionSpec.swift in Sources */,
 			);

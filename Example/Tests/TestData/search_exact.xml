@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><items total="3" termsofuse="http://boardgamegeek.com/xmlapi/termsofuse">			<item type="boardgame" id="30549">
+			<name type="primary" value="Pandemic"/>			
+							<yearpublished value="2008" />
+					</item>
+						<item type="rpgitem" id="182291">
+			<name type="primary" value="Pandemic"/>			
+							<yearpublished value="2015" />
+					</item>
+						<item type="videogame" id="131688">
+			<name type="primary" value="Pandemic"/>			
+					</item>
+	</items>

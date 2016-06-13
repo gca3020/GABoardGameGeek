@@ -11,7 +11,7 @@ import Foundation
  * A structure defining a Board Game (or expansion, etc...) returned from an "item" query.
  * This is the standard format and contains all of the relevant information that a game has.
  * The statistics block is optional, and will only be present when a game is requested with
- * "stats=1" in the API request.
+ * `stats` set to `true` in the API request.
  */
 public struct BoardGame {
 
