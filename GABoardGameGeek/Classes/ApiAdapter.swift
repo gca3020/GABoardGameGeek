@@ -37,17 +37,17 @@ internal class ApiAdapter {
                 closure(self.parse(xmlString, rootElement: rootElement, childElement: childElement))
             case .failure(let error):
                 switch(error) {
-                case .serverNotReady: break          // In some cases (collection requests), a 202 status code means we should try again,
+                case .serverNotReady:
+                    // In some cases (collection requests), a 202 status code means we should try again,
                     // so queue up a retry to happen in one second, as long as we're still below the timeout.
-                    //if( (NSDate().compare(retryUntil) == ComparisonResult.orderedAscending) ) {
-                       // let delay = DispatchTime.now(dispatch_time_t(DispatchTime.now()), Int64(1.0 * Double(NSEC_PER_SEC)))
-                        //dispatch_after(delay, DispatchQueue.main) {
-                        //    self.request(url, params: params, rootElement: rootElement, childElement: childElement, retryUntil: retryUntil, closure: closure)
-                        //}
-                    //}
-                    //else {
-                    //    closure(.failure(error))
-                    //}
+                    if(Date().compare(retryUntil) == ComparisonResult.orderedAscending) {
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                            self.request(url, params: params, rootElement: rootElement, childElement: childElement, retryUntil: retryUntil, closure: closure)
+                        }
+                    }
+                    else {
+                        closure(.failure(error))
+                    }
                 default:
                     closure(.failure(error))
                 }
