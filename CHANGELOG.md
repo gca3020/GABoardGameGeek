@@ -1,3 +1,7 @@
+## v1.0.0 (December 17, 2016)
+
+* Update code and dependencies for Swift3
+
 ## v0.2.0 (June 13, 2016)
 
 * Add Search functionality to the API
