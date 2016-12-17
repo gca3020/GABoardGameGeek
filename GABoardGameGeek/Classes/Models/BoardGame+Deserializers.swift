@@ -139,7 +139,7 @@ extension BoardGame: XMLIndexerDeserializable {
 
      - returns: A `BoardGame` structure.
      */
-    public static func deserialize(node: XMLIndexer) throws -> BoardGame {
+    public static func deserialize(_ node: XMLIndexer) throws -> BoardGame {
         guard try node.element != nil &&
             node["name"].withAttr("type", "primary").element != nil &&
             node["yearpublished"].element != nil &&
@@ -225,7 +225,7 @@ extension SuggestedPlayersPoll: XMLIndexerDeserializable {
 
     - returns: A populated `SuggestedPlayersPoll` structure
     */
-    public static func deserialize(node: XMLIndexer) throws -> SuggestedPlayersPoll {
+    public static func deserialize(_ node: XMLIndexer) throws -> SuggestedPlayersPoll {
         guard node.element != nil else {
             throw XMLDeserializationError.NodeIsInvalid(node: node)
         }
@@ -281,7 +281,7 @@ extension SuggestedPlayeragePoll: XMLIndexerDeserializable {
 
     - returns: A populated `SuggestedPlayeragePoll` structure
     */
-    public static func deserialize(node: XMLIndexer) throws -> SuggestedPlayeragePoll {
+    public static func deserialize(_ node: XMLIndexer) throws -> SuggestedPlayeragePoll {
         guard node.element != nil else {
             throw XMLDeserializationError.NodeIsInvalid(node: node)
         }
@@ -317,7 +317,7 @@ extension LanguageDependencePoll: XMLIndexerDeserializable {
 
     - returns: A populated `LanguageDependencePoll` structure
     */
-    public static func deserialize(node: XMLIndexer) throws -> LanguageDependencePoll {
+    public static func deserialize(_ node: XMLIndexer) throws -> LanguageDependencePoll {
         guard node.element != nil else {
             throw XMLDeserializationError.NodeIsInvalid(node: node)
         }
@@ -347,7 +347,7 @@ extension PollResult: XMLElementDeserializable {
 
     - returns: A populated `PollResult` structure
     */
-    public static func deserialize(element: XMLElement) throws -> PollResult {
+    public static func deserialize(_ element: XMLElement) throws -> PollResult {
         return try PollResult(
             level: element.attribute("level"),
             value: element.attribute("value"),
@@ -391,7 +391,7 @@ extension Statistics: XMLIndexerDeserializable {
 
     - returns: A populated `Statistics` structure
     */
-    public static func deserialize(node: XMLIndexer) throws -> Statistics {
+    public static func deserialize(_ node: XMLIndexer) throws -> Statistics {
         return try Statistics(
             usersRated: node["usersrated"].element!.attribute("value"),
             average: node["average"].element!.attribute("value"),
@@ -428,7 +428,7 @@ extension BoardGameLink: XMLElementDeserializable {
 
     - returns: A populated `BoardGameLink` structure
     */
-    public static func deserialize(element: XMLElement) throws -> BoardGameLink {
+    public static func deserialize(_ element: XMLElement) throws -> BoardGameLink {
         return try BoardGameLink(
             type: element.attribute("type"),
             id: element.attribute("id"),
@@ -454,7 +454,7 @@ extension GameRank: XMLElementDeserializable {
 
      - returns: A populated `GameRank` structure
      */
-    public static func deserialize(element: XMLElement) throws -> GameRank {
+    public static func deserialize(_ element: XMLElement) throws -> GameRank {
         return try GameRank(
             type: element.attribute("type"),
             id: element.attribute("id"),

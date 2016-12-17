@@ -118,21 +118,21 @@ class SearchSpec: QuickSpec {
         }
 
         beforeSuite {
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["query": "pandemic"])) { _ in
-                let stubPath = OHPathForFile("TestData/search.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["query": "pandemic"])) { _ in
+                let stubPath = OHPathForFile("TestData/search.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["query": "pandemic", "type": "boardgameexpansion"])) { _ in
-                let stubPath = OHPathForFile("TestData/search_expansion.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["query": "pandemic", "type": "boardgameexpansion"])) { _ in
+                let stubPath = OHPathForFile("TestData/search_expansion.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["query": "pandemic", "exact": "1"])) { _ in
-                let stubPath = OHPathForFile("TestData/search_exact.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["query": "pandemic", "exact": "1"])) { _ in
+                let stubPath = OHPathForFile("TestData/search_exact.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["query": "empty"])) { _ in
-                let stubPath = OHPathForFile("TestData/search_empty.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["query": "empty"])) { _ in
+                let stubPath = OHPathForFile("TestData/search_empty.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
         }
 

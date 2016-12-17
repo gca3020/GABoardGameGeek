@@ -45,7 +45,7 @@ extension CollectionBoardGame: XMLIndexerDeserializable {
 
      - returns: A `CollectionBoardGame` structure.
      */
-    public static func deserialize(node: XMLIndexer) throws -> CollectionBoardGame {
+    public static func deserialize(_ node: XMLIndexer) throws -> CollectionBoardGame {
         guard node.element != nil && node["name"].element != nil else {
             throw XMLDeserializationError.NodeIsInvalid(node: node)
         }
@@ -89,7 +89,7 @@ extension CollectionStatus: XMLElementDeserializable {
 
      - returns: A `CollectionStatus` structure.
      */
-    public static func deserialize(element: XMLElement) throws -> CollectionStatus {
+    public static func deserialize(_ element: XMLElement) throws -> CollectionStatus {
         return try CollectionStatus(
             owned: element.attribute("own"),
             prevOwned: element.attribute("prevowned"),
@@ -126,7 +126,7 @@ extension CollectionStats: XMLIndexerDeserializable {
 
      - returns: A `CollectionStats` structure.
      */
-    public static func deserialize(node: XMLIndexer) throws -> CollectionStats {
+    public static func deserialize(_ node: XMLIndexer) throws -> CollectionStats {
         guard let element = node.element else {
             throw XMLDeserializationError.NodeIsInvalid(node: node)
         }
@@ -176,7 +176,7 @@ extension CollectionRating: XMLIndexerDeserializable {
 
      - returns: A `CollectionStats` structure.
      */
-    public static func deserialize(node: XMLIndexer) throws -> CollectionRating {
+    public static func deserialize(_ node: XMLIndexer) throws -> CollectionRating {
         guard node["average"].element != nil && node["bayesaverage"].element != nil else {
             throw XMLDeserializationError.NodeIsInvalid(node: node)
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class GABoardGameGeek {
+open class GABoardGameGeek {
 
     // MARK: - User Collections
 
@@ -24,7 +24,7 @@ public class GABoardGameGeek {
      
      - NOTE: The closure executes on the main thread by default.
      */
-    public func getUserCollection(username: String, brief: Bool = false, stats: Bool = false, timeoutSeconds: Int = 90, closure: ApiResult<[CollectionBoardGame]> -> () ) {
+    open func getUserCollection(_ username: String, brief: Bool = false, stats: Bool = false, timeoutSeconds: Int = 90, closure: @escaping (ApiResult<[CollectionBoardGame]>) -> () ) {
 
         // Set up the initial request parameters
         var requestParams = [String: String]()
@@ -33,7 +33,7 @@ public class GABoardGameGeek {
         requestParams["stats"] = (stats ? "1" : "0")
 
         // Make the network call to get the collection.
-        let endTime = NSDate().dateByAddingTimeInterval(Double(timeoutSeconds))
+        let endTime = Date().addingTimeInterval(Double(timeoutSeconds))
         api.request(self.collectionUrl, params: requestParams, rootElement: "items", childElement: "item", retryUntil: endTime, closure: closure)
     }
 
@@ -49,11 +49,11 @@ public class GABoardGameGeek {
 
      - NOTE: The closure executes on the main thread by default.
      */
-    public func getGamesById(ids: [Int], stats: Bool = false, closure: ApiResult<[BoardGame]> -> () ) {
+    open func getGamesById(_ ids: [Int], stats: Bool = false, closure: @escaping (ApiResult<[BoardGame]>) -> () ) {
 
         // Set up the request parameters
         var requestParams = [String: String]()
-        requestParams["id"] = ids.map { String($0) }.joinWithSeparator(",")
+        requestParams["id"] = ids.map { String($0) }.joined(separator: ",")
         requestParams["stats"] = (stats ? "1" : "0")
 
         // Make the request
@@ -70,26 +70,26 @@ public class GABoardGameGeek {
 
      - NOTE: The closure executes on the main thread by default.
      */
-    public func getGameById(id: Int, stats: Bool = false, closure: ApiResult<BoardGame> -> () ) {
+    open func getGameById(_ id: Int, stats: Bool = false, closure: @escaping (ApiResult<BoardGame>) -> () ) {
 
         // Call the getter that takes an array, and validate that there was exactly one result
         getGamesById([id], stats: stats) { result in
             switch(result) {
-            case .Success(let gameCollection):
+            case .success(let gameCollection):
                 if(gameCollection.count == 1) {
-                    closure(.Success(gameCollection[0]))
+                    closure(.success(gameCollection[0]))
                 } else {
-                    closure(.Failure(.ApiError("Invalid Number of Items Returned: \(gameCollection.count)")))
+                    closure(.failure(.apiError("Invalid Number of Items Returned: \(gameCollection.count)")))
                 }
-            case .Failure(let error):
-                closure(.Failure(error))
+            case .failure(let error):
+                closure(.failure(error))
             }
         }
     }
 
     // MARK: - Search
 
-    public func searchFor(query: String, searchType: String? = nil, exactMatch: Bool = false, closure: ApiResult<[SearchResult]> -> () ) {
+    open func searchFor(_ query: String, searchType: String? = nil, exactMatch: Bool = false, closure: @escaping (ApiResult<[SearchResult]>) -> () ) {
 
         // Set up the request parameters
         var requestParams = [String: String]()
@@ -119,16 +119,16 @@ public class GABoardGameGeek {
     // MARK: - Private Member Variables
 
     /// An `ApiAdapter` to separate out all of the internal Networking and XML Parsing Functionality
-    private let api: ApiAdapter
+    fileprivate let api: ApiAdapter
 
     // MARK: - Constants
 
     /// The BGG URL to use when querying a user's collection
-    private let collectionUrl = "https://boardgamegeek.com/xmlapi2/collection"
+    fileprivate let collectionUrl = "https://boardgamegeek.com/xmlapi2/collection"
 
     /// The BGG URL to use when querying an item by ID
-    private let itemUrl = "https://boardgamegeek.com/xmlapi2/thing"
+    fileprivate let itemUrl = "https://boardgamegeek.com/xmlapi2/thing"
 
     /// The BGG URL to use when performing a search
-    private let searchUrl = "https://boardgamegeek.com/xmlapi2/search"
+    fileprivate let searchUrl = "https://boardgamegeek.com/xmlapi2/search"
 }

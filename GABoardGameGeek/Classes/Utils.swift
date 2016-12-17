@@ -11,12 +11,12 @@ import Foundation
 internal extension String {
     /// Get a string encoded for URL Requests
     var URLQueryString: String {
-        return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
     }
 
     /// Get a string with whitespace trimmed off
     var trimWhitespace: String {
-        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 }
 
@@ -29,16 +29,19 @@ internal extension String {
 
      - returns: A substring that can be sorted alphabetically.
      */
-    func getSortString(sortIndex: Int) -> String {
+    func getSortString(_ sortIndex: Int) -> String {
         if sortIndex <= 1 || sortIndex > self.characters.count {
             return self
         } else {
-            return self.substringFromIndex(self.startIndex.advancedBy(sortIndex - 1))
+            return self.substring(from: self.characters.index(self.startIndex, offsetBy: sortIndex - 1))
         }
     }
 }
 
-internal extension NSURL {
+
+// TODO: Fix this logic
+/*
+internal extension URL {
     /**
      Failable initializer for an NSURL given a BGG URL String (one which is missing the protocol).
 
@@ -46,11 +49,12 @@ internal extension NSURL {
 
      - returns: A fully-formed NSURL based on the given string, or nil if anything failed.
      */
-    convenience init?(fromBggUrlString: String?) {
+    init?(fromBggUrlString: String?) {
         guard let urlString = fromBggUrlString else {
             return nil
         }
 
-        self.init(string: "http:\(urlString)")
+        //(self as NSURL).type(of:, init)(string: "http:\(urlString)")
     }
 }
+ */

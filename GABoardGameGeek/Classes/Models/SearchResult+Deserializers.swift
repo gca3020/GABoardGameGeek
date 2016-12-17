@@ -28,7 +28,7 @@ extension SearchResult: XMLIndexerDeserializable {
 
      - returns: A `SearchResult` structure.
      */
-    public static func deserialize(node: XMLIndexer) throws -> SearchResult {
+    public static func deserialize(_ node: XMLIndexer) throws -> SearchResult {
         guard node.element != nil && node["name"].element != nil else {
             throw XMLDeserializationError.NodeIsInvalid(node: node)
         }

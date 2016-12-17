@@ -260,7 +260,7 @@ class CollectionSpec: QuickSpec {
 
                     expect(apiResult).toNot(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(equal(BggError.ServerNotReady))
+                    expect(apiResult?.error).to(equal(BggError.serverNotReady))
                 }
 
                 it("should return a real result given enough time") {
@@ -292,7 +292,7 @@ class CollectionSpec: QuickSpec {
 
                     expect(apiResult).toNot(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(equal(BggError.ApiError("Invalid username specified")))
+                    expect(apiResult?.error).to(equal(BggError.apiError("Invalid username specified")))
                 }
             } // context( for an invalid username )
 
@@ -372,39 +372,39 @@ class CollectionSpec: QuickSpec {
         beforeSuite {
             var retryCount = 0
 
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"0"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"0"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"0"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_brief.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"0"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_brief.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"1"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_stats.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"1"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_stats.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"1"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_brief_stats.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"1"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_brief_stats.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "invalid"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_invalid_username.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "invalid"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_invalid_username.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "empty"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_empty.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "empty"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_empty.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "delay"])) { _ in
-                let stubPathValid = OHPathForFile("TestData/collection_empty.xml", self.dynamicType)
-                let stubPathNotReady = OHPathForFile("TestData/collection_notready.xml", self.dynamicType)
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "delay"])) { _ in
+                let stubPathValid = OHPathForFile("TestData/collection_empty.xml", type(of: self))
+                let stubPathNotReady = OHPathForFile("TestData/collection_notready.xml", type(of: self))
 
                 retryCount += 1
                 if retryCount <= 6 {
-                    return fixture(stubPathNotReady!, status: 202, headers: ["Content-Type":"text/xml"])
+                    return OHHTTPStubsResponse(fileAtPath: stubPathNotReady!, statusCode: 202, headers: ["Content-Type":"text/xml"])
                 } else {
-                    return fixture(stubPathValid!, headers: ["Content-Type":"text/xml"])
+                    return OHHTTPStubsResponse(fileAtPath: stubPathValid!, statusCode: 200, headers: ["Content-Type":"text/xml"])
                 }
             }
         }

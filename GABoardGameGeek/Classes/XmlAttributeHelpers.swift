@@ -14,14 +14,14 @@ import SWXMLHash
 internal extension XMLElement {
 
     // Int
-    internal func attribute(attribute: String) throws -> Int {
+    internal func attribute(_ attribute: String) throws -> Int {
         guard let attributeStr = self.attributes[attribute], let ret = Int(attributeStr) else {
             throw XMLDeserializationError.NodeHasNoValue
         }
         return ret
     }
     // Int?
-    internal func attribute(attribute: String) throws -> Int? {
+    internal func attribute(_ attribute: String) throws -> Int? {
         if let attributeStr = self.attributes[attribute] {
             return Int(attributeStr)
         }
@@ -29,14 +29,14 @@ internal extension XMLElement {
     }
 
     // Double
-    internal func attribute(attribute: String) throws -> Double {
+    internal func attribute(_ attribute: String) throws -> Double {
         guard let attributeStr = self.attributes[attribute], let ret = Double(attributeStr) else {
             throw XMLDeserializationError.NodeHasNoValue
         }
         return ret
     }
     // Double?
-    internal func attribute(attribute: String) throws -> Double? {
+    internal func attribute(_ attribute: String) throws -> Double? {
         if let attributeStr = self.attributes[attribute] {
             return Double(attributeStr)
         }
@@ -44,14 +44,14 @@ internal extension XMLElement {
     }
 
     // String
-    internal func attribute(attribute: String) throws -> String {
+    internal func attribute(_ attribute: String) throws -> String {
         guard let ret = self.attributes[attribute] else {
             throw XMLDeserializationError.NodeHasNoValue
         }
         return ret
     }
     // String?
-    internal func attribute(attribute: String) throws -> String? {
+    internal func attribute(_ attribute: String) throws -> String? {
         if let attributeStr = self.attributes[attribute] {
             return attributeStr
         }
@@ -59,14 +59,14 @@ internal extension XMLElement {
     }
 
     // Bool
-    internal func attribute(attribute: String) throws -> Bool {
+    internal func attribute(_ attribute: String) throws -> Bool {
         guard let attributeStr = self.attributes[attribute] else {
             throw XMLDeserializationError.NodeHasNoValue
         }
         return NSString(string: attributeStr).boolValue
     }
     // Bool?
-    internal func attribute(attribute: String) throws -> Bool? {
+    internal func attribute(_ attribute: String) throws -> Bool? {
         if let attributeStr = self.attributes[attribute] {
             return NSString(string: attributeStr).boolValue
         }

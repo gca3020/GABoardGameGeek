@@ -201,7 +201,7 @@ class BoardGameSpec: QuickSpec {
 
                     expect(apiResult).toNot(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(equal(BggError.ApiError("error reading chunk of file")))
+                    expect(apiResult?.error).to(equal(BggError.apiError("error reading chunk of file")))
                 }
             } // context( for a broken game ID )
 
@@ -220,7 +220,7 @@ class BoardGameSpec: QuickSpec {
                     expect(apiResult).toNot(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
                     expect(apiResult?.isSuccess).to(beFalse())
-                    expect(apiResult?.error).to(equal(BggError.ApiError("Invalid Number of Items Returned: 0")))
+                    expect(apiResult?.error).to(equal(BggError.apiError("Invalid Number of Items Returned: 0")))
                     expect(apiResult?.value).to(beNil())
                 }
 
@@ -259,7 +259,8 @@ class BoardGameSpec: QuickSpec {
                     expect(apiResult?.isSuccess).to(beFalse())
                     expect(apiResult?.value).to(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(equal(BggError.ConnectionError(NSError(domain: NSURLErrorDomain, code: -1009, userInfo: nil))))
+                    //expect(apiResult?.error).to(equal(BggError.ConnectionError(NSError(domain: NSURLErrorDomain, code: -1009, userInfo: nil))))
+                    expect(apiResult?.error).to(equal(BggError.connectionError))
                 }
             }
 
@@ -278,38 +279,38 @@ class BoardGameSpec: QuickSpec {
                     expect(apiResult?.isSuccess).to(beFalse())
                     expect(apiResult?.value).to(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(matchError(BggError.XmlError("")))
+                    expect(apiResult?.error).to(matchError(BggError.xmlError("")))
                 }
             }
         }
 
         beforeSuite {
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["id": "161936", "stats": "0"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "161936", "stats": "0"])) { _ in
+                let stubPath = OHPathForFile("TestData/thing.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["id": "161936", "stats": "1"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing_stats.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "161936", "stats": "1"])) { _ in
+                let stubPath = OHPathForFile("TestData/thing_stats.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["id": "1,2,3,4,5"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing_multiple.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "1,2,3,4,5"])) { _ in
+                let stubPath = OHPathForFile("TestData/thing_multiple.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["id": "35"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing_error.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "35"])) { _ in
+                let stubPath = OHPathForFile("TestData/thing_error.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["id": "999999"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing_empty.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "999999"])) { _ in
+                let stubPath = OHPathForFile("TestData/thing_empty.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["id": "34404"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing_unparsable.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "34404"])) { _ in
+                let stubPath = OHPathForFile("TestData/thing_unparsable.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["id": "0"])) { _ in
-                let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.CFURLErrorNotConnectedToInternet.rawValue), userInfo:nil)
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "0"])) { _ in
+                let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
                 return OHHTTPStubsResponse(error:notConnectedError)
             }
         }
