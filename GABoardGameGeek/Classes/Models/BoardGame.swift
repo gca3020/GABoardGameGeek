@@ -86,13 +86,13 @@ public struct BoardGame {
     /// The `NSURL` to retrieve the game's image.
     /// - Note: Nil if the game has no `imagePath`, or if `imagePath` is malformed.
     public var imageUrl: URL? {
-        get { return URL(string: imagePath!) }
+        get { return URL(fromBggUrlString: imagePath) }
     }
 
     /// The `NSURL` to retrieve the game's thumbnail-sized image.
     /// - Note: Nil if the game has no `thumbnailPath`, or if `thumbnailPath` is malformed.
     public var thumbnailUrl: URL? {
-       get { return URL(string: thumbnailPath!) }
+       get { return URL(fromBggUrlString: thumbnailPath) }
     }
 }
 

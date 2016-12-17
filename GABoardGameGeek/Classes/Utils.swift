@@ -38,9 +38,6 @@ internal extension String {
     }
 }
 
-
-// TODO: Fix this logic
-/*
 internal extension URL {
     /**
      Failable initializer for an NSURL given a BGG URL String (one which is missing the protocol).
@@ -54,7 +51,6 @@ internal extension URL {
             return nil
         }
 
-        //(self as NSURL).type(of:, init)(string: "http:\(urlString)")
+        self.init(string: "http:\(urlString)")
     }
 }
- */
