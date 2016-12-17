@@ -21,6 +21,6 @@ to deal with the complexities of parsing and error-checking the XML.
 
   s.source_files = 'GABoardGameGeek/Classes/**/*'
 
-  s.dependency 'Alamofire', '~> 3.0'
-  s.dependency 'SWXMLHash', '~> 2.2'
+  s.dependency 'Alamofire', '~> 4.0'
+  s.dependency 'SWXMLHash', '~> 3.0'
 end
