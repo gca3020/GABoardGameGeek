@@ -323,7 +323,7 @@ extension PollResult: XMLElementDeserializable {
 
     - returns: A populated `PollResult` structure
     */
-    public static func deserialize(_ element: XMLElement) throws -> PollResult {
+    public static func deserialize(_ element: SWXMLHash.XMLElement) throws -> PollResult {
         return try PollResult(
             level: element.value(ofAttribute:"level"),
             value: element.value(ofAttribute:"value"),
@@ -404,7 +404,7 @@ extension BoardGameLink: XMLElementDeserializable {
 
     - returns: A populated `BoardGameLink` structure
     */
-    public static func deserialize(_ element: XMLElement) throws -> BoardGameLink {
+    public static func deserialize(_ element: SWXMLHash.XMLElement) throws -> BoardGameLink {
         return try BoardGameLink(
             type: element.value(ofAttribute:"type"),
             id: element.value(ofAttribute:"id"),
@@ -430,7 +430,7 @@ extension GameRank: XMLElementDeserializable {
 
      - returns: A populated `GameRank` structure
      */
-    public static func deserialize(_ element: XMLElement) throws -> GameRank {
+    public static func deserialize(_ element: SWXMLHash.XMLElement) throws -> GameRank {
         return try GameRank(
             type: element.value(ofAttribute:"type"),
             id: element.value(ofAttribute:"id"),

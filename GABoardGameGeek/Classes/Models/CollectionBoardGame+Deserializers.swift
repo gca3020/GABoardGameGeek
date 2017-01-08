@@ -85,7 +85,7 @@ extension CollectionStatus: XMLElementDeserializable {
 
      - returns: A `CollectionStatus` structure.
      */
-    public static func deserialize(_ element: XMLElement) throws -> CollectionStatus {
+    public static func deserialize(_ element: SWXMLHash.XMLElement) throws -> CollectionStatus {
         return try CollectionStatus(
             owned: element.value(ofAttribute:"own"),
             prevOwned: element.value(ofAttribute:"prevowned"),
