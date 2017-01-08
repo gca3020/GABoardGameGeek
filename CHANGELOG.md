@@ -1,7 +1,8 @@
-## v0.3.0 (January 8, 2017)
+## v1.0.0 (January 8, 2017)
 
 * Update code and dependencies for Swift3
 * Update to use https for image path, rather than http
+* Deserializers now use SWXMLHash `value(ofAttribute:)` rather than getting attributes manually 
 
 ## v0.2.0 (June 13, 2016)
 

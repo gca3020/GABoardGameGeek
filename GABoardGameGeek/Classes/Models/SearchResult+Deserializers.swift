@@ -29,17 +29,13 @@ extension SearchResult: XMLIndexerDeserializable {
      - returns: A `SearchResult` structure.
      */
     public static func deserialize(_ node: XMLIndexer) throws -> SearchResult {
-        guard node.element != nil && node["name"].element != nil else {
-            throw XMLDeserializationError.NodeIsInvalid(node: node)
-        }
-
         do {
             return try SearchResult(
-                itemType: node.element!.attribute("type"),
-                objectId: node.element!.attribute("id"),
-                nameType: node["name"].element!.attribute("type"),
-                name: node["name"].element!.attribute("value"),
-                yearPublished: node["yearpublished"].element?.attribute("value")
+                itemType: node.value(ofAttribute:"type"),
+                objectId: node.value(ofAttribute:"id"),
+                nameType: node["name"].value(ofAttribute:"type"),
+                name: node["name"].value(ofAttribute:"value"),
+                yearPublished: node["yearpublished"].value(ofAttribute:"value")
             )
         } catch {
             // If any errors occur while parsing this game, throw them as a single exception along
