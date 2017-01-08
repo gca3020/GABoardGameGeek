@@ -49,11 +49,11 @@ class BoardGameSpec: QuickSpec {
 
                     expect(game!.thumbnailPath).to(equal("//cf.geekdo-images.com/images/pic2452831_t.png"))
                     expect(game!.thumbnailUrl).toNot(beNil())
-                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic2452831_t.png"))
+                    expect(game!.thumbnailUrl!.absoluteString).to(equal("https://cf.geekdo-images.com/images/pic2452831_t.png"))
 
                     expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic2452831.png"))
                     expect(game!.imageUrl).toNot(beNil())
-                    expect(game!.imageUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic2452831.png"))
+                    expect(game!.imageUrl!.absoluteString).to(equal("https://cf.geekdo-images.com/images/pic2452831.png"))
 
                     expect(game!.yearPublished).to(equal(2015))
                     expect(game!.minPlayers).to(equal(2))

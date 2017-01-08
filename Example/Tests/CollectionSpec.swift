@@ -54,11 +54,11 @@ class CollectionSpec: QuickSpec {
 
                     expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic1176894.jpg"))
                     expect(game!.imageUrl).toNot(beNil())
-                    expect(game!.imageUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic1176894.jpg"))
+                    expect(game!.imageUrl!.absoluteString).to(equal("https://cf.geekdo-images.com/images/pic1176894.jpg"))
 
                     expect(game!.thumbnailPath).to(equal("//cf.geekdo-images.com/images/pic1176894_t.jpg"))
                     expect(game!.thumbnailUrl).toNot(beNil())
-                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic1176894_t.jpg"))
+                    expect(game!.thumbnailUrl!.absoluteString).to(equal("https://cf.geekdo-images.com/images/pic1176894_t.jpg"))
 
                     expect(game!.numPlays).to(equal(6))
 
@@ -155,11 +155,11 @@ class CollectionSpec: QuickSpec {
 
                     expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic2247647.jpg"))
                     expect(game!.imageUrl).toNot(beNil())
-                    expect(game!.imageUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic2247647.jpg"))
+                    expect(game!.imageUrl!.absoluteString).to(equal("https://cf.geekdo-images.com/images/pic2247647.jpg"))
 
                     expect(game!.thumbnailPath).to(equal("//cf.geekdo-images.com/images/pic2247647_t.jpg"))
                     expect(game!.thumbnailUrl).toNot(beNil())
-                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic2247647_t.jpg"))
+                    expect(game!.thumbnailUrl!.absoluteString).to(equal("https://cf.geekdo-images.com/images/pic2247647_t.jpg"))
 
                     expect(game!.numPlays).to(equal(9))
 

@@ -51,6 +51,6 @@ internal extension URL {
             return nil
         }
 
-        self.init(string: "http:\(urlString)")
+        self.init(string: "https:\(urlString)")
     }
 }
