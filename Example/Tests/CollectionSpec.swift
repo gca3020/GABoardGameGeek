@@ -37,35 +37,37 @@ class CollectionSpec: QuickSpec {
 
                     expect(game).toNot(beNil())
 
-                    expect(game!.objectId).to(equal(84876))
-                    expect(game!.name).to(equal("The Castles of Burgundy"))
-                    expect(game!.sortName).to(equal("Castles of Burgundy"))
-                    expect(game!.yearPublished).to(equal(2011))
+                    if(game != nil) {
+                        expect(game!.objectId).to(equal(84876))
+                        expect(game!.name).to(equal("The Castles of Burgundy"))
+                        expect(game!.sortName).to(equal("Castles of Burgundy"))
+                        expect(game!.yearPublished).to(equal(2011))
 
-                    expect(game!.status.owned).to(beTrue())
-                    expect(game!.status.prevOwned).to(beFalse())
-                    expect(game!.status.forTrade).to(beFalse())
-                    expect(game!.status.wantInTrade).to(beFalse())
-                    expect(game!.status.wantToPlay).to(beFalse())
-                    expect(game!.status.wantToBuy).to(beFalse())
-                    expect(game!.status.wishList).to(beFalse())
-                    expect(game!.status.preOrdered).to(beFalse())
-                    expect(game!.status.wishListPriority).to(beNil())
+                        expect(game!.status.owned).to(beTrue())
+                        expect(game!.status.prevOwned).to(beFalse())
+                        expect(game!.status.forTrade).to(beFalse())
+                        expect(game!.status.wantInTrade).to(beFalse())
+                        expect(game!.status.wantToPlay).to(beFalse())
+                        expect(game!.status.wantToBuy).to(beFalse())
+                        expect(game!.status.wishList).to(beFalse())
+                        expect(game!.status.preOrdered).to(beFalse())
+                        expect(game!.status.wishListPriority).to(beNil())
 
-                    expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic1176894.jpg"))
-                    expect(game!.imageUrl).toNot(beNil())
-                    expect(game!.imageUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic1176894.jpg"))
+                        expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic1176894.jpg"))
+                        expect(game!.imageUrl).toNot(beNil())
+                        expect(game!.imageUrl!.absoluteString).to(equal("https://cf.geekdo-images.com/images/pic1176894.jpg"))
 
-                    expect(game!.thumbnailPath).to(equal("//cf.geekdo-images.com/images/pic1176894_t.jpg"))
-                    expect(game!.thumbnailUrl).toNot(beNil())
-                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic1176894_t.jpg"))
+                        expect(game!.thumbnailPath).to(equal("//cf.geekdo-images.com/images/pic1176894_t.jpg"))
+                        expect(game!.thumbnailUrl).toNot(beNil())
+                        expect(game!.thumbnailUrl!.absoluteString).to(equal("https://cf.geekdo-images.com/images/pic1176894_t.jpg"))
 
-                    expect(game!.numPlays).to(equal(6))
+                        expect(game!.numPlays).to(equal(6))
 
-                    // The following fields should be nil for this game
-                    expect(game!.comment).to(beNil())
-                    expect(game!.wishListComment).to(beNil())
-                    expect(game!.stats).to(beNil())
+                        // The following fields should be nil for this game
+                        expect(game!.comment).to(beNil())
+                        expect(game!.wishListComment).to(beNil())
+                        expect(game!.stats).to(beNil())
+                    }
                 }
             } // context( for a standard list )
 
@@ -89,31 +91,33 @@ class CollectionSpec: QuickSpec {
 
                     expect(game).toNot(beNil())
 
-                    expect(game!.objectId).to(equal(27588))
-                    expect(game!.name).to(equal("Zooloretto"))
-                    expect(game!.sortName).to(equal("Zooloretto"))
+                    if(game != nil) {
+                        expect(game!.objectId).to(equal(27588))
+                        expect(game!.name).to(equal("Zooloretto"))
+                        expect(game!.sortName).to(equal("Zooloretto"))
 
-                    expect(game!.yearPublished).to(beNil())
+                        expect(game!.yearPublished).to(beNil())
 
-                    expect(game!.status.owned).to(beFalse())
-                    expect(game!.status.prevOwned).to(beFalse())
-                    expect(game!.status.forTrade).to(beFalse())
-                    expect(game!.status.wantInTrade).to(beFalse())
-                    expect(game!.status.wantToPlay).to(beFalse())
-                    expect(game!.status.wantToBuy).to(beFalse())
-                    expect(game!.status.wishList).to(beTrue())
-                    expect(game!.status.preOrdered).to(beFalse())
-                    expect(game!.status.wishListPriority).to(equal(3))
+                        expect(game!.status.owned).to(beFalse())
+                        expect(game!.status.prevOwned).to(beFalse())
+                        expect(game!.status.forTrade).to(beFalse())
+                        expect(game!.status.wantInTrade).to(beFalse())
+                        expect(game!.status.wantToPlay).to(beFalse())
+                        expect(game!.status.wantToBuy).to(beFalse())
+                        expect(game!.status.wishList).to(beTrue())
+                        expect(game!.status.preOrdered).to(beFalse())
+                        expect(game!.status.wishListPriority).to(equal(3))
 
 
-                    expect(game!.imagePath).to(beNil())
-                    expect(game!.imageUrl).to(beNil())
-                    expect(game!.thumbnailPath).to(beNil())
-                    expect(game!.thumbnailUrl).to(beNil())
-                    expect(game!.numPlays).to(beNil())
-                    expect(game!.comment).to(beNil())
-                    expect(game!.wishListComment).to(beNil())
-                    expect(game!.stats).to(beNil())
+                        expect(game!.imagePath).to(beNil())
+                        expect(game!.imageUrl).to(beNil())
+                        expect(game!.thumbnailPath).to(beNil())
+                        expect(game!.thumbnailUrl).to(beNil())
+                        expect(game!.numPlays).to(beNil())
+                        expect(game!.comment).to(beNil())
+                        expect(game!.wishListComment).to(beNil())
+                        expect(game!.stats).to(beNil())
+                    }
                 }
             } // context( for a brief list )
 
@@ -137,47 +141,49 @@ class CollectionSpec: QuickSpec {
 
                     expect(game).toNot(beNil())
 
-                    expect(game!.objectId).to(equal(164153))
-                    expect(game!.name).to(equal("Star Wars: Imperial Assault"))
-                    expect(game!.sortName).to(equal("Star Wars: Imperial Assault"))
+                    if( game != nil ) {
+                        expect(game!.objectId).to(equal(164153))
+                        expect(game!.name).to(equal("Star Wars: Imperial Assault"))
+                        expect(game!.sortName).to(equal("Star Wars: Imperial Assault"))
 
-                    expect(game!.yearPublished).to(equal(2014))
+                        expect(game!.yearPublished).to(equal(2014))
 
-                    expect(game!.status.owned).to(beTrue())
-                    expect(game!.status.prevOwned).to(beFalse())
-                    expect(game!.status.forTrade).to(beFalse())
-                    expect(game!.status.wantInTrade).to(beFalse())
-                    expect(game!.status.wantToPlay).to(beFalse())
-                    expect(game!.status.wantToBuy).to(beFalse())
-                    expect(game!.status.wishList).to(beFalse())
-                    expect(game!.status.preOrdered).to(beFalse())
-                    expect(game!.status.wishListPriority).to(beNil())
+                        expect(game!.status.owned).to(beTrue())
+                        expect(game!.status.prevOwned).to(beFalse())
+                        expect(game!.status.forTrade).to(beFalse())
+                        expect(game!.status.wantInTrade).to(beFalse())
+                        expect(game!.status.wantToPlay).to(beFalse())
+                        expect(game!.status.wantToBuy).to(beFalse())
+                        expect(game!.status.wishList).to(beFalse())
+                        expect(game!.status.preOrdered).to(beFalse())
+                        expect(game!.status.wishListPriority).to(beNil())
 
-                    expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic2247647.jpg"))
-                    expect(game!.imageUrl).toNot(beNil())
-                    expect(game!.imageUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic2247647.jpg"))
+                        expect(game!.imagePath).to(equal("//cf.geekdo-images.com/images/pic2247647.jpg"))
+                        expect(game!.imageUrl).toNot(beNil())
+                        expect(game!.imageUrl!.absoluteString).to(equal("https://cf.geekdo-images.com/images/pic2247647.jpg"))
 
-                    expect(game!.thumbnailPath).to(equal("//cf.geekdo-images.com/images/pic2247647_t.jpg"))
-                    expect(game!.thumbnailUrl).toNot(beNil())
-                    expect(game!.thumbnailUrl!.absoluteString).to(equal("http://cf.geekdo-images.com/images/pic2247647_t.jpg"))
+                        expect(game!.thumbnailPath).to(equal("//cf.geekdo-images.com/images/pic2247647_t.jpg"))
+                        expect(game!.thumbnailUrl).toNot(beNil())
+                        expect(game!.thumbnailUrl!.absoluteString).to(equal("https://cf.geekdo-images.com/images/pic2247647_t.jpg"))
 
-                    expect(game!.numPlays).to(equal(9))
+                        expect(game!.numPlays).to(equal(9))
 
-                    expect(game!.comment).to(beNil())
-                    expect(game!.wishListComment).to(equal("Star Wars D&D."))
+                        expect(game!.comment).to(beNil())
+                        expect(game!.wishListComment).to(equal("Star Wars D&D."))
 
-                    expect(game!.stats).toNot(beNil())
-                    let stats = game!.stats!
-                    expect(stats.minPlayers).to(equal(2))
-                    expect(stats.maxPlayers).to(equal(5))
-                    expect(stats.minPlaytime).to(equal(60))
-                    expect(stats.maxPlaytime).to(equal(120))
-                    expect(stats.playingTime).to(equal(120))
-                    expect(stats.numOwned).to(equal(13637))
-
-                    expect(stats.rating.userRating).to(beCloseTo(9.0))
-                    expect(stats.rating.averageRating).to(beCloseTo(8.29618))
-                    expect(stats.rating.bayesAverageRating).to(beCloseTo(7.94556))
+                        expect(game!.stats).toNot(beNil())
+                        let stats = game!.stats!
+                        expect(stats.minPlayers).to(equal(2))
+                        expect(stats.maxPlayers).to(equal(5))
+                        expect(stats.minPlaytime).to(equal(60))
+                        expect(stats.maxPlaytime).to(equal(120))
+                        expect(stats.playingTime).to(equal(120))
+                        expect(stats.numOwned).to(equal(13637))
+                        
+                        expect(stats.rating.userRating).to(beCloseTo(9.0))
+                        expect(stats.rating.averageRating).to(beCloseTo(8.29618))
+                        expect(stats.rating.bayesAverageRating).to(beCloseTo(7.94556))
+                    }
 
                 }
             } // context( for a standard list with stats )
@@ -201,44 +207,46 @@ class CollectionSpec: QuickSpec {
 
                     expect(game).toNot(beNil())
 
-                    expect(game!.objectId).to(equal(10630))
-                    expect(game!.name).to(equal("Memoir '44"))
-                    expect(game!.sortName).to(equal("Memoir '44"))
+                    if(game != nil) {
+                        expect(game!.objectId).to(equal(10630))
+                        expect(game!.name).to(equal("Memoir '44"))
+                        expect(game!.sortName).to(equal("Memoir '44"))
 
-                    expect(game!.yearPublished).to(beNil())
+                        expect(game!.yearPublished).to(beNil())
 
-                    expect(game!.status.owned).to(beTrue())
-                    expect(game!.status.prevOwned).to(beFalse())
-                    expect(game!.status.forTrade).to(beTrue())
-                    expect(game!.status.wantInTrade).to(beFalse())
-                    expect(game!.status.wantToPlay).to(beFalse())
-                    expect(game!.status.wantToBuy).to(beFalse())
-                    expect(game!.status.wishList).to(beFalse())
-                    expect(game!.status.preOrdered).to(beFalse())
-                    expect(game!.status.wishListPriority).to(beNil())
+                        expect(game!.status.owned).to(beTrue())
+                        expect(game!.status.prevOwned).to(beFalse())
+                        expect(game!.status.forTrade).to(beTrue())
+                        expect(game!.status.wantInTrade).to(beFalse())
+                        expect(game!.status.wantToPlay).to(beFalse())
+                        expect(game!.status.wantToBuy).to(beFalse())
+                        expect(game!.status.wishList).to(beFalse())
+                        expect(game!.status.preOrdered).to(beFalse())
+                        expect(game!.status.wishListPriority).to(beNil())
 
-                    expect(game!.imagePath).to(beNil())
-                    expect(game!.imageUrl).to(beNil())
-                    expect(game!.thumbnailPath).to(beNil())
-                    expect(game!.thumbnailUrl).to(beNil())
+                        expect(game!.imagePath).to(beNil())
+                        expect(game!.imageUrl).to(beNil())
+                        expect(game!.thumbnailPath).to(beNil())
+                        expect(game!.thumbnailUrl).to(beNil())
 
-                    expect(game!.numPlays).to(beNil())
+                        expect(game!.numPlays).to(beNil())
 
-                    expect(game!.comment).to(beNil())
-                    expect(game!.wishListComment).to(beNil())
+                        expect(game!.comment).to(beNil())
+                        expect(game!.wishListComment).to(beNil())
 
-                    expect(game!.stats).toNot(beNil())
-                    let stats = game!.stats!
-                    expect(stats.minPlayers).to(equal(2))
-                    expect(stats.maxPlayers).to(equal(2))
-                    expect(stats.minPlaytime).to(equal(30))
-                    expect(stats.maxPlaytime).to(equal(60))
-                    expect(stats.playingTime).to(equal(60))
-                    expect(stats.numOwned).to(equal(21504))
-
-                    expect(stats.rating.userRating).to(beCloseTo(8.0))
-                    expect(stats.rating.averageRating).to(beCloseTo(7.52372))
-                    expect(stats.rating.bayesAverageRating).to(beCloseTo(7.39571))
+                        expect(game!.stats).toNot(beNil())
+                        let stats = game!.stats!
+                        expect(stats.minPlayers).to(equal(2))
+                        expect(stats.maxPlayers).to(equal(2))
+                        expect(stats.minPlaytime).to(equal(30))
+                        expect(stats.maxPlaytime).to(equal(60))
+                        expect(stats.playingTime).to(equal(60))
+                        expect(stats.numOwned).to(equal(21504))
+                        
+                        expect(stats.rating.userRating).to(beCloseTo(8.0))
+                        expect(stats.rating.averageRating).to(beCloseTo(7.52372))
+                        expect(stats.rating.bayesAverageRating).to(beCloseTo(7.39571))
+                    }
                     
                 }
             } // context( for a brief list with stats )
@@ -260,7 +268,7 @@ class CollectionSpec: QuickSpec {
 
                     expect(apiResult).toNot(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(equal(BggError.ServerNotReady))
+                    expect(apiResult?.error).to(equal(BggError.serverNotReady))
                 }
 
                 it("should return a real result given enough time") {
@@ -292,7 +300,7 @@ class CollectionSpec: QuickSpec {
 
                     expect(apiResult).toNot(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(equal(BggError.ApiError("Invalid username specified")))
+                    expect(apiResult?.error).to(equal(BggError.apiError("Invalid username specified")))
                 }
             } // context( for an invalid username )
 
@@ -370,41 +378,42 @@ class CollectionSpec: QuickSpec {
         }
 
         beforeSuite {
+
             var retryCount = 0
 
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"0"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"0"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"0"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_brief.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"0"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_brief.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"1"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_stats.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"1"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_stats.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"1"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_brief_stats.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"1"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_brief_stats.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "invalid"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_invalid_username.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "invalid"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_invalid_username.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "empty"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_empty.xml", self.dynamicType)
-                return fixture(stubPath!, headers: ["Content-Type":"text/xml"])
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "empty"])) { _ in
+                let stubPath = OHPathForFile("TestData/collection_empty.xml", type(of: self))
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
-            stub(isHost("boardgamegeek.com") && containsQueryParams(["username": "delay"])) { _ in
-                let stubPathValid = OHPathForFile("TestData/collection_empty.xml", self.dynamicType)
-                let stubPathNotReady = OHPathForFile("TestData/collection_notready.xml", self.dynamicType)
+            stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "delay"])) { _ in
+                let stubPathValid = OHPathForFile("TestData/collection_empty.xml", type(of: self))
+                let stubPathNotReady = OHPathForFile("TestData/collection_notready.xml", type(of: self))
 
                 retryCount += 1
                 if retryCount <= 6 {
-                    return fixture(stubPathNotReady!, status: 202, headers: ["Content-Type":"text/xml"])
+                    return OHHTTPStubsResponse(fileAtPath: stubPathNotReady!, statusCode: 202, headers: ["Content-Type":"text/xml"])
                 } else {
-                    return fixture(stubPathValid!, headers: ["Content-Type":"text/xml"])
+                    return OHHTTPStubsResponse(fileAtPath: stubPathValid!, statusCode: 200, headers: ["Content-Type":"text/xml"])
                 }
             }
         }

@@ -11,6 +11,7 @@
 		6C4180231D08ECC200F4B9E7 /* BoardGameSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4180211D08ECC200F4B9E7 /* BoardGameSpec.swift */; };
 		6C4180241D08ECC200F4B9E7 /* CollectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4180221D08ECC200F4B9E7 /* CollectionSpec.swift */; };
 		6C41803C1D08EFEA00F4B9E7 /* TestData in Resources */ = {isa = PBXBuildFile; fileRef = 6C41803B1D08EFEA00F4B9E7 /* TestData */; };
+		6C90A33D1E057A6F00FAC7DF /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6C90A33C1E057A6F00FAC7DF /* .travis.yml */; };
 		AA0C918DD549951A2CBFD106 /* Pods_GABoardGameGeek_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F8B0F7B75EFC5BBCE170F6 /* Pods_GABoardGameGeek_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 		6C4180211D08ECC200F4B9E7 /* BoardGameSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGameSpec.swift; sourceTree = "<group>"; };
 		6C4180221D08ECC200F4B9E7 /* CollectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSpec.swift; sourceTree = "<group>"; };
 		6C41803B1D08EFEA00F4B9E7 /* TestData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestData; sourceTree = "<group>"; };
+		6C90A33A1E0578F500FAC7DF /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		6C90A33C1E057A6F00FAC7DF /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		76F8B0F7B75EFC5BBCE170F6 /* Pods_GABoardGameGeek_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABoardGameGeek_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF0E90AC2C16A976759584E /* GABoardGameGeek.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GABoardGameGeek.podspec; path = ../GABoardGameGeek.podspec; sourceTree = "<group>"; };
 		9DBE8ADBA401567C3671C127 /* Pods-GABoardGameGeek_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABoardGameGeek_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GABoardGameGeek_Tests/Pods-GABoardGameGeek_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				6C90A33C1E057A6F00FAC7DF /* .travis.yml */,
+				6C90A33A1E0578F500FAC7DF /* CHANGELOG.md */,
 				7DF0E90AC2C16A976759584E /* GABoardGameGeek.podspec */,
 				364A24AF4AEB1083F89E566F /* README.md */,
 				FFE94016F9A3F826B248EF23 /* LICENSE */,
@@ -137,11 +142,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -169,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C90A33D1E057A6F00FAC7DF /* .travis.yml in Resources */,
 				6C41803C1D08EFEA00F4B9E7 /* TestData in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,7 +225,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -250,8 +257,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -295,8 +304,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -315,6 +326,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -323,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DBE8ADBA401567C3671C127 /* Pods-GABoardGameGeek_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -332,6 +345,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -339,11 +353,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3CD75A01818909122282EE04 /* Pods-GABoardGameGeek_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

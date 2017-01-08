@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/gca3020/GABoardGameGeek.svg?branch=master)](https://travis-ci.org/gca3020/GABoardGameGeek)
 [![codecov.io](https://codecov.io/github/gca3020/GABoardGameGeek/coverage.svg?branch=master)](https://codecov.io/github/gca3020/GABoardGameGeek?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/GABoardGameGeek.svg?style=flat)](http://cocoapods.org/pods/GABoardGameGeek)
-![Swift version](https://img.shields.io/badge/swift-2.2-orange.svg)
+![Swift version](https://img.shields.io/badge/swift-3.0-orange.svg)
 [![Platform](https://img.shields.io/cocoapods/p/GABoardGameGeek.svg?style=flat)](http://cocoadocs.org/docsets/GABoardGameGeek)
 [![License](https://img.shields.io/cocoapods/l/GABoardGameGeek.svg?style=flat)](http://cocoapods.org/pods/GABoardGameGeek)
 [![Twitter](https://img.shields.io/badge/twitter-@gca3020-blue.svg?style=flat)](http://twitter.com/gca3020)
@@ -19,9 +19,9 @@ BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections
 
 ## Requirements
 
-- iOS 8.0+
-- Xcode 7.3+
-- Swift 2.2
+- iOS 8.0+, macOS 10.10+, tvOS 9.0+, watchOS 2.0+
+- Xcode 8.1+
+- Swift 3.0
 
 ## Dependencies
 
@@ -63,9 +63,9 @@ import GABoardGameGeek
 
 GABoardGameGeek().searchFor("pandemic") { result in
     switch(result) {
-    case .Success(let searchResults):
+    case .success(let searchResults):
         print(searchResults)
-    case .Failure(let error):
+    case .failure(let error):
         print(error)
     }
 }
@@ -79,9 +79,9 @@ import GABoardGameGeek
 
 GABoardGameGeek().searchFor("pandemic: on the brink", searchType: "boardgameexpansion", exactMatch: true) { result in
     switch(result) {
-    case .Success(let searchResults):
+    case .success(let searchResults):
         print(searchResults)
-    case .Failure(let error):
+    case .failure(let error):
         print(error)
     }
 }
@@ -97,9 +97,9 @@ Once you have a game ID, getting the details for that game is easy:
 ```swift
 GABoardGameGeek().getGameById(12345) { result in
     switch(result) {
-    case .Success(let game):
+    case .success(let game):
         print(game)
-    case .Failure(let error):
+    case .failure(let error):
         print(error)
     }
 }
@@ -110,9 +110,9 @@ Of course, you also might want to request a bunch of games at once:
 ```swift
 GABoardGameGeek().getGamesById([1, 232, 41415, 12]) { result in
     switch(result) {
-    case .Success(let gameList):
+    case .success(let gameList):
         print(gameList)
-    case .Failure(let error):
+    case .failure(let error):
         print(error)
     }
 }
@@ -124,9 +124,9 @@ game, or the list of games
 ```swift
 GABoardGameGeek().getGameById(12123, stats: true) { result in
     switch(result) {
-    case .Success(let game):
+    case .success(let game):
         print(game)
-    case .Failure(let error):
+    case .failure(let error):
         print(error)
     }
 }
@@ -140,9 +140,9 @@ containing a `CollectionBoardGame` array
 ```swift
 GABoardGameGeek().getUserCollection("userName") { result in
     switch(result) {
-    case .Success(let gameCollection):
+    case .success(let gameCollection):
         print(gameCollection)
-    case .Failure(let error):
+    case .failure(let error):
         print(error)
     }
 }
@@ -162,9 +162,9 @@ seconds, during which time it will retry, as long as the server continues to res
 ```swift
 GABoardGameGeek().getUserCollection("userName", brief: true, stats: true, timeout: 120) { result in
     switch(result) {
-    case .Success(let gameCollection):
+    case .success(let gameCollection):
         print(gameCollection)
-    case .Failure(let error):
+    case .failure(let error):
         print(error)
     }
 }
@@ -183,9 +183,9 @@ following two examples are equivalent:
 // Use switch to handle results/errors
 GABoardGameGeek().getGameById(12123) { result in
     switch(result) {
-    case .Success(let game):
+    case .success(let game):
         print(game)
-    case .Failure(let error):
+    case .failure(let error):
         print(error)
     }
 }
@@ -207,14 +207,14 @@ So feel free to choose the syntax you prefer.
 
 Whenever you are dealing with Networking APIs, there are a number of errors that can occur. I've done
 my best to prevent the ones I can, but there's nothing I can do when the API goes down, or a network 
-connection is unavaialable. When that happens, you can either add code to the `.Failure` case of the 
+connection is unavaialable. When that happens, you can either add code to the `.failure` case of the 
 `ApiResult` enum, or check `result.isFailure`. 
 
 There are a few classes of error in the `BggError` enumeration:
-- `ConnectionError`: Something went wrong with the network connection itself, and the API could not be reached.
-- `ServerNotReady`: Seen when querying a user's collection. The server is not ready yet, but our timeout has expired.
-- `ApiError`: There was an error in the results of the API, things like invalid usernames will cause this.
-- `XmlError`: There was an error parsing the XML response from the API. If you see one of these, please [Contact Me](mailto:gca3020@users.noreply.github.com)
+- `connectionError`: Something went wrong with the network connection itself, and the API could not be reached.
+- `serverNotReady`: Seen when querying a user's collection. The server is not ready yet, but our timeout has expired.
+- `apiError`: There was an error in the results of the API, things like invalid usernames will cause this.
+- `xmlError`: There was an error parsing the XML response from the API. If you see one of these, please [Contact Me](mailto:gca3020@users.noreply.github.com)
 or create an issue with the request you were making and the detail text from the error.
 
 ---

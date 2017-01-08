@@ -1,26 +1,26 @@
 PODS:
-  - Alamofire (3.4.0)
-  - GABoardGameGeek (0.1.0):
-    - Alamofire (~> 3.0)
-    - SWXMLHash (~> 2.2)
-  - Nimble (4.0.1)
-  - OHHTTPStubs (5.1.0):
-    - OHHTTPStubs/Default (= 5.1.0)
-  - OHHTTPStubs/Core (5.1.0)
-  - OHHTTPStubs/Default (5.1.0):
+  - Alamofire (4.2.0)
+  - GABoardGameGeek (0.2.0):
+    - Alamofire (~> 4.0)
+    - SWXMLHash (~> 3.0)
+  - Nimble (5.1.1)
+  - OHHTTPStubs (5.2.3):
+    - OHHTTPStubs/Default (= 5.2.3)
+  - OHHTTPStubs/Core (5.2.3)
+  - OHHTTPStubs/Default (5.2.3):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (5.1.0):
+  - OHHTTPStubs/JSON (5.2.3):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (5.1.0):
+  - OHHTTPStubs/NSURLSession (5.2.3):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (5.1.0)
-  - OHHTTPStubs/Swift (5.1.0):
+  - OHHTTPStubs/OHPathHelpers (5.2.3)
+  - OHHTTPStubs/Swift (5.2.3):
     - OHHTTPStubs/Core
-  - Quick (0.9.2)
-  - SWXMLHash (2.3.1)
+  - Quick (1.0.0)
+  - SWXMLHash (3.0.3)
 
 DEPENDENCIES:
   - GABoardGameGeek (from `../`)
@@ -34,13 +34,13 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  GABoardGameGeek: 31e17ba2fab5aba67c3369b1fc30ae41e6ec8859
-  Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
-  OHHTTPStubs: 592f74439d2d72615115cf99a954237a3fbe26e5
-  Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
-  SWXMLHash: 795c66e74f4cc9473ad6465c6653c5a6f59f417e
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  GABoardGameGeek: 673f32df168634d9d6984a9ffadcd5021b67504d
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
+  OHHTTPStubs: e238cd5b66d8efa51c861db45895de8fe079f4a7
+  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
+  SWXMLHash: 80d2529d74891bb2f15305a0b9e08f2a4f229ee7
 
 PODFILE CHECKSUM: 54474ed4c073938fd2dbb3036f9e72cce6b2fad8
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

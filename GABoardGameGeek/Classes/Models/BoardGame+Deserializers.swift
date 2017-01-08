@@ -139,35 +139,23 @@ extension BoardGame: XMLIndexerDeserializable {
 
      - returns: A `BoardGame` structure.
      */
-    public static func deserialize(node: XMLIndexer) throws -> BoardGame {
-        guard try node.element != nil &&
-            node["name"].withAttr("type", "primary").element != nil &&
-            node["yearpublished"].element != nil &&
-            node["minplayers"].element != nil &&
-            node["maxplayers"].element != nil &&
-            node["playingtime"].element != nil &&
-            node["minplaytime"].element != nil &&
-            node["maxplaytime"].element != nil &&
-            node["minage"].element != nil else {
-            throw XMLDeserializationError.NodeIsInvalid(node: node)
-        }
-
+    public static func deserialize(_ node: XMLIndexer) throws -> BoardGame {
         do {
             return try BoardGame(
-                objectId: node.element!.attribute("id"),
-                type: node.element!.attribute("type"),
-                name: node["name"].withAttr("type", "primary").element!.attribute("value")!,
-                sortIndex: node["name"].withAttr("type", "primary").element!.attribute("sortindex"),
+                objectId: node.value(ofAttribute:"id"),
+                type: node.value(ofAttribute:"type"),
+                name: node["name"].withAttr("type", "primary").value(ofAttribute:"value"),
+                sortIndex: node["name"].withAttr("type", "primary").value(ofAttribute:"sortindex"),
                 imagePath: node["image"].value(),
                 thumbnailPath: node["thumbnail"].value(),
                 description: (node["description"].value() as String).trimWhitespace,
-                yearPublished: node["yearpublished"].element!.attribute("value"),
-                minPlayers: node["minplayers"].element!.attribute("value"),
-                maxPlayers: node["maxplayers"].element!.attribute("value"),
-                playingTime: node["playingtime"].element!.attribute("value"),
-                minPlaytime: node["minplaytime"].element!.attribute("value"),
-                maxPlaytime: node["maxplaytime"].element!.attribute("value"),
-                minAge: node["minage"].element!.attribute("value"),
+                yearPublished: node["yearpublished"].value(ofAttribute:"value"),
+                minPlayers: node["minplayers"].value(ofAttribute:"value"),
+                maxPlayers: node["maxplayers"].value(ofAttribute:"value"),
+                playingTime: node["playingtime"].value(ofAttribute:"value"),
+                minPlaytime: node["minplaytime"].value(ofAttribute:"value"),
+                maxPlaytime: node["maxplaytime"].value(ofAttribute:"value"),
+                minAge: node["minage"].value(ofAttribute:"value"),
                 suggestedPlayers: node["poll"].withAttr("name", "suggested_numplayers").value(),
                 suggestedPlayerage: node["poll"].withAttr("name", "suggested_playerage").value(),
                 languageDependence: node["poll"].withAttr("name", "language_dependence").value(),
@@ -225,12 +213,8 @@ extension SuggestedPlayersPoll: XMLIndexerDeserializable {
 
     - returns: A populated `SuggestedPlayersPoll` structure
     */
-    public static func deserialize(node: XMLIndexer) throws -> SuggestedPlayersPoll {
-        guard node.element != nil else {
-            throw XMLDeserializationError.NodeIsInvalid(node: node)
-        }
-
-        let totalVotes = try node.element!.attribute("totalvotes") as Int
+    public static func deserialize(_ node: XMLIndexer) throws -> SuggestedPlayersPoll {
+        let totalVotes = try node.value(ofAttribute:"totalvotes") as Int
         var resultDict: [String: [PollResult]]? = nil
 
         // Only attempt to parse this if
@@ -239,7 +223,7 @@ extension SuggestedPlayersPoll: XMLIndexerDeserializable {
 
             // Fill in the dictionary, indexing the PollResult arrays by the number of players string
             for result in node["results"] {
-                resultDict![(try result.element!.attribute("numplayers") as String)] = try result["result"].value()
+                resultDict![(try result.value(ofAttribute:"numplayers") as String)] = try result["result"].value()
             }
         }
 
@@ -281,13 +265,9 @@ extension SuggestedPlayeragePoll: XMLIndexerDeserializable {
 
     - returns: A populated `SuggestedPlayeragePoll` structure
     */
-    public static func deserialize(node: XMLIndexer) throws -> SuggestedPlayeragePoll {
-        guard node.element != nil else {
-            throw XMLDeserializationError.NodeIsInvalid(node: node)
-        }
-
+    public static func deserialize(_ node: XMLIndexer) throws -> SuggestedPlayeragePoll {
         return try SuggestedPlayeragePoll(
-            totalVotes: node.element!.attribute("totalvotes"),
+            totalVotes: node.value(ofAttribute:"totalvotes"),
             results: node["results"]["result"].value()
         )
     }
@@ -317,13 +297,9 @@ extension LanguageDependencePoll: XMLIndexerDeserializable {
 
     - returns: A populated `LanguageDependencePoll` structure
     */
-    public static func deserialize(node: XMLIndexer) throws -> LanguageDependencePoll {
-        guard node.element != nil else {
-            throw XMLDeserializationError.NodeIsInvalid(node: node)
-        }
-
+    public static func deserialize(_ node: XMLIndexer) throws -> LanguageDependencePoll {
         return try LanguageDependencePoll(
-            totalVotes: node.element!.attribute("totalvotes"),
+            totalVotes: node.value(ofAttribute:"totalvotes"),
             results: node["results"]["result"].value()
         )
     }
@@ -347,11 +323,11 @@ extension PollResult: XMLElementDeserializable {
 
     - returns: A populated `PollResult` structure
     */
-    public static func deserialize(element: XMLElement) throws -> PollResult {
+    public static func deserialize(_ element: SWXMLHash.XMLElement) throws -> PollResult {
         return try PollResult(
-            level: element.attribute("level"),
-            value: element.attribute("value"),
-            numVotes: element.attribute("numvotes")
+            level: element.value(ofAttribute:"level"),
+            value: element.value(ofAttribute:"value"),
+            numVotes: element.value(ofAttribute:"numvotes")
         )
     }
 }
@@ -391,20 +367,20 @@ extension Statistics: XMLIndexerDeserializable {
 
     - returns: A populated `Statistics` structure
     */
-    public static func deserialize(node: XMLIndexer) throws -> Statistics {
+    public static func deserialize(_ node: XMLIndexer) throws -> Statistics {
         return try Statistics(
-            usersRated: node["usersrated"].element!.attribute("value"),
-            average: node["average"].element!.attribute("value"),
-            bayesAverage: node["bayesaverage"].element!.attribute("value"),
-            stdDev: node["stddev"].element!.attribute("value"),
-            median: node["median"].element!.attribute("value"),
-            owned: node["owned"].element!.attribute("value"),
-            trading: node["trading"].element!.attribute("value"),
-            wanting: node["wanting"].element!.attribute("value"),
-            wishing: node["wishing"].element!.attribute("value"),
-            numComments: node["numcomments"].element!.attribute("value"),
-            numWeights: node["numweights"].element!.attribute("value"),
-            averageWeight: node["averageweight"].element!.attribute("value"),
+            usersRated: node["usersrated"].value(ofAttribute:"value"),
+            average: node["average"].value(ofAttribute:"value"),
+            bayesAverage: node["bayesaverage"].value(ofAttribute:"value"),
+            stdDev: node["stddev"].value(ofAttribute:"value"),
+            median: node["median"].value(ofAttribute:"value"),
+            owned: node["owned"].value(ofAttribute:"value"),
+            trading: node["trading"].value(ofAttribute:"value"),
+            wanting: node["wanting"].value(ofAttribute:"value"),
+            wishing: node["wishing"].value(ofAttribute:"value"),
+            numComments: node["numcomments"].value(ofAttribute:"value"),
+            numWeights: node["numweights"].value(ofAttribute:"value"),
+            averageWeight: node["averageweight"].value(ofAttribute:"value"),
             ranks: node["ranks"]["rank"].value()
         )
     }
@@ -428,12 +404,12 @@ extension BoardGameLink: XMLElementDeserializable {
 
     - returns: A populated `BoardGameLink` structure
     */
-    public static func deserialize(element: XMLElement) throws -> BoardGameLink {
+    public static func deserialize(_ element: SWXMLHash.XMLElement) throws -> BoardGameLink {
         return try BoardGameLink(
-            type: element.attribute("type"),
-            id: element.attribute("id"),
-            value: element.attribute("value"),
-            inbound: element.attribute("inbound")
+            type: element.value(ofAttribute:"type"),
+            id: element.value(ofAttribute:"id"),
+            value: element.value(ofAttribute:"value"),
+            inbound: element.value(ofAttribute:"inbound")
         )
     }
 }
@@ -454,14 +430,14 @@ extension GameRank: XMLElementDeserializable {
 
      - returns: A populated `GameRank` structure
      */
-    public static func deserialize(element: XMLElement) throws -> GameRank {
+    public static func deserialize(_ element: SWXMLHash.XMLElement) throws -> GameRank {
         return try GameRank(
-            type: element.attribute("type"),
-            id: element.attribute("id"),
-            name: element.attribute("name"),
-            friendlyName: element.attribute("friendlyname"),
-            value: (element.attribute("value") as Int?) ?? 0,
-            bayesAverage: (element.attribute("bayesaverage") as Double?) ?? 0.0
+            type: element.value(ofAttribute:"type"),
+            id: element.value(ofAttribute:"id"),
+            name: element.value(ofAttribute:"name"),
+            friendlyName: element.value(ofAttribute:"friendlyname"),
+            value: (element.value(ofAttribute:"value") as Int?) ?? 0,
+            bayesAverage: (element.value(ofAttribute:"bayesaverage") as Double?) ?? 0.0
         )
     }
 }
