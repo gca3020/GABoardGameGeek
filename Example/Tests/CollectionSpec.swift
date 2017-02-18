@@ -42,6 +42,7 @@ class CollectionSpec: QuickSpec {
                         expect(game!.name).to(equal("The Castles of Burgundy"))
                         expect(game!.sortName).to(equal("Castles of Burgundy"))
                         expect(game!.yearPublished).to(equal(2011))
+                        expect(game!.collId).to(equal(29577003))
 
                         expect(game!.status.owned).to(beTrue())
                         expect(game!.status.prevOwned).to(beFalse())
@@ -95,6 +96,7 @@ class CollectionSpec: QuickSpec {
                         expect(game!.objectId).to(equal(27588))
                         expect(game!.name).to(equal("Zooloretto"))
                         expect(game!.sortName).to(equal("Zooloretto"))
+                        expect(game!.collId).to(equal(29622796))
 
                         expect(game!.yearPublished).to(beNil())
 
@@ -145,6 +147,7 @@ class CollectionSpec: QuickSpec {
                         expect(game!.objectId).to(equal(164153))
                         expect(game!.name).to(equal("Star Wars: Imperial Assault"))
                         expect(game!.sortName).to(equal("Star Wars: Imperial Assault"))
+                        expect(game!.collId).to(equal(28295925))
 
                         expect(game!.yearPublished).to(equal(2014))
 
@@ -211,6 +214,7 @@ class CollectionSpec: QuickSpec {
                         expect(game!.objectId).to(equal(10630))
                         expect(game!.name).to(equal("Memoir '44"))
                         expect(game!.sortName).to(equal("Memoir '44"))
+                        expect(game!.collId).to(equal(28226243))
 
                         expect(game!.yearPublished).to(beNil())
 
