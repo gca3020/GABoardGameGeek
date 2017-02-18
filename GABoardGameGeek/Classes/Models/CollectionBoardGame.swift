@@ -32,6 +32,9 @@ public struct CollectionBoardGame {
     /// The status of a game in a user's collection - Along with the name and ID,
     /// this is the only thing that is guaranteed to be there when querying a collection
     public var status: CollectionStatus
+    
+    /// The collection ID of this game.
+    public var collId: Int
 
     /// Statistics for a game in a user's collection. These are formatted differently
     /// from the simple game lookup. 

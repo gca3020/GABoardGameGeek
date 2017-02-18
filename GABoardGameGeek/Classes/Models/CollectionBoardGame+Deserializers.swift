@@ -52,6 +52,7 @@ extension CollectionBoardGame: XMLIndexerDeserializable {
                 name: node["name"].value(),
                 sortIndex: node["name"].value(ofAttribute:"sortindex"),
                 status: node["status"].value(),
+                collId: node.value(ofAttribute:"collid"),
                 stats: node["stats"].value(),
                 yearPublished: node["yearpublished"].value(),
                 imagePath: node["image"].value(),
