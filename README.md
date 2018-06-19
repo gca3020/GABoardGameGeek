@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/gca3020/GABoardGameGeek.svg?branch=master)](https://travis-ci.org/gca3020/GABoardGameGeek)
 [![codecov.io](https://codecov.io/github/gca3020/GABoardGameGeek/coverage.svg?branch=master)](https://codecov.io/github/gca3020/GABoardGameGeek?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/GABoardGameGeek.svg?style=flat)](http://cocoapods.org/pods/GABoardGameGeek)
-![Swift version](https://img.shields.io/badge/swift-3.0-orange.svg)
+![Swift version](https://img.shields.io/badge/swift-4.0-orange.svg)
 [![Platform](https://img.shields.io/cocoapods/p/GABoardGameGeek.svg?style=flat)](http://cocoadocs.org/docsets/GABoardGameGeek)
 [![License](https://img.shields.io/cocoapods/l/GABoardGameGeek.svg?style=flat)](http://cocoapods.org/pods/GABoardGameGeek)
 [![Twitter](https://img.shields.io/badge/twitter-@gca3020-blue.svg?style=flat)](http://twitter.com/gca3020)
@@ -21,7 +21,7 @@ BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections
 
 - iOS 8.0+, macOS 10.10+, tvOS 9.0+, watchOS 2.0+
 - Xcode 8.1+
-- Swift 3.0
+- Swift 4.0
 
 ## Dependencies
 
