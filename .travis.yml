@@ -2,7 +2,7 @@
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
 
-osx_image: xcode8.2
+osx_image: xcode9
 language: objective-c
 
 before_install:
@@ -13,7 +13,7 @@ script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-  - xcodebuild test -workspace Example/GABoardGameGeek.xcworkspace -scheme GABoardGameGeek-Example -sdk iphonesimulator10.2 -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.1' ONLY_ACTIVE_ARCH=YES | xcpretty
+  - xcodebuild test -workspace Example/GABoardGameGeek.xcworkspace -scheme GABoardGameGeek-Example -sdk iphonesimulator11.0 -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.0' ONLY_ACTIVE_ARCH=YES | xcpretty
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'GABoardGameGeek'
