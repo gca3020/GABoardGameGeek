@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GABoardGameGeek'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'A Swift Library for interacting with the BoardGameGeek XMLAPI2'
 
   s.description      = <<-DESC
