@@ -112,7 +112,7 @@ internal class ApiAdapter {
 
             // Try to parse the collection. We do it this way to handle the case where the rootElement
             // is empty and does not contain any of the child element
-            for elem in xmlIndexer[rootElement][childElement] {
+            for elem in xmlIndexer[rootElement][childElement].all{
                 retVal.append(try elem.value())
             }
 
@@ -157,9 +157,9 @@ internal class ApiAdapter {
      */
     fileprivate func handleXmlError(_ error: Error) -> BggError {
         switch error {
-        case XMLDeserializationError.NodeIsInvalid(let node):
+        case XMLDeserializationError.nodeIsInvalid(let node):
             return .xmlError("Node Is Invalid: \(node)")
-        case XMLDeserializationError.TypeConversionFailed(let type, let element):
+        case XMLDeserializationError.typeConversionFailed(let type, let element):
             return .xmlError("Could Not Deserialize \(type): \(element)")
         default:
             return .xmlError("Unhandled Error: \(error)")

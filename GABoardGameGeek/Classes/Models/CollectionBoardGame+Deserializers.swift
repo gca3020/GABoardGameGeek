@@ -65,7 +65,7 @@ extension CollectionBoardGame: XMLIndexerDeserializable {
             // If any errors occur while parsing this game, throw them as a single exception along
             // with the XML that the game deserializes from. This makes it much easier to track down
             // which particular field might be failing.
-            throw XMLDeserializationError.TypeConversionFailed(type: "CollectionBoardGame", element: node.element!)
+            throw XMLDeserializationError.typeConversionFailed(type: "CollectionBoardGame", element: node.element!)
         }
     }
 }

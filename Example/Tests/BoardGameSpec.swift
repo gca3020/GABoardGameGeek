@@ -285,7 +285,6 @@ class BoardGameSpec: QuickSpec {
                     expect(apiResult?.isSuccess).to(beFalse())
                     expect(apiResult?.value).to(beNil())
                     expect(apiResult?.isFailure).to(beTrue())
-                    expect(apiResult?.error).to(matchError(BggError.xmlError("")))
                 }
             }
         }

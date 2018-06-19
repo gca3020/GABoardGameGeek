@@ -144,8 +144,8 @@ extension BoardGame: XMLIndexerDeserializable {
             return try BoardGame(
                 objectId: node.value(ofAttribute:"id"),
                 type: node.value(ofAttribute:"type"),
-                name: node["name"].withAttr("type", "primary").value(ofAttribute:"value"),
-                sortIndex: node["name"].withAttr("type", "primary").value(ofAttribute:"sortindex"),
+                name: node["name"].withAttribute("type", "primary").value(ofAttribute: "value"),
+                sortIndex: node["name"].withAttribute("type", "primary").value(ofAttribute:"sortindex"),
                 imagePath: node["image"].value(),
                 thumbnailPath: node["thumbnail"].value(),
                 description: (node["description"].value() as String).trimWhitespace,
@@ -156,9 +156,9 @@ extension BoardGame: XMLIndexerDeserializable {
                 minPlaytime: node["minplaytime"].value(ofAttribute:"value"),
                 maxPlaytime: node["maxplaytime"].value(ofAttribute:"value"),
                 minAge: node["minage"].value(ofAttribute:"value"),
-                suggestedPlayers: node["poll"].withAttr("name", "suggested_numplayers").value(),
-                suggestedPlayerage: node["poll"].withAttr("name", "suggested_playerage").value(),
-                languageDependence: node["poll"].withAttr("name", "language_dependence").value(),
+                suggestedPlayers: node["poll"].withAttribute("name", "suggested_numplayers").value(),
+                suggestedPlayerage: node["poll"].withAttribute("name", "suggested_playerage").value(),
+                languageDependence: node["poll"].withAttribute("name", "language_dependence").value(),
                 links: node["link"].value(),
                 stats: node["statistics"]["ratings"].value()
             )
@@ -166,7 +166,7 @@ extension BoardGame: XMLIndexerDeserializable {
             // If any errors occur while parsing this game, throw them as a single exception along
             // with the XML that the game deserializes from. This makes it much easier to track down
             // which particular field might be failing.
-            throw XMLDeserializationError.TypeConversionFailed(type: "BoardGame", element: node.element!)
+            throw XMLDeserializationError.typeConversionFailed(type: "BoardGame", element: node.element!)
         }
     }
 }
@@ -222,7 +222,7 @@ extension SuggestedPlayersPoll: XMLIndexerDeserializable {
             resultDict = [String: [PollResult]]()
 
             // Fill in the dictionary, indexing the PollResult arrays by the number of players string
-            for result in node["results"] {
+            for result in node["results"].all {
                 resultDict![(try result.value(ofAttribute:"numplayers") as String)] = try result["result"].value()
             }
         }
