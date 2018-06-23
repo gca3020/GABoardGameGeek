@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.7.2)
-  - GABoardGameGeek (1.0.0):
+  - GABoardGameGeek (1.2.0):
     - Alamofire
     - SWXMLHash
   - Nimble (7.1.2)
@@ -43,12 +43,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  GABoardGameGeek: c3939bf394df20648cef010e57690e69274a3a82
+  GABoardGameGeek: 75611b3474f4dbc6f02226c6e55d7390a4a96fd7
   Nimble: 3835ba9f459daa6b347f8a8e110aaae8ca1920a8
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
   SWXMLHash: f4522438189f72b41e39676d19469a8969d60dd1
 
-PODFILE CHECKSUM: 54474ed4c073938fd2dbb3036f9e72cce6b2fad8
+PODFILE CHECKSUM: c1d49c01375be0edda60080b38a7b403428e213a
 
 COCOAPODS: 1.5.3

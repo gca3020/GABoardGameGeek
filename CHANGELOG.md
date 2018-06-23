@@ -1,3 +1,7 @@
+## v1.1.1 (June 23, 2018)
+
+* Additional updates for Swift 4, cleaning up the project and deprecated usages.
+
 ## v1.1.0 (June 19, 2018)
 
 * Update pods to support Swift 4 versions of dependencies.

@@ -30,10 +30,10 @@ internal extension String {
      - returns: A substring that can be sorted alphabetically.
      */
     func getSortString(_ sortIndex: Int) -> String {
-        if sortIndex <= 1 || sortIndex > self.characters.count {
+        if sortIndex <= 1 || sortIndex > self.count {
             return self
         } else {
-            return self.substring(from: self.characters.index(self.startIndex, offsetBy: sortIndex - 1))
+            return String(self[self.index(self.startIndex, offsetBy: sortIndex - 1)...]);
         }
     }
 }
