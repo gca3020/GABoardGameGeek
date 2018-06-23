@@ -20,6 +20,7 @@ to deal with the complexities of parsing and error-checking the XML.
   s.tvos.deployment_target = '9.0'
 
   s.source_files = 'GABoardGameGeek/Classes/**/*'
+  s.swift_version = '4.0'
 
   s.dependency 'Alamofire'
   s.dependency 'SWXMLHash'

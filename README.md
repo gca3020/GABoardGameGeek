@@ -20,7 +20,7 @@ BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections
 ## Requirements
 
 - iOS 8.0+, macOS 10.10+, tvOS 9.0+, watchOS 2.0+
-- Xcode 8.1+
+- Xcode 9.0+
 - Swift 4.0
 
 ## Dependencies
