@@ -1,4 +1,10 @@
-## v1.1.1 (June 23, 2018)
+# Changelog
+
+## v1.3.0 (February 25, 2022)
+
+* Code changes required for Swift 5
+
+## v1.2.0 (June 23, 2018)
 
 * Additional updates for Swift 4, cleaning up the project and deprecated usages.
 

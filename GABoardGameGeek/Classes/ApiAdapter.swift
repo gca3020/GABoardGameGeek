@@ -66,17 +66,17 @@ internal class ApiAdapter {
      - parameter closure: The closure to call with the response
      */
     fileprivate func requestDataOnce(_ baseUrl: String, params: [String: String], closure: @escaping (ApiResult<String>) -> ()) {
-        Alamofire.request(baseUrl, parameters: params)
+        AF.request(baseUrl, parameters: params)
             .validate(statusCode: 200...202)
             .validate(contentType: ["text/xml"])
             .responseString { response in
                 switch response.result {
-                case .success:
+                case .success(let value):
                     if let statusCode = response.response?.statusCode {
                         if( statusCode == 202 ) {
                             closure(.failure(.serverNotReady))
                         } else {
-                            closure(.success(response.result.value!))
+                            closure(.success(value))
                         }
                     }
                 case .failure(let error):
@@ -103,7 +103,7 @@ internal class ApiAdapter {
         var retVal = [T]()
 
         do {
-            let xmlIndexer = SWXMLHash.parse(xml)
+            let xmlIndexer = XMLHash.parse(xml)
 
             // Check for errors before we attempt to parse out any actual data
             if let error = checkForApiError(xmlIndexer) {
