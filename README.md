@@ -19,9 +19,8 @@ BoardGameGeek XMLAPI2 Swift Framework for interacting with games and collections
 
 ## Requirements
 
-- iOS 8.0+, macOS 10.10+, tvOS 9.0+, watchOS 2.0+
-- Xcode 9.0+
-- Swift 4.0
+- iOS 10.0+, macOS 10.12+, tvOS 10.0+, watchOS 3.0+
+- Swift 5.0
 
 ## Dependencies
 
@@ -211,6 +210,7 @@ connection is unavaialable. When that happens, you can either add code to the `.
 `ApiResult` enum, or check `result.isFailure`. 
 
 There are a few classes of error in the `BggError` enumeration:
+
 - `connectionError`: Something went wrong with the network connection itself, and the API could not be reached.
 - `serverNotReady`: Seen when querying a user's collection. The server is not ready yet, but our timeout has expired.
 - `apiError`: There was an error in the results of the API, things like invalid usernames will cause this.
