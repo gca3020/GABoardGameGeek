@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GABoardGameGeek'
-  s.version          = '1.3.0'
+  s.version          = '2.0.0'
   s.summary          = 'A Swift Library for interacting with the BoardGameGeek XMLAPI2'
 
   s.description      = <<-DESC
@@ -19,7 +19,7 @@ to deal with the complexities of parsing and error-checking the XML.
   s.watchos.deployment_target = '3.0'
   s.tvos.deployment_target = '10.0'
 
-  s.source_files = 'GABoardGameGeek/Classes/**/*'
+  s.source_files = 'Sources/GABoardGameGeek/**/*'
   s.swift_version = '5.0'
 
   s.dependency 'Alamofire'

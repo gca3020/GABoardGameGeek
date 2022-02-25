@@ -1,9 +1,9 @@
 # GABoardGameGeek
 
-[![Build Status](https://travis-ci.org/gca3020/GABoardGameGeek.svg?branch=master)](https://travis-ci.org/gca3020/GABoardGameGeek)
-[![codecov.io](https://codecov.io/github/gca3020/GABoardGameGeek/coverage.svg?branch=master)](https://codecov.io/github/gca3020/GABoardGameGeek?branch=master)
+![gitlab-workflow](https://github.com/gca3020/GABoardGameGeek/actions/workflows/main.yml/badge.svg)
 [![Version](https://img.shields.io/cocoapods/v/GABoardGameGeek.svg?style=flat)](http://cocoapods.org/pods/GABoardGameGeek)
-![Swift version](https://img.shields.io/badge/swift-4.0-orange.svg)
+![Swift version](https://img.shields.io/badge/swift-5.0-orange.svg)
+![swift-package-manager](https://img.shields.io/badge/package%20manager-compatible-brightgreen.svg)
 [![Platform](https://img.shields.io/cocoapods/p/GABoardGameGeek.svg?style=flat)](http://cocoadocs.org/docsets/GABoardGameGeek)
 [![License](https://img.shields.io/cocoapods/l/GABoardGameGeek.svg?style=flat)](http://cocoapods.org/pods/GABoardGameGeek)
 [![Twitter](https://img.shields.io/badge/twitter-@gca3020-blue.svg?style=flat)](http://twitter.com/gca3020)
@@ -49,7 +49,7 @@ pod "GABoardGameGeek"
 
 ## Usage
 
-One of the things that I wanted to accomplish with this library is making the common things you 
+One of the things that I wanted to accomplish with this library is making the common things you
 would want to do very easy, as well as "Swifty". To that end, here are a number of the things you
 can do with this library.
 
@@ -70,7 +70,7 @@ GABoardGameGeek().searchFor("pandemic") { result in
 }
 ```
 
-Alternately, you might want to narrow down your search by only searching for exact matches, or only 
+Alternately, you might want to narrow down your search by only searching for exact matches, or only
 for items of a specific type, like expansions:
 
 ```swift
@@ -86,7 +86,7 @@ GABoardGameGeek().searchFor("pandemic: on the brink", searchType: "boardgameexpa
 }
 ```
 
-I have some plans for how the search type is specified, as these handful of strings for "type" are used 
+I have some plans for how the search type is specified, as these handful of strings for "type" are used
 pretty commonly throughout the API, but for now, specifying the string manually gets ths job done.
 
 ### Reading a Game by ID
@@ -117,7 +117,7 @@ GABoardGameGeek().getGamesById([1, 232, 41415, 12]) { result in
 }
 ```
 
-Additionally, you might want game statistics. These can be requested as well for either a single 
+Additionally, you might want game statistics. These can be requested as well for either a single
 game, or the list of games
 
 ```swift
@@ -147,11 +147,11 @@ GABoardGameGeek().getUserCollection("userName") { result in
 }
 ```
 
-Collection requests have a number of additional, optional parameters. You can request a "brief" collection, 
-which will generally be returned and parsed much quicker, especially for users with large collections, but 
+Collection requests have a number of additional, optional parameters. You can request a "brief" collection,
+which will generally be returned and parsed much quicker, especially for users with large collections, but
 will not contain as many details about a game as a standard request. You can also request a collection with
-statistics, which will contain additional information about a game, such as it's overall rating, position in 
-various rankings, and what this particular user has rated it.  You can even combine these two parameters, 
+statistics, which will contain additional information about a game, such as it's overall rating, position in
+various rankings, and what this particular user has rated it.  You can even combine these two parameters,
 and request brief game details, with a subset of game statistics.
 
 Finally, BoardGameGeek's API generally takes a while to respond to Collection Requests, especially for users
@@ -171,7 +171,7 @@ GABoardGameGeek().getUserCollection("userName", brief: true, stats: true, timeou
 
 ### Handling Results
 
-With heavy inspiration taken from common Swift libraries like Alamofire, the primary way that API results 
+With heavy inspiration taken from common Swift libraries like Alamofire, the primary way that API results
 are returned is in an ApiResult container. This container uses Swift Generics to hold values of different
 types.
 
@@ -205,9 +205,9 @@ So feel free to choose the syntax you prefer.
 ### Error Handling
 
 Whenever you are dealing with Networking APIs, there are a number of errors that can occur. I've done
-my best to prevent the ones I can, but there's nothing I can do when the API goes down, or a network 
-connection is unavaialable. When that happens, you can either add code to the `.failure` case of the 
-`ApiResult` enum, or check `result.isFailure`. 
+my best to prevent the ones I can, but there's nothing I can do when the API goes down, or a network
+connection is unavaialable. When that happens, you can either add code to the `.failure` case of the
+`ApiResult` enum, or check `result.isFailure`.
 
 There are a few classes of error in the `BggError` enumeration:
 

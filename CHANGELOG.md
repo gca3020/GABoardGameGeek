@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.0 (February 25, 2022)
+
+* Support for Swift 5 & Swift Package Manager (Tested on Linux)
+
 ## v1.3.0 (February 25, 2022)
 
 * Code changes required for Swift 5
@@ -16,7 +20,7 @@
 
 * Update code and dependencies for Swift3
 * Update to use https for image path, rather than http
-* Deserializers now use SWXMLHash `value(ofAttribute:)` rather than getting attributes manually 
+* Deserializers now use SWXMLHash `value(ofAttribute:)` rather than getting attributes manually
 
 ## v0.2.0 (June 13, 2016)
 
