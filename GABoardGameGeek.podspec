@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GABoardGameGeek'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'A Swift Library for interacting with the BoardGameGeek XMLAPI2'
 
   s.description      = <<-DESC
@@ -14,13 +14,13 @@ to deal with the complexities of parsing and error-checking the XML.
   s.author           = { 'Geoff Amey' => 'gca3020@users.noreply.github.com' }
   s.source           = { :git => 'https://github.com/gca3020/GABoardGameGeek.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.10'
-  s.watchos.deployment_target = '2.0'
-  s.tvos.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
+  s.osx.deployment_target = '10.12'
+  s.watchos.deployment_target = '3.0'
+  s.tvos.deployment_target = '10.0'
 
   s.source_files = 'GABoardGameGeek/Classes/**/*'
-  s.swift_version = '4.0'
+  s.swift_version = '5.0'
 
   s.dependency 'Alamofire'
   s.dependency 'SWXMLHash'
