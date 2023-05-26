@@ -25,7 +25,7 @@ internal class ApiAdapter {
      - parameter retryUntil:   The absolute end time after which we should stop retrying.
      - parameter closure:      The completion closure when we have either finished or failed
      */
-    internal func request<T: XMLIndexerDeserializable>(_ url: String,
+    internal func request<T: XMLObjectDeserialization>(_ url: String,
                                                        params: [String: String],
                                                        rootElement: String, childElement: String,
                                                        retryUntil: Date = Date(),
@@ -99,7 +99,7 @@ internal class ApiAdapter {
      - returns: ApiResult.Success with an array of n objects of type 'T' or ApiResult.Failure
                 with an appropriate Error
      */
-    fileprivate func parse<T: XMLIndexerDeserializable>(_ xml: String, rootElement: String, childElement: String) -> ApiResult<[T]> {
+    fileprivate func parse<T: XMLObjectDeserialization>(_ xml: String, rootElement: String, childElement: String) -> ApiResult<[T]> {
         var retVal = [T]()
 
         do {

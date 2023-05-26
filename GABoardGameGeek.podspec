@@ -14,7 +14,7 @@ to deal with the complexities of parsing and error-checking the XML.
   s.author           = { 'Geoff Amey' => 'gca3020@users.noreply.github.com' }
   s.source           = { :git => 'https://github.com/gca3020/GABoardGameGeek.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
   s.osx.deployment_target = '10.12'
   s.watchos.deployment_target = '3.0'
   s.tvos.deployment_target = '10.0'

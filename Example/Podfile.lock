@@ -1,26 +1,26 @@
 PODS:
-  - Alamofire (4.7.2)
-  - GABoardGameGeek (1.2.0):
+  - Alamofire (5.7.1)
+  - GABoardGameGeek (2.0.0):
     - Alamofire
     - SWXMLHash
-  - Nimble (7.1.2)
-  - OHHTTPStubs (6.1.0):
-    - OHHTTPStubs/Default (= 6.1.0)
-  - OHHTTPStubs/Core (6.1.0)
-  - OHHTTPStubs/Default (6.1.0):
+  - Nimble (12.0.0)
+  - OHHTTPStubs (9.1.0):
+    - OHHTTPStubs/Default (= 9.1.0)
+  - OHHTTPStubs/Core (9.1.0)
+  - OHHTTPStubs/Default (9.1.0):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (6.1.0):
+  - OHHTTPStubs/JSON (9.1.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (6.1.0):
+  - OHHTTPStubs/NSURLSession (9.1.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (6.1.0)
-  - OHHTTPStubs/Swift (6.1.0):
+  - OHHTTPStubs/OHPathHelpers (9.1.0)
+  - OHHTTPStubs/Swift (9.1.0):
     - OHHTTPStubs/Default
-  - Quick (1.3.0)
-  - SWXMLHash (4.7.0)
+  - Quick (7.0.0)
+  - SWXMLHash (7.0.2)
 
 DEPENDENCIES:
   - GABoardGameGeek (from `../`)
@@ -30,7 +30,7 @@ DEPENDENCIES:
   - Quick
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - Nimble
     - OHHTTPStubs
@@ -42,13 +42,13 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  GABoardGameGeek: 75611b3474f4dbc6f02226c6e55d7390a4a96fd7
-  Nimble: 3835ba9f459daa6b347f8a8e110aaae8ca1920a8
-  OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
-  Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
-  SWXMLHash: f4522438189f72b41e39676d19469a8969d60dd1
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  GABoardGameGeek: 9db7dd0add975d0b1243f2ea54bfaaa4f65be928
+  Nimble: 02a4990866e51868303a466970cd1c81bb84a192
+  OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
+  Quick: f57e9c1acc5ff48d2b04e23a17b4892eda5a3b09
+  SWXMLHash: dd733a457e9c4fe93b1538654057aefae4acb382
 
-PODFILE CHECKSUM: c1d49c01375be0edda60080b38a7b403428e213a
+PODFILE CHECKSUM: 873f2dfa41de9ed82532168b31e252f7cabf491e
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.12.1

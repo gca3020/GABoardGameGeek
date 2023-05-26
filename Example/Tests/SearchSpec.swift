@@ -13,7 +13,7 @@ import OHHTTPStubs
 
 class SearchSpec: QuickSpec {
 
-    override func spec() {
+    override class func spec() {
 
         describe("A Search Request") {
 
@@ -103,7 +103,7 @@ class SearchSpec: QuickSpec {
                 "</root>"
 
                 beforeEach {
-                    parser = SWXMLHash.parse(xml)
+                    parser = XMLHash.parse(xml)
                 }
 
                 it("should fail if a result has no name element") {
@@ -119,26 +119,26 @@ class SearchSpec: QuickSpec {
 
         beforeSuite {
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["query": "pandemic"])) { _ in
-                let stubPath = OHPathForFile("TestData/search.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/search.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["query": "pandemic", "type": "boardgameexpansion"])) { _ in
-                let stubPath = OHPathForFile("TestData/search_expansion.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/search_expansion.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["query": "pandemic", "exact": "1"])) { _ in
-                let stubPath = OHPathForFile("TestData/search_exact.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/search_exact.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["query": "empty"])) { _ in
-                let stubPath = OHPathForFile("TestData/search_empty.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/search_empty.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
         }
 
         afterSuite {
             // Clear out the HTTP Stubs
-            OHHTTPStubs.removeAllStubs()
+            HTTPStubs.removeAllStubs()
         }
     }
 }

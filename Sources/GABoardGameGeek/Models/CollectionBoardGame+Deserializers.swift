@@ -9,7 +9,7 @@
 import Foundation
 import SWXMLHash
 
-extension CollectionBoardGame: XMLIndexerDeserializable {
+extension CollectionBoardGame: XMLObjectDeserialization {
 
     /**
      Deserializes an `<item>` element in a BoardGameGeek "collection" response. This element represents
@@ -103,7 +103,7 @@ extension CollectionStatus: XMLElementDeserializable {
 }
 
 
-extension CollectionStats: XMLIndexerDeserializable {
+extension CollectionStats: XMLObjectDeserialization {
 
     /**
      Deserializes a `<stats>` indexer in BoardGameGeek "collection" response.
@@ -136,7 +136,7 @@ extension CollectionStats: XMLIndexerDeserializable {
     }
 }
 
-extension CollectionRating: XMLIndexerDeserializable {
+extension CollectionRating: XMLObjectDeserialization {
 
     /**
      Deserializes a "rating" indexer in BoardGameGeek "collection" response.

@@ -8,7 +8,7 @@
 import Foundation
 import SWXMLHash
 
-extension BoardGame: XMLIndexerDeserializable {
+extension BoardGame: XMLObjectDeserialization {
 
     /**
      Deserializes an `<item>` element in a BoardGameGeek `thing` response. This item represents
@@ -171,7 +171,7 @@ extension BoardGame: XMLIndexerDeserializable {
     }
 }
 
-extension SuggestedPlayersPoll: XMLIndexerDeserializable {
+extension SuggestedPlayersPoll: XMLObjectDeserialization {
 
     /**
     Deserializes a Suggested Player Count `<poll>` element during `BoardGame` deserialization
@@ -234,7 +234,7 @@ extension SuggestedPlayersPoll: XMLIndexerDeserializable {
     }
 }
 
-extension SuggestedPlayeragePoll: XMLIndexerDeserializable {
+extension SuggestedPlayeragePoll: XMLObjectDeserialization {
 
     /**
     Deserializes a Suggested Playerage `<poll>` element in a `BoardGame` API response
@@ -273,7 +273,7 @@ extension SuggestedPlayeragePoll: XMLIndexerDeserializable {
     }
 }
 
-extension LanguageDependencePoll: XMLIndexerDeserializable {
+extension LanguageDependencePoll: XMLObjectDeserialization {
 
     /**
     Deserializes a Language Dependence `<poll>` element in a `BoardGame` API response
@@ -332,7 +332,7 @@ extension PollResult: XMLElementDeserializable {
     }
 }
 
-extension Statistics: XMLIndexerDeserializable {
+extension Statistics: XMLObjectDeserialization {
     /**
     Deserializes a `<statistics>` element in a `BoardGame` API response.
 

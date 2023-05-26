@@ -13,7 +13,7 @@ import OHHTTPStubs
 
 class BoardGameSpec: QuickSpec {
 
-    override func spec() {
+    override class func spec() {
 
         describe("A Game API Request") {
 
@@ -291,38 +291,38 @@ class BoardGameSpec: QuickSpec {
 
         beforeSuite {
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "161936", "stats": "0"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/thing.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "161936", "stats": "1"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing_stats.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/thing_stats.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "1,2,3,4,5"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing_multiple.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/thing_multiple.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "35"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing_error.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/thing_error.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "999999"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing_empty.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/thing_empty.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "34404"])) { _ in
-                let stubPath = OHPathForFile("TestData/thing_unparsable.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/thing_unparsable.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["id": "0"])) { _ in
                 let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
-                return OHHTTPStubsResponse(error:notConnectedError)
+                return HTTPStubsResponse(error:notConnectedError)
             }
         }
         
         afterSuite {
             // Clear out the HTTP Stubs
-            OHHTTPStubs.removeAllStubs()
+            HTTPStubs.removeAllStubs()
         }
     }
 }
