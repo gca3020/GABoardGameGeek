@@ -13,7 +13,7 @@ import OHHTTPStubs
 
 class CollectionSpec: QuickSpec {
 
-    override func spec() {
+    override class func spec() {
 
         describe("A Collection API Request") {
 
@@ -263,7 +263,7 @@ class CollectionSpec: QuickSpec {
                 }
 
                 it("should timeout if a request is too short") {
-                    waitUntil(timeout: 10) { done in
+                    waitUntil(timeout: .seconds(10)) { done in
                         GABoardGameGeek().getUserCollection("delay", timeoutSeconds: 3) { result in
                             apiResult = result
                             done()
@@ -276,7 +276,7 @@ class CollectionSpec: QuickSpec {
                 }
 
                 it("should return a real result given enough time") {
-                    waitUntil(timeout: 10) { done in
+                    waitUntil(timeout: .seconds(10)) { done in
                         GABoardGameGeek().getUserCollection("delay", timeoutSeconds: 7) { result in
                             apiResult = result
                             done()
@@ -295,7 +295,7 @@ class CollectionSpec: QuickSpec {
                 it("should return an ApiError") {
                     var apiResult: ApiResult<[CollectionBoardGame]>?
 
-                    waitUntil(timeout: 10) { done in
+                    waitUntil(timeout: .seconds(10)) { done in
                         GABoardGameGeek().getUserCollection("invalid") { result in
                             apiResult = result
                             done()
@@ -312,7 +312,7 @@ class CollectionSpec: QuickSpec {
                 it("should return a collection of 0 elements") {
                     var apiResult: ApiResult<[CollectionBoardGame]>?
 
-                    waitUntil(timeout: 10) { done in
+                    waitUntil(timeout: .seconds(10)) { done in
                         GABoardGameGeek().getUserCollection("empty") { result in
                             apiResult = result
                             done()
@@ -355,7 +355,7 @@ class CollectionSpec: QuickSpec {
                     "</root>"
 
                 beforeEach {
-                    parser = SWXMLHash.parse(xml)
+                    parser = XMLHash.parse(xml)
                 }
 
                 it("should fail if a game has no name element") {
@@ -386,45 +386,45 @@ class CollectionSpec: QuickSpec {
             var retryCount = 0
 
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"0"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/collection.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"0"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_brief.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/collection_brief.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"0", "stats":"1"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_stats.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/collection_stats.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "test", "brief":"1", "stats":"1"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_brief_stats.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/collection_brief_stats.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "invalid"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_invalid_username.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/collection_invalid_username.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "empty"])) { _ in
-                let stubPath = OHPathForFile("TestData/collection_empty.xml", type(of: self))
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                let stubPath = OHPathForFile("TestData/collection_empty.xml", self)
+                return HTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"text/xml"])
             }
             stub(condition: isHost("boardgamegeek.com") && containsQueryParams(["username": "delay"])) { _ in
-                let stubPathValid = OHPathForFile("TestData/collection_empty.xml", type(of: self))
-                let stubPathNotReady = OHPathForFile("TestData/collection_notready.xml", type(of: self))
+                let stubPathValid = OHPathForFile("TestData/collection_empty.xml", self)
+                let stubPathNotReady = OHPathForFile("TestData/collection_notready.xml", self)
 
                 retryCount += 1
                 if retryCount <= 6 {
-                    return OHHTTPStubsResponse(fileAtPath: stubPathNotReady!, statusCode: 202, headers: ["Content-Type":"text/xml"])
+                    return HTTPStubsResponse(fileAtPath: stubPathNotReady!, statusCode: 202, headers: ["Content-Type":"text/xml"])
                 } else {
-                    return OHHTTPStubsResponse(fileAtPath: stubPathValid!, statusCode: 200, headers: ["Content-Type":"text/xml"])
+                    return HTTPStubsResponse(fileAtPath: stubPathValid!, statusCode: 200, headers: ["Content-Type":"text/xml"])
                 }
             }
         }
 
         afterSuite {
             // Clear out the HTTP Stubs
-            OHHTTPStubs.removeAllStubs()
+            HTTPStubs.removeAllStubs()
         }
     }
 }

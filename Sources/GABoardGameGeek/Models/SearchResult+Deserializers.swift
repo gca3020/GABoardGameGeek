@@ -9,7 +9,7 @@
 import Foundation
 import SWXMLHash
 
-extension SearchResult: XMLIndexerDeserializable {
+extension SearchResult: XMLObjectDeserialization {
 
     /**
      Deserializes an `<item>` element in a BoardGameGeek "search" response.
